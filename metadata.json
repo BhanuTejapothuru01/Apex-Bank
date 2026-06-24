@@ -1,0 +1,6 @@
+{
+  "name": "Apex Bank",
+  "description": "An interactive, highly animated application for Apex Bank.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

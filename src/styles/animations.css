@@ -1,0 +1,128 @@
+/* Shared animation utilities for Apex Bank apps */
+
+@keyframes apex-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes apex-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+@keyframes apex-float-1 {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-20px) scale(1.02); }
+}
+
+@keyframes apex-float-2 {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-30px) scale(1.03); }
+}
+
+@keyframes apex-float-3 {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-15px) scale(1.01); }
+}
+
+@keyframes apex-slide-in-from-bottom-4 {
+  from { opacity: 0; transform: translateY(1rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes apex-slide-in-from-bottom-6 {
+  from { opacity: 0; transform: translateY(1.5rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes apex-slide-in-from-bottom-8 {
+  from { opacity: 0; transform: translateY(2rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes apex-slide-in-from-top-4 {
+  from { opacity: 0; transform: translateY(-1rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes apex-slide-in-from-left-4 {
+  from { opacity: 0; transform: translateX(-1rem); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes apex-zoom-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-in,
+.animate-fadeIn {
+  animation: apex-fade-in 0.3s ease-out both;
+}
+
+.animate-shake {
+  animation: apex-shake 0.4s ease-in-out;
+}
+
+.animate-float-1 {
+  animation: apex-float-1 12s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: apex-float-2 16s ease-in-out infinite;
+}
+
+.animate-float-3 {
+  animation: apex-float-3 20s ease-in-out infinite;
+}
+
+/* tailwindcss-animate replacements */
+.animate-in.fade-in {
+  animation: apex-fade-in 300ms ease-out both;
+}
+
+.animate-in.fade-in.duration-500 {
+  animation: apex-fade-in 500ms ease-out both;
+}
+
+.animate-in.fade-in.duration-700 {
+  animation: apex-fade-in 700ms ease-out both;
+}
+
+.animate-in.fade-in.slide-in-from-bottom-4,
+.animate-in.fade-in.slide-in-from-bottom-4.duration-300 {
+  animation: apex-slide-in-from-bottom-4 300ms ease-out both;
+}
+
+.animate-in.fade-in.slide-in-from-bottom-6.duration-700 {
+  animation: apex-slide-in-from-bottom-6 700ms ease-out both;
+}
+
+.animate-in.fade-in.slide-in-from-bottom-8.duration-500 {
+  animation: apex-slide-in-from-bottom-8 500ms ease-out both;
+}
+
+.animate-in.fade-in.slide-in-from-top-4 {
+  animation: apex-slide-in-from-top-4 300ms ease-out both;
+}
+
+.animate-in.fade-in.slide-in-from-left-4.duration-300 {
+  animation: apex-slide-in-from-left-4 300ms ease-out both;
+}
+
+.animate-in.fade-in.zoom-in.duration-500 {
+  animation: apex-zoom-in 500ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in,
+  .animate-fadeIn,
+  .animate-shake,
+  .animate-float-1,
+  .animate-float-2,
+  .animate-float-3,
+  .animate-in {
+    animation: none !important;
+  }
+}
