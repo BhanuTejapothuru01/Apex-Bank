@@ -1,0 +1,830 @@
+/**
+ * EquiRisk Cinematic Underwriting Platform - style.css
+ * Ultra-premium Dark-Mode Fintech design system.
+ * Highly compatible with Bootstrap 5.3.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Premium Dark Fintech Palette */
+  --cb-bg: #050811;               /* Deepest cosmos black */
+  --cb-bg-card: rgba(10, 17, 34, 0.75); /* High-contrast glass container */
+  --cb-border: rgba(59, 130, 246, 0.16);  /* Dynamic blue border */
+  --cb-border-glow: rgba(6, 182, 212, 0.3); /* Neon glowing border */
+  
+  /* Brand Accents */
+  --cb-primary: #3b82f6;          /* Hyper Blue */
+  --cb-secondary: #06b6d4;        /* Electric Cyan */
+  --cb-success: #10b981;          /* Matrix Emerald Green */
+  --cb-warning: #f59e0b;          /* Cyber Gold Amber */
+  --cb-danger: #ef4444;           /* Alert Cyber Red */
+  
+  /* Fonts */
+  --cb-font-display: 'Space Grotesk', sans-serif;
+  --cb-font-sans: 'Outfit', sans-serif;
+  --cb-font-mono: 'JetBrains Mono', monospace;
+
+  /* Shadow & Glow Assets */
+  --cb-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  --cb-glow-blue: 0 0 15px rgba(59, 130, 246, 0.45);
+  --cb-glow-cyan: 0 0 15px rgba(6, 182, 212, 0.45);
+  --cb-glow-green: 0 0 15px rgba(16, 185, 129, 0.45);
+  --cb-glow-red: 0 0 15px rgba(239, 68, 68, 0.45);
+}
+
+/* Base Body Styles */
+body {
+  background-color: var(--cb-bg);
+  background-image: 
+    radial-gradient(circle at 12% 18%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 85% 78%, rgba(6, 182, 212, 0.07) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.03) 0%, transparent 60%);
+  background-attachment: fixed;
+  color: #f1f5f9;
+  font-family: var(--cb-font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typography pairings */
+h1, h2, h3, .h1, .h2, .h3, .display-logo {
+  font-family: var(--cb-font-display);
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.font-mono-tech {
+  font-family: var(--cb-font-mono);
+  letter-spacing: -0.01em;
+}
+
+/* Semi-transparent Navbar */
+.navbar-cinematic {
+  backdrop-filter: blur(12px);
+  background-color: rgba(5, 8, 17, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  z-index: 1040;
+}
+
+.nav-link-premium {
+  color: #94a3b8 !important;
+  font-family: var(--cb-font-display);
+  font-weight: 500;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.nav-link-premium:hover, .nav-link-premium.active {
+  color: var(--cb-secondary) !important;
+}
+
+.nav-link-premium::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 10%;
+  width: 0;
+  height: 2px;
+  background-color: var(--cb-secondary);
+  transition: width 0.25s ease;
+}
+
+.nav-link-premium:hover::after, .nav-link-premium.active::after {
+  width: 80%;
+}
+
+/* Cinematic Full-screen Main Container */
+.cinematic-wrapper {
+  position: relative;
+  min-height: calc(100vh - 75px);
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Grid Matrix Canvas Overlay */
+.kinetic-canvas-bg {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.01) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Left panel & right panel flex config */
+.cinematic-grid {
+  display: grid;
+  grid-template-columns: 360px 1fr 340px;
+  gap: 1.5rem;
+  z-index: 1;
+  position: relative;
+  padding: 1rem 2rem;
+}
+
+/* Glassmorphism Card Style */
+.glass-panel {
+  background: var(--cb-bg-card);
+  backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid var(--cb-border);
+  box-shadow: var(--cb-shadow);
+  border-radius: 16px;
+  padding: 1.25rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.01) 30%,
+    rgba(255, 255, 255, 0.03) 50%,
+    rgba(255, 255, 255, 0.01) 70%,
+    transparent 100%
+  );
+  transform: rotate(-12deg);
+  pointer-events: none;
+  transition: transform 0.6s ease;
+}
+
+.glass-panel:hover::before {
+  transform: translate(25%, 0) rotate(-12deg);
+}
+
+.glass-panel.glow-accent-blue {
+  border-color: var(--cb-primary);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), 0 0 15px rgba(59, 130, 246, 0.15);
+}
+
+.glass-panel.glow-accent-cyan {
+  border-color: var(--cb-secondary);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), 0 0 15px rgba(6, 182, 212, 0.15);
+}
+
+.glass-panel.glow-accent-green {
+  border-color: var(--cb-success);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), 0 0 15px rgba(16, 185, 129, 0.15);
+}
+
+/* Timeline Vertical Stepper Control */
+.vertical-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  overflow-y: auto;
+  max-height: calc(100vh - 310px);
+  padding-right: 4px;
+}
+
+/* Custom scroll bar for panels */
+.custom-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.01);
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+}
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--cb-secondary);
+}
+
+/* Story interactive Node in Timeline */
+.timeline-step-node {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  text-align: left;
+}
+
+.timeline-step-node:hover {
+  background: rgba(59, 130, 246, 0.06);
+  border-color: rgba(59, 130, 246, 0.25);
+  transform: translateX(4px);
+}
+
+.timeline-step-node.active-step {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(59, 130, 246, 0.05));
+  border-color: var(--cb-secondary);
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.15);
+}
+
+.step-number-pill {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--cb-font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.07);
+  color: #94a3b8;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.timeline-step-node.active-step .step-number-pill {
+  background: var(--cb-secondary);
+  color: #050811;
+  border-color: var(--cb-secondary);
+  font-weight: 800;
+  box-shadow: var(--cb-glow-cyan);
+}
+
+.step-label-holder {
+  flex: 1;
+}
+
+.step-title-text {
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  margin: 0;
+}
+
+.step-desc-text {
+  font-size: 0.72rem;
+  color: #64748b;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.timeline-step-node.active-step .step-desc-text {
+  color: #cbd5e1;
+}
+
+/* central SVG and layered card stage wrapper */
+.animation-stage {
+  position: relative;
+  height: calc(100vh - 210px);
+  width: 100%;
+  border-radius: 20px;
+  background: radial-gradient(circle at 50% 50%, rgba(13, 20, 35, 0.95), rgba(5, 8, 17, 0.98));
+  border: 1px solid var(--cb-border);
+  overflow: hidden;
+}
+
+/* Master SVG Kinetic Connector system */
+.stage-path-system {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Glowing connector wire paths */
+.glow-path-wire {
+  fill: none;
+  stroke: rgba(59, 130, 246, 0.12);
+  stroke-width: 3;
+  stroke-linecap: round;
+  transition: all 0.6s ease;
+}
+
+/* Activated route wires that light up */
+.glow-path-wire.active-wire {
+  stroke: var(--cb-secondary);
+  stroke-width: 3;
+  filter: drop-shadow(0 0 5px var(--cb-secondary));
+}
+
+.glow-path-wire.complete-wire {
+  stroke: var(--cb-success);
+  stroke-width: 2.5;
+  filter: drop-shadow(0 0 4px var(--cb-success));
+}
+
+/* Moving Flow Particles along paths */
+.glow-particle {
+  fill: var(--cb-secondary);
+  filter: drop-shadow(0 0 6px var(--cb-secondary));
+  animation: none;
+}
+
+.glow-particle.pulse-purple {
+  fill: #a855f7;
+  filter: drop-shadow(0 0 6px #a855f7);
+}
+
+.glow-particle.pulse-green {
+  fill: var(--cb-success);
+  filter: drop-shadow(0 0 6px var(--cb-success));
+}
+
+.glow-particle.pulse-gold {
+  fill: var(--cb-warning);
+  filter: drop-shadow(0 0 6px var(--cb-warning));
+}
+
+/* Layered HUD Overlay Cards representing steps */
+.overlay-card-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Absolute individual stage elements */
+.cinema-floating-card {
+  position: absolute;
+  width: 340px;
+  padding: 1.25rem;
+  border-radius: 16px;
+  background: rgba(10, 18, 38, 0.88);
+  backdrop-filter: blur(20px);
+  border: 1.5px solid var(--cb-border);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+  pointer-events: auto;
+  opacity: 0;
+  transform: scale(0.9) translateY(20px);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 10;
+  visibility: hidden;
+}
+
+/* Center position helper */
+.cinema-floating-card.center-screen {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+.cinema-floating-card.active-card {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1) translateY(0);
+}
+
+.cinema-floating-card.active-card.center-screen {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Floating widgets positioning */
+.floating-widget {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Micro elements inside overlays */
+.scanning-beam-ray {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, rgba(6, 182, 212, 0), rgba(6, 182, 212, 0.85), rgba(6, 182, 212, 0));
+  box-shadow: 0 0 10px var(--cb-secondary);
+  animation: sweepScanning 2s ease-in-out infinite alternate;
+}
+
+@keyframes sweepScanning {
+  0% { top: 0%; opacity: 0.1; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { top: 100%; opacity: 0.1; }
+}
+
+/* Semi-circular FICO Score Meter Dial */
+.fico-dial-container {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  margin: 0.5rem auto;
+}
+
+.fico-score-number {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+.fico-score-tick {
+  font-family: var(--cb-font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--cb-success);
+}
+
+.gradient-progress-bar {
+  position: relative;
+  width: 100%;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.gradient-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--cb-primary), var(--cb-secondary), var(--cb-success));
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+  border-radius: 5px;
+  transition: width 1.2s cubic-bezier(0.1, 0.8, 0.1, 1);
+}
+
+/* Hexagon shield shape for fraud alert */
+.shield-pulse-wrapper {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0.5rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shield-pulse-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(16, 185, 129, 0.3);
+  animation: spinShield 8s linear infinite;
+}
+
+.shield-pulse-center {
+  z-index: 2;
+  color: var(--cb-success);
+  filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.4));
+  animation: pulseClassic 2s infinite ease-in-out;
+}
+
+@keyframes spinShield {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulseClassic {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.4)); }
+  50% { transform: scale(1.15); filter: drop-shadow(0 0 16px rgba(16, 185, 129, 0.75)); }
+}
+
+/* Vault transfer cash streams */
+.cash-particle-flow {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: var(--cb-warning);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  filter: drop-shadow(0 0 4px var(--cb-warning));
+  opacity: 0;
+}
+
+/* HUD bottom playback controller */
+.hud-controller-bar {
+  background: rgba(10, 17, 34, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--cb-border);
+  box-shadow: var(--cb-shadow);
+  border-radius: 16px;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  z-index: 3;
+}
+
+.hud-scrubber-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hud-scrubber-rail {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+  position: relative;
+  cursor: pointer;
+}
+
+.hud-scrubber-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--cb-primary), var(--cb-secondary));
+  box-shadow: 0 0 8px var(--cb-secondary);
+  width: 0%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: width 0.3s cubic-bezier(0.1, 0.8, 0.2, 1);
+}
+
+.hud-scrubber-knob {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 6px var(--cb-secondary);
+  left: 0%;
+  transition: left 0.3s cubic-bezier(0.1, 0.8, 0.2, 1);
+}
+
+.hud-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #cbd5e1;
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.hud-btn:hover {
+  background: rgba(59, 130, 246, 0.15);
+  border-color: var(--cb-primary);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.hud-btn:active {
+  transform: translateY(0);
+}
+
+.hud-btn.active-speed-btn {
+  background: var(--cb-secondary);
+  border-color: var(--cb-secondary);
+  color: #050811;
+  font-weight: 600;
+  box-shadow: var(--cb-glow-cyan);
+}
+
+/* Form Design inside Parameter Customizer on Left Panel */
+.fintech-form-group {
+  margin-bottom: 0.85rem;
+}
+
+.fintech-form-label {
+  font-family: var(--cb-font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #94a3b8;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+.fintech-input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: rgba(14, 25, 47, 0.7);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.fintech-input-group:focus-within {
+  border-color: var(--cb-secondary);
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.25);
+}
+
+.fintech-input-addon {
+  padding: 0.45rem 0.65rem;
+  background: rgba(255, 255, 255, 0.03);
+  color: #64748b;
+  font-family: var(--cb-font-mono);
+  font-size: 0.8rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.fintech-input-box {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  color: #f1f5f9 !important;
+  width: 100%;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.825rem;
+  font-family: var(--cb-font-sans);
+}
+
+.fintech-input-box::placeholder {
+  color: #475569;
+}
+
+/* Real-time slider styling */
+.fintech-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 5px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  outline: none;
+  margin: 0.4rem 0;
+}
+
+.fintech-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--cb-secondary);
+  cursor: pointer;
+  box-shadow: var(--cb-glow-cyan);
+  transition: transform 0.15s ease;
+}
+
+.fintech-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.25);
+}
+
+/* Custom interactive submit launch block */
+.fintech-cta-btn {
+  background: linear-gradient(135deg, var(--cb-primary), var(--cb-secondary));
+  color: #ffffff;
+  border: none;
+  font-family: var(--cb-font-display);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: 8px;
+  box-shadow: var(--cb-glow-blue);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.fintech-cta-btn:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.6);
+}
+
+/* Left panel dynamic logging console */
+.telemetry-console-box {
+  background: rgba(3, 7, 15, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 0.65rem 0.85rem;
+  font-family: var(--cb-font-mono);
+  font-size: 0.6875rem;
+}
+
+.telemetry-row {
+  color: #38bdf8;
+  line-height: 1.4;
+  margin-bottom: 0.15rem;
+}
+
+.telemetry-row.telemetry-accent {
+  color: var(--cb-success);
+}
+
+.telemetry-row.telemetry-warning {
+  color: var(--cb-warning);
+}
+
+.telemetry-row.telemetry-alert {
+  color: var(--cb-danger);
+}
+
+/* Checklist items verification */
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-bottom: 0.35rem;
+}
+
+.checklist-item.passed {
+  color: #cbd5e1;
+}
+
+.checklist-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.checklist-icon.passed {
+  color: var(--cb-success);
+}
+
+/* Simple animation delay util classes */
+.anime-delay-1 { animation-delay: 0.2s; }
+.anime-delay-2 { animation-delay: 0.4s; }
+.anime-delay-3 { animation-delay: 0.6s; }
+
+/* Micro badge styling */
+.badge-custom-cyber {
+  font-family: var(--cb-font-mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.badge-custom-cyber.status-pass {
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #34d399;
+}
+
+.badge-custom-cyber.status-warn {
+  background: rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.4);
+  color: #fbbf24;
+}
+
+.badge-custom-cyber.status-fail {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.4);
+  color: #fca5a5;
+}
+
+/* Standard animation states class */
+.pulse-glow-blue {
+  animation: bgPulseBlue 3s infinite ease-in-out;
+}
+
+@keyframes bgPulseBlue {
+  0%, 100% { border-color: var(--cb-border); }
+  50% { border-color: var(--cb-primary); box-shadow: 0 0 10px rgba(59, 130, 246, 0.3); }
+}
+
+/* Mobile responsive design configurations */
+@media (max-width: 1199.98px) {
+  .cinematic-grid {
+    grid-template-columns: 320px 1fr;
+    grid-template-rows: auto auto;
+  }
+  .stage-right-panel-wrapper {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .cinematic-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    padding: 1rem;
+  }
+  .stage-right-panel-wrapper {
+    grid-column: span 1;
+  }
+  .animation-stage {
+    height: 480px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hud-controller-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hud-scrubber-container {
+    width: 100%;
+  }
+}
