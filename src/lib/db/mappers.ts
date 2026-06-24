@@ -414,6 +414,9 @@ export function mapSavingTargetRow(row: DbRow): SavingTarget {
 
 export function mapSuperAdminInboxRow(row: DbRow) {
   const msgType = str(row.message_type, 'System Message');
+  const meta = row.metadata && typeof row.metadata === 'object'
+    ? (row.metadata as Record<string, unknown>)
+    : {};
   const type =
     msgType === 'Leave Request' ? 'Leave Request'
     : msgType === 'Announcement' ? 'Announcement'
@@ -433,6 +436,10 @@ export function mapSuperAdminInboxRow(row: DbRow) {
     read: bool(row.is_read),
     archived: bool(row.is_archived),
     priority: str(row.priority, 'Medium') as 'High' | 'Medium' | 'Low',
+    leaveType: str(meta.leaveType) as 'Casual Leave' | 'Sick Leave' | 'Earned Leave' | 'Sabbatical' | 'Other' | undefined,
+    leaveDuration: str(meta.leaveDuration) || undefined,
+    startDate: str(meta.startDate) || undefined,
+    endDate: str(meta.endDate) || undefined,
     replies: [] as Array<{ sender: string; message: string; timestamp: string }>,
   };
 }

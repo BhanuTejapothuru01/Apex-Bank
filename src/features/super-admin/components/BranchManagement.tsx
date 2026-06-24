@@ -35,6 +35,8 @@ import {
   ZoomOut
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { Branch } from '../types/dashboard';
+import { type IndianBranch, mergeDbBranchesWithDefaults } from '../lib/branchTransform';
 import { 
   AreaChart, 
   Area, 
@@ -56,38 +58,8 @@ interface BranchNote {
   type: 'Urgent Mandate' | 'Compliance Note' | 'Performance Warning' | 'Operational Instruction';
 }
 
-interface IndianBranch {
-  id: string;
-  code: string;
-  name: string;
-  state: string;
-  city: string;
-  category: 'Headquarters' | 'Regional Office' | 'Branch';
-  status: 'Operational' | 'Attention Required';
-  manager: {
-    name: string;
-    avatarSeed: string;
-    phone: string;
-    email: string;
-    rating: number;
-    performance: number;
-    accountsCount: number;
-  };
-  employeeCount: number;
-  customerCount: number;
-  deposits: number;
-  loans: number;
-  fixedDeposits: number;
-  investmentPortfolio: number;
-  riskRating: 'Low' | 'Medium' | 'High' | 'Critical';
-  performanceRating: number;
-  openDate: string;
-  lastAuditDate: string;
-  revenue: number;
-  profit: number;
-  loss: number;
-  coordinates: { x: number; y: number };
-  notes: BranchNote[];
+interface BranchManagementProps {
+  branches?: Branch[];
 }
 
 // Helper format currency
@@ -118,7 +90,7 @@ const formatShortIndian = (val: number) => {
   }
 };
 
-export default function BranchManagement() {
+export default function BranchManagement({ branches: dbBranches = [] }: BranchManagementProps) {
   // Core branch locations requested by user
   const [branches, setBranches] = useState<IndianBranch[]>([
     {
@@ -454,6 +426,15 @@ export default function BranchManagement() {
   ]);
 
   const [selectedBranchId, setSelectedBranchId] = useState<string>("BR-HYD-01");
+
+  useEffect(() => {
+    if (dbBranches.length > 0) {
+      setBranches((prev) => mergeDbBranchesWithDefaults(dbBranches, prev));
+      setSelectedBranchId((id) =>
+        dbBranches.some((b) => b.id === id) ? id : dbBranches[0].id
+      );
+    }
+  }, [dbBranches]);
   const [searchQuery, setSearchQuery] = useState('');
   const [tickerMultiplier, setTickerMultiplier] = useState(1.0);
   const [selectedKpiCardId, setSelectedKpiCardId] = useState<string | null>(null);
@@ -497,7 +478,7 @@ export default function BranchManagement() {
 
   // Find currently active primary selected node
   const selectedBranch = useMemo(() => {
-    return branches.find(b => b.id === selectedBranchId) || branches[0];
+    return branches.find(b => b.id === selectedBranchId) || branches[0] || null;
   }, [branches, selectedBranchId]);
 
   // Calculate live ticker metrics
@@ -712,6 +693,7 @@ export default function BranchManagement() {
   }, [branches, searchQuery]);
 
   const profitTrend = useMemo(() => {
+    if (!selectedBranch) return [];
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
     return months.map((m, i) => {
       const factor = 0.85 + (i * 0.04) + (Math.sin(i) * 0.05);
@@ -726,7 +708,7 @@ export default function BranchManagement() {
 
   const handleDispatchNoteSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!quickNoteText.trim()) return;
+    if (!selectedBranch || !quickNoteText.trim()) return;
 
     const newNote: BranchNote = {
       date: new Date().toLocaleDateString('en-CA'),
@@ -753,6 +735,7 @@ export default function BranchManagement() {
 
   const handleFundTransferSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!selectedBranch) return;
     const amount = Number(transferAmount);
     if (isNaN(amount) || amount <= 0) return;
 
@@ -876,6 +859,10 @@ export default function BranchManagement() {
         <div className="lg:col-span-2 rounded-2xl border border-pink-200 bg-white shadow-sm shadow-pink-100/50 p-4 sm:p-5 lg:p-6 flex flex-col justify-between relative overflow-hidden">
           <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-pink-300 via-pink-500 to-pink-300" />
           
+          {!selectedBranch ? (
+            <p className="text-sm text-slate-500 py-8 text-center">No branch selected.</p>
+          ) : (
+          <>
           <div className="space-y-4">
             
             <div className="flex justify-between items-center">
@@ -1067,6 +1054,8 @@ export default function BranchManagement() {
               Performance History
             </button>
           </div>
+          </>
+          )}
 
         </div>
 

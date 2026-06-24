@@ -44,6 +44,8 @@ interface LoansTabProps {
   onLoansChange: (amt: number) => void;
   initialInterestRate?: number;
   globalSearchQuery?: string;
+  applications?: LoanApplication[];
+  setApplications?: React.Dispatch<React.SetStateAction<LoanApplication[]>>;
 }
 
 interface LoanApplication {
@@ -181,12 +183,15 @@ export default function LoansTab({
   currentLoans, 
   onLoansChange,
   initialInterestRate = 5.5,
-  globalSearchQuery = ''
+  globalSearchQuery = '',
+  applications: externalApplications,
+  setApplications: setExternalApplications,
 }: LoansTabProps) {
-  // Application List State
-  const [applications, setApplications] = useState<LoanApplication[]>(INITIAL_APPLICATIONS);
+  const [localApplications, setLocalApplications] = useState<LoanApplication[]>(INITIAL_APPLICATIONS);
+  const applications = externalApplications?.length ? externalApplications : localApplications;
+  const setApplications = setExternalApplications ?? setLocalApplications;
   const fileInputRef = React.useRef<HTMLInputElement>(null);
-  const [selectedAppId, setSelectedAppId] = useState<string>('LN-2026-089A');
+  const [selectedAppId, setSelectedAppId] = useState<string>(applications[0]?.id ?? 'LN-2026-089A');
   const [searchQuery, setSearchQuery] = useState<string>('');
   
   // Search filter - moved up to avoid hoisting/scoping compilation issues
@@ -239,6 +244,14 @@ export default function LoansTab({
       setCustomInterest(initialInterestRate);
     }
   }, [initialInterestRate]);
+
+  if (!activeApp) {
+    return (
+      <div className="p-8 rounded-3xl bg-white/20 border border-white/40 text-center text-purple-950/50 font-bold text-sm">
+        No loan applications available. Connect Supabase or check your database seed.
+      </div>
+    );
+  }
 
   // Calculate live dynamic math metrics based on controls
   const P = customAmount;

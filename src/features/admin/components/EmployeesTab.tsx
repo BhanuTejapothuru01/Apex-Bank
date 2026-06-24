@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Users, 
@@ -21,6 +21,8 @@ import {
 
 interface EmployeesTabProps {
   searchQuery?: string;
+  employees?: Employee[];
+  setEmployees?: React.Dispatch<React.SetStateAction<Employee[]>>;
 }
 
 interface Employee {
@@ -105,12 +107,32 @@ const INITIAL_EMPLOYEES: Employee[] = [
   }
 ];
 
-export default function EmployeesTab({ searchQuery = '' }: EmployeesTabProps) {
-  const [employees, setEmployees] = useState<Employee[]>(INITIAL_EMPLOYEES);
-  const [selectedId, setSelectedId] = useState<string>('emp-1');
+export default function EmployeesTab({
+  searchQuery = '',
+  employees: externalEmployees,
+  setEmployees: setExternalEmployees,
+}: EmployeesTabProps) {
+  const [localEmployees, setLocalEmployees] = useState<Employee[]>(INITIAL_EMPLOYEES);
+  const employees = externalEmployees?.length ? externalEmployees : localEmployees;
+  const setEmployees = setExternalEmployees ?? setLocalEmployees;
+  const [selectedId, setSelectedId] = useState<string>(employees[0]?.id ?? 'emp-1');
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
+  useEffect(() => {
+    if (externalEmployees?.length && !externalEmployees.some((e) => e.id === selectedId)) {
+      setSelectedId(externalEmployees[0].id);
+    }
+  }, [externalEmployees, selectedId]);
+
   const activeEmp = employees.find(e => e.id === selectedId) || employees[0];
+
+  if (!activeEmp) {
+    return (
+      <div className="p-8 rounded-3xl bg-white/20 border border-white/40 text-center text-purple-950/50 font-bold text-sm">
+        No employees available.
+      </div>
+    );
+  }
 
   // Dynamic filter matching role, name, department, or email
   const filteredEmployees = employees.filter(emp => {

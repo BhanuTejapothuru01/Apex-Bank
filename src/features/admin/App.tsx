@@ -5,6 +5,13 @@ import LiveBadge from '@/components/LiveBadge';
 import { useSupabaseTable } from '@/hooks/useSupabaseTable';
 import { useSupabaseSetting } from '@/hooks/useSupabaseSetting';
 import { mapAdminTransactionRow, mapSavingTargetRow } from '@/lib/db/mappers';
+import {
+  mapStudentToAdminCustomer,
+  mapEmployeeToAdminEmployee,
+  mapFraudAlertToAdminIncident,
+  mapBankLoanToAdminApplication,
+  mapInboxToAdminMessage,
+} from './supabaseMappers';
 import { 
   Bell, 
   Search, 
@@ -57,6 +64,11 @@ export default function App() {
   const transactionsDb = useSupabaseTable({ table: 'bank_transactions', mapRow: mapAdminTransactionRow, fallback: INITIAL_TRANSACTIONS, filter: { column: 'portal', value: 'admin' } });
   const savingTargetsDb = useSupabaseTable({ table: 'saving_targets', mapRow: mapSavingTargetRow, fallback: SAVING_TARGETS, orderColumn: 'name' });
   const dashboardDb = useSupabaseSetting('admin_dashboard', { balance: 562000, loans: 43000, interestRate: 5.5 });
+  const customersDb = useSupabaseTable({ table: 'students', mapRow: mapStudentToAdminCustomer, fallback: [], orderColumn: 'created_at' });
+  const employeesDb = useSupabaseTable({ table: 'employees', mapRow: mapEmployeeToAdminEmployee, fallback: [], orderColumn: 'join_date' });
+  const fraudDb = useSupabaseTable({ table: 'fraud_alerts', mapRow: mapFraudAlertToAdminIncident, fallback: [], orderColumn: 'alert_time' });
+  const loansDb = useSupabaseTable({ table: 'bank_loans', mapRow: mapBankLoanToAdminApplication, fallback: [], orderColumn: 'requested_date' });
+  const inboxDb = useSupabaseTable({ table: 'inbox_messages', mapRow: mapInboxToAdminMessage, fallback: [], orderColumn: 'created_at' });
 
   const transactions = transactionsDb.data;
   const setTransactions = transactionsDb.setData;
@@ -79,7 +91,7 @@ export default function App() {
 
   const [searchQuery, setSearchQuery] = useState('');
   const [toastMessage, setToastMessage] = useState<string | null>(null);
-  const liveConnected = dashboardDb.connected || transactionsDb.connected || savingTargetsDb.connected;
+  const liveConnected = dashboardDb.connected || transactionsDb.connected || savingTargetsDb.connected || customersDb.connected || employeesDb.connected;
 
   // Top header panels states
   const [isRefreshOpen, setIsRefreshOpen] = useState(false);
@@ -429,6 +441,8 @@ export default function App() {
                       onLoansChange={setLoans}
                       initialInterestRate={syncedInterestRate}
                       globalSearchQuery={searchQuery}
+                      applications={loansDb.data}
+                      setApplications={loansDb.setData}
                     />
                   </motion.div>
                 );
@@ -447,6 +461,7 @@ export default function App() {
                       onBalanceChange={setBalance} 
                       onAddTransaction={handleAddTransaction}
                       searchQuery={searchQuery}
+                      transactions={transactions}
                     />
                   </motion.div>
                 );
@@ -464,6 +479,8 @@ export default function App() {
                       balance={balance}
                       currentLoans={loans}
                       globalSearchQuery={searchQuery}
+                      messages={inboxDb.data}
+                      setMessages={inboxDb.setData}
                     />
                   </motion.div>
                 );
@@ -484,6 +501,8 @@ export default function App() {
                       onLoansChange={setLoans}
                       onAddTransaction={handleAddTransaction}
                       searchQuery={searchQuery}
+                      customers={customersDb.data}
+                      setCustomers={customersDb.setData}
                     />
                   </motion.div>
                 );
@@ -502,6 +521,8 @@ export default function App() {
                       onBalanceChange={setBalance}
                       onAddTransaction={handleAddTransaction}
                       searchQuery={searchQuery}
+                      incidents={fraudDb.data}
+                      setIncidents={fraudDb.setData}
                     />
                   </motion.div>
                 );
@@ -517,6 +538,8 @@ export default function App() {
                   >
                     <EmployeesTab 
                       searchQuery={searchQuery}
+                      employees={employeesDb.data}
+                      setEmployees={employeesDb.setData}
                     />
                   </motion.div>
                 );

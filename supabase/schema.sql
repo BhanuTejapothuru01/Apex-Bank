@@ -488,6 +488,18 @@ insert into public.fraud_alerts (id, source, reason, amount, risk_probability, a
   ('alert-2', 'CUST-415', 'Unusual crypto transfer pattern', 120000, 74, '10:30 PM', 'Pending', 'London, UK', 'Desktop')
 on conflict (id) do nothing;
 
+insert into public.inbox_messages (id, sender_name, employee_id, branch_name, subject, content, preview, message_type, message_time, priority, is_read, status) values
+  ('MSG-4201', 'Admin – Hyderabad Main Branch', 'EMP-046', 'Hyderabad Main Branch', 'Leave Application Request', 'Applying for 3 days Casual Leave from 25–27 June 2026.', 'Applying for 3 days Casual Leave…', 'Leave Request', '2026-06-17 09:30 AM', 'High', false, 'Pending'),
+  ('MSG-1081', 'Yuki Sato', 'EMP-108', 'Tokyo Neo Skyline', 'Emergency Sick Leave', 'Applying for 2 days Sick Leave due to influenza.', 'Applying for 2 days Sick Leave…', 'Leave Request', '2026-06-16 11:20 AM', 'Medium', false, 'Pending'),
+  ('MSG-3051', 'Compliance System Bulletin', 'SYSTEM', 'Apex Corporate HQ', 'RBI Quarterly Audit Notice', 'All branch admins must complete KYC ledgers before June 30.', 'All branch admins must complete…', 'Announcement', '2026-06-15 08:00 AM', 'High', true, 'Approved')
+on conflict (id) do nothing;
+
+insert into public.bank_transactions (id, customer_id, customer_name, merchant, name, amount, tx_type, tx_direction, category, status, recipient, icon_name, portal, transaction_date) values
+  ('tx-adm-1', null, null, 'Payroll Disbursement', 'Payroll Disbursement', 42000, 'Transfer', 'expense', 'Payroll', 'Completed', 'Operations Team', 'ReceiptText', 'admin', '2026-06-12T09:00:00Z'),
+  ('tx-adm-2', null, null, 'Treasury Deposit', 'Treasury Deposit', 85000, 'Transfer', 'income', 'Treasury', 'Completed', 'Apex Holdings', 'TrendingUp', 'admin', '2026-06-11T14:30:00Z'),
+  ('tx-adm-3', null, null, 'Loan Servicing Fee', 'Loan Servicing Fee', 3200, 'Transfer', 'income', 'Loans', 'Completed', 'Marcus Vance', 'TrendingUp', 'admin', '2026-06-10T11:15:00Z')
+on conflict (id) do nothing;
+
 insert into public.audit_logs (id, user_email, action, ip_address, severity, created_at) values
   ('LOG-5421', 'khanamsayeemakousar@gmail.com', 'System Session Initialized', '192.168.1.144', 'Info', '2026-06-11T08:35:10Z'),
   ('LOG-5420', 's.jenkins@apexbank.com', 'KYC Application Rejected [CUST-104]', '10.0.4.32', 'Warning', '2026-06-11T08:14:22Z')

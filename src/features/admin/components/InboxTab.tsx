@@ -33,6 +33,8 @@ interface InboxTabProps {
   balance: number;
   currentLoans: number;
   globalSearchQuery?: string;
+  messages?: FeedbackMessage[];
+  setMessages?: React.Dispatch<React.SetStateAction<FeedbackMessage[]>>;
 }
 
 interface FeedbackMessage {
@@ -164,10 +166,17 @@ const INITIAL_FEEDBACK_MESSAGES: FeedbackMessage[] = [
   }
 ];
 
-export default function InboxTab({ balance, currentLoans, globalSearchQuery = '' }: InboxTabProps) {
-  // Inbox Messages State
-  const [messages, setMessages] = useState<FeedbackMessage[]>(INITIAL_FEEDBACK_MESSAGES);
-  const [selectedMsgId, setSelectedMsgId] = useState<string>("MSG-LN-904D");
+export default function InboxTab({
+  balance,
+  currentLoans,
+  globalSearchQuery = '',
+  messages: externalMessages,
+  setMessages: setExternalMessages,
+}: InboxTabProps) {
+  const [localMessages, setLocalMessages] = useState<FeedbackMessage[]>(INITIAL_FEEDBACK_MESSAGES);
+  const messages = externalMessages?.length ? externalMessages : localMessages;
+  const setMessages = setExternalMessages ?? setLocalMessages;
+  const [selectedMsgId, setSelectedMsgId] = useState<string>(messages[0]?.id ?? 'MSG-LN-904D');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [activeFilter, setActiveFilter] = useState<'all' | 'critical-high' | 'unread'>('all');
 

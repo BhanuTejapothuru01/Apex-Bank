@@ -368,6 +368,59 @@ export default function FixedDeposits({
   // Initialize and track active filtered Fixed Deposits database
   const [fdData, setFdData] = useState<FDRichDetails[]>(RICH_FD_PRESETS);
 
+  useEffect(() => {
+    if (fixedDeposits.length === 0) return;
+    const mapped: FDRichDetails[] = fixedDeposits.map((fd) => {
+      const customer = customers.find((c) => c.name === fd.customerName);
+      const branch = branches.find((b) => b.id === customer?.branchId) || branches[0];
+      const months = fd.durationMonths || 12;
+      const maturity = new Date(fd.startDate);
+      maturity.setMonth(maturity.getMonth() + months);
+      const maturityAmount = fd.amount * (1 + (fd.interestRate / 100) * (months / 12));
+      return {
+        id: fd.id,
+        fdNumber: fd.id,
+        customerName: fd.customerName,
+        customerId: customer?.id || 'CUST-000',
+        mobileNumber: customer?.phone || '+91 90000 00000',
+        emailAddress: customer?.email || 'client@apexbank.com',
+        amount: fd.amount,
+        interestRate: fd.interestRate,
+        durationMonths: months,
+        startDate: fd.startDate,
+        maturityDate: maturity.toISOString().slice(0, 10),
+        maturityAmount,
+        status: fd.status,
+        fdType: 'Regular FD',
+        isEmployee: false,
+        branchName: branch?.name || 'Hyderabad Main Branch',
+        branchCode: branch?.id || 'BR-HYD-01',
+        branchLocation: branch?.location || 'Hyderabad, Telangana',
+        branchManagerName: branch?.manager || 'Branch Manager',
+        createdByEmployee: employees[0]?.name || 'System Admin',
+        createdByEmployeeId: employees[0]?.id || 'EMP-001',
+        creatorDesignation: employees[0]?.role || 'Operations Officer',
+        dateCreated: fd.startDate,
+        timeCreated: '09:00 AM',
+        approvedBy: branch?.manager || 'Branch Manager',
+        approvalBranchManager: branch?.manager || 'Branch Manager',
+        approvalDate: fd.startDate,
+        approvalTime: '10:00 AM',
+        transactions: [
+          {
+            type: 'FD Opening Transaction' as const,
+            amount: fd.amount,
+            date: fd.startDate,
+            time: '09:00 AM',
+            branch: branch?.name || 'Main Branch',
+          },
+        ],
+      };
+    });
+    setFdData(mapped);
+    if (mapped[0]) setSelectedFdId(mapped[0].id);
+  }, [fixedDeposits, customers, employees, branches]);
+
   // Filters state
   const [holderFilter, setHolderFilter] = useState<'All' | 'Customers' | 'Employees'>('All');
   const [statusFilter, setStatusFilter] = useState<string>('All');

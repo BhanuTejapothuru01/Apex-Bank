@@ -9,7 +9,7 @@ interface ChartsProps {
 }
 
 export default function Charts({ cashflowData }: ChartsProps) {
-  const [hoveredBarIndex, setHoveredBarIndex] = useState<number | null>(5); // Default to June (index 5) as showcased in image 1!
+  const [hoveredBarIndex, setHoveredBarIndex] = useState<number | null>(null);
   const [hoveredDoughnutIndex, setHoveredDoughnutIndex] = useState<number | null>(null);
   const [timeframe, setTimeframe] = useState('This Year');
   const [donutType, setDonutType] = useState('This Month');
@@ -28,6 +28,17 @@ export default function Charts({ cashflowData }: ChartsProps) {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (cashflowData.length === 0) {
+      setHoveredBarIndex(null);
+      return;
+    }
+    setHoveredBarIndex((prev) => {
+      if (prev !== null && prev < cashflowData.length) return prev;
+      return Math.min(5, cashflowData.length - 1);
+    });
+  }, [cashflowData.length]);
+
   // Bar chart mathematics
   const height = 240;
   const paddingLeft = 32;
@@ -42,9 +53,15 @@ export default function Charts({ cashflowData }: ChartsProps) {
   const maxVal = Math.max(...cashflowData.flatMap(d => [d.income, d.expense]), 8000);
   
   const getX = (index: number) => {
+    if (cashflowData.length === 0) return paddingLeft;
     const spacing = chartWidth / cashflowData.length;
     return paddingLeft + index * spacing + spacing / 2;
   };
+
+  const hoveredItem =
+    hoveredBarIndex !== null && hoveredBarIndex < cashflowData.length
+      ? cashflowData[hoveredBarIndex]
+      : null;
   
   const getY = (val: number) => {
     const ratio = val / maxVal;
@@ -122,7 +139,7 @@ export default function Charts({ cashflowData }: ChartsProps) {
         <div className="relative mt-2">
           {/* Custom June 2029 Tooltip (matches first image exactly!) */}
           <AnimatePresence>
-            {hoveredBarIndex !== null && (
+            {hoveredItem && hoveredBarIndex !== null && (
               <motion.div
                 initial={{ opacity: 0, scale: 0.95, y: -5 }}
                 animate={{ 
@@ -135,26 +152,31 @@ export default function Charts({ cashflowData }: ChartsProps) {
                 className="absolute -top-12 bg-white/95 border border-purple-500/20 backdrop-blur-2xl rounded-2xl p-2.5 shadow-xl text-[10px] w-36 pointer-events-none z-10 font-sans"
               >
                 <p className="font-extrabold text-purple-950/70 border-b border-purple-950/10 pb-1 mb-1 bg-gradient-to-r from-purple-900 to-pink-900 bg-clip-text text-transparent uppercase tracking-wider">
-                  {cashflowData[hoveredBarIndex].month} 2029
+                  {hoveredItem.month} 2029
                 </p>
                 <div className="flex justify-between items-center text-purple-950 font-semibold mb-0.5">
                   <span className="flex items-center gap-1 text-purple-900 font-bold">
                     <span className="w-1.5 h-1.5 rounded-full bg-purple-800" />
                     Income:
                   </span>
-                  <span className="font-mono">${cashflowData[hoveredBarIndex].income.toLocaleString()}</span>
+                  <span className="font-mono">${hoveredItem.income.toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between items-center text-purple-950 font-semibold">
                   <span className="flex items-center gap-1 text-pink-500 font-bold">
                     <span className="w-1.5 h-1.5 rounded-full bg-pink-400" />
                     Expense:
                   </span>
-                  <span className="font-mono">${cashflowData[hoveredBarIndex].expense.toLocaleString()}</span>
+                  <span className="font-mono">${hoveredItem.expense.toLocaleString()}</span>
                 </div>
               </motion.div>
             )}
           </AnimatePresence>
 
+          {cashflowData.length === 0 ? (
+            <div className="flex items-center justify-center h-[240px] text-xs font-bold text-purple-950/40">
+              No cashflow data available
+            </div>
+          ) : (
           <svg width={width} height={height} className="overflow-visible">
             {/* Grid Lines */}
             {[0, 0.25, 0.5, 0.75, 1].map((ratio, index) => {
@@ -272,6 +294,7 @@ export default function Charts({ cashflowData }: ChartsProps) {
               </linearGradient>
             </defs>
           </svg>
+          )}
         </div>
       </div>
 

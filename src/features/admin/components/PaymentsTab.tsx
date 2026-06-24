@@ -2,27 +2,24 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Building2, 
-  Tv, 
   Lightbulb, 
-  ShieldCheck, 
   Wifi, 
-  Clock, 
   ArrowRight, 
   CreditCard, 
-  User, 
-  CheckCircle2, 
-  RefreshCw,
-  Plus
+  CheckCircle2,
+  History,
 } from 'lucide-react';
+import { Transaction } from '../types';
 
 interface PaymentsTabProps {
   balance: number;
   onBalanceChange: (amt: number) => void;
   onAddTransaction: (name: string, type: 'Income' | 'Expense', amount: number, recipient: string, status?: 'Completed' | 'Pending' | 'Failed') => void;
   searchQuery?: string;
+  transactions?: Transaction[];
 }
 
-export default function PaymentsTab({ balance, onBalanceChange, onAddTransaction, searchQuery = '' }: PaymentsTabProps) {
+export default function PaymentsTab({ balance, onBalanceChange, onAddTransaction, searchQuery = '', transactions = [] }: PaymentsTabProps) {
   const [autopayEnabled, setAutopayEnabled] = useState<Record<string, boolean>>({
     'pay-1': true,
     'pay-2': false,
@@ -45,6 +42,16 @@ export default function PaymentsTab({ balance, onBalanceChange, onAddTransaction
       item.name.toLowerCase().includes(q) ||
       item.category.toLowerCase().includes(q) ||
       item.recipient.toLowerCase().includes(q)
+    );
+  });
+
+  const filteredTransactions = transactions.filter((tx) => {
+    const q = searchQuery.toLowerCase();
+    if (!q) return true;
+    return (
+      tx.name.toLowerCase().includes(q) ||
+      tx.recipient.toLowerCase().includes(q) ||
+      tx.status.toLowerCase().includes(q)
     );
   });
 
@@ -158,6 +165,37 @@ export default function PaymentsTab({ balance, onBalanceChange, onAddTransaction
         {filteredTemplates.length === 0 && (
           <div className="col-span-full py-16 text-center text-xs font-bold text-purple-950/40 bg-white/10 rounded-3xl border border-dashed border-purple-950/15">
             No payments match "{searchQuery}". Try searching for bills like "Electricity" or "Cloud".
+          </div>
+        )}
+      </div>
+
+      {/* 3. RECENT PAYMENT ACTIVITY (Supabase admin transactions) */}
+      <div className="rounded-3xl bg-white/20 border border-white/40 p-5 backdrop-blur-xl shadow-lg">
+        <div className="flex items-center gap-2 mb-4">
+          <History className="w-4 h-4 text-purple-950/60" />
+          <h3 className="font-display font-extrabold text-sm text-purple-950">Recent Payment Activity</h3>
+        </div>
+        {filteredTransactions.length === 0 ? (
+          <p className="text-xs font-bold text-purple-950/40 py-4 text-center">No admin portal transactions yet.</p>
+        ) : (
+          <div className="space-y-2 max-h-[240px] overflow-y-auto">
+            {filteredTransactions.slice(0, 10).map((tx) => (
+              <div
+                key={tx.id}
+                className="flex items-center justify-between gap-3 p-3 rounded-2xl bg-white/30 border border-white/40 text-xs"
+              >
+                <div>
+                  <p className="font-extrabold text-purple-950">{tx.name}</p>
+                  <p className="text-purple-950/50 font-medium">{tx.recipient} · {tx.date.slice(0, 10)}</p>
+                </div>
+                <div className="text-right">
+                  <p className={`font-mono font-black ${tx.type === 'Income' ? 'text-emerald-700' : 'text-rose-600'}`}>
+                    {tx.type === 'Income' ? '+' : '-'}${tx.amount.toLocaleString()}
+                  </p>
+                  <p className="text-[10px] font-bold text-purple-950/40 uppercase">{tx.status}</p>
+                </div>
+              </div>
+            ))}
           </div>
         )}
       </div>

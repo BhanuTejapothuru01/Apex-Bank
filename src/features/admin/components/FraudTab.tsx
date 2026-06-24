@@ -27,6 +27,8 @@ interface FraudTabProps {
     status?: 'Completed' | 'Pending' | 'Failed'
   ) => void;
   searchQuery?: string;
+  incidents?: AlertIncident[];
+  setIncidents?: React.Dispatch<React.SetStateAction<AlertIncident[]>>;
 }
 
 interface AlertIncident {
@@ -41,7 +43,50 @@ interface AlertIncident {
   status: 'Pending Review' | 'Cleared' | 'Blocked';
 }
 
-export default function FraudTab({ balance, onBalanceChange, onAddTransaction, searchQuery = '' }: FraudTabProps) {
+const FALLBACK_INCIDENTS: AlertIncident[] = [
+  {
+    id: 'frd-101',
+    sourceName: 'Stripe API Gateway',
+    amount: 14500,
+    riskScore: 82,
+    reason: 'Rapid velocity from unfamiliar overseas IP',
+    location: 'Frankfurt, DE',
+    ip: '194.25.10.11',
+    time: 'Just now',
+    status: 'Pending Review'
+  },
+  {
+    id: 'frd-102',
+    sourceName: 'Andrew Forbist Card',
+    amount: 450,
+    riskScore: 23,
+    reason: 'Standard office supply acquisition',
+    location: 'New York, US',
+    ip: '64.233.160.10',
+    time: '4 mins ago',
+    status: 'Cleared'
+  },
+  {
+    id: 'frd-103',
+    sourceName: 'Merchant Terminal #4',
+    amount: 89000,
+    riskScore: 94,
+    reason: 'Card-Not-Present transaction above threshold request',
+    location: 'Lagos, NG',
+    ip: '102.89.3.45',
+    time: '12 mins ago',
+    status: 'Blocked'
+  }
+];
+
+export default function FraudTab({
+  balance,
+  onBalanceChange,
+  onAddTransaction,
+  searchQuery = '',
+  incidents: externalIncidents,
+  setIncidents: setExternalIncidents,
+}: FraudTabProps) {
   // Fraud rules states
   const [rules, setRules] = useState({
     velocityCheck: true,
@@ -50,41 +95,9 @@ export default function FraudTab({ balance, onBalanceChange, onAddTransaction, s
     fingerprintCheck: true,
   });
 
-  const [incidents, setIncidents] = useState<AlertIncident[]>([
-    {
-      id: 'frd-101',
-      sourceName: 'Stripe API Gateway',
-      amount: 14500,
-      riskScore: 82,
-      reason: 'Rapid velocity from unfamiliar overseas IP',
-      location: 'Frankfurt, DE',
-      ip: '194.25.10.11',
-      time: 'Just now',
-      status: 'Pending Review'
-    },
-    {
-      id: 'frd-102',
-      sourceName: 'Andrew Forbist Card',
-      amount: 450,
-      riskScore: 23,
-      reason: 'Standard office supply acquisition',
-      location: 'New York, US',
-      ip: '64.233.160.10',
-      time: '4 mins ago',
-      status: 'Cleared'
-    },
-    {
-      id: 'frd-103',
-      sourceName: 'Merchant Terminal #4',
-      amount: 89000,
-      riskScore: 94,
-      reason: 'Card-Not-Present transaction above threshold request',
-      location: 'Lagos, NG',
-      ip: '102.89.3.45',
-      time: '12 mins ago',
-      status: 'Blocked'
-    }
-  ]);
+  const [localIncidents, setLocalIncidents] = useState<AlertIncident[]>(FALLBACK_INCIDENTS);
+  const incidents = externalIncidents?.length ? externalIncidents : localIncidents;
+  const setIncidents = setExternalIncidents ?? setLocalIncidents;
 
   // Simulator inputs
   const [simName, setSimName] = useState('John Doe');

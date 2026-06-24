@@ -129,7 +129,7 @@ export default function App() {
   };
 
   const markNotificationAsRead = (id: string) => {
-    setNotifications(notifications.map(n => n.id === id ? { ...n, read: true } : n));
+    setNotifications((prev) => prev.map(n => n.id === id ? { ...n, read: true } : n));
   };
 
   // Badges calculations
@@ -330,7 +330,11 @@ export default function App() {
                   )}
 
                   {activeTab === 'fraud' && (
-                    <FraudDetection />
+                    <FraudDetection
+                      alerts={notifications}
+                      setAlerts={setNotifications}
+                      addAuditLog={addAuditLog}
+                    />
                   )}
 
                   {activeTab === 'wealth' && (

@@ -28,6 +28,38 @@ export default function EmployeeManagement({
   // Initialize main list of branch managers
   const [managers, setManagers] = useState<BranchManager[]>(INITIAL_BRANCH_MANAGERS);
 
+  useEffect(() => {
+    if (employees.length === 0) return;
+    const branchById = Object.fromEntries(branches.map((b) => [b.id, b]));
+    const mapped: BranchManager[] = employees.map((emp, idx) => {
+      const branch = branchById[emp.branchId];
+      const template = INITIAL_BRANCH_MANAGERS[idx % INITIAL_BRANCH_MANAGERS.length];
+      const initials = emp.name.split(' ').map((n) => n[0]).join('').slice(0, 2).toUpperCase();
+      return {
+        ...template,
+        id: emp.id,
+        name: emp.name,
+        avatarSeed: initials,
+        email: emp.email,
+        phone: '+91 40 1234 5678',
+        joinDate: emp.joinDate,
+        status: emp.status === 'Inactive' ? 'Inactive' : 'Active',
+        rating: emp.rating,
+        department: emp.department,
+        designation: emp.role,
+        branchName: branch?.name || template.branchName,
+        branchCode: branch?.id || template.branchCode,
+        branchLocation: branch?.location || template.branchLocation,
+        stats: {
+          ...template.stats,
+          totalStaff: Math.max(10, Math.round(emp.performance / 2)),
+          activeStaff: Math.max(8, Math.round(emp.performance / 2.5)),
+        },
+      };
+    });
+    setManagers(mapped);
+  }, [employees, branches]);
+
   // States for search & filters
   const [searchQuery, setSearchQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState<'All' | 'Active' | 'On Leave' | 'Inactive'>('All');

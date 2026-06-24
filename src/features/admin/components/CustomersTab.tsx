@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Gauge, 
@@ -37,6 +37,8 @@ interface CustomersTabProps {
     status: 'Completed' | 'Pending' | 'Failed'
   ) => void;
   searchQuery?: string;
+  customers?: Customer[];
+  setCustomers?: React.Dispatch<React.SetStateAction<Customer[]>>;
 }
 
 interface Customer {
@@ -174,10 +176,14 @@ export default function CustomersTab({
   currentLoans, 
   onLoansChange,
   onAddTransaction,
-  searchQuery = ''
+  searchQuery = '',
+  customers: externalCustomers,
+  setCustomers: setExternalCustomers,
 }: CustomersTabProps) {
-  const [customers, setCustomers] = useState<Customer[]>(INITIAL_CUSTOMERS);
-  const [selectedId, setSelectedId] = useState<string>('cust-1');
+  const [localCustomers, setLocalCustomers] = useState<Customer[]>(INITIAL_CUSTOMERS);
+  const customers = externalCustomers?.length ? externalCustomers : localCustomers;
+  const setCustomers = setExternalCustomers ?? setLocalCustomers;
+  const [selectedId, setSelectedId] = useState<string>(customers[0]?.id ?? 'cust-1');
   const [showScore, setShowScore] = useState<boolean>(false);
   const [showDocInspector, setShowDocInspector] = useState<boolean>(false);
   const [showAccNumber, setShowAccNumber] = useState<boolean>(false);
@@ -212,6 +218,21 @@ export default function CustomersTab({
 
   // Find active customer info
   const activeCust = filteredCustomers.find(c => c.id === selectedId) || filteredCustomers[0];
+
+  useEffect(() => {
+    if (externalCustomers?.length && !externalCustomers.some((c) => c.id === selectedId)) {
+      setSelectedId(externalCustomers[0].id);
+    }
+  }, [externalCustomers, selectedId]);
+
+  if (!activeCust) {
+    return (
+      <div className="p-8 rounded-3xl bg-white/20 border border-white/40 text-center text-purple-950/50 font-bold text-sm">
+        No customers available. Connect Supabase or check your database seed.
+      </div>
+    );
+  }
+
   const isAndrew = activeCust.id === 'cust-1';
 
   // Synchronize state value based on selection
