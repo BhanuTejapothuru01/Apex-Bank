@@ -135,10 +135,10 @@ export default function Sidebar({
   return (
     <div 
       id="apex-sidebar"
-      className={`h-[calc(100%-2rem)] max-h-full my-4 ml-4 rounded-[32px] bg-white/40 backdrop-blur-3xl flex flex-col shadow-2xl w-[240px] lg:w-[260px] xl:w-[280px] flex-shrink-0 transition-transform duration-300 z-50 border border-white/50
+      className={`h-full max-h-full my-2 xl:my-4 ml-2 xl:ml-4 rounded-[24px] xl:rounded-[32px] bg-white/40 backdrop-blur-3xl flex flex-col shadow-2xl w-[220px] lg:w-[240px] xl:w-[260px] 2xl:w-[280px] flex-shrink-0 transition-transform duration-300 z-50 border border-white/50
         ${isOpen 
-          ? 'translate-x-0 fixed left-1 top-0 bottom-0' 
-          : '-translate-x-full lg:translate-x-0 fixed lg:static left-0 top-0 bottom-0 lg:flex hidden'
+          ? 'translate-x-0 fixed portal-fixed-below-banner-tight left-1' 
+          : '-translate-x-full lg:translate-x-0 fixed lg:static left-0 lg:left-auto lg:bottom-auto lg:top-auto lg:max-h-none'
         }
       `}
     >

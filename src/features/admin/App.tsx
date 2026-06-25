@@ -190,8 +190,7 @@ export default function App() {
   };
 
   return (
-    <div className="admin-dashboard">
-    <div className="min-h-screen font-sans bg-[#fbf5f7] relative overflow-x-hidden">
+    <div className="admin-dashboard portal-app-root h-full w-full max-w-full font-sans bg-[#fbf5f7] relative overflow-hidden flex flex-col">
       
       {/* 1. BACKGROUND DECORATION - EXACT REPLICATION OF PINK CLOUDS & SOFT BLUR FROM IMAGE 2 */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
@@ -209,10 +208,10 @@ export default function App() {
       </div>
 
       {/* 2. MAIN HUB INTERFACE */}
-      <div className="relative z-10 p-4 sm:p-6 lg:p-8 max-w-[1600px] mx-auto min-h-screen flex flex-col justify-between">
+      <div className="relative z-10 p-3 sm:p-4 lg:p-6 xl:p-8 max-w-[1600px] mx-auto flex-1 min-h-0 w-full flex flex-col overflow-hidden">
         
         {/* Main Content Grid Panel */}
-        <div className="flex flex-col lg:flex-row gap-6 grow items-stretch">
+        <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 flex-1 min-h-0 items-stretch overflow-hidden">
           
           {/* A. LEFT SIDEBAR */}
           <Sidebar 
@@ -223,7 +222,7 @@ export default function App() {
           />
 
           {/* B. MIDDLE & RIGHT PRIMARY CONTAINER */}
-          <main className="flex-1 flex flex-col gap-6">
+          <main className="flex-1 flex flex-col gap-6 min-h-0 overflow-y-auto overflow-x-hidden">
             
             {/* Top Navigation Row - styled exactly as Image 2 */}
             <header className="flex items-center justify-between gap-4 p-4 rounded-3xl bg-white/15 border border-white/40 backdrop-blur-xl shadow-lg relative z-[2000]">
@@ -608,7 +607,6 @@ export default function App() {
         )}
       </AnimatePresence>
 
-    </div>
     </div>
   );
 }

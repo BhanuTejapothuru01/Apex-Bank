@@ -6,11 +6,23 @@
   <meta name="description" content="Official notice: Apex Bank is a portfolio demonstration UI project. Not a real bank. No real money or financial services.">
   <meta name="robots" content="noindex, nofollow">
   <title>About This Demo — Apex Bank UI Project</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Apex Bank UI Demo",
+    "applicationCategory": "EducationalApplication",
+    "description": "Fictional banking UI portfolio demonstration. Not a real bank. No financial services.",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
   <style>
     body { font-family: system-ui, sans-serif; max-width: 640px; margin: 48px auto; padding: 0 24px; line-height: 1.6; color: #1e293b; }
     h1 { font-size: 1.5rem; color: #0f172a; }
     .badge { display: inline-block; background: #1e40af; color: #fff; padding: 6px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 16px; }
     a { color: #2563eb; }
+    .urls { background: #f1f5f9; padding: 12px 16px; border-radius: 8px; font-size: 14px; }
   </style>
 </head>
 <body>
@@ -25,10 +37,20 @@
     <li>Does not offer real accounts, loans, wire transfers, or custody of funds</li>
     <li>Login forms authenticate against a demo database with pre-seeded test credentials</li>
     <li>Intended for developers, students, and reviewers evaluating a UI/UX project</li>
+    <li>All pages are marked <code>noindex</code> and include visible demo disclaimers</li>
   </ul>
   <p>
     Demo credentials (examples): <code>customer@apexbank.com</code> / <code>customer123</code>,
-    <code>admin@apexbank.com</code> / <code>admin123</code>
+    <code>admin@apexbank.com</code> / <code>admin123</code>,
+    <code>superadmin@apexbank.com</code> / <code>superadmin123</code>
+  </p>
+  <div class="urls">
+    <strong>Official demo URLs:</strong><br>
+    <a href="https://master-app-ten.vercel.app">master-app-ten.vercel.app</a><br>
+    <a href="https://apexbank-portfolio-demo.vercel.app">apexbank-portfolio-demo.vercel.app</a>
+  </div>
+  <p style="margin-top: 1.5rem;">
+    Site owner? See <a href="/search-console-setup.html">Safe Browsing review instructions</a>.
   </p>
   <p><a href="/">Return to demo homepage</a></p>
 </body>

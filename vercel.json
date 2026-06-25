@@ -5,6 +5,8 @@
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/$1" },
     { "source": "/landing.html", "destination": "/landing.html" },
+    { "source": "/about-demo.html", "destination": "/about-demo.html" },
+    { "source": "/search-console-setup.html", "destination": "/search-console-setup.html" },
     { "source": "/((?!api/).*)", "destination": "/index.html" }
   ],
   "headers": [

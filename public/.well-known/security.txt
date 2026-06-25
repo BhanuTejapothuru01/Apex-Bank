@@ -3,3 +3,5 @@ Preferred-Languages: en
 Canonical: https://master-app-ten.vercel.app/.well-known/security.txt
 Policy: https://master-app-ten.vercel.app/about-demo.html
 Acknowledgments: This is a student/portfolio banking UI demo. It is not a real bank and does not collect real credentials for financial services.
+# Alternate demo URL: https://apexbank-portfolio-demo.vercel.app/about-demo.html
+# Safe Browsing review guide: https://master-app-ten.vercel.app/search-console-setup.html

@@ -5,7 +5,7 @@ function AccessLoader() {
   return (
     <div
       style={{
-        minHeight: '100vh',
+        minHeight: '100dvh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -38,9 +38,8 @@ export default function ProtectedRoute({
 
   if (!allowed) return <AccessLoader />;
   return (
-    <div className="flex flex-col h-[100dvh] overflow-hidden">
-      <div className="h-10 shrink-0" aria-hidden="true" />
-      <div className="flex-1 min-h-0 overflow-hidden">{children}</div>
+    <div className="portal-route-shell">
+      <div className="portal-app-root">{children}</div>
     </div>
   );
 }

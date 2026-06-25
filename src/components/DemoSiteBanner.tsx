@@ -10,6 +10,8 @@ export default function DemoSiteBanner() {
         left: 0,
         right: 0,
         zIndex: 99999,
+        minHeight: 'var(--demo-banner-height)',
+        boxSizing: 'border-box',
         background: '#1e3a5f',
         color: '#f8fafc',
         textAlign: 'center',
@@ -24,6 +26,10 @@ export default function DemoSiteBanner() {
       DEMO / PORTFOLIO PROJECT — Not a real bank. No real money or financial services.{' '}
       <a href="/about-demo.html" target="_blank" rel="noopener noreferrer" style={{ color: '#93c5fd' }}>
         About this demo
+      </a>
+      {' · '}
+      <a href="/search-console-setup.html" target="_blank" rel="noopener noreferrer" style={{ color: '#93c5fd' }}>
+        Safe Browsing info
       </a>
     </div>
   );

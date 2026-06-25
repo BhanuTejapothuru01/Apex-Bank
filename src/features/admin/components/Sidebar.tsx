@@ -43,8 +43,8 @@ export default function Sidebar({ currentTab, onTabChange, isOpen, onClose }: Si
   ];
 
   const SidebarContent = () => (
-    <div className="flex flex-col h-full justify-between">
-      <div>
+    <div className="flex flex-col h-full min-h-0 justify-between">
+      <div className="flex flex-col min-h-0 flex-1">
         {/* Logo and Brand */}
         <div className="mb-6 flex items-center gap-3">
           <div className="relative flex items-center justify-center w-10 h-10 select-none">
@@ -93,7 +93,7 @@ export default function Sidebar({ currentTab, onTabChange, isOpen, onClose }: Si
 
         {/* Menu Navigation container formatted with max-height & elegant scrollbars */}
         <LayoutGroup id="admin-sidebar">
-        <nav className="space-y-1 py-1 max-h-[calc(100vh-10rem)] overflow-y-auto pr-1 select-none scrollbar-thin scrollbar-thumb-purple-950/15">
+        <nav className="space-y-1 py-1 flex-1 min-h-0 overflow-y-auto pr-1 select-none scrollbar-thin scrollbar-thumb-purple-950/15">
           {menuItems.map((item) => {
             const Icon = item.icon;
             const isActive = currentTab === item.id;
@@ -190,7 +190,7 @@ export default function Sidebar({ currentTab, onTabChange, isOpen, onClose }: Si
       </AnimatePresence>
 
       {/* Desktop Persistent Sidebar */}
-      <aside className="hidden lg:block w-64 shrink-0 h-[calc(100vh-3rem)] rounded-3xl p-6 bg-white/20 border border-white/40 backdrop-blur-xl shadow-xl shadow-purple-950/5">
+      <aside className="hidden lg:block portal-sidebar-width shrink-0 h-full max-h-full min-h-0 rounded-3xl p-4 xl:p-6 bg-white/20 border border-white/40 backdrop-blur-xl shadow-xl shadow-purple-950/5">
         <SidebarContent />
       </aside>
 
@@ -202,7 +202,7 @@ export default function Sidebar({ currentTab, onTabChange, isOpen, onClose }: Si
             animate={{ x: 0 }}
             exit={{ x: '-100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed top-0 bottom-0 left-0 w-72 h-full z-50 p-6 bg-white/70 border-r border-white/50 backdrop-blur-2xl shadow-2xl flex flex-col justify-between"
+            className="fixed portal-fixed-below-banner-tight bottom-0 left-0 w-72 h-auto z-50 p-6 bg-white/70 border-r border-white/50 backdrop-blur-2xl shadow-2xl flex flex-col justify-between"
           >
             <div className="absolute top-4 right-4 lg:hidden">
               <button 

@@ -141,7 +141,7 @@ export default function App() {
 
   return (
     <LanguageProvider>
-    <div className="super-admin-dashboard h-full min-h-0">
+    <div className="super-admin-dashboard portal-app-root h-full min-h-0 w-full">
         <motion.div 
           key="dashboard"
           initial={{ opacity: 0 }}
@@ -220,7 +220,7 @@ export default function App() {
             />
 
             {/* Central dynamically toggling interactive view screen area */}
-            <main className="flex-1 overflow-y-auto px-4 md:px-8 py-6 select-text scrollbar-thin scrollbar-thumb-slate-800">
+            <main className="flex-1 min-h-0 overflow-y-auto px-3 sm:px-5 md:px-6 lg:px-8 py-4 md:py-5 lg:py-6 select-text scrollbar-thin scrollbar-thumb-slate-800">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeTab}

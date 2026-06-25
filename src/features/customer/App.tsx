@@ -721,7 +721,7 @@ export default function App() {
   });
 
   return (
-    <div className="customer-dashboard min-h-screen bg-[#fbf5f7] text-slate-100 flex relative antialiased selection:bg-[#ec4899]/30 selection:text-[#2e1065]">
+    <div className="customer-dashboard portal-app-root h-full w-full max-w-full bg-[#fbf5f7] text-slate-100 flex flex-col lg:flex-row relative antialiased selection:bg-[#ec4899]/30 selection:text-[#2e1065] overflow-hidden">
       
       {/* 1. BACKGROUND DECORATION - EXACT REPLICATION OF PINK CLOUDS & SOFT BLUR FROM IMAGE 2 */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
@@ -745,7 +745,7 @@ export default function App() {
             initial={{ opacity: 0, y: -40, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.9 }}
-            className="fixed top-6 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-md border border-[#00efd1] px-6 py-3.5 rounded-2xl z-50 shadow-2xl flex items-center gap-3"
+            className="fixed top-[calc(var(--demo-banner-height)+1.5rem)] left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-md border border-[#00efd1] px-6 py-3.5 rounded-2xl z-50 shadow-2xl flex items-center gap-3"
           >
             <div className="w-2.5 h-2.5 rounded-full bg-[#00efd1] animate-ping" />
             <p className="text-xs font-bold text-slate-100 uppercase tracking-widest font-mono">
@@ -756,7 +756,7 @@ export default function App() {
       </AnimatePresence>
 
       {/* A. LEFT SIDEBAR PANEL (Exact structure as Image 2 layout with neon highlights) */}
-      <aside className="hidden lg:flex flex-col w-68 glass-sidebar fixed shrink-0 top-4 bottom-4 left-4 rounded-3xl z-30 shadow-2xl border border-white/40 overflow-y-auto">
+      <aside className="hidden lg:flex flex-col portal-sidebar-width shrink-0 h-full min-h-0 glass-sidebar lg:m-2 lg:rounded-3xl z-30 shadow-2xl border border-white/40 overflow-hidden">
         
         {/* Brand visual featuring Brand logo "apex bank" from client image */}
         <div className="p-6 border-b border-zinc-200/40 flex items-center justify-center">
@@ -801,7 +801,7 @@ export default function App() {
         </div>
 
         {/* Left Sidebar Links matching Image 2 with gorgeous filled active container as requested */}
-        <nav className="flex-1 px-4 space-y-3">
+        <nav className="flex-1 min-h-0 px-4 space-y-2 overflow-y-auto">
           <p className="px-3 text-[10px] uppercase font-bold text-slate-400 tracking-[0.2em] mb-3 mt-1 font-display">
             Banking Operations
           </p>
@@ -841,10 +841,10 @@ export default function App() {
       </aside>
 
       {/* B. MAIN VIEWPORT WRAPPER (shifts right on desktop for fixed sidebar) */}
-      <div className="flex-1 flex flex-col lg:pl-72 z-10 w-full min-h-screen">
+      <div className="flex-1 flex flex-col z-10 w-full h-full min-h-0 overflow-hidden">
         
         {/* Top Header Controls Area (Search as in Image 2 + Create Account top banner + dynamic info) */}
-        <header className="px-6 py-4 border border-white/40 backdrop-blur-[24px] flex items-center justify-between gap-4 sticky top-4 z-30 bg-white/20 rounded-[24px] mx-4 my-2 shadow-sm">
+        <header className="px-3 sm:px-5 py-2.5 sm:py-3 border border-white/40 backdrop-blur-[24px] flex flex-wrap items-center justify-between gap-2 sm:gap-3 shrink-0 z-30 bg-white/20 rounded-[20px] sm:rounded-[24px] mx-2 sm:mx-4 my-2 shadow-sm laptop-compact-y">
           
           <div className="flex items-center gap-4">
             {/* Mobile menu toggle button */}
@@ -868,7 +868,7 @@ export default function App() {
           </div>
 
           {/* Central Glass Search Bar per visual specs */}
-          <div className="flex-1 max-w-sm hidden md:flex items-center relative">
+            <div className="flex-1 max-w-sm hidden lg:flex items-center relative min-w-[8rem]">
             <Search className="w-4 h-4 text-[#2e1065]/50 absolute left-3.5" />
             <input 
               type="text" 
@@ -878,24 +878,25 @@ export default function App() {
           </div>
 
           {/* Right Header Panel Actions */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap justify-end">
             {/* 🏦 Create New Account Action Button */}
             <button
               onClick={() => {
                 setShowCreateAccountModal(true);
                 addSecurityLog('Triggered instant bank portfolio creation drawer.');
               }}
-              className="px-4 py-2 bg-gradient-to-r from-[#5b21b6] to-[#7c3aed] hover:from-[#4c1d95] hover:to-[#6d28d9] text-white rounded-xl text-xs font-bold transition-all duration-250 hover:scale-[1.04] active:scale-[0.96] flex items-center gap-1.5 shadow-md hover:shadow-[#5b21b6]/20 cursor-pointer text-center"
+              className="px-3 sm:px-4 py-2 bg-gradient-to-r from-[#5b21b6] to-[#7c3aed] hover:from-[#4c1d95] hover:to-[#6d28d9] text-white rounded-xl text-[10px] sm:text-xs font-bold transition-all duration-250 hover:scale-[1.04] active:scale-[0.96] flex items-center gap-1.5 shadow-md hover:shadow-[#5b21b6]/20 cursor-pointer text-center"
             >
               <Plus className="w-3.5 h-3.5 border border-white/50 rounded-md" />
-              <span>Create Account</span>
+              <span className="hidden sm:inline">Create Account</span>
+              <span className="sm:hidden">New</span>
             </button>
 
             {/* Live database sync indicator */}
             {liveDbConnected && <LiveBadge connected className="hidden sm:inline-flex" />}
 
             {/* Time Indicator */}
-            <div className="hidden sm:flex items-center gap-1.5 bg-white/40 border border-white/50 px-3 py-2 rounded-xl text-[#2e1065] text-xs font-mono font-bold shadow-sm">
+            <div className="hidden sm:flex items-center gap-1.5 bg-white/40 border border-white/50 px-3 py-2 rounded-xl text-[#2e1065] text-xs font-mono font-bold shadow-sm laptop-hide-short">
               <Clock className="w-3.5 h-3.5 text-[#ec4899] animate-pulse" />
               <span>{currentTime.toLocaleTimeString('en-US', { hour12: false })} UTC</span>
             </div>
@@ -923,7 +924,7 @@ export default function App() {
               initial={{ opacity: 0, x: -60 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -60 }}
-              className="fixed inset-y-0 left-0 w-72 z-40 glass-sidebar p-6 flex flex-col justify-between border-r border-white/40 lg:hidden shadow-2xl"
+              className="fixed portal-fixed-below-banner-tight bottom-0 left-0 w-72 z-40 glass-sidebar p-6 flex flex-col justify-between border-r border-white/40 lg:hidden shadow-2xl"
             >
               <div className="space-y-6">
                 <div className="flex items-center justify-between border-b border-[#2e1065]/10 pb-4">
@@ -1029,7 +1030,7 @@ export default function App() {
         </AnimatePresence>
 
         {/* C. GENERAL MAIN VIEWPORT PANEL */}
-        <main className="flex-1 p-4 sm:p-6 lg:p-8 space-y-6 relative z-10 max-w-7xl mx-auto w-full">
+        <main className="flex-1 p-3 sm:p-5 lg:p-6 space-y-4 sm:space-y-6 relative z-10 max-w-7xl mx-auto w-full min-h-0 overflow-y-auto overflow-x-hidden">
           
           <AnimatePresence mode="wait">
             
@@ -1608,7 +1609,7 @@ export default function App() {
         </main>
 
         {/* Elegant cyber luxury matte footer */}
-       <footer className="bg-gradient-to-b from-rose-50/80 to-pink-50/80 border-t border-rose-200/50 py-6 text-center text-xs relative z-10 backdrop-blur-sm">
+       <footer className="shrink-0 bg-gradient-to-b from-rose-50/80 to-pink-50/80 border-t border-rose-200/50 py-4 sm:py-6 text-center text-xs relative z-10 backdrop-blur-sm laptop-hide-short">
   <p className="font-mono tracking-wider font-extrabold text-purple-600 text-gradient-neon uppercase text-[10px]">
     APEX DIGITAL BANKING CONSOLE © 2026
   </p>
@@ -1628,7 +1629,7 @@ export default function App() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-              className="mb-4 w-96 max-w-[calc(100vw-2rem)] h-[560px] bg-zinc-950/95 border border-[#ff5e9c]/30 rounded-3xl overflow-hidden shadow-2xl flex flex-col backdrop-blur-xl"
+              className="mb-4 w-96 max-w-[calc(100vw-2rem)] h-[min(560px,calc(100dvh-var(--demo-banner-height)-4rem))] portal-constrained-panel bg-zinc-950/95 border border-[#ff5e9c]/30 rounded-3xl overflow-hidden shadow-2xl flex flex-col backdrop-blur-xl"
             >
               {/* Header inside the popup */}
               <div className="bg-gradient-to-r from-[#ff5e9c]/20 via-[#b03bfc]/20 to-black p-4 border-b border-white/10 flex justify-between items-center select-none shrink-0">

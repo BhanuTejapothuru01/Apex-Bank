@@ -28,7 +28,9 @@ import {
   BookOpen,
   MailCheck,
   Check,
-  Bell
+  Bell,
+  Menu,
+  X
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { clearSession } from '@/auth/session';
@@ -94,6 +96,7 @@ import SettingsView from './components/SettingsView';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<ActiveTab>('dashboard');
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   
   const loansDb = useSupabaseTable({ table: 'bank_loans', mapRow: mapEmployeeLoanRow, fallback: initialLoans });
   const customersDb = useSupabaseTable({ table: 'employee_customers', mapRow: mapEmployeeCustomerRow, fallback: initialCustomers, orderColumn: 'name' });
@@ -272,8 +275,16 @@ export default function App() {
   const totalResultsCount = filteredCustomers.length + filteredLoans.length + filteredTransactions.length + filteredDocs.length;
 
   return (
-    <div className="employee-dashboard">
-    <div id="apex-portal-root" className="w-screen min-h-screen h-screen max-h-screen bg-[#fbf5f7] flex p-5 gap-6 font-sans relative overflow-hidden antialiased select-none">
+    <div id="apex-portal-root" className="employee-dashboard portal-app-root h-full w-full max-w-full bg-[#fbf5f7] flex flex-col xl:flex-row p-3 sm:p-4 xl:p-5 gap-3 sm:gap-4 xl:gap-6 font-sans relative overflow-hidden antialiased select-none box-border">
+
+      {sidebarOpen && (
+        <button
+          type="button"
+          aria-label="Close navigation menu"
+          className="fixed inset-0 z-30 bg-[#2e1065]/25 backdrop-blur-[2px] xl:hidden"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
       
       {/* 0. Full-screen dreamy luxury backdrop layer with floating animated baby pink clouds & subtle orbs */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
@@ -316,10 +327,12 @@ export default function App() {
       </div>
 
       {/* 1. Left Persistent Sidebar: Floating glass panel with precise dimensions and interactions */}
-      <aside className="w-72 glass-sidebar text-[#2e1065] shrink-0 flex flex-col justify-between p-6 relative z-10 h-full">
+      <aside className={`portal-sidebar-width glass-sidebar text-[#2e1065] shrink-0 flex-col justify-between p-4 xl:p-6 relative z-40 h-full min-h-0
+        fixed portal-fixed-below-banner-tight left-3 shadow-2xl xl:shadow-none xl:static
+        ${sidebarOpen ? 'flex' : 'hidden'} xl:flex`}>
         
         {/* Core Sidebar Header Logo decoration */}
-        <div>
+        <div className="flex flex-col min-h-0 flex-1">
           <div className="px-3 mb-8 select-none">
             <span className="font-display text-[28px] font-extrabold tracking-tight text-[#0f2942] leading-none lowercase block">
               apex bank
@@ -327,14 +340,17 @@ export default function App() {
           </div>
 
           {/* Nav links list with 12px vertical spacing and slight hover micro-interactions */}
-          <nav className="space-y-2.5 max-h-[calc(100vh-210px)] overflow-y-auto pr-1">
+          <nav className="space-y-2.5 flex-1 min-h-0 overflow-y-auto pr-1">
             {sidebarItems.map((item) => {
               const Icon = item.icon;
               const isActive = activeTab === item.id;
               return (
                 <button
                   key={item.id}
-                  onClick={() => setActiveTab(item.id)}
+                  onClick={() => {
+                    setActiveTab(item.id);
+                    setSidebarOpen(false);
+                  }}
                   className={`w-full flex items-center justify-between px-4 py-3 rounded-2xl font-semibold text-[14px] font-sans transition-all duration-200 group active:scale-[0.96] nav-item ${
                     isActive
                       ? 'bg-gradient-to-r from-[#5b21b6] to-[#7c3aed] text-white shadow-lg shadow-purple-500/20 scale-[1.02]'
@@ -377,23 +393,33 @@ export default function App() {
       <div className="flex-1 flex flex-col h-full gap-5 relative z-[1000] overflow-hidden">
         
         {/* Floating Top Header bar with exact responsive options */}
-        <header className="glass-header px-8 py-3.5 flex items-center justify-between shrink-0 select-none relative z-50">
+        <header className="glass-header px-4 sm:px-6 xl:px-8 py-2.5 xl:py-3.5 flex items-center justify-between gap-2 sm:gap-3 shrink-0 select-none relative z-50 laptop-compact-y">
           
-          <div>
-            <h2 className="text-2xl font-black text-[#2e1065] font-display uppercase tracking-tight">
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+            <button
+              type="button"
+              onClick={() => setSidebarOpen((open) => !open)}
+              className="xl:hidden p-2 rounded-xl bg-white/40 border border-white/50 text-[#2e1065] hover:bg-white/60 shrink-0 cursor-pointer"
+              aria-label="Open navigation menu"
+            >
+              {sidebarOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+            </button>
+            <div className="min-w-0">
+            <h2 className="text-lg sm:text-xl xl:text-2xl font-black text-[#2e1065] font-display uppercase tracking-tight truncate">
               {activeTab === 'dashboard' ? 'Overview' : sidebarItems.find(s => s.id === activeTab)?.label}
             </h2>
-            <p className="text-[10px] text-[#6d28d9] font-mono tracking-[0.16em] uppercase mt-0.5 font-extrabold">
+            <p className="text-[10px] text-[#6d28d9] font-mono tracking-[0.16em] uppercase mt-0.5 font-extrabold truncate laptop-hide-short">
               {activeTab === 'dashboard' ? `WELCOME BACK, ${userName.split(' ')[0]}` : `SYSTEM PORTAL ZONE`}
             </p>
+            </div>
           </div>
 
           {/* Operational tools: Search, sync dropdown triggers, profiles */}
-          <div className="flex items-center gap-4">
-            <LiveBadge connected={liveConnected} />
+          <div className="flex items-center gap-2 sm:gap-3 xl:gap-4 shrink-0">
+            <LiveBadge connected={liveConnected} className="hidden sm:inline-flex" />
             
              {/* Elegant glass search bar as requested */}
-             <div className="relative w-64 md:w-80" style={{ zIndex: searchQuery ? 9999 : 'auto' }}>
+             <div className="relative hidden md:block w-44 lg:w-52 xl:w-64 2xl:w-80" style={{ zIndex: searchQuery ? 9999 : 'auto' }}>
                <form 
                  onSubmit={(e) => {
                    e.preventDefault();
@@ -1006,7 +1032,6 @@ export default function App() {
         )}
       </AnimatePresence>
 
-    </div>
     </div>
   );
 }

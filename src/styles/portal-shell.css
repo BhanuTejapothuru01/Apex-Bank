@@ -1,0 +1,86 @@
+/* Shared layout for authenticated portals under the demo banner */
+:root {
+  --demo-banner-height: 40px;
+  --portal-sidebar-width: 16rem;
+}
+
+.portal-route-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
+  padding-top: var(--demo-banner-height);
+  box-sizing: border-box;
+}
+
+.portal-app-root {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Offset viewport-fixed panels below the demo banner */
+.portal-fixed-below-banner {
+  top: calc(var(--demo-banner-height) + 0.75rem) !important;
+  bottom: 0.75rem !important;
+  max-height: calc(100dvh - var(--demo-banner-height) - 1.5rem);
+}
+
+.portal-fixed-below-banner-tight {
+  top: var(--demo-banner-height) !important;
+  bottom: 0 !important;
+  max-height: calc(100dvh - var(--demo-banner-height));
+}
+
+/* Short laptop screens (768px–820px height) */
+@media (max-height: 820px) {
+  :root {
+    --demo-banner-height: 36px;
+  }
+
+  .laptop-compact-y {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+
+  .laptop-hide-short {
+    display: none !important;
+  }
+}
+
+/* Laptop width — slightly narrower sidebar, tighter padding */
+@media (max-width: 1400px) {
+  :root {
+    --portal-sidebar-width: 15rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  :root {
+    --portal-sidebar-width: 17rem;
+  }
+}
+
+.portal-sidebar-width {
+  width: var(--portal-sidebar-width);
+  flex-shrink: 0;
+}
+
+.portal-main-pl {
+  padding-left: 0;
+}
+
+@media (min-width: 1024px) {
+  .portal-main-pl {
+    padding-left: 0;
+  }
+}
+
+/* Popups / drawers should not exceed laptop viewport */
+.portal-constrained-panel {
+  max-height: calc(100dvh - var(--demo-banner-height) - 2rem);
+}

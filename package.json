@@ -16,7 +16,8 @@
     "db:seed-teja": "tsx scripts/seed-teja-user.ts",
     "db:seed-expanded": "tsx scripts/seed-expanded-data.ts",
     "db:verify": "tsx scripts/verify-system.ts",
-    "db:bootstrap": "tsx scripts/bootstrap-realtime.ts"
+    "db:bootstrap": "tsx scripts/bootstrap-realtime.ts",
+    "gsc:verify": "tsx scripts/apply-google-verification.ts"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",
