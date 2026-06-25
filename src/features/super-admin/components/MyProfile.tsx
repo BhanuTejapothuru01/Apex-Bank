@@ -213,7 +213,7 @@ export default function MyProfile() {
                   className="p-2 hover:bg-white/20 rounded-full transition-colors"
                   title="Upload Photo"
                 >
-                  <Edit3 className="text-white w-5 h-5 drop-shadow-md" />
+                  <Edit3 className="text-[#4A044E] w-5 h-5 drop-shadow-md" />
                 </button>
                 <div className="w-[1px] h-6 bg-white/20" />
                 <button 
@@ -221,7 +221,7 @@ export default function MyProfile() {
                   className="p-2 hover:bg-white/20 rounded-full transition-colors"
                   title="Capture via Camera"
                 >
-                  <Camera className="text-white w-5 h-5 drop-shadow-md" />
+                  <Camera className="text-[#4A044E] w-5 h-5 drop-shadow-md" />
                 </button>
               </div>
             </div>
@@ -285,7 +285,7 @@ export default function MyProfile() {
                       <X size={16} />
                       Cancel
                     </button>
-                    <button onClick={handleSaveChanges} className="flex items-center gap-2 px-6 py-3 bg-[#d946ef] text-white border border-[#d946ef] rounded-[16px] text-xs font-black uppercase tracking-widest shadow-sm hover:scale-[1.05] active:scale-[0.95] transition-all">
+                    <button onClick={handleSaveChanges} className="flex items-center gap-2 px-6 py-3 bg-[#d946ef] text-[#4A044E] border border-[#d946ef] rounded-[16px] text-xs font-black uppercase tracking-widest shadow-sm hover:scale-[1.05] active:scale-[0.95] transition-all">
                       <Save size={16} />
                       Save Changes
                     </button>
@@ -342,7 +342,7 @@ export default function MyProfile() {
             <div className="flex items-center justify-between mb-10">
               <SectionHeader icon={Lock} title="Security Protocols" />
               <div className="flex gap-4">
-                <button onClick={() => handleAction('Key update procedures initiated')} className="flex items-center gap-2 px-6 py-3 bg-[#d946ef] text-white rounded-[16px] text-xs font-black uppercase tracking-widest shadow-sm hover:bg-[c026d3] transition-all">
+                <button onClick={() => handleAction('Key update procedures initiated')} className="flex items-center gap-2 px-6 py-3 bg-[#d946ef] text-[#4A044E] rounded-[16px] text-xs font-black uppercase tracking-widest shadow-sm hover:bg-[c026d3] transition-all">
                   <Key size={16} />
                   Update Key
                 </button>
@@ -499,7 +499,7 @@ export default function MyProfile() {
                   <Phone size={14} />
                   +91 91234 56789
                 </button>
-                <button onClick={() => handleAction('Transmitting encrypted emergency message...')} className="flex items-center justify-center gap-2 py-3 rounded-2xl bg-red-600 text-white font-bold text-xs shadow-lg shadow-red-200 hover:scale-[1.05] transition-all">
+                <button onClick={() => handleAction('Transmitting encrypted emergency message...')} className="flex items-center justify-center gap-2 py-3 rounded-2xl bg-red-600 text-[#4A044E] font-bold text-xs shadow-lg shadow-red-200 hover:scale-[1.05] transition-all">
                   <Mail size={14} />
                   Emergency Encryption
                 </button>
@@ -546,7 +546,7 @@ export default function MyProfile() {
                   playsInline 
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 border-[20px] border-white/10 pointer-events-none" />
+                <div className="absolute inset-0 border-[20px] border-[#F9A8D4]/50 pointer-events-none" />
                 <div className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1 bg-black/40 rounded-full">
                   <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
                   <span className="text-[10px] font-black text-white/80 uppercase tracking-widest font-mono">REC LIVE</span>
@@ -562,7 +562,7 @@ export default function MyProfile() {
                 </button>
                 <button 
                   onClick={capturePhoto}
-                  className="px-8 py-3 bg-[#d946ef] text-white rounded-2xl text-xs font-black uppercase tracking-widest shadow-xl shadow-pink-200 hover:scale-[1.05] active:scale-[0.95] transition-all flex items-center gap-2"
+                  className="px-8 py-3 bg-[#d946ef] text-[#4A044E] rounded-2xl text-xs font-black uppercase tracking-widest shadow-xl shadow-pink-200 hover:scale-[1.05] active:scale-[0.95] transition-all flex items-center gap-2"
                 >
                   <Camera size={16} />
                   Capture

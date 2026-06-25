@@ -55,6 +55,43 @@
   color: #3a2072;
 }
 
+/* Pink data panels — tables, inputs, cards inside super-admin modules */
+.super-admin-dashboard table thead tr {
+  background-color: rgba(252, 231, 243, 0.85) !important;
+}
+
+.super-admin-dashboard table tbody tr:hover {
+  background-color: rgba(253, 242, 248, 0.9) !important;
+}
+
+.super-admin-dashboard input:not(header input),
+.super-admin-dashboard select,
+.super-admin-dashboard textarea {
+  background-color: #fff1f5 !important;
+  border-color: #f9a8d4 !important;
+  color: #4a044e !important;
+}
+
+.super-admin-dashboard input::placeholder,
+.super-admin-dashboard textarea::placeholder {
+  color: rgba(236, 72, 153, 0.45) !important;
+}
+
+/* Gold / gradient action buttons keep light text */
+.super-admin-dashboard .bg-gradient-to-r.from-\[\#d4af37\],
+.super-admin-dashboard [class*="from-pink-500"],
+.super-admin-dashboard [class*="from-blue-5"],
+.super-admin-dashboard [class*="bg-emerald-5"],
+.super-admin-dashboard [class*="bg-rose-5"] {
+  color: inherit;
+}
+
+.super-admin-dashboard #apex-sidebar .active-sidebar-item-btn,
+.super-admin-dashboard #apex-sidebar .active,
+.super-admin-dashboard #apex-sidebar .active * {
+  color: #ffffff !important;
+}
+
 /* Modal overlays */
 .super-admin-dashboard .fixed.inset-0.bg-black\/35,
 .super-admin-dashboard [class*="bg-black/"] {

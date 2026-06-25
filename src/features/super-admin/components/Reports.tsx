@@ -34,34 +34,34 @@ export default function Reports({
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
         {/* Reports dynamic list */}
-        <div className="lg:col-span-2 p-6 rounded-2xl border border-[#17235a]/60 bg-[#070c2e]/80 shadow-2xl space-y-4">
+        <div className="lg:col-span-2 p-6 rounded-2xl border border-[#F9A8D4] bg-[#FCE7F3]/90 shadow-2xl space-y-4">
           <div className="flex items-center gap-4">
             <BrandLogo size={48} className="shrink-0" />
             <div>
-              <h3 className="text-sm font-bold text-white uppercase tracking-wider">Apex Reporting Hub</h3>
-              <p className="text-xs text-[#556994]">Aggregate, compile and package full structural data logs into compliant templates.</p>
+              <h3 className="text-sm font-bold text-[#4A044E] uppercase tracking-wider">Apex Reporting Hub</h3>
+              <p className="text-xs text-[#9D174D]/80">Aggregate, compile and package full structural data logs into compliant templates.</p>
             </div>
           </div>
 
           <div className="space-y-3">
             {reportsList.map((rep, idx) => (
-              <div key={idx} className="p-4 border border-[#17235a]/60 bg-[#0b1030]/60 hover:bg-[#121c4e]/30 rounded-xl flex items-center justify-between text-xs transition-colors">
+              <div key={idx} className="p-4 border border-[#F9A8D4] bg-[#FFF1F5]/60 hover:bg-[#FBCFE8]/30 rounded-xl flex items-center justify-between text-xs transition-colors">
                 <div className="space-y-1">
                   <span className={`px-2 py-0.5 rounded text-[8px] font-bold font-mono tracking-wider uppercase ${
                     rep.category === 'Compliance' ? 'bg-amber-500/15 text-amber-500' : rep.category === 'Financial' ? 'bg-pink-500/15 text-pink-400' : 'bg-rose-500/10 text-rose-400'
                   }`}>
                     {rep.category}
                   </span>
-                  <h4 className="font-bold text-white text-[13px]">{rep.title}</h4>
-                  <p className="text-[#8496bf] text-xs leading-normal">{rep.desc}</p>
+                  <h4 className="font-bold text-[#4A044E] text-[13px]">{rep.title}</h4>
+                  <p className="text-[#BE185D]/75 text-xs leading-normal">{rep.desc}</p>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <span className="text-[10px] font-mono text-[#556994] font-semibold">{rep.format}</span>
+                  <span className="text-[10px] font-mono text-[#9D174D]/80 font-semibold">{rep.format}</span>
                   <button
                     id={`download-report-${idx}`}
                     onClick={() => handleDownloadSheet(`${rep.title}`)}
-                    className="p-2 border border-[#1b2559] bg-[#0c143d] hover:border-[#d4af37]/45 text-slate-400 hover:text-[#d4af37] rounded-lg transition-all cursor-pointer"
+                    className="p-2 border border-[#F9A8D4] bg-[#FDF4F9] hover:border-[#d4af37]/45 text-[#9D174D]/85 hover:text-[#d4af37] rounded-lg transition-all cursor-pointer"
                     title={`Export ${rep.format}`}
                   >
                     <Download size={14} />

@@ -117,37 +117,37 @@ export default function ManagerContactModal({
   const [isStreaming, setIsStreaming] = useState(false);
 
   return (
-    <div className="fixed inset-0 bg-black/35 backdrop-blur-[6px] flex items-center justify-center z-[99999] p-4 font-sans text-slate-100 select-none">
-      <div className="w-[75%] h-[80vh] bg-[#090f2b] border border-[#17235a]/80 rounded-[24px] shadow-2xl overflow-hidden relative flex flex-col">
+    <div className="fixed inset-0 bg-black/35 backdrop-blur-[6px] flex items-center justify-center z-[99999] p-4 font-sans text-[#4A044E] select-none">
+      <div className="w-[75%] h-[80vh] bg-[#FCE7F3] border border-[#F9A8D4]/80 rounded-[24px] shadow-2xl overflow-hidden relative flex flex-col">
         
         {/* Top Header Glow border strip */}
         <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-600" />
 
         {/* Modal Window Title Panel */}
-        <div className="p-5 border-b border-white/10 flex items-center justify-between bg-slate-900/50">
+        <div className="p-5 border-b border-[#F9A8D4]/50 flex items-center justify-between bg-[#FFF1F5]/50">
           <div>
             <h3 className="text-sm font-black uppercase text-[#d4af37] tracking-widest flex items-center gap-2">
               <PhoneCall className="text-amber-400 animate-pulse" size={16} />
               <span>Apex secured telecom portal</span>
             </h3>
-            <p className="text-[10px] text-slate-400 font-mono mt-0.5">
+            <p className="text-[10px] text-[#9D174D]/85 font-mono mt-0.5">
               TARGET ENDPOINT: {manager.name} ({manager.id}) - {manager.branchName}
             </p>
           </div>
           <button 
             onClick={onClose}
-            className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 cursor-pointer transition-all"
+            className="p-1.5 rounded-lg text-[#9D174D]/85 hover:text-[#4A044E] hover:bg-white/5 cursor-pointer transition-all"
           >
             <X size={18} />
           </button>
         </div>
 
         {/* Tab Controllers */}
-        <div className="grid grid-cols-4 bg-slate-950/40 border-b border-white/10 text-xs">
+        <div className="grid grid-cols-4 bg-pink-50/80 border-b border-[#F9A8D4]/50 text-xs">
           <button
             onClick={() => setActiveTab('call')}
             className={`py-3.5 flex flex-col sm:flex-row items-center justify-center gap-1.5 font-bold uppercase transition-all tracking-wider ${
-              activeTab === 'call' ? 'text-[#d4af37] bg-amber-500/10 border-b-2 border-[#d4af37]' : 'text-slate-400 hover:text-slate-200'
+              activeTab === 'call' ? 'text-[#d4af37] bg-amber-500/10 border-b-2 border-[#d4af37]' : 'text-[#9D174D]/85 hover:text-[#701a75]'
             }`}
           >
             <Volume2 size={14} />
@@ -156,7 +156,7 @@ export default function ManagerContactModal({
           <button
             onClick={() => setActiveTab('chat')}
             className={`py-3.5 flex flex-col sm:flex-row items-center justify-center gap-1.5 font-bold uppercase transition-all tracking-wider ${
-              activeTab === 'chat' ? 'text-[#d4af37] bg-amber-500/10 border-b-2 border-[#d4af37]' : 'text-slate-400 hover:text-slate-200'
+              activeTab === 'chat' ? 'text-[#d4af37] bg-amber-500/10 border-b-2 border-[#d4af37]' : 'text-[#9D174D]/85 hover:text-[#701a75]'
             }`}
           >
             <MessageSquare size={14} />
@@ -165,7 +165,7 @@ export default function ManagerContactModal({
           <button
             onClick={() => setActiveTab('email')}
             className={`py-3.5 flex flex-col sm:flex-row items-center justify-center gap-1.5 font-bold uppercase transition-all tracking-wider ${
-              activeTab === 'email' ? 'text-[#d4af37] bg-amber-500/10 border-b-2 border-[#d4af37]' : 'text-slate-400 hover:text-slate-200'
+              activeTab === 'email' ? 'text-[#d4af37] bg-amber-500/10 border-b-2 border-[#d4af37]' : 'text-[#9D174D]/85 hover:text-[#701a75]'
             }`}
           >
             <Mail size={14} />
@@ -174,7 +174,7 @@ export default function ManagerContactModal({
           <button
             onClick={() => setActiveTab('video')}
             className={`py-3.5 flex flex-col sm:flex-row items-center justify-center gap-1.5 font-bold uppercase transition-all tracking-wider ${
-              activeTab === 'video' ? 'text-[#d4af37] bg-amber-500/10 border-b-2 border-[#d4af37]' : 'text-slate-400 hover:text-slate-200'
+              activeTab === 'video' ? 'text-[#d4af37] bg-amber-500/10 border-b-2 border-[#d4af37]' : 'text-[#9D174D]/85 hover:text-[#701a75]'
             }`}
           >
             <Video size={14} />
@@ -183,7 +183,7 @@ export default function ManagerContactModal({
         </div>
 
         {/* Tab Body Contents */}
-        <div className="p-6 flex-1 overflow-y-auto bg-[#070c2e]/10">
+        <div className="p-6 flex-1 overflow-y-auto bg-[#FCE7F3]/30">
           {/* TAB 1: PHONE SECURED VOIP */}
           {activeTab === 'call' && (
             <div className="flex flex-col items-center justify-center h-full text-center space-y-6">
@@ -193,8 +193,8 @@ export default function ManagerContactModal({
                     <Volume2 size={44} className="animate-pulse" />
                   </div>
                   <div>
-                    <h4 className="text-base font-bold text-white">Direct Audited VoIP Link</h4>
-                    <p className="text-xs text-slate-400 max-w-sm mt-1.5">
+                    <h4 className="text-base font-bold text-[#4A044E]">Direct Audited VoIP Link</h4>
+                    <p className="text-xs text-[#9D174D]/85 max-w-sm mt-1.5">
                       This call executes a cryptographically locked communication gateway that is fully taped and audited by regional sovereign offices.
                     </p>
                   </div>
@@ -212,7 +212,7 @@ export default function ManagerContactModal({
                 <>
                   <div className="relative">
                     <div className="absolute inset-0 bg-amber-500/20 rounded-full animate-ping" />
-                    <div className="w-24 h-24 rounded-full bg-[#111c47] border-2 border-amber-400 flex items-center justify-center text-amber-300 relative z-10">
+                    <div className="w-24 h-24 rounded-full bg-[#FDF2F8] border-2 border-amber-400 flex items-center justify-center text-amber-300 relative z-10">
                       <PhoneCall size={38} className="animate-bounce" />
                     </div>
                   </div>
@@ -220,13 +220,13 @@ export default function ManagerContactModal({
                     <h4 className="font-bold text-amber-450 font-mono tracking-widest text-[13px] uppercase animate-pulse">
                       Establishing Encrypted Key Exchange...
                     </h4>
-                    <p className="text-xs text-slate-400 mt-1">
+                    <p className="text-xs text-[#9D174D]/85 mt-1">
                       Calling {manager.phone} | Secure Proxy Signal Route G8
                     </p>
                   </div>
                   <button
                     onClick={endCall}
-                    className="flex items-center gap-2 px-6 py-2.5 bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold uppercase rounded-xl cursor-pointer shadow-lg shadow-rose-500/10 transition-colors"
+                    className="flex items-center gap-2 px-6 py-2.5 bg-rose-600 hover:bg-rose-500 text-[#4A044E] text-xs font-bold uppercase rounded-xl cursor-pointer shadow-lg shadow-rose-500/10 transition-colors"
                   >
                     <Square size={12} fill="white" />
                     <span>Cancel Call</span>
@@ -244,23 +244,23 @@ export default function ManagerContactModal({
                       <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
                       <span>SECURE LINE ACTIVE</span>
                     </h4>
-                    <p className="text-lg font-mono font-bold text-white mt-1">
+                    <p className="text-lg font-mono font-bold text-[#4A044E] mt-1">
                       {formatTimer(callDuration)}
                     </p>
-                    <p className="text-[10px] text-slate-500 font-mono mt-1 uppercase tracking-widest">
+                    <p className="text-[10px] text-[#9D174D]/75 font-mono mt-1 uppercase tracking-widest">
                       AUDIO: AES-256 GCM • CODEC: OPUS-HQ • LATENCY: ~18ms
                     </p>
                   </div>
                   <div className="flex gap-3">
                     <button
                       onClick={() => setCallState('muted')}
-                      className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold rounded-lg cursor-pointer"
+                      className="px-4 py-2 bg-[#FDF2F8] hover:bg-slate-700 text-[#701a75] text-xs font-bold rounded-lg cursor-pointer"
                     >
                       Mute Line
                     </button>
                     <button
                       onClick={endCall}
-                      className="flex items-center gap-2 px-6 py-2.5 bg-rose-600 hover:bg-rose-500 text-white text-xs font-black uppercase rounded-xl cursor-pointer shadow-lg shadow-rose-600/15"
+                      className="flex items-center gap-2 px-6 py-2.5 bg-rose-600 hover:bg-rose-500 text-[#4A044E] text-xs font-black uppercase rounded-xl cursor-pointer shadow-lg shadow-rose-600/15"
                     >
                       <PhoneCall size={12} className="rotate-[135deg]" />
                       <span>End Audited Session</span>
@@ -276,20 +276,20 @@ export default function ManagerContactModal({
                   </div>
                   <div>
                     <h4 className="text-base font-black text-amber-400">SESSION ON MUTED STATE</h4>
-                    <p className="text-lg font-mono font-bold text-slate-400 mt-1">
+                    <p className="text-lg font-mono font-bold text-[#9D174D]/85 mt-1">
                       {formatTimer(callDuration)}
                     </p>
                   </div>
                   <div className="flex gap-3">
                     <button
                       onClick={() => setCallState('connected')}
-                      className="px-4 py-2 bg-emerald-700 hover:bg-emerald-600 text-white text-xs font-bold rounded-lg cursor-pointer"
+                      className="px-4 py-2 bg-emerald-700 hover:bg-emerald-600 text-[#4A044E] text-xs font-bold rounded-lg cursor-pointer"
                     >
                       Unmute Session
                     </button>
                     <button
                       onClick={endCall}
-                      className="flex items-center gap-2 px-6 py-2.5 bg-rose-600 hover:bg-rose-500 text-white text-xs font-black uppercase rounded-xl cursor-pointer"
+                      className="flex items-center gap-2 px-6 py-2.5 bg-rose-600 hover:bg-rose-500 text-[#4A044E] text-xs font-black uppercase rounded-xl cursor-pointer"
                     >
                       <span>Terminate Session</span>
                     </button>
@@ -301,36 +301,36 @@ export default function ManagerContactModal({
 
           {/* TAB 2: INTERNAL MESSAGING */}
           {activeTab === 'chat' && (
-            <div className="flex flex-col h-full bg-slate-950/50 rounded-xl overflow-hidden border border-white/5 text-xs">
+            <div className="flex flex-col h-full bg-slate-950/50 rounded-xl overflow-hidden border border-[#F9A8D4]/40 text-xs">
               {/* Message History Scroller */}
               <div className="flex-1 overflow-y-auto p-4 space-y-3.5 scrollbar-thin scrollbar-thumb-white/10">
                 {messages.map((m, idx) => (
                   <div key={idx} className={`flex flex-col ${m.sender === 'admin' ? 'items-end' : 'items-start'}`}>
                     <div className={`max-w-[85%] p-3 rounded-xl leading-relaxed text-[11px] ${
                       m.sender === 'admin'
-                        ? 'bg-amber-550 border border-amber-500/35 bg-amber-500/30 text-white rounded-br-none font-bold'
-                        : 'bg-slate-800 text-slate-100 rounded-bl-none border border-white/5'
+                        ? 'bg-amber-550 border border-amber-500/35 bg-amber-500/30 text-[#4A044E] rounded-br-none font-bold'
+                        : 'bg-[#FDF2F8] text-[#4A044E] rounded-bl-none border border-[#F9A8D4]/40'
                     }`}>
                       {m.text}
                     </div>
-                    <span className="text-[9px] text-slate-500 font-mono mt-1">{m.time}</span>
+                    <span className="text-[9px] text-[#9D174D]/75 font-mono mt-1">{m.time}</span>
                   </div>
                 ))}
                 {isTyping && (
-                  <div className="flex flex-col items-start bg-slate-800/40 border border-white/5 p-2 px-3 rounded-lg animate-pulse">
-                    <p className="text-[10px] text-slate-400 tracking-wider">Manager is drafting response...</p>
+                  <div className="flex flex-col items-start bg-[#FDF2F8]/40 border border-[#F9A8D4]/40 p-2 px-3 rounded-lg animate-pulse">
+                    <p className="text-[10px] text-[#9D174D]/85 tracking-wider">Manager is drafting response...</p>
                   </div>
                 )}
               </div>
 
               {/* Chat Input Area */}
-              <form onSubmit={sendMessage} className="p-3 bg-slate-900 border-t border-white/15 flex gap-2">
+              <form onSubmit={sendMessage} className="p-3 bg-[#FFF1F5] border-t border-white/15 flex gap-2">
                 <input
                   type="text"
                   value={inputText}
                   onChange={(e) => setInputText(e.target.value)}
                   placeholder="Type secure instruction here..."
-                  className="flex-1 bg-[#05091a] border border-white/10 rounded-lg px-3.5 py-2.5 text-white outline-none placeholder-slate-500 text-xs focus:border-[#d4af37]/65"
+                  className="flex-1 bg-[#FFF1F5] border border-[#F9A8D4]/50 rounded-lg px-3.5 py-2.5 text-[#4A044E] outline-none placeholder-slate-500 text-xs focus:border-[#d4af37]/65"
                 />
                 <button
                   type="submit"
@@ -346,33 +346,33 @@ export default function ManagerContactModal({
           {activeTab === 'email' && (
             <form onSubmit={handleSendEmail} className="space-y-3.5 text-xs">
               <div className="space-y-1">
-                <label className="text-[10px] text-slate-400 uppercase font-bold font-mono">Receiver Address:</label>
+                <label className="text-[10px] text-[#9D174D]/85 uppercase font-bold font-mono">Receiver Address:</label>
                 <input
                   type="text"
                   disabled
                   value={`${manager.name} <${manager.email}>`}
-                  className="w-full bg-slate-900/80 border border-white/10 p-2.5 rounded-lg text-slate-400 font-semibold"
+                  className="w-full bg-[#FFF1F5]/80 border border-[#F9A8D4]/50 p-2.5 rounded-lg text-[#9D174D]/85 font-semibold"
                 />
               </div>
               <div className="space-y-1">
-                <label className="text-[10px] text-slate-400 uppercase font-bold font-mono">Subject Header:</label>
+                <label className="text-[10px] text-[#9D174D]/85 uppercase font-bold font-mono">Subject Header:</label>
                 <input
                   type="text"
                   required
                   placeholder="Confidential Operational Compliance Verification Report"
                   value={subject}
                   onChange={(e) => setSubject(e.target.value)}
-                  className="w-full bg-[#05081b] border border-white/10 p-2.5 rounded-lg text-white outline-none focus:border-amber-500/50"
+                  className="w-full bg-[#FFF1F5] border border-[#F9A8D4]/50 p-2.5 rounded-lg text-[#4A044E] outline-none focus:border-amber-500/50"
                 />
               </div>
               <div className="space-y-1">
-                <label className="text-[10px] text-slate-400 uppercase font-bold font-mono">Confidential Message Body:</label>
+                <label className="text-[10px] text-[#9D174D]/85 uppercase font-bold font-mono">Confidential Message Body:</label>
                 <textarea
                   rows={4}
                   required
                   value={emailBody}
                   onChange={(e) => setEmailBody(e.target.value)}
-                  className="w-full bg-[#05081b] border border-white/10 p-2.5 rounded-lg text-white outline-none font-sans focus:border-amber-500/50 leading-relaxed text-xs"
+                  className="w-full bg-[#FFF1F5] border border-[#F9A8D4]/50 p-2.5 rounded-lg text-[#4A044E] outline-none font-sans focus:border-amber-500/50 leading-relaxed text-xs"
                 />
               </div>
 
@@ -412,8 +412,8 @@ export default function ManagerContactModal({
                     <Video size={44} className="animate-pulse" />
                   </div>
                   <div>
-                    <h4 className="text-base font-bold text-white">Encrypted Cryptographic Video Room</h4>
-                    <p className="text-xs text-slate-400 max-w-sm mt-1.5">
+                    <h4 className="text-base font-bold text-[#4A044E]">Encrypted Cryptographic Video Room</h4>
+                    <p className="text-xs text-[#9D174D]/85 max-w-sm mt-1.5">
                       Room Session Code: <span className="font-mono text-amber-300 font-bold">ROOM-{manager.branchCode}-{manager.id.substring(4)}</span>
                     </p>
                   </div>
@@ -429,10 +429,10 @@ export default function ManagerContactModal({
                   </button>
                 </>
               ) : (
-                <div className="w-full h-full flex flex-col justify-between relative bg-slate-950 rounded-xl overflow-hidden border border-white/10 font-mono">
+                <div className="w-full h-full flex flex-col justify-between relative bg-slate-950 rounded-xl overflow-hidden border border-[#F9A8D4]/50 font-mono">
                   {/* Glowing Video stream simulated placeholder */}
-                  <div className="flex-1 flex flex-col items-center justify-center p-8 bg-gradient-to-b from-slate-900 via-[#070b28] to-slate-900 text-slate-400 relative">
-                    <div className="absolute top-3 left-3 bg-red-600 text-white text-[9px] font-black uppercase px-2 py-0.5 rounded tracking-widest flex items-center gap-1">
+                  <div className="flex-1 flex flex-col items-center justify-center p-8 bg-gradient-to-b from-slate-900 via-[#070b28] to-slate-900 text-[#9D174D]/85 relative">
+                    <div className="absolute top-3 left-3 bg-red-600 text-[#4A044E] text-[9px] font-black uppercase px-2 py-0.5 rounded tracking-widest flex items-center gap-1">
                       <span className="w-1.5 h-1.5 bg-white rounded-full animate-ping" />
                       <span>LIVE SECURE</span>
                     </div>
@@ -441,11 +441,11 @@ export default function ManagerContactModal({
                       TOKEN SHA-256 ACCREDITED
                     </div>
 
-                    <div className="w-16 h-16 rounded-full bg-slate-900 border border-amber-400/30 flex items-center justify-center text-amber-400 font-black text-2xl mb-2">
+                    <div className="w-16 h-16 rounded-full bg-[#FFF1F5] border border-amber-400/30 flex items-center justify-center text-amber-400 font-black text-2xl mb-2">
                       {manager.avatarSeed}
                     </div>
-                    <span className="text-white font-bold">{manager.name}</span>
-                    <span className="text-[10px] text-slate-500 mt-0.5">Assigned Stream: Node Camera B</span>
+                    <span className="text-[#4A044E] font-bold">{manager.name}</span>
+                    <span className="text-[10px] text-[#9D174D]/75 mt-0.5">Assigned Stream: Node Camera B</span>
 
                     <p className="text-[9px] text-emerald-400 animate-pulse mt-4 bg-emerald-500/10 border border-emerald-500/20 px-4 py-1.5 rounded-full">
                       ● BIOMETRIC HANDSHAKE COMPLETE (AES-256 DECRYPTOR ALIVE)
@@ -453,11 +453,11 @@ export default function ManagerContactModal({
                   </div>
 
                   {/* Conference controls footer */}
-                  <div className="bg-slate-900 p-3.5 border-t border-white/10 flex items-center justify-between text-xs font-sans">
-                    <span className="text-slate-400 text-[10px]">ROOM ID: RM-APEX-{manager.branchCode}</span>
+                  <div className="bg-[#FFF1F5] p-3.5 border-t border-[#F9A8D4]/50 flex items-center justify-between text-xs font-sans">
+                    <span className="text-[#9D174D]/85 text-[10px]">ROOM ID: RM-APEX-{manager.branchCode}</span>
                     <button
                       onClick={() => setVideoConnected(false)}
-                      className="px-4 py-1.5 bg-rose-600 hover:bg-rose-500 text-white rounded font-bold uppercase text-[10px] cursor-pointer"
+                      className="px-4 py-1.5 bg-rose-600 hover:bg-rose-500 text-[#4A044E] rounded font-bold uppercase text-[10px] cursor-pointer"
                     >
                       Disconnect Port
                     </button>
@@ -469,10 +469,10 @@ export default function ManagerContactModal({
         </div>
 
         {/* Modal Window Footer Panel */}
-        <div className="p-4 bg-slate-950 border-t border-white/5 flex justify-end gap-2 text-xs">
+        <div className="p-4 bg-slate-950 border-t border-[#F9A8D4]/40 flex justify-end gap-2 text-xs">
           <button
             onClick={onClose}
-            className="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold uppercase text-[10px] rounded-lg cursor-pointer transition-all"
+            className="px-5 py-2.5 bg-[#FDF2F8] hover:bg-slate-700 text-[#831843] font-bold uppercase text-[10px] rounded-lg cursor-pointer transition-all"
           >
             Close Portal
           </button>

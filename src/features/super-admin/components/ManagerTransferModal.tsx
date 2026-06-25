@@ -51,13 +51,13 @@ export default function ManagerTransferModal({
   }, [manager]);
 
   return (
-    <div className="fixed inset-0 bg-black/35 backdrop-blur-[6px] flex items-center justify-center z-[99999] p-4 font-sans text-slate-100 select-none">
-      <div className="w-[75%] h-[80vh] bg-[#090f2b] border border-[#17235a]/80 rounded-[24px] shadow-2xl overflow-hidden relative flex flex-col">
+    <div className="fixed inset-0 bg-black/35 backdrop-blur-[6px] flex items-center justify-center z-[99999] p-4 font-sans text-[#4A044E] select-none">
+      <div className="w-[75%] h-[80vh] bg-[#FCE7F3] border border-[#F9A8D4]/80 rounded-[24px] shadow-2xl overflow-hidden relative flex flex-col">
         {/* Top Header Highlight Bar */}
         <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-600" />
 
         {/* Modal Window Title */}
-        <div className="p-5 border-b border-white/10 flex items-center justify-between bg-slate-900/50">
+        <div className="p-5 border-b border-[#F9A8D4]/50 flex items-center justify-between bg-[#FFF1F5]/50">
           <div className="flex items-center gap-3">
             <div className="p-2.5 rounded-xl bg-amber-500/10 text-amber-400">
               <MapPin size={20} />
@@ -66,14 +66,14 @@ export default function ManagerTransferModal({
               <h3 className="text-sm font-black uppercase text-[#d4af37] tracking-widest">
                 Transfer & Deployment Records
               </h3>
-              <p className="text-[10px] text-slate-400 font-mono mt-0.5">
+              <p className="text-[10px] text-[#9D174D]/85 font-mono mt-0.5">
                 EXECUTIVE TRANSFER LEDGER FOR: {manager.name} ({manager.id})
               </p>
             </div>
           </div>
           <button 
             onClick={onClose}
-            className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 cursor-pointer transition-all"
+            className="p-1.5 rounded-lg text-[#9D174D]/85 hover:text-[#4A044E] hover:bg-white/5 cursor-pointer transition-all"
           >
             <X size={18} />
           </button>
@@ -81,10 +81,10 @@ export default function ManagerTransferModal({
 
         {/* Modal Content - Table Panel */}
         <div className="p-6 flex-1 overflow-y-auto">
-          <div className="bg-slate-950/50 border border-white/5 rounded-2xl overflow-hidden">
+          <div className="bg-slate-950/50 border border-[#F9A8D4]/40 rounded-2xl overflow-hidden">
             <table className="w-full text-left text-xs border-collapse">
               <thead>
-                <tr className="bg-slate-950 text-slate-400 font-bold uppercase tracking-wider text-[10px] border-b border-white/10">
+                <tr className="bg-slate-950 text-[#9D174D]/85 font-bold uppercase tracking-wider text-[10px] border-b border-[#F9A8D4]/50">
                   <th className="py-4 px-5">Date</th>
                   <th className="py-4 px-5">From Branch Node</th>
                   <th className="py-4 px-5">To Branch Node</th>
@@ -95,7 +95,7 @@ export default function ManagerTransferModal({
               <tbody className="divide-y divide-white/5 text-[11px]">
                 {compiledTransfers.map((tx, idx) => (
                   <tr key={idx} className="hover:bg-amber-500/[0.02] transition-colors">
-                    <td className="py-3.5 px-5 font-mono text-slate-300 whitespace-nowrap">
+                    <td className="py-3.5 px-5 font-mono text-[#831843] whitespace-nowrap">
                       <div className="flex items-center gap-2">
                         <Calendar size={12} className="text-amber-400 shrink-0" />
                         <span>{tx.date}</span>
@@ -106,14 +106,14 @@ export default function ManagerTransferModal({
                     </td>
                     <td className="py-3.5 px-5 font-semibold text-emerald-400 max-w-[160px] truncate">
                       <div className="flex items-center gap-1.5">
-                        <ArrowRight size={12} className="text-slate-500 shrink-0" />
+                        <ArrowRight size={12} className="text-[#9D174D]/75 shrink-0" />
                         <span>{tx.toBranch}</span>
                       </div>
                     </td>
-                    <td className="py-3.5 px-5 text-slate-100 font-medium">
+                    <td className="py-3.5 px-5 text-[#4A044E] font-medium">
                       {tx.position}
                     </td>
-                    <td className="py-3.5 px-5 text-right font-semibold text-slate-400 whitespace-nowrap">
+                    <td className="py-3.5 px-5 text-right font-semibold text-[#9D174D]/85 whitespace-nowrap">
                       <div className="inline-flex items-center gap-1.5 justify-end">
                         <ShieldCheck size={12} className="text-amber-500" />
                         <span>{tx.approvedBy}</span>
@@ -130,8 +130,8 @@ export default function ManagerTransferModal({
             <div className="w-9 h-9 rounded-full bg-amber-500/10 text-amber-400 flex items-center justify-center shrink-0">
               <ShieldCheck size={18} />
             </div>
-            <div className="text-[10px] leading-relaxed text-slate-400">
-              <p className="font-bold text-slate-300">Biometric Clearance Verified</p>
+            <div className="text-[10px] leading-relaxed text-[#9D174D]/85">
+              <p className="font-bold text-[#831843]">Biometric Clearance Verified</p>
               <p className="mt-0.5">
                 This transfer history index is audited and synchronized with Central Sovereign Operations. Any unauthorized manipulation will instantly trip remote network failsafes.
               </p>
@@ -140,10 +140,10 @@ export default function ManagerTransferModal({
         </div>
 
         {/* Modal Window Footer */}
-        <div className="p-4 bg-slate-950 border-t border-white/5 flex justify-end gap-2 text-xs">
+        <div className="p-4 bg-slate-950 border-t border-[#F9A8D4]/40 flex justify-end gap-2 text-xs">
           <button
             onClick={onClose}
-            className="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold uppercase text-[10px] rounded-lg cursor-pointer transition-all"
+            className="px-5 py-2.5 bg-[#FDF2F8] hover:bg-slate-700 text-[#831843] font-bold uppercase text-[10px] rounded-lg cursor-pointer transition-all"
           >
             Close Ledgers
           </button>

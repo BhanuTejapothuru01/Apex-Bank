@@ -99,7 +99,7 @@ export default function Header({
   const unreadCount = notifications.filter(n => !n.read).length;
 
   return (
-    <header className="relative h-20 m-4 sm:m-4 mx-4 sm:mx-8 bg-white/40 backdrop-blur-3xl rounded-[28px] px-4 sm:px-6 flex items-center justify-between z-25 shadow-[0_8px_32px_rgba(0,0,0,0.05)] border border-white/50">
+    <header className="relative h-20 m-4 sm:m-4 mx-4 sm:mx-8 bg-white/40 backdrop-blur-3xl rounded-[28px] px-4 sm:px-6 flex items-center justify-between z-25 shadow-[0_8px_32px_rgba(0,0,0,0.05)] border border-[#F9A8D4]/400">
       
       {/* Mobile Toggle Drawer Hamburger Button */}
       {onSidebarToggle && (
@@ -166,9 +166,9 @@ export default function Header({
               {/* Dynamic Scrollable Results List */}
               <div id="search-results-scrollable" className="overflow-y-auto flex-1 pr-1 space-y-2 select-none scrollbar-thin scrollbar-thumb-pink-200 text-left">
                 {filteredCustomers.length === 0 ? (
-                  <div className="py-10 text-center text-slate-500 flex flex-col items-center justify-center gap-1">
+                  <div className="py-10 text-center text-[#9D174D]/75 flex flex-col items-center justify-center gap-1">
                     <span className="font-extrabold text-[12px] text-pink-900 font-sans">No matching customers found</span>
-                    <span className="text-[10px] text-slate-400 font-mono">Check ID format or full-name spelling</span>
+                    <span className="text-[10px] text-[#9D174D]/85 font-mono">Check ID format or full-name spelling</span>
                   </div>
                 ) : (
                   filteredCustomers.map((cust) => {
@@ -204,7 +204,7 @@ export default function Header({
                               <span className="text-[9px] font-extrabold leading-none bg-[#FCE7F3]/80 border border-pink-200 text-pink-900 px-1 py-0.5 rounded truncate">
                                 {cust.id}
                               </span>
-                              <span className="text-[9px] font-bold leading-none text-slate-500">
+                              <span className="text-[9px] font-bold leading-none text-[#9D174D]/75">
                                 {cust.type}
                               </span>
                             </div>
@@ -259,7 +259,7 @@ export default function Header({
           >
             <Bell size={18} />
             {unreadCount > 0 && (
-              <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-[#ec4899] text-[10px] font-bold text-white border-2 border-[#fbf5f7] shadow-lg animate-bounce">
+              <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-[#ec4899] text-[10px] font-bold text-[#4A044E] border-2 border-[#fbf5f7] shadow-lg animate-bounce">
                 {unreadCount}
               </span>
             )}
@@ -440,7 +440,7 @@ export default function Header({
                   </div>
                   
                   <h3 className="text-xl font-bold text-[#2e1065] text-center mb-2">Terminate Secure Session</h3>
-                  <p className="text-sm text-slate-500 text-center mb-8 leading-relaxed">
+                  <p className="text-sm text-[#9D174D]/75 text-center mb-8 leading-relaxed">
                     Are you sure you want to terminate this secure administrative connection? This will securely log out Sayeema.
                   </p>
                   
@@ -470,7 +470,7 @@ export default function Header({
                           }, 1500);
                         }, 2000);
                       }}
-                      className="py-3 px-4 rounded-xl bg-rose-500 text-white text-sm font-bold hover:bg-rose-600 transition-colors shadow-lg active:scale-[0.98] cursor-pointer"
+                      className="py-3 px-4 rounded-xl bg-rose-500 text-[#4A044E] text-sm font-bold hover:bg-rose-600 transition-colors shadow-lg active:scale-[0.98] cursor-pointer"
                     >
                       Terminate
                     </button>
@@ -490,7 +490,7 @@ export default function Header({
                     <div className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center" />
                   </div>
                   <h3 className="text-lg font-bold text-emerald-600">Connection Terminated</h3>
-                  <p className="text-xs text-slate-400 mt-2">Clearing local active nodes...</p>
+                  <p className="text-xs text-[#9D174D]/85 mt-2">Clearing local active nodes...</p>
                 </div>
               )}
             </motion.div>

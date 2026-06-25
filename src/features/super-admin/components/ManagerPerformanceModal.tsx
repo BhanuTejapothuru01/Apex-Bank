@@ -47,13 +47,13 @@ export default function ManagerPerformanceModal({
   }, []);
 
   return (
-    <div className="fixed inset-0 bg-black/35 backdrop-blur-[6px] flex items-center justify-center z-[99999] p-4 font-sans text-slate-100 select-none">
-      <div className="w-[75%] h-[80vh] bg-[#090f2b] border border-[#17235a]/80 rounded-[24px] shadow-2xl overflow-hidden relative flex flex-col">
+    <div className="fixed inset-0 bg-black/35 backdrop-blur-[6px] flex items-center justify-center z-[99999] p-4 font-sans text-[#4A044E] select-none">
+      <div className="w-[75%] h-[80vh] bg-[#FCE7F3] border border-[#F9A8D4]/80 rounded-[24px] shadow-2xl overflow-hidden relative flex flex-col">
         {/* Decorative Top Gold Glow Bar */}
         <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-600" />
 
         {/* Modal Window Title Area */}
-        <div className="p-5 border-b border-white/10 flex items-center justify-between bg-slate-900/50">
+        <div className="p-5 border-b border-[#F9A8D4]/50 flex items-center justify-between bg-[#FFF1F5]/50">
           <div className="flex items-center gap-3">
             <div className="p-2.5 rounded-xl bg-amber-500/10 text-amber-400">
               <TrendingUp size={20} />
@@ -62,14 +62,14 @@ export default function ManagerPerformanceModal({
               <h3 className="text-sm font-black uppercase text-[#d4af37] tracking-widest">
                 Interactive Performance Analytics
               </h3>
-              <p className="text-[10px] text-slate-400 font-mono mt-0.5">
+              <p className="text-[10px] text-[#9D174D]/85 font-mono mt-0.5">
                 OPERATIONAL KPIS AND DATA TRENDS FOR: {manager.name} ({manager.id})
               </p>
             </div>
           </div>
           <button 
             onClick={onClose}
-            className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 cursor-pointer transition-all animate-none"
+            className="p-1.5 rounded-lg text-[#9D174D]/85 hover:text-[#4A044E] hover:bg-white/5 cursor-pointer transition-all animate-none"
           >
             <X size={18} />
           </button>
@@ -80,43 +80,43 @@ export default function ManagerPerformanceModal({
           
           {/* Key Metric Scorecard Cards Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs">
-            <div className="p-4 bg-slate-950/40 border border-white/5 rounded-2xl space-y-1">
-              <div className="flex items-center gap-1.5 text-slate-400 text-[10px] font-bold uppercase tracking-wider">
+            <div className="p-4 bg-pink-50/80 border border-[#F9A8D4]/40 rounded-2xl space-y-1">
+              <div className="flex items-center gap-1.5 text-[#9D174D]/85 text-[10px] font-bold uppercase tracking-wider">
                 <DollarSign size={12} className="text-amber-400" />
                 <span>Deposits Managed</span>
               </div>
-              <p className="text-lg font-black font-mono text-white tracking-tight">
+              <p className="text-lg font-black font-mono text-[#4A044E] tracking-tight">
                 {manager.performance.totalDeposits}
               </p>
               <span className="text-[9px] text-emerald-400 font-mono font-bold">+12.4% vs last quarter</span>
             </div>
 
-            <div className="p-4 bg-slate-950/40 border border-white/5 rounded-2xl space-y-1">
-              <div className="flex items-center gap-1.5 text-slate-400 text-[10px] font-bold uppercase tracking-wider">
+            <div className="p-4 bg-pink-50/80 border border-[#F9A8D4]/40 rounded-2xl space-y-1">
+              <div className="flex items-center gap-1.5 text-[#9D174D]/85 text-[10px] font-bold uppercase tracking-wider">
                 <Award size={12} className="text-amber-400" />
                 <span>Performance Rating</span>
               </div>
               <p className="text-lg font-black font-mono text-[#d4af37] tracking-tight">
                 {manager.rating} / 5.0
               </p>
-              <div className="w-full bg-slate-800 rounded-full h-1 mt-1.5 overflow-hidden">
+              <div className="w-full bg-[#FDF2F8] rounded-full h-1 mt-1.5 overflow-hidden">
                 <div className="bg-amber-400 h-1 rounded-full" style={{ width: `${(manager.rating / 5) * 100}%` }} />
               </div>
             </div>
 
-            <div className="p-4 bg-slate-950/40 border border-white/5 rounded-2xl space-y-1">
-              <div className="flex items-center gap-1.5 text-slate-400 text-[10px] font-bold uppercase tracking-wider">
+            <div className="p-4 bg-pink-50/80 border border-[#F9A8D4]/40 rounded-2xl space-y-1">
+              <div className="flex items-center gap-1.5 text-[#9D174D]/85 text-[10px] font-bold uppercase tracking-wider">
                 <Users size={12} className="text-amber-400" />
                 <span>Staff Attendance</span>
               </div>
-              <p className="text-lg font-black font-mono text-white tracking-tight">
+              <p className="text-lg font-black font-mono text-[#4A044E] tracking-tight">
                 98.4%
               </p>
-              <span className="text-[9px] text-slate-400 font-bold">Standard Target: 95.0%</span>
+              <span className="text-[9px] text-[#9D174D]/85 font-bold">Standard Target: 95.0%</span>
             </div>
 
-            <div className="p-4 bg-slate-950/40 border border-white/5 rounded-2xl space-y-1">
-              <div className="flex items-center gap-1.5 text-slate-400 text-[10px] font-bold uppercase tracking-wider">
+            <div className="p-4 bg-pink-50/80 border border-[#F9A8D4]/40 rounded-2xl space-y-1">
+              <div className="flex items-center gap-1.5 text-[#9D174D]/85 text-[10px] font-bold uppercase tracking-wider">
                 <Percent size={12} className="text-amber-400" />
                 <span>Revenue Flow</span>
               </div>
@@ -131,13 +131,13 @@ export default function ManagerPerformanceModal({
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             
             {/* Visual Chart 1: Revenue Flow History (Area Chart) */}
-            <div className="lg:col-span-2 p-5 bg-slate-950/40 border border-white/5 rounded-[20px] space-y-4">
+            <div className="lg:col-span-2 p-5 bg-pink-50/80 border border-[#F9A8D4]/40 rounded-[20px] space-y-4">
               <div className="flex items-center justify-between">
                 <div>
                   <h4 className="text-xs font-black uppercase text-amber-200 tracking-wider">
                     Monthly Revenue Vector (Last 6 Months)
                   </h4>
-                  <p className="text-[10px] text-slate-400 mt-0.5">Chronological index of registered cashflow</p>
+                  <p className="text-[10px] text-[#9D174D]/85 mt-0.5">Chronological index of registered cashflow</p>
                 </div>
                 <span className="text-[10px] bg-amber-500/10 border border-amber-400/20 text-[#d4af37] px-3 py-1 rounded-full font-mono font-bold">
                   Total Managed Ledger Ingress
@@ -167,12 +167,12 @@ export default function ManagerPerformanceModal({
             </div>
 
             {/* Visual Chart 2: Customer CSAT Ratings Distributions (Bar Chart) */}
-            <div className="p-5 bg-slate-950/40 border border-white/5 rounded-[20px] space-y-4">
+            <div className="p-5 bg-pink-50/80 border border-[#F9A8D4]/40 rounded-[20px] space-y-4">
               <div>
                 <h4 className="text-xs font-black uppercase text-amber-200 tracking-wider">
                   Quarterly CSAT Distribution
                 </h4>
-                <p className="text-[10px] text-slate-400 mt-0.5">Assigned satisfaction points</p>
+                <p className="text-[10px] text-[#9D174D]/85 mt-0.5">Assigned satisfaction points</p>
               </div>
 
               <div className="h-48 w-full font-mono text-[10px]">
@@ -198,22 +198,22 @@ export default function ManagerPerformanceModal({
           </div>
 
           {/* Detailed Progress Bars for KPIs */}
-          <div className="p-5 bg-slate-950/40 border border-white/5 rounded-[20px] space-y-4">
+          <div className="p-5 bg-pink-50/80 border border-[#F9A8D4]/40 rounded-[20px] space-y-4">
             <div>
               <h4 className="text-xs font-black uppercase text-amber-200 tracking-wider">
                 Weekly KPI Performance Vectors
               </h4>
-              <p className="text-[10px] text-slate-400 mt-0.5">Metric verification thresholds compared against targets</p>
+              <p className="text-[10px] text-[#9D174D]/85 mt-0.5">Metric verification thresholds compared against targets</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
               {kpis.map((k, i) => (
                 <div key={i} className="space-y-1.5 text-xs">
-                  <div className="flex justify-between items-center text-[11px] font-bold text-slate-300">
+                  <div className="flex justify-between items-center text-[11px] font-bold text-[#831843]">
                     <span>{k.name}</span>
-                    <span className="text-[#d4af37]">{k.score}{k.unit} <span className="text-slate-500 font-normal">/ target {k.target}{k.unit}</span></span>
+                    <span className="text-[#d4af37]">{k.score}{k.unit} <span className="text-[#9D174D]/75 font-normal">/ target {k.target}{k.unit}</span></span>
                   </div>
-                  <div className="w-full bg-slate-800 rounded-full h-1.5 overflow-hidden">
+                  <div className="w-full bg-[#FDF2F8] rounded-full h-1.5 overflow-hidden">
                     <div className="bg-gradient-to-r from-amber-400 to-[#d4af37] h-1.5 rounded-full" style={{ width: `${(k.score / 100) * 100}%` }} />
                   </div>
                 </div>
@@ -224,10 +224,10 @@ export default function ManagerPerformanceModal({
         </div>
 
         {/* Modal Window Footer */}
-        <div className="p-4 bg-slate-950 border-t border-white/5 flex justify-end gap-2 text-xs">
+        <div className="p-4 bg-slate-950 border-t border-[#F9A8D4]/40 flex justify-end gap-2 text-xs">
           <button
             onClick={onClose}
-            className="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold uppercase text-[10px] rounded-lg cursor-pointer transition-all"
+            className="px-5 py-2.5 bg-[#FDF2F8] hover:bg-slate-700 text-[#831843] font-bold uppercase text-[10px] rounded-lg cursor-pointer transition-all"
           >
             Close Dashboard
           </button>

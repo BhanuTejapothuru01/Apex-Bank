@@ -356,7 +356,7 @@ export default function Inbox({
       >
         <div className="space-y-1">
           <div className="flex items-center gap-2">
-            <span className="p-1.5 bg-[#EC4899] text-white rounded-lg">
+            <span className="p-1.5 bg-[#EC4899] text-[#4A044E] rounded-lg">
               <InboxIcon size={18} />
             </span>
             <h1 className="text-xl font-black tracking-tight" style={{ color: '#4A044E' }}>
@@ -374,7 +374,7 @@ export default function Inbox({
             onClick={() => setActiveMode('view-inbox')}
             className={`px-3.5 py-2 text-[10px] font-bold uppercase tracking-wider rounded-xl transition-all duration-200 cursor-pointer ${
               activeMode === 'view-inbox'
-                ? 'bg-[#EC4899] text-white shadow-md'
+                ? 'bg-[#EC4899] text-[#4A044E] shadow-md'
                 : 'bg-[#FBCFE8]/60 border border-[#F9A8D4] text-[#4A044E] hover:bg-[#FBCFE8]'
             }`}
           >
@@ -385,7 +385,7 @@ export default function Inbox({
             onClick={() => setActiveMode('simulator')}
             className={`px-3.5 py-2 text-[10px] font-bold uppercase tracking-wider rounded-xl transition-all duration-200 cursor-pointer flex items-center gap-1.5 ${
               activeMode === 'simulator'
-                ? 'bg-[#4A044E] text-white shadow-md'
+                ? 'bg-[#4A044E] text-[#4A044E] shadow-md'
                 : 'bg-[#FBCFE8]/60 border border-[#F9A8D4] text-[#4A044E] hover:bg-[#FBCFE8]'
             }`}
           >
@@ -552,12 +552,12 @@ export default function Inbox({
                       onClick={() => selectFolder(item.key)}
                       className={`w-full flex items-center justify-between px-3 py-2.5 text-xs font-bold rounded-xl transition-all duration-200 cursor-pointer text-left ${
                         isSelected
-                          ? 'bg-[#EC4899] text-white shadow-md scale-[1.01]'
+                          ? 'bg-[#EC4899] text-[#4A044E] shadow-md scale-[1.01]'
                           : 'text-[#4A044E] bg-white/40 hover:bg-[#FBCFE8] border border-transparent hover:border-[#F9A8D4]'
                       }`}
                     >
                       <div className="flex items-center gap-2">
-                        <item.icon size={13} className={isSelected ? 'text-white' : 'text-[#EC4899]'} />
+                        <item.icon size={13} className={isSelected ? 'text-[#4A044E]' : 'text-[#EC4899]'} />
                         <span>{item.label}</span>
                       </div>
                       {badgeCount > 0 && (
@@ -706,7 +706,7 @@ export default function Inbox({
                   <div className="relative border-b pb-4 mb-4" style={{ borderColor: 'rgba(74, 4, 78, 0.12)' }}>
                     <div className="flex items-center gap-3">
                       {/* Avatar initial or profile */}
-                      <div className="w-12 h-12 rounded-full border-2 flex items-center justify-center shrink-0 bg-[#EC4899] text-white shadow-md font-black text-sm" style={{ borderColor: '#F9A8D4' }}>
+                      <div className="w-12 h-12 rounded-full border-2 flex items-center justify-center shrink-0 bg-[#EC4899] text-[#4A044E] shadow-md font-black text-sm" style={{ borderColor: '#F9A8D4' }}>
                         {selectedMessage.senderName.slice(0, 2).toUpperCase()}
                       </div>
                       
@@ -906,7 +906,7 @@ export default function Inbox({
                             className={`flex items-center justify-center gap-1.5 py-3 rounded-xl text-[10px] font-black uppercase transition-all duration-200 cursor-pointer active:scale-95 border ${
                               selectedMessage.status === 'Rejected'
                                 ? 'bg-[#F3F4F6] text-stone-400 border-stone-200 cursor-not-allowed opacity-50'
-                                : 'bg-[#EF4444] hover:bg-[#DC2626] border-[#B91C1C] text-white shadow-md font-extrabold'
+                                : 'bg-[#EF4444] hover:bg-[#DC2626] border-[#B91C1C] text-[#4A044E] shadow-md font-extrabold'
                             }`}
                           >
                             <X size={12} className="shrink-0" />
@@ -941,7 +941,7 @@ export default function Inbox({
                               />
                               <button
                                 onClick={() => handleRequestMoreInfo(selectedMessage.id)}
-                                className="px-3 bg-[#4A044E] hover:bg-black text-[10.5px] font-bold text-white rounded-lg transition-colors cursor-pointer"
+                                className="px-3 bg-[#4A044E] hover:bg-[#831843] text-[10.5px] font-bold text-white rounded-lg transition-colors cursor-pointer"
                               >
                                 Send
                               </button>
@@ -1135,10 +1135,10 @@ export default function Inbox({
                   </button>
                   <button
                     type="submit"
-                    className="px-6 py-2.5 rounded-xl text-white font-extrabold uppercase shadow-lg transition-all duration-200 cursor-pointer flex items-center gap-2 active:scale-95"
+                    className="px-6 py-2.5 rounded-xl text-[#4A044E] font-extrabold uppercase shadow-lg transition-all duration-200 cursor-pointer flex items-center gap-2 active:scale-95"
                     style={{ backgroundColor: '#EC4899' }}
                   >
-                    <Send size={12} className="text-white" />
+                    <Send size={12} className="text-[#4A044E]" />
                     <span>File Leave Application</span>
                   </button>
                 </div>

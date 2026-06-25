@@ -528,16 +528,16 @@ export default function FixedDeposits({
     <div className="space-y-6" id="fixeddeposits-module">
 
       {/* Advanced Filter Control Center */}
-      <div className="p-5 rounded-xl border border-[#17235a]/80 bg-[#061035] shadow-xl space-y-4">
-        <div className="flex items-center gap-2 pb-1 border-b border-[#141b44]">
+      <div className="p-5 rounded-xl border border-[#F9A8D4]/80 bg-[#FCE7F3] shadow-xl space-y-4">
+        <div className="flex items-center gap-2 pb-1 border-b border-[#FBCFE8]">
           <Filter size={14} className="text-amber-400" />
-          <h4 className="text-xs font-bold text-white uppercase tracking-wider">Fixed Deposit Ledger Control workbench</h4>
+          <h4 className="text-xs font-bold text-[#4A044E] uppercase tracking-wider">Fixed Deposit Ledger Control workbench</h4>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* 1. Applicant/Holder filters */}
           <div className="space-y-1.5">
-            <label className="text-[10px] text-[#8496bf] uppercase tracking-wide font-bold">Applicant Category</label>
+            <label className="text-[10px] text-[#BE185D]/75 uppercase tracking-wide font-bold">Applicant Category</label>
             <div className="flex flex-wrap gap-1.5">
               {(['All', 'Customers', 'Employees'] as const).map((type) => (
                 <button
@@ -549,7 +549,7 @@ export default function FixedDeposits({
                   className={`px-3 py-1.5 text-xs font-semibold rounded-lg border transition-all cursor-pointer ${
                     holderFilter === type
                       ? 'bg-amber-500/10 border-amber-500/60 text-amber-400 hover:bg-amber-500/25'
-                      : 'bg-[#111942]/60 border-[#17235a] text-[#8496bf] hover:bg-[#111942] hover:text-white'
+                      : 'bg-[#FFF1F5]/60 border-[#F9A8D4] text-[#BE185D]/75 hover:bg-[#FFF1F5] hover:text-[#4A044E]'
                   }`}
                 >
                   <span className="flex items-center gap-1">
@@ -564,13 +564,13 @@ export default function FixedDeposits({
 
           {/* 2. FD Status Filters */}
           <div className="space-y-1.5">
-            <label className="text-[10px] text-[#8496bf] uppercase tracking-wide font-bold font-mono">FD Verification Status</label>
+            <label className="text-[10px] text-[#BE185D]/75 uppercase tracking-wide font-bold font-mono">FD Verification Status</label>
             <div className="relative">
               <select
                 id="fd-status-filter-select"
                 value={statusFilter}
                 onChange={(e) => setStatusFilter(e.target.value)}
-                className="w-full text-xs font-medium bg-[#111942]/60 border border-[#17235a] text-white hover:border-[#223585] rounded-lg px-2.5 py-1.5 appearance-none focus:outline-none focus:ring-1 focus:ring-amber-500/40 cursor-pointer"
+                className="w-full text-xs font-medium bg-[#FFF1F5]/60 border border-[#F9A8D4] text-[#4A044E] hover:border-[#F9A8D4] rounded-lg px-2.5 py-1.5 appearance-none focus:outline-none focus:ring-1 focus:ring-amber-500/40 cursor-pointer"
               >
                 <option value="All">All FD Statuses</option>
                 <option value="Active FD">Active FD</option>
@@ -579,7 +579,7 @@ export default function FixedDeposits({
                 <option value="Pending Approval">Pending Approval</option>
                 <option value="Closed FD">Closed FD</option>
               </select>
-              <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none text-[#8496bf]">
+              <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none text-[#BE185D]/75">
                 ▼
               </div>
             </div>
@@ -587,13 +587,13 @@ export default function FixedDeposits({
 
           {/* 3. FD Type Filters */}
           <div className="space-y-1.5">
-            <label className="text-[10px] text-[#8496bf] uppercase tracking-wide font-bold">FD Investment Type</label>
+            <label className="text-[10px] text-[#BE185D]/75 uppercase tracking-wide font-bold">FD Investment Type</label>
             <div className="relative">
               <select
                 id="fd-type-filter-select"
                 value={typeFilter}
                 onChange={(e) => setTypeFilter(e.target.value)}
-                className="w-full text-xs font-medium bg-[#111942]/60 border border-[#17235a] text-white hover:border-[#223585] rounded-lg px-2.5 py-1.5 appearance-none focus:outline-none focus:ring-1 focus:ring-amber-500/40 cursor-pointer"
+                className="w-full text-xs font-medium bg-[#FFF1F5]/60 border border-[#F9A8D4] text-[#4A044E] hover:border-[#F9A8D4] rounded-lg px-2.5 py-1.5 appearance-none focus:outline-none focus:ring-1 focus:ring-amber-500/40 cursor-pointer"
               >
                 <option value="All">All FD Types</option>
                 <option value="Regular FD">Regular FD</option>
@@ -602,7 +602,7 @@ export default function FixedDeposits({
                 <option value="Corporate FD">Corporate FD</option>
                 <option value="Employee FD">Employee FD</option>
               </select>
-              <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none text-[#8496bf]">
+              <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none text-[#BE185D]/75">
                 ▼
               </div>
             </div>
@@ -617,11 +617,11 @@ export default function FixedDeposits({
         <div className="lg:col-span-7 space-y-6">
           
           {/* Active Deposits Table */}
-          <div className="p-5 rounded-2xl border border-[#17235a]/60 bg-[#070c2e]/80 shadow-2xl space-y-4">
-            <div className="flex justify-between items-center pb-2 border-b border-[#141b44]">
+          <div className="p-5 rounded-2xl border border-[#F9A8D4] bg-[#FCE7F3]/90 shadow-2xl space-y-4">
+            <div className="flex justify-between items-center pb-2 border-b border-[#FBCFE8]">
               <div>
-                <h3 className="text-xs font-bold text-white uppercase tracking-wider">Active Long-Term Reserves Ledger</h3>
-                <p className="text-[11px] text-[#556994]">A list of premium physical investment certificates assigned to Apex client portfolios.</p>
+                <h3 className="text-xs font-bold text-[#4A044E] uppercase tracking-wider">Active Long-Term Reserves Ledger</h3>
+                <p className="text-[11px] text-[#9D174D]/80">A list of premium physical investment certificates assigned to Apex client portfolios.</p>
               </div>
               <span className="text-[10px] font-mono font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2 py-0.5 rounded uppercase shrink-0">
                 {filteredFDs.length} FD Records
@@ -631,7 +631,7 @@ export default function FixedDeposits({
             <div className="overflow-x-auto select-text">
               <table className="w-full text-left border-collapse">
                 <thead>
-                  <tr className="border-b border-[#141c48] text-[9px] text-[#8496bf] font-bold uppercase tracking-wider">
+                  <tr className="border-b border-[#FBCFE8] text-[9px] text-[#BE185D]/75 font-bold uppercase tracking-wider">
                     <th className="py-2.5 px-3">FD Ref ID</th>
                     <th className="py-2.5 px-3">Owner of record</th>
                     <th className="py-2.5 px-3">FD Type</th>
@@ -657,20 +657,20 @@ export default function FixedDeposits({
                         <tr 
                           key={fd.id}
                           onClick={() => setSelectedFdId(fd.id)}
-                          className={`text-xs hover:bg-[#121c4b]/50 transition-colors cursor-pointer ${
-                            isSelected ? 'bg-[#0d1645] border-l-2 border-amber-500' : ''
+                          className={`text-xs hover:bg-[#FBCFE8]/70 transition-colors cursor-pointer ${
+                            isSelected ? 'bg-[#FDF2F8] border-l-2 border-amber-500' : ''
                           }`}
                         >
-                          <td className="py-3 px-3 font-mono font-bold text-slate-300 flex items-center gap-1">
+                          <td className="py-3 px-3 font-mono font-bold text-[#831843] flex items-center gap-1">
                             {fd.isEmployee ? <Users size={11} className="text-amber-500" /> : <User size={11} className="text-zinc-400" />}
                             <span>{fd.id}</span>
                           </td>
                           <td className="py-3 px-3">
-                            <span className="font-semibold text-white block truncate max-w-[120px]">{fd.customerName}</span>
-                            <span className="text-[8px] text-[#556994] font-mono leading-none">{fd.customerId}</span>
+                            <span className="font-semibold text-[#4A044E] block truncate max-w-[120px]">{fd.customerName}</span>
+                            <span className="text-[8px] text-[#9D174D]/80 font-mono leading-none">{fd.customerId}</span>
                           </td>
-                          <td className="py-3 px-3 text-[#8496bf] font-medium text-[10px]">{fd.fdType}</td>
-                          <td className="py-3 px-3 text-right font-mono font-bold text-white">
+                          <td className="py-3 px-3 text-[#BE185D]/75 font-medium text-[10px]">{fd.fdType}</td>
+                          <td className="py-3 px-3 text-right font-mono font-bold text-[#4A044E]">
                             ${fd.amount.toLocaleString(undefined, { minimumFractionDigits: 2 })}
                           </td>
                           <td className="py-3 px-3 text-center text-amber-500 font-bold font-mono">{fd.interestRate}%</td>
@@ -684,7 +684,7 @@ export default function FixedDeposits({
                     })
                   ) : (
                     <tr>
-                      <td colSpan={6} className="py-16 text-center text-[#556994] font-mono text-xs">
+                      <td colSpan={6} className="py-16 text-center text-[#9D174D]/80 font-mono text-xs">
                         No Fixed Deposits found matching the selected filters.
                       </td>
                     </tr>
@@ -695,38 +695,38 @@ export default function FixedDeposits({
           </div>
 
           {/* Compounding Interest Calculator Form */}
-          <div className="p-5 rounded-2xl border border-[#17235a]/60 bg-[#070c2e]/80 shadow-2xl space-y-4">
+          <div className="p-5 rounded-2xl border border-[#F9A8D4] bg-[#FCE7F3]/90 shadow-2xl space-y-4">
             <div>
               <span className="text-amber-500 text-[9px] font-mono tracking-widest uppercase font-bold block">Reserve Forecasting</span>
-              <h3 className="text-sm font-bold text-white mt-1 font-sans">Compounding Yield Calculator</h3>
-              <p className="text-xs text-[#8496bf]">Pre-evaluate passive wealth generation payouts based on active baseline metrics.</p>
+              <h3 className="text-sm font-bold text-[#4A044E] mt-1 font-sans">Compounding Yield Calculator</h3>
+              <p className="text-xs text-[#BE185D]/75">Pre-evaluate passive wealth generation payouts based on active baseline metrics.</p>
             </div>
 
             <form onSubmit={calculateCompoundInterest} className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
               <div className="space-y-1">
-                <label className="text-[#8496bf] font-semibold uppercase tracking-wide">Principal Sum ($):</label>
+                <label className="text-[#BE185D]/75 font-semibold uppercase tracking-wide">Principal Sum ($):</label>
                 <input 
                   id="fd-calc-principal"
                   type="number"
                   value={calcInput.principal}
                   onChange={(e) => setCalcInput({ ...calcInput, principal: Number(e.target.value) })}
-                  className="w-full bg-[#0a1135] border border-[#1b2557] focus:border-[#d4af37]/60 text-white p-2.5 rounded-xl outline-none font-mono font-bold"
+                  className="w-full bg-[#FFF1F5] border border-[#F9A8D4] focus:border-[#d4af37]/60 text-[#4A044E] p-2.5 rounded-xl outline-none font-mono font-bold"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="text-[#8496bf] font-semibold uppercase tracking-wide">Term (Months):</label>
+                <label className="text-[#BE185D]/75 font-semibold uppercase tracking-wide">Term (Months):</label>
                 <input 
                   id="fd-calc-duration"
                   type="number"
                   value={calcInput.duration}
                   onChange={(e) => setCalcInput({ ...calcInput, duration: Number(e.target.value) })}
-                  className="w-full bg-[#0a1135] border border-[#1b2557] focus:border-[#d4af37]/60 text-white p-2.5 rounded-xl outline-none font-mono"
+                  className="w-full bg-[#FFF1F5] border border-[#F9A8D4] focus:border-[#d4af37]/60 text-[#4A044E] p-2.5 rounded-xl outline-none font-mono"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="text-[#8496bf] font-semibold uppercase tracking-wide">APR Rate (%):</label>
+                <label className="text-[#BE185D]/75 font-semibold uppercase tracking-wide">APR Rate (%):</label>
                 <div className="flex gap-2">
                   <input 
                     id="fd-calc-rate"
@@ -734,7 +734,7 @@ export default function FixedDeposits({
                     step="0.05"
                     value={calcInput.rate}
                     onChange={(e) => setCalcInput({ ...calcInput, rate: Number(e.target.value) })}
-                    className="w-full bg-[#0a1135] border border-[#1b2557] focus:border-[#d4af37]/60 text-white p-2.5 rounded-xl outline-none font-mono"
+                    className="w-full bg-[#FFF1F5] border border-[#F9A8D4] focus:border-[#d4af37]/60 text-[#4A044E] p-2.5 rounded-xl outline-none font-mono"
                   />
                   <button
                     id="fd-calc-submit"
@@ -754,8 +754,8 @@ export default function FixedDeposits({
 
             {/* Results Block */}
             <div className="p-3 rounded-xl border border-[#2e1d10] bg-[#1a0e03]/80 text-amber-500 text-xs flex justify-between items-center">
-              <span className="uppercase text-[9px] font-bold tracking-widest text-[#8496bf]">Projected Compounding Yield:</span>
-              <p className="text-base font-bold font-mono text-white">${interestResult.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
+              <span className="uppercase text-[9px] font-bold tracking-widest text-[#BE185D]/75">Projected Compounding Yield:</span>
+              <p className="text-base font-bold font-mono text-[#4A044E]">${interestResult.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
             </div>
           </div>
 
@@ -764,13 +764,13 @@ export default function FixedDeposits({
         {/* Right detailed Fixed Deposit profile panel (5/12) */}
         <div className="lg:col-span-5">
           {selectedFdDetail ? (
-            <div className="p-5 rounded-2xl border border-[#17235a]/60 bg-[#070c2e]/80 shadow-2xl space-y-5 select-text">
+            <div className="p-5 rounded-2xl border border-[#F9A8D4] bg-[#FCE7F3]/90 shadow-2xl space-y-5 select-text">
               
               {/* Card Header information */}
-              <div className="pb-3 border-b border-[#141b44] flex items-center justify-between">
+              <div className="pb-3 border-b border-[#FBCFE8] flex items-center justify-between">
                 <div>
                   <span className="text-amber-500 text-[9px] font-mono tracking-widest uppercase font-bold block">Reserve Document Profile</span>
-                  <h3 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-1.5 mt-0.5">
+                  <h3 className="text-sm font-bold text-[#4A044E] uppercase tracking-wider flex items-center gap-1.5 mt-0.5">
                     <PiggyBank size={14} className="text-amber-400" />
                     Inspection Dashboard
                   </h3>
@@ -788,21 +788,21 @@ export default function FixedDeposits({
                   FD Holder Information
                 </span>
                 
-                <div className="p-3.5 rounded-xl border border-[#141b4a] bg-[#04081c]/60 text-xs space-y-2 font-mono">
-                  <div className="flex justify-between border-b border-[#141b44]/40 pb-1.5">
-                    <span className="text-[#8496bf] font-sans">Full Name:</span>
-                    <span className="font-bold text-white text-right">{selectedFdDetail.customerName}</span>
+                <div className="p-3.5 rounded-xl border border-[#FBCFE8] bg-[#FFF5F8]/80 text-xs space-y-2 font-mono">
+                  <div className="flex justify-between border-b border-[#FBCFE8]/40 pb-1.5">
+                    <span className="text-[#BE185D]/75 font-sans">Full Name:</span>
+                    <span className="font-bold text-[#4A044E] text-right">{selectedFdDetail.customerName}</span>
                   </div>
-                  <div className="flex justify-between border-b border-[#141b44]/40 pb-1.5">
-                    <span className="text-[#8496bf] font-sans">{selectedFdDetail.isEmployee ? 'Employee ID' : 'Customer ID'}:</span>
+                  <div className="flex justify-between border-b border-[#FBCFE8]/40 pb-1.5">
+                    <span className="text-[#BE185D]/75 font-sans">{selectedFdDetail.isEmployee ? 'Employee ID' : 'Customer ID'}:</span>
                     <span className="font-bold text-amber-400 text-right">{selectedFdDetail.customerId}</span>
                   </div>
-                  <div className="flex justify-between border-b border-[#141b44]/40 pb-1.5">
-                    <span className="text-[#8496bf] font-sans">Mobile Number:</span>
-                    <a href={`tel:${selectedFdDetail.mobileNumber}`} className="font-bold text-white text-right hover:text-amber-500 cursor-pointer">{selectedFdDetail.mobileNumber}</a>
+                  <div className="flex justify-between border-b border-[#FBCFE8]/40 pb-1.5">
+                    <span className="text-[#BE185D]/75 font-sans">Mobile Number:</span>
+                    <a href={`tel:${selectedFdDetail.mobileNumber}`} className="font-bold text-[#4A044E] text-right hover:text-amber-500 cursor-pointer">{selectedFdDetail.mobileNumber}</a>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-[#8496bf] font-sans">Email Address:</span>
+                    <span className="text-[#BE185D]/75 font-sans">Email Address:</span>
                     <a href={`mailto:${selectedFdDetail.emailAddress}`} className="font-bold text-emerald-400 text-right overflow-hidden text-ellipsis whitespace-nowrap block max-w-[170px] hover:underline cursor-pointer">{selectedFdDetail.emailAddress}</a>
                   </div>
                 </div>
@@ -814,41 +814,41 @@ export default function FixedDeposits({
                   Fixed Deposit Information
                 </span>
 
-                <div className="p-3.5 rounded-xl border border-[#141b4a] bg-[#04081c]/60 text-xs space-y-2 font-mono">
-                  <div className="flex justify-between border-b border-[#141b44]/40 pb-1.5">
-                    <span className="text-[#8496bf] font-sans">FD Number:</span>
-                    <span className="font-bold text-white text-right">{selectedFdDetail.fdNumber}</span>
+                <div className="p-3.5 rounded-xl border border-[#FBCFE8] bg-[#FFF5F8]/80 text-xs space-y-2 font-mono">
+                  <div className="flex justify-between border-b border-[#FBCFE8]/40 pb-1.5">
+                    <span className="text-[#BE185D]/75 font-sans">FD Number:</span>
+                    <span className="font-bold text-[#4A044E] text-right">{selectedFdDetail.fdNumber}</span>
                   </div>
-                  <div className="flex justify-between border-b border-[#141b44]/40 pb-1.5">
-                    <span className="text-[#8496bf] font-sans">FD Type:</span>
+                  <div className="flex justify-between border-b border-[#FBCFE8]/40 pb-1.5">
+                    <span className="text-[#BE185D]/75 font-sans">FD Type:</span>
                     <span className="font-bold text-indigo-300 text-right">{selectedFdDetail.fdType}</span>
                   </div>
-                  <div className="flex justify-between border-b border-[#141b44]/40 pb-1.5">
-                    <span className="text-[#8496bf] font-sans">Deposit Amount:</span>
-                    <span className="font-bold text-white text-right text-sm">
+                  <div className="flex justify-between border-b border-[#FBCFE8]/40 pb-1.5">
+                    <span className="text-[#BE185D]/75 font-sans">Deposit Amount:</span>
+                    <span className="font-bold text-[#4A044E] text-right text-sm">
                       ${selectedFdDetail.amount.toLocaleString(undefined, { minimumFractionDigits: 2 })}
                     </span>
                   </div>
-                  <div className="flex justify-between border-b border-[#141b44]/40 pb-1.5">
-                    <span className="text-[#8496bf] font-sans">Interest Rate (APY):</span>
+                  <div className="flex justify-between border-b border-[#FBCFE8]/40 pb-1.5">
+                    <span className="text-[#BE185D]/75 font-sans">Interest Rate (APY):</span>
                     <span className="font-bold text-amber-500 text-right">{selectedFdDetail.interestRate}%</span>
                   </div>
-                  <div className="flex justify-between border-b border-[#141b44]/40 pb-1.5">
-                    <span className="text-[#8496bf] font-sans">Deposit Date:</span>
-                    <span className="font-bold text-white text-right">{selectedFdDetail.startDate}</span>
+                  <div className="flex justify-between border-b border-[#FBCFE8]/40 pb-1.5">
+                    <span className="text-[#BE185D]/75 font-sans">Deposit Date:</span>
+                    <span className="font-bold text-[#4A044E] text-right">{selectedFdDetail.startDate}</span>
                   </div>
-                  <div className="flex justify-between border-b border-[#141b44]/40 pb-1.5">
-                    <span className="text-[#8496bf] font-sans">Maturity Date:</span>
-                    <span className="font-bold text-white text-right">{selectedFdDetail.maturityDate}</span>
+                  <div className="flex justify-between border-b border-[#FBCFE8]/40 pb-1.5">
+                    <span className="text-[#BE185D]/75 font-sans">Maturity Date:</span>
+                    <span className="font-bold text-[#4A044E] text-right">{selectedFdDetail.maturityDate}</span>
                   </div>
-                  <div className="flex justify-between border-b border-[#141b44]/40 pb-1.5">
-                    <span className="text-[#8496bf] font-sans">Maturity Amount:</span>
+                  <div className="flex justify-between border-b border-[#FBCFE8]/40 pb-1.5">
+                    <span className="text-[#BE185D]/75 font-sans">Maturity Amount:</span>
                     <span className="font-bold text-emerald-400 text-right">
                       ${selectedFdDetail.maturityAmount.toLocaleString(undefined, { minimumFractionDigits: 2 })}
                     </span>
                   </div>
                   <div className="flex justify-between items-center pb-0.5">
-                    <span className="text-[#8496bf] font-sans">Current FD Status:</span>
+                    <span className="text-[#BE185D]/75 font-sans">Current FD Status:</span>
                     <span className="px-2 py-0.5 border border-amber-500/30 bg-amber-500/5 text-amber-400 rounded text-[9px] font-bold font-mono">
                       {selectedFdDetail.status.toUpperCase()}
                     </span>
@@ -858,26 +858,26 @@ export default function FixedDeposits({
 
               {/* Branch details */}
               <div className="space-y-2">
-                <span className="text-[10px] font-mono uppercase font-bold text-slate-400 block tracking-wider">
+                <span className="text-[10px] font-mono uppercase font-bold text-[#9D174D]/85 block tracking-wider">
                   Branch Information
                 </span>
 
-                <div className="p-3.5 rounded-xl border border-[#141b4a] bg-[#04081c]/60 text-xs space-y-2 font-mono">
-                  <div className="flex justify-between border-b border-[#141b44]/40 pb-1.5">
-                    <span className="text-[#8496bf] font-sans">Branch Name:</span>
-                    <span className="font-bold text-white text-right">{selectedFdDetail.branchName}</span>
+                <div className="p-3.5 rounded-xl border border-[#FBCFE8] bg-[#FFF5F8]/80 text-xs space-y-2 font-mono">
+                  <div className="flex justify-between border-b border-[#FBCFE8]/40 pb-1.5">
+                    <span className="text-[#BE185D]/75 font-sans">Branch Name:</span>
+                    <span className="font-bold text-[#4A044E] text-right">{selectedFdDetail.branchName}</span>
                   </div>
-                  <div className="flex justify-between border-b border-[#141b44]/40 pb-1.5">
-                    <span className="text-[#8496bf] font-sans">Branch Code:</span>
-                    <span className="font-bold text-white text-right">{selectedFdDetail.branchCode}</span>
+                  <div className="flex justify-between border-b border-[#FBCFE8]/40 pb-1.5">
+                    <span className="text-[#BE185D]/75 font-sans">Branch Code:</span>
+                    <span className="font-bold text-[#4A044E] text-right">{selectedFdDetail.branchCode}</span>
                   </div>
-                  <div className="flex justify-between border-b border-[#141b44]/40 pb-1.5">
-                    <span className="text-[#8496bf] font-sans">Branch Location:</span>
-                    <span className="font-bold text-white text-right">{selectedFdDetail.branchLocation}</span>
+                  <div className="flex justify-between border-b border-[#FBCFE8]/40 pb-1.5">
+                    <span className="text-[#BE185D]/75 font-sans">Branch Location:</span>
+                    <span className="font-bold text-[#4A044E] text-right">{selectedFdDetail.branchLocation}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-[#8496bf] font-sans">Branch Manager Name:</span>
-                    <span className="font-bold text-white text-right">{selectedFdDetail.branchManagerName}</span>
+                    <span className="text-[#BE185D]/75 font-sans">Branch Manager Name:</span>
+                    <span className="font-bold text-[#4A044E] text-right">{selectedFdDetail.branchManagerName}</span>
                   </div>
                 </div>
               </div>
@@ -888,26 +888,26 @@ export default function FixedDeposits({
                   FD Creation Information
                 </span>
 
-                <div className="p-3.5 rounded-xl border border-[#141b4a] bg-[#04081c]/60 text-xs space-y-2 font-mono">
-                  <div className="flex justify-between border-b border-[#141b44]/40 pb-1.5">
-                    <span className="text-[#8496bf] font-sans">Created By Employee:</span>
-                    <span className="font-bold text-white text-right">{selectedFdDetail.createdByEmployee}</span>
+                <div className="p-3.5 rounded-xl border border-[#FBCFE8] bg-[#FFF5F8]/80 text-xs space-y-2 font-mono">
+                  <div className="flex justify-between border-b border-[#FBCFE8]/40 pb-1.5">
+                    <span className="text-[#BE185D]/75 font-sans">Created By Employee:</span>
+                    <span className="font-bold text-[#4A044E] text-right">{selectedFdDetail.createdByEmployee}</span>
                   </div>
-                  <div className="flex justify-between border-b border-[#141b44]/40 pb-1.5">
-                    <span className="text-[#8496bf] font-sans">Employee ID:</span>
-                    <span className="font-bold text-white text-right">{selectedFdDetail.createdByEmployeeId}</span>
+                  <div className="flex justify-between border-b border-[#FBCFE8]/40 pb-1.5">
+                    <span className="text-[#BE185D]/75 font-sans">Employee ID:</span>
+                    <span className="font-bold text-[#4A044E] text-right">{selectedFdDetail.createdByEmployeeId}</span>
                   </div>
-                  <div className="flex justify-between border-b border-[#141b44]/40 pb-1.5">
-                    <span className="text-[#8496bf] font-sans">Designation:</span>
-                    <span className="font-bold text-white text-right">{selectedFdDetail.creatorDesignation}</span>
+                  <div className="flex justify-between border-b border-[#FBCFE8]/40 pb-1.5">
+                    <span className="text-[#BE185D]/75 font-sans">Designation:</span>
+                    <span className="font-bold text-[#4A044E] text-right">{selectedFdDetail.creatorDesignation}</span>
                   </div>
-                  <div className="flex justify-between border-b border-[#141b44]/40 pb-1.5">
-                    <span className="text-[#8496bf] font-sans">Date Created:</span>
-                    <span className="font-bold text-white text-right">{selectedFdDetail.dateCreated}</span>
+                  <div className="flex justify-between border-b border-[#FBCFE8]/40 pb-1.5">
+                    <span className="text-[#BE185D]/75 font-sans">Date Created:</span>
+                    <span className="font-bold text-[#4A044E] text-right">{selectedFdDetail.dateCreated}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-[#8496bf] font-sans">Time Created:</span>
-                    <span className="font-bold text-white text-right">{selectedFdDetail.timeCreated}</span>
+                    <span className="text-[#BE185D]/75 font-sans">Time Created:</span>
+                    <span className="font-bold text-[#4A044E] text-right">{selectedFdDetail.timeCreated}</span>
                   </div>
                 </div>
               </div>
@@ -918,22 +918,22 @@ export default function FixedDeposits({
                   Approval Information
                 </span>
 
-                <div className="p-3.5 rounded-xl border border-[#141b4a] bg-[#04081c]/60 text-xs space-y-2 font-mono">
-                  <div className="flex justify-between border-b border-[#141b44]/40 pb-1.5">
-                    <span className="text-[#8496bf] font-sans">Approved By:</span>
-                    <span className="font-bold text-white text-right">{selectedFdDetail.approvedBy}</span>
+                <div className="p-3.5 rounded-xl border border-[#FBCFE8] bg-[#FFF5F8]/80 text-xs space-y-2 font-mono">
+                  <div className="flex justify-between border-b border-[#FBCFE8]/40 pb-1.5">
+                    <span className="text-[#BE185D]/75 font-sans">Approved By:</span>
+                    <span className="font-bold text-[#4A044E] text-right">{selectedFdDetail.approvedBy}</span>
                   </div>
-                  <div className="flex justify-between border-b border-[#141b44]/40 pb-1.5">
-                    <span className="text-[#8496bf] font-sans">Branch Manager:</span>
-                    <span className="font-bold text-white text-right">{selectedFdDetail.approvalBranchManager}</span>
+                  <div className="flex justify-between border-b border-[#FBCFE8]/40 pb-1.5">
+                    <span className="text-[#BE185D]/75 font-sans">Branch Manager:</span>
+                    <span className="font-bold text-[#4A044E] text-right">{selectedFdDetail.approvalBranchManager}</span>
                   </div>
-                  <div className="flex justify-between border-b border-[#141b44]/40 pb-1.5">
-                    <span className="text-[#8496bf] font-sans">Approval Date:</span>
-                    <span className="font-bold text-white text-right">{selectedFdDetail.approvalDate}</span>
+                  <div className="flex justify-between border-b border-[#FBCFE8]/40 pb-1.5">
+                    <span className="text-[#BE185D]/75 font-sans">Approval Date:</span>
+                    <span className="font-bold text-[#4A044E] text-right">{selectedFdDetail.approvalDate}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-[#8496bf] font-sans">Approval Time:</span>
-                    <span className="font-bold text-white text-right">{selectedFdDetail.approvalTime}</span>
+                    <span className="text-[#BE185D]/75 font-sans">Approval Time:</span>
+                    <span className="font-bold text-[#4A044E] text-right">{selectedFdDetail.approvalTime}</span>
                   </div>
                 </div>
               </div>
@@ -946,12 +946,12 @@ export default function FixedDeposits({
 
                 <div className="space-y-2 max-h-48 overflow-y-auto pr-1">
                   {selectedFdDetail.transactions.map((tx, idx) => (
-                    <div key={idx} className="p-3 border border-[#141b4a]/60 bg-[#04081d] rounded-xl text-xs space-y-1 font-mono">
-                      <div className="flex justify-between items-center border-b border-[#141b44]/30 pb-1">
+                    <div key={idx} className="p-3 border border-[#FBCFE8]/60 bg-[#FFF5F8] rounded-xl text-xs space-y-1 font-mono">
+                      <div className="flex justify-between items-center border-b border-[#FBCFE8]/30 pb-1">
                         <span className="font-bold text-amber-400 text-[10px]">{tx.type}</span>
-                        <span className="text-white font-bold">${tx.amount.toLocaleString(undefined, { minimumFractionDigits: 2 })}</span>
+                        <span className="text-[#4A044E] font-bold">${tx.amount.toLocaleString(undefined, { minimumFractionDigits: 2 })}</span>
                       </div>
-                      <div className="flex justify-between text-[10px] text-[#8496bf]">
+                      <div className="flex justify-between text-[10px] text-[#BE185D]/75">
                         <span>{tx.date} • {tx.time}</span>
                         <span className="font-sans text-stone-400">{tx.branch}</span>
                       </div>
@@ -991,10 +991,10 @@ export default function FixedDeposits({
 
             </div>
           ) : (
-            <div className="py-24 text-center text-xs text-[#556994] border border-dashed border-[#17235a]/50 rounded-2xl bg-[#070c2e]/40 p-6 space-y-2">
-              <PiggyBank size={32} className="mx-auto text-slate-500 opacity-40" />
-              <p className="font-bold text-white">No Record Inspected</p>
-              <p className="text-[#556994]">Select any account to load sovereign reserve certificates.</p>
+            <div className="py-24 text-center text-xs text-[#9D174D]/80 border border-dashed border-[#F9A8D4]/50 rounded-2xl bg-[#FCE7F3]/60 p-6 space-y-2">
+              <PiggyBank size={32} className="mx-auto text-[#9D174D]/75 opacity-40" />
+              <p className="font-bold text-[#4A044E]">No Record Inspected</p>
+              <p className="text-[#9D174D]/80">Select any account to load sovereign reserve certificates.</p>
             </div>
           )}
         </div>

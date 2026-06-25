@@ -221,16 +221,16 @@ export default function AIFeatures({
     <div className="space-y-6" id="aifeatures-module">
       
       {/* Top Filter Section */}
-      <div className="p-5 rounded-xl border border-[#17235a]/80 bg-[#061035] shadow-xl space-y-4">
-        <div className="flex items-center gap-2 pb-1 border-b border-[#141b44]">
+      <div className="p-5 rounded-xl border border-[#F9A8D4]/80 bg-[#FCE7F3] shadow-xl space-y-4">
+        <div className="flex items-center gap-2 pb-1 border-b border-[#FBCFE8]">
           <BrainCircuit size={14} className="text-amber-400" />
-          <h4 className="text-xs font-bold text-white uppercase tracking-wider">AI Financial Intelligence Workbench</h4>
+          <h4 className="text-xs font-bold text-[#4A044E] uppercase tracking-wider">AI Financial Intelligence Workbench</h4>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Analysis Filters */}
           <div className="space-y-1.5">
-            <label className="text-[10px] text-[#8496bf] uppercase tracking-wide font-bold">Analysis Category</label>
+            <label className="text-[10px] text-[#BE185D]/75 uppercase tracking-wide font-bold">Analysis Category</label>
             <div className="flex flex-wrap gap-1.5">
               {(['All', 'Customers', 'Employees'] as const).map((type) => (
                 <button
@@ -242,7 +242,7 @@ export default function AIFeatures({
                   className={`px-3 py-1.5 text-xs font-semibold rounded-lg border transition-all cursor-pointer ${
                     analysisFilter === type
                       ? 'bg-amber-500/10 border-amber-500/60 text-amber-400 hover:bg-amber-500/25'
-                      : 'bg-[#111942]/60 border-[#17235a] text-[#8496bf] hover:bg-[#111942] hover:text-white'
+                      : 'bg-[#FFF1F5]/60 border-[#F9A8D4] text-[#BE185D]/75 hover:bg-[#FFF1F5] hover:text-[#4A044E]'
                   }`}
                 >
                   <span className="flex items-center gap-1">
@@ -257,7 +257,7 @@ export default function AIFeatures({
 
           {/* AI Intelligence Filters */}
           <div className="space-y-1.5">
-            <label className="text-[10px] text-[#8496bf] uppercase tracking-wide font-bold">AI Intelligence Vectors</label>
+            <label className="text-[10px] text-[#BE185D]/75 uppercase tracking-wide font-bold">AI Intelligence Vectors</label>
             <div className="flex flex-wrap gap-1.5">
               {(['Risk', 'Liquidity', 'Compliance Audit', 'Credit Score'] as const).map((intel) => (
                 <button
@@ -269,7 +269,7 @@ export default function AIFeatures({
                   className={`px-3 py-1.5 text-xs font-semibold rounded-lg border transition-all cursor-pointer ${
                     aiIntelligenceFilter === intel
                       ? 'bg-indigo-500/10 border-indigo-500/60 text-indigo-400 hover:bg-indigo-500/25'
-                      : 'bg-[#111942]/60 border-[#17235a] text-[#8496bf] hover:bg-[#111942] hover:text-white'
+                      : 'bg-[#FFF1F5]/60 border-[#F9A8D4] text-[#BE185D]/75 hover:bg-[#FFF1F5] hover:text-[#4A044E]'
                   }`}
                 >
                   <span className="flex items-center gap-1">
@@ -298,12 +298,12 @@ export default function AIFeatures({
             </span>
 
             <div className="space-y-1 select-none text-xs">
-              <label className="text-[#8496bf] font-bold uppercase tracking-wide">Target Ledger Owner:</label>
+              <label className="text-[#BE185D]/75 font-bold uppercase tracking-wide">Target Ledger Owner:</label>
               <select
                 id="ai-insight-customer-select"
                 value={activeTarget ? activeTarget.id : ''}
                 onChange={(e) => setSelectedCustomerId(e.target.value)}
-                className="w-full bg-[#0a1135] border border-[#1b2557] text-white p-2.5 rounded-lg outline-none cursor-pointer"
+                className="w-full bg-[#FFF1F5] border border-[#F9A8D4] text-[#4A044E] p-2.5 rounded-lg outline-none cursor-pointer"
               >
                 {selectableTargets.map((t) => (
                   <option key={t.id} value={t.id}>{t.name} ({t.id} - {t.type})</option>
@@ -322,36 +322,36 @@ export default function AIFeatures({
             </button>
           </div>
 
-          <div className="text-[10px] text-[#556994] font-mono border-t border-[#131b40]/60 pt-4 mt-6">
+          <div className="text-[10px] text-[#9D174D]/80 font-mono border-t border-[#131b40]/60 pt-4 mt-6">
             Core AI engine utilizes sovereign risk filters under compliance mandate tier-1.
           </div>
         </div>
 
         {/* AI Insight Outputs */}
-        <div className="lg:col-span-2 p-6 rounded-2xl border border-[#17235a]/60 bg-[#070c2e]/80 shadow-2xl relative flex flex-col justify-between min-h-[350px]">
+        <div className="lg:col-span-2 p-6 rounded-2xl border border-[#F9A8D4] bg-[#FCE7F3]/90 shadow-2xl relative flex flex-col justify-between min-h-[350px]">
           <div>
             <span className="text-amber-500 text-[10px] tracking-widest uppercase font-mono font-bold block">Cognitive Outputs</span>
-            <h3 className="text-base font-bold text-white mt-1 flex items-center gap-1.5">
+            <h3 className="text-base font-bold text-[#4A044E] mt-1 flex items-center gap-1.5">
               <Sparkles size={16} className="text-amber-500 animate-pulse" />
               Dynamic Intelligent Report Matrix ({aiIntelligenceFilter})
             </h3>
           </div>
 
-          <div className="flex-1 mt-4 p-4 rounded-xl border border-[#141b44] bg-[#04081c]/60 overflow-y-auto text-xs text-slate-300 leading-relaxed font-mono select-text h-64 whitespace-pre-line">
+          <div className="flex-1 mt-4 p-4 rounded-xl border border-[#FBCFE8] bg-[#FFF5F8]/80 overflow-y-auto text-xs text-[#831843] leading-relaxed font-mono select-text h-64 whitespace-pre-line">
             {insightOutput ? (
               <div>{insightOutput}</div>
             ) : (
-              <div className="h-full flex flex-col items-center justify-center text-[#556994] text-center p-6 font-sans">
+              <div className="h-full flex flex-col items-center justify-center text-[#9D174D]/80 text-center p-6 font-sans">
                 <BrainCircuit size={40} className="text-[#152361] mb-4 animate-bounce" />
-                <p className="font-bold text-slate-300">Evaluate Compliance Diagnostics</p>
-                <p className="text-[11px] text-[#556994] mt-1 max-w-[340px]">
+                <p className="font-bold text-[#831843]">Evaluate Compliance Diagnostics</p>
+                <p className="text-[11px] text-[#9D174D]/80 mt-1 max-w-[340px]">
                   Select any Customer or Employee record above, choose an AI intelligence vector, and click "Compile Smart Insights" to inspect neural bank matrices.
                 </p>
               </div>
             )}
           </div>
 
-          <div className="flex justify-between items-center text-[10px] text-[#556994] font-mono border-t border-[#131b40]/60 pt-3.5 mt-4">
+          <div className="flex justify-between items-center text-[10px] text-[#9D174D]/80 font-mono border-t border-[#131b40]/60 pt-3.5 mt-4">
             <span>COGNITIVE REPORT INTERPOLATIONS ENCRYPT_OK</span>
             <span>SECURE PROXY HUB 3000 SYNCED</span>
           </div>
@@ -360,23 +360,23 @@ export default function AIFeatures({
       </div>
 
       {/* Interactive AI Query Terminal prompter */}
-      <div className="p-6 rounded-2xl border border-[#17235a]/60 bg-[#070c2e]/80 shadow-2xl space-y-4">
+      <div className="p-6 rounded-2xl border border-[#F9A8D4] bg-[#FCE7F3]/90 shadow-2xl space-y-4">
         <div>
-          <h3 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-1.5 leading-normal">
+          <h3 className="text-sm font-bold text-[#4A044E] uppercase tracking-wider flex items-center gap-1.5 leading-normal">
             <Sparkles size={14} className="text-amber-500 fill-amber-500/20" />
             Apex Real-Time Financial Query Prompter
           </h3>
-          <p className="text-xs text-[#556994]">Type any financial balance question, default assessment queries or fraud scan summaries. The AI analyzes local states dynamically.</p>
+          <p className="text-xs text-[#9D174D]/80">Type any financial balance question, default assessment queries or fraud scan summaries. The AI analyzes local states dynamically.</p>
         </div>
 
         {/* Mini Chat dialog box */}
-        <div className="space-y-4 max-h-80 overflow-y-auto border border-[#141b4a] p-4 bg-[#04081c]/60 rounded-xl select-text h-64">
+        <div className="space-y-4 max-h-80 overflow-y-auto border border-[#FBCFE8] p-4 bg-[#FFF5F8]/80 rounded-xl select-text h-64">
           {aiPrompterChat.map((msg, idx) => (
             <div key={idx} className={`flex gap-3 max-w-2xl ${msg.sender === 'user' ? 'ml-auto flex-row-reverse' : ''}`}>
               <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs text-[#04081c] shrink-0 ${msg.sender === 'user' ? 'bg-amber-400' : 'bg-[#d4af37]'}`}>
                 {msg.sender === 'user' ? 'AD' : 'AI'}
               </div>
-              <div className={`p-4 rounded-xl text-xs leading-relaxed font-mono ${msg.sender === 'user' ? 'bg-[#152361] text-white' : 'bg-[#0d153a] text-amber-100'}`}>
+              <div className={`p-4 rounded-xl text-xs leading-relaxed font-mono ${msg.sender === 'user' ? 'bg-[#152361] text-[#4A044E]' : 'bg-[#FDF2F8] text-amber-100'}`}>
                 {msg.text}
               </div>
             </div>
@@ -392,12 +392,12 @@ export default function AIFeatures({
             value={aiPrompterText}
             onChange={(e) => setAiPrompterText(e.target.value)}
             placeholder="e.g. 'Review aggregate deposition balances' or 'Show current loan underwriter default risk score'..."
-            className="flex-1 bg-[#0a1135] border border-[#1b2557] focus:border-[#d4af37]/60 text-white placeholder-[#4c5c87] p-2.5 rounded-xl text-xs outline-none font-mono"
+            className="flex-1 bg-[#FFF1F5] border border-[#F9A8D4] focus:border-[#d4af37]/60 text-[#4A044E] placeholder-[#4c5c87] p-2.5 rounded-xl text-xs outline-none font-mono"
           />
           <button 
             id="ai-prompter-submit-btn"
             type="submit"
-            className="px-5 py-2.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-white text-xs font-bold uppercase rounded-xl transition-all cursor-pointer"
+            className="px-5 py-2.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-[#4A044E] text-xs font-bold uppercase rounded-xl transition-all cursor-pointer"
           >
             Submit Query
           </button>

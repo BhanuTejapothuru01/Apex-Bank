@@ -1024,11 +1024,11 @@ export default function LoanManagement({
       
       {/* Absolute Dynamic System toast */}
       {feedback && (
-        <div id="toast-lending-notification" className="fixed bottom-5 right-5 z-50 p-4 rounded-xl border border-[#d4af37]/40 bg-[#060a28] shadow-2xl animate-bounce flex items-center gap-3 max-w-sm">
+        <div id="toast-lending-notification" className="fixed bottom-5 right-5 z-50 p-4 rounded-xl border border-[#d4af37]/40 bg-[#FDF2F8] shadow-2xl animate-bounce flex items-center gap-3 max-w-sm">
           <ShieldAlert className="text-[#d4af37] animate-pulse" size={18} />
           <div>
             <p className="text-[10px] font-mono text-[#d4af37] font-bold uppercase tracking-widest">Sovereign Credit Broadcast</p>
-            <p className="text-xs text-white mt-0.5">{feedback}</p>
+            <p className="text-xs text-[#4A044E] mt-0.5">{feedback}</p>
           </div>
         </div>
       )}
@@ -1051,26 +1051,26 @@ export default function LoanManagement({
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="bg-[#0a1135] border border-[#232d66] p-6 rounded-2xl max-w-sm w-full shadow-2xl space-y-4"
+              className="bg-[#FFF1F5] border border-[#F9A8D4] p-6 rounded-2xl max-w-sm w-full shadow-2xl space-y-4"
             >
               <div className="flex items-center gap-3 text-amber-400">
                 <ShieldAlert size={28} />
                 <h3 className="text-lg font-bold">Security Clearance Required</h3>
               </div>
-              <p className="text-slate-300 text-sm leading-relaxed">
-                You are about to execute a Level 5 Super Admin override: <span className="text-white font-bold">{confirmAction.name}</span>. 
+              <p className="text-[#831843] text-sm leading-relaxed">
+                You are about to execute a Level 5 Super Admin override: <span className="text-[#4A044E] font-bold">{confirmAction.name}</span>. 
                 This action will be permanently recorded in the immutable audit ledger.
               </p>
               <div className="flex gap-3 pt-2">
                 <button 
                   onClick={() => setConfirmAction(null)}
-                  className="flex-1 py-2 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 font-bold transition-colors cursor-pointer"
+                  className="flex-1 py-2 rounded-lg bg-[#FDF2F8] text-[#831843] hover:bg-slate-700 font-bold transition-colors cursor-pointer"
                 >
                   Abort
                 </button>
                 <button 
                   onClick={confirmAction.handler}
-                  className="flex-1 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-500 font-bold transition-all shadow-[0_0_15px_rgba(37,99,235,0.4)] cursor-pointer"
+                  className="flex-1 py-2 rounded-lg bg-blue-600 text-[#4A044E] hover:bg-blue-500 font-bold transition-all shadow-[0_0_15px_rgba(37,99,235,0.4)] cursor-pointer"
                 >
                   Authorize
                 </button>
@@ -1083,38 +1083,38 @@ export default function LoanManagement({
       {/* Structured Credit KPI Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         
-        <div className="p-5 rounded-2xl border border-[#17235a]/60 bg-[#070c2e]/80 shadow-2xl relative">
+        <div className="p-5 rounded-2xl border border-[#F9A8D4] bg-[#FCE7F3]/90 shadow-2xl relative">
           <div className="absolute top-2 right-4 text-emerald-500 opacity-20"><Coins size={36} /></div>
           <span className="text-amber-500 text-[9px] font-mono tracking-widest uppercase font-bold block">Aggregated Issuance</span>
-          <h3 className="text-sm font-bold text-white mt-1">Outstanding Capital Disbursed</h3>
-          <p className="text-2xl font-bold font-mono text-white mt-3">
+          <h3 className="text-sm font-bold text-[#4A044E] mt-1">Outstanding Capital Disbursed</h3>
+          <p className="text-2xl font-bold font-mono text-[#4A044E] mt-3">
             {formatUSD(aggregatedStats.totalIssued)}
           </p>
-          <div className="text-[10px] text-slate-500 font-mono mt-1 flex items-center gap-1">
+          <div className="text-[10px] text-[#9D174D]/75 font-mono mt-1 flex items-center gap-1">
             <span className="text-emerald-400">● Live Ledger Linked</span>
           </div>
         </div>
 
-        <div className="p-5 rounded-2xl border border-[#17235a]/60 bg-[#070c2e]/80 shadow-2xl relative">
+        <div className="p-5 rounded-2xl border border-[#F9A8D4] bg-[#FCE7F3]/90 shadow-2xl relative">
           <div className="absolute top-2 right-4 text-[#d4af37] opacity-20"><Clock size={36} /></div>
           <span className="text-blue-400 text-[9px] font-mono tracking-widest uppercase font-bold block">Appraisal Pipeline</span>
-          <h3 className="text-sm font-bold text-white mt-1">Pending Application Capital</h3>
-          <p className="text-2xl font-bold font-mono text-white mt-3 text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-amber-500">
+          <h3 className="text-sm font-bold text-[#4A044E] mt-1">Pending Application Capital</h3>
+          <p className="text-2xl font-bold font-mono text-[#4A044E] mt-3 text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-amber-500">
             {formatUSD(aggregatedStats.pendingIssued)}
           </p>
-          <div className="text-[10px] text-slate-500 font-mono mt-1 flex items-center gap-1">
+          <div className="text-[10px] text-[#9D174D]/75 font-mono mt-1 flex items-center gap-1">
             <span className="text-amber-500 animate-pulse">● Risk Analysis Running</span>
           </div>
         </div>
 
-        <div className="p-5 rounded-2xl border border-[#17235a]/60 bg-[#070c2e]/80 shadow-2xl relative">
+        <div className="p-5 rounded-2xl border border-[#F9A8D4] bg-[#FCE7F3]/90 shadow-2xl relative">
           <div className="absolute top-2 right-4 text-rose-500 opacity-20"><AlertTriangle size={36} /></div>
           <span className="text-rose-500 text-[9px] font-mono tracking-widest uppercase font-bold block">Threat metrics</span>
-          <h3 className="text-sm font-bold text-white mt-1">Avg Structural Portfolio Risk</h3>
+          <h3 className="text-sm font-bold text-[#4A044E] mt-1">Avg Structural Portfolio Risk</h3>
           <p className="text-2xl font-bold font-mono text-rose-400 mt-3">
             {aggregatedStats.meanRisk.toFixed(1)}% Score
           </p>
-          <div className="text-[10px] text-slate-500 font-mono mt-1 flex items-center gap-1">
+          <div className="text-[10px] text-[#9D174D]/75 font-mono mt-1 flex items-center gap-1">
             <span className="text-rose-400">● Compliance limit: 45.0%</span>
           </div>
         </div>
@@ -1125,13 +1125,13 @@ export default function LoanManagement({
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
         {/* Ledger area */}
-        <div className="lg:col-span-2 p-3 sm:p-5 lg:p-6 rounded-2xl border border-[#17235a]/60 bg-[#070c2e]/80 shadow-2xl space-y-5">
+        <div className="lg:col-span-2 p-3 sm:p-5 lg:p-6 rounded-2xl border border-[#F9A8D4] bg-[#FCE7F3]/90 shadow-2xl space-y-5">
           
           {/* Header & searching */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
-              <h3 className="text-sm font-bold text-white uppercase tracking-wider">Credit Allocation Ledger</h3>
-              <p className="text-[#556994] text-xs">Authorize, audit, and analyze sovereign lending schemes globally.</p>
+              <h3 className="text-sm font-bold text-[#4A044E] uppercase tracking-wider">Credit Allocation Ledger</h3>
+              <p className="text-[#9D174D]/80 text-xs">Authorize, audit, and analyze sovereign lending schemes globally.</p>
             </div>
 
             <div className="relative max-w-sm w-full">
@@ -1141,14 +1141,14 @@ export default function LoanManagement({
                 placeholder="Search Loan ID, Name, Account, Phone, Branch..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-[#04081c] border border-[#141b44] focus:border-amber-500 text-xs px-3.5 py-2 pl-9 rounded-xl text-white outline-none placeholder-slate-500 transition-all font-sans"
+                className="w-full bg-[#FFF5F8] border border-[#FBCFE8] focus:border-amber-500 text-xs px-3.5 py-2 pl-9 rounded-xl text-[#4A044E] outline-none placeholder-slate-500 transition-all font-sans"
               />
-              <Search size={14} className="absolute left-3 top-2.5 text-slate-500" />
+              <Search size={14} className="absolute left-3 top-2.5 text-[#9D174D]/75" />
             </div>
           </div>
 
           {/* New Segment Filter Controller Buttons */}
-          <div id="credit-filter-grid" className="p-4 rounded-xl border border-[#141b44] bg-[#04081c]/70 space-y-3">
+          <div id="credit-filter-grid" className="p-4 rounded-xl border border-[#FBCFE8] bg-[#FFF5F8]/85 space-y-3">
             
             {/* ROW 1: Applicant Filters (Customers / Employees) */}
             <div className="flex flex-col sm:flex-row sm:items-center gap-2">
@@ -1161,7 +1161,7 @@ export default function LoanManagement({
                     className={`px-3 py-1 text-[10px] rounded-lg border font-mono font-bold transition-all ${
                       applicantFilter === f 
                         ? 'bg-amber-500/20 text-[#d4af37] border-amber-500/50' 
-                        : 'bg-[#060a24]/80 text-slate-400 border-[#141c48] hover:border-slate-700 hover:text-slate-250'
+                        : 'bg-[#FDF2F8]/90 text-[#9D174D]/85 border-[#FBCFE8] hover:border-slate-700 hover:text-slate-250'
                     }`}
                   >
                     {f === 'All' ? 'All Applicants' : f === 'Customer' ? 'Customers' : 'Employees'}
@@ -1181,7 +1181,7 @@ export default function LoanManagement({
                     className={`px-3 py-1 text-[10px] rounded-lg border font-mono font-bold transition-all ${
                       loanStatusFilter === s 
                         ? 'bg-blue-500/20 text-blue-400 border-blue-500/50' 
-                        : 'bg-[#060a24]/80 text-slate-400 border-[#141c48] hover:border-slate-700 hover:text-slate-250'
+                        : 'bg-[#FDF2F8]/90 text-[#9D174D]/85 border-[#FBCFE8] hover:border-slate-700 hover:text-slate-250'
                     }`}
                   >
                     {s === 'All' ? 'All Loans' : s}
@@ -1192,7 +1192,7 @@ export default function LoanManagement({
 
             {/* ROW 3: Loan Type Filters */}
             <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-              <span className="text-[10px] font-mono uppercase font-bold text-slate-400 tracking-wider w-28">Category Schema:</span>
+              <span className="text-[10px] font-mono uppercase font-bold text-[#9D174D]/85 tracking-wider w-28">Category Schema:</span>
               <div className="flex flex-wrap gap-1.5">
                 {(['All', 'Personal Loan', 'Home Loan', 'Vehicle Loan', 'Education Loan', 'Business Loan', 'Corporate Loan', 'Gold Loan'] as const).map(t => (
                   <button
@@ -1201,7 +1201,7 @@ export default function LoanManagement({
                     className={`px-3 py-1 text-[10px] rounded-lg border font-mono font-semibold transition-all ${
                       loanTypeFilter === t 
                         ? 'bg-indigo-500/20 text-indigo-400 border-indigo-500/50' 
-                        : 'bg-[#060a24]/80 text-slate-400 border-[#141c48] hover:border-slate-700 hover:text-slate-250'
+                        : 'bg-[#FDF2F8]/90 text-[#9D174D]/85 border-[#FBCFE8] hover:border-slate-700 hover:text-slate-250'
                     }`}
                   >
                     {t}
@@ -1216,7 +1216,7 @@ export default function LoanManagement({
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="border-b border-[#141c48] text-[9px] text-[#8496bf] font-bold uppercase tracking-wider">
+                <tr className="border-b border-[#FBCFE8] text-[9px] text-[#BE185D]/75 font-bold uppercase tracking-wider">
                   <th className="py-3 px-3">Loan ID</th>
                   <th className="py-3 px-3">Applicant details</th>
                   <th className="py-3 px-3">Classification Type</th>
@@ -1228,7 +1228,7 @@ export default function LoanManagement({
               <tbody className="divide-y divide-[#141c48]">
                 {filteredLoans.length === 0 ? (
                   <tr>
-                    <td colSpan={6} className="text-center py-10 text-xs text-slate-500">
+                    <td colSpan={6} className="text-center py-10 text-xs text-[#9D174D]/75">
                       No loan records correspond to the requested structural filters.
                     </td>
                   </tr>
@@ -1240,13 +1240,13 @@ export default function LoanManagement({
                         id={`loan-row-${l.id}`}
                         key={l.id}
                         onClick={() => setSelectedLoanId(l.id)}
-                        className={`text-xs hover:bg-[#121c4b]/50 transition-colors cursor-pointer ${
+                        className={`text-xs hover:bg-[#FBCFE8]/70 transition-colors cursor-pointer ${
                           isSelected ? 'bg-[#152361]/60 border-l-2 border-amber-500' : ''
                         }`}
                       >
-                        <td className="py-3 px-3 font-mono font-bold text-slate-300">{l.id}</td>
+                        <td className="py-3 px-3 font-mono font-bold text-[#831843]">{l.id}</td>
                         <td className="py-3 px-3">
-                          <div className="font-semibold text-white flex items-center gap-1.5">
+                          <div className="font-semibold text-[#4A044E] flex items-center gap-1.5">
                             {l.applicantName}
                             <span className={`px-1 rounded text-[8px] font-mono leading-none ${
                               l.applicantType === 'Employee' 
@@ -1256,10 +1256,10 @@ export default function LoanManagement({
                               {l.applicantType === 'Employee' ? 'Staff' : 'Client'}
                             </span>
                           </div>
-                          <span className="text-[10px] text-[#556994] font-mono lowercase block truncate w-48">{l.purpose}</span>
+                          <span className="text-[10px] text-[#9D174D]/80 font-mono lowercase block truncate w-48">{l.purpose}</span>
                         </td>
                         <td className="py-3 px-3 text-indigo-300 font-mono font-medium">{l.loanType}</td>
-                        <td className="py-3 px-3 font-mono font-semibold text-white">
+                        <td className="py-3 px-3 font-mono font-semibold text-[#4A044E]">
                           {formatUSD(l.amount)}
                         </td>
                         <td className="py-3 px-3 text-center">
@@ -1280,7 +1280,7 @@ export default function LoanManagement({
                               : l.status === 'Pending'
                                 ? 'bg-amber-500/15 text-amber-500 animate-pulse'
                                 : l.status === 'Closed'
-                                  ? 'bg-slate-700 text-slate-300'
+                                  ? 'bg-slate-700 text-[#831843]'
                                   : l.status === 'Overdue'
                                     ? 'bg-orange-500/20 text-orange-400 border border-orange-500/30'
                                     : 'bg-rose-500/15 text-rose-400'
@@ -1299,50 +1299,50 @@ export default function LoanManagement({
         </div>
 
         {/* Dynamic Context Profile Side Panel */}
-        <div id="loan-secure-details-box" className="rounded-2xl border border-[#17235a]/60 bg-[#070c2e]/80 shadow-2xl p-4 sm:p-5 lg:p-6 flex flex-col justify-between relative overflow-y-auto max-h-[1200px] scrollbar-thin">
+        <div id="loan-secure-details-box" className="rounded-2xl border border-[#F9A8D4] bg-[#FCE7F3]/90 shadow-2xl p-4 sm:p-5 lg:p-6 flex flex-col justify-between relative overflow-y-auto max-h-[1200px] scrollbar-thin">
           <div className="absolute top-0 inset-x-0 h-[3px] bg-gradient-to-r from-transparent via-[#d4af37] to-transparent" />
           
           {activeLoanItem ? (
             <div className="space-y-6">
               
               {/* Header profile info */}
-              <div className="flex items-center gap-4 border-b border-[#141b44] pb-4">
-                <div className="w-14 h-14 rounded-full bg-gradient-to-tr from-[#d4af37]/30 to-indigo-600/40 border-2 border-[#d4af37] flex items-center justify-center font-bold text-white shadow-lg text-lg">
+              <div className="flex items-center gap-4 border-b border-[#FBCFE8] pb-4">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-tr from-[#d4af37]/30 to-indigo-600/40 border-2 border-[#d4af37] flex items-center justify-center font-bold text-[#4A044E] shadow-lg text-lg">
                   {activeLoanItem.applicantName.split(' ')[0][0]}{activeLoanItem.applicantName.split(' ').slice(-1)[0][0] || ''}
                 </div>
                 <div>
                   <span className="text-[9px] font-mono text-amber-500 font-bold uppercase tracking-widest block">Audit profile gate</span>
-                  <h4 className="text-md font-bold text-white leading-tight">{activeLoanItem.applicantName}</h4>
-                  <p className="text-[10px] font-mono text-slate-400 mt-1">{activeLoanItem.applicantType} Profile ID: {activeLoanItem.applicantId}</p>
+                  <h4 className="text-md font-bold text-[#4A044E] leading-tight">{activeLoanItem.applicantName}</h4>
+                  <p className="text-[10px] font-mono text-[#9D174D]/85 mt-1">{activeLoanItem.applicantType} Profile ID: {activeLoanItem.applicantId}</p>
                 </div>
               </div>
 
               {/* 1. Applicant Information */}
               <div className="space-y-2">
-                <p className="text-[10px] font-mono uppercase tracking-widest text-[#8496bf] font-bold">1. Applicant Profile Overview</p>
-                <div className="p-3.5 rounded-xl border border-[#141b44] bg-[#04081c]/60 space-y-2 text-xs w-full max-w-full box-border h-auto min-h-max animate-fade-in">
+                <p className="text-[10px] font-mono uppercase tracking-widest text-[#BE185D]/75 font-bold">1. Applicant Profile Overview</p>
+                <div className="p-3.5 rounded-xl border border-[#FBCFE8] bg-[#FFF5F8]/80 space-y-2 text-xs w-full max-w-full box-border h-auto min-h-max animate-fade-in">
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left flex-shrink-0 select-none">Application Name:</span>
-                    <span className="w-[65%] text-white font-semibold text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.applicantName}</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left flex-shrink-0 select-none">Application Name:</span>
+                    <span className="w-[65%] text-[#4A044E] font-semibold text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.applicantName}</span>
                   </div>
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-mono font-semibold text-left flex-shrink-0 select-none">Reference Code:</span>
-                    <span className="w-[65%] text-white font-mono font-medium text-left break-all [word-break:break-all] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.applicantId}</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-mono font-semibold text-left flex-shrink-0 select-none">Reference Code:</span>
+                    <span className="w-[65%] text-[#4A044E] font-mono font-medium text-left break-all [word-break:break-all] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.applicantId}</span>
                   </div>
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-mono font-semibold text-left flex-shrink-0 select-none">Mobile Number:</span>
-                    <span className="w-[65%] text-slate-300 font-mono text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.phone}</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-mono font-semibold text-left flex-shrink-0 select-none">Mobile Number:</span>
+                    <span className="w-[65%] text-[#831843] font-mono text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.phone}</span>
                   </div>
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-mono font-semibold text-left flex-shrink-0 select-none">Official Email:</span>
-                    <span className="w-[65%] text-slate-300 text-[11px] font-mono text-left break-all [word-break:break-word] [overflow-wrap:break-word] whitespace-normal" title={activeLoanItem.email}>{activeLoanItem.email}</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-mono font-semibold text-left flex-shrink-0 select-none">Official Email:</span>
+                    <span className="w-[65%] text-[#831843] text-[11px] font-mono text-left break-all [word-break:break-word] [overflow-wrap:break-word] whitespace-normal" title={activeLoanItem.email}>{activeLoanItem.email}</span>
                   </div>
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left flex-shrink-0 select-none">Designation Role:</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left flex-shrink-0 select-none">Designation Role:</span>
                     <span className="w-[65%] text-indigo-400 font-mono text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.applicantType} Account</span>
                   </div>
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left flex-shrink-0 select-none">Applicant status:</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left flex-shrink-0 select-none">Applicant status:</span>
                     <div className="w-[65%] text-left">
                       <span className="inline-block px-1.5 py-0.5 rounded text-[9px] font-sans font-bold bg-emerald-500/10 text-emerald-400">Active Clear</span>
                     </div>
@@ -1352,38 +1352,38 @@ export default function LoanManagement({
 
               {/* 2. Loan Information */}
               <div className="space-y-2 font-sans">
-                <p className="text-[10px] font-mono uppercase tracking-widest text-[#8496bf] font-bold">2. Loan Information Ledger</p>
-                <div className="p-3.5 rounded-xl border border-[#141b44] bg-[#04081c]/60 space-y-2 text-xs w-full max-w-full box-border h-auto min-h-max">
+                <p className="text-[10px] font-mono uppercase tracking-widest text-[#BE185D]/75 font-bold">2. Loan Information Ledger</p>
+                <div className="p-3.5 rounded-xl border border-[#FBCFE8] bg-[#FFF5F8]/80 space-y-2 text-xs w-full max-w-full box-border h-auto min-h-max">
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left flex-shrink-0 select-none">Lending ID:</span>
-                    <span className="w-[65%] text-white font-mono font-bold text-left break-all [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.id}</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left flex-shrink-0 select-none">Lending ID:</span>
+                    <span className="w-[65%] text-[#4A044E] font-mono font-bold text-left break-all [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.id}</span>
                   </div>
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-mono font-semibold text-left flex-shrink-0 select-none">Lending Type:</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-mono font-semibold text-left flex-shrink-0 select-none">Lending Type:</span>
                     <span className="w-[65%] text-[#d4af37] font-bold text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.loanType}</span>
                   </div>
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left flex-shrink-0 select-none">Asset Amount:</span>
-                    <span className="w-[65%] text-white font-mono font-black text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{formatUSD(activeLoanItem.amount)}</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left flex-shrink-0 select-none">Asset Amount:</span>
+                    <span className="w-[65%] text-[#4A044E] font-mono font-black text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{formatUSD(activeLoanItem.amount)}</span>
                   </div>
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-mono font-semibold text-left flex-shrink-0 select-none">Interest APR Rate:</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-mono font-semibold text-left flex-shrink-0 select-none">Interest APR Rate:</span>
                     <span className="w-[65%] text-indigo-400 font-mono font-bold text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.interestRate}% APR Yield</span>
                   </div>
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left flex-shrink-0 select-none">Amortization Tenure:</span>
-                    <span className="w-[65%] text-slate-300 font-mono text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.duration} Months</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left flex-shrink-0 select-none">Amortization Tenure:</span>
+                    <span className="w-[65%] text-[#831843] font-mono text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.duration} Months</span>
                   </div>
-                  <div className="flex items-start w-full gap-2 py-0.5 border-t border-[#141b44]/55 pt-2 mt-2">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left flex-shrink-0 select-none">Monthly EMI Payment:</span>
+                  <div className="flex items-start w-full gap-2 py-0.5 border-t border-[#FBCFE8]/55 pt-2 mt-2">
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left flex-shrink-0 select-none">Monthly EMI Payment:</span>
                     <span className="w-[65%] text-[#10b981] font-mono font-bold text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{formatUSD(activeLoanItem.emiAmount)}</span>
                   </div>
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left flex-shrink-0 select-none">Outstanding Debt Balance:</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left flex-shrink-0 select-none">Outstanding Debt Balance:</span>
                     <span className="w-[65%] text-orange-400 font-mono font-extrabold text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{formatUSD(activeLoanItem.remainingBalance)}</span>
                   </div>
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left flex-shrink-0 select-none">Sovereign State:</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left flex-shrink-0 select-none">Sovereign State:</span>
                     <div className="w-[65%] text-left">
                       <span className={`inline-block px-2 py-0.5 rounded font-mono text-[9px] font-bold ${
                         activeLoanItem.status === 'Approved' ? 'bg-emerald-500/10 text-emerald-400' : activeLoanItem.status === 'Pending' ? 'bg-amber-500/10 text-amber-500' : 'bg-rose-500/10 text-rose-400'
@@ -1395,45 +1395,45 @@ export default function LoanManagement({
 
               {/* 3. Account Information */}
               <div className="space-y-2">
-                <p className="text-[10px] font-mono uppercase tracking-widest text-[#8496bf] font-bold">3. Account Link Connection</p>
-                <div className="p-3.5 rounded-xl border border-[#141b44] bg-[#04081c]/60 space-y-2 text-xs w-full max-w-full box-border h-auto min-h-max">
+                <p className="text-[10px] font-mono uppercase tracking-widest text-[#BE185D]/75 font-bold">3. Account Link Connection</p>
+                <div className="p-3.5 rounded-xl border border-[#FBCFE8] bg-[#FFF5F8]/80 space-y-2 text-xs w-full max-w-full box-border h-auto min-h-max">
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left flex-shrink-0 select-none">Linked Account Number:</span>
-                    <span className="w-[65%] text-white font-mono font-semibold text-left break-all [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.accountNumber}</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left flex-shrink-0 select-none">Linked Account Number:</span>
+                    <span className="w-[65%] text-[#4A044E] font-mono font-semibold text-left break-all [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.accountNumber}</span>
                   </div>
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-mono font-semibold text-left flex-shrink-0 select-none">Linked Type:</span>
-                    <span className="w-[65%] text-slate-300 text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.accountType}</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-mono font-semibold text-left flex-shrink-0 select-none">Linked Type:</span>
+                    <span className="w-[65%] text-[#831843] text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.accountType}</span>
                   </div>
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left flex-shrink-0 select-none">Linked Account Balance:</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left flex-shrink-0 select-none">Linked Account Balance:</span>
                     <span className="w-[65%] text-emerald-400 font-mono font-bold text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{formatUSD(activeLoanItem.accountBalance)}</span>
                   </div>
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left flex-shrink-0 select-none">Linked Opening Date:</span>
-                    <span className="w-[65%] text-slate-300 font-mono text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.accountOpeningDate}</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left flex-shrink-0 select-none">Linked Opening Date:</span>
+                    <span className="w-[65%] text-[#831843] font-mono text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.accountOpeningDate}</span>
                   </div>
                 </div>
               </div>
 
               {/* 4. Branch Information */}
               <div className="space-y-2">
-                <p className="text-[10px] font-mono uppercase tracking-widest text-[#8496bf] font-bold">4. Regional Branch Anchor</p>
-                <div className="p-3.5 rounded-xl border border-[#141b44] bg-[#04081c]/60 space-y-2 text-xs w-full max-w-full box-border h-auto min-h-max">
+                <p className="text-[10px] font-mono uppercase tracking-widest text-[#BE185D]/75 font-bold">4. Regional Branch Anchor</p>
+                <div className="p-3.5 rounded-xl border border-[#FBCFE8] bg-[#FFF5F8]/80 space-y-2 text-xs w-full max-w-full box-border h-auto min-h-max">
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left flex-shrink-0 select-none">Branch Name:</span>
-                    <span className="w-[65%] text-white font-semibold text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.branchName}</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left flex-shrink-0 select-none">Branch Name:</span>
+                    <span className="w-[65%] text-[#4A044E] font-semibold text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.branchName}</span>
                   </div>
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-mono font-semibold text-left flex-shrink-0 select-none">Branch Code ID:</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-mono font-semibold text-left flex-shrink-0 select-none">Branch Code ID:</span>
                     <span className="w-[65%] text-amber-500 font-mono font-bold text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.branchCode}</span>
                   </div>
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left flex-shrink-0 select-none">Location Coordinate:</span>
-                    <span className="w-[65%] text-slate-300 font-mono text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.branchLocation}</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left flex-shrink-0 select-none">Location Coordinate:</span>
+                    <span className="w-[65%] text-[#831843] font-mono text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.branchLocation}</span>
                   </div>
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-mono font-semibold text-left flex-shrink-0 select-none">Regional Zone:</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-mono font-semibold text-left flex-shrink-0 select-none">Regional Zone:</span>
                     <span className="w-[65%] text-indigo-400 font-mono text-[10px] text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.branchZone}</span>
                   </div>
                 </div>
@@ -1441,44 +1441,44 @@ export default function LoanManagement({
 
               {/* 5. Branch Manager Information */}
               <div className="space-y-2">
-                <p className="text-[10px] font-mono uppercase tracking-widest text-[#8496bf] font-bold">5. Regional Custodial manager</p>
-                <div className="p-3.5 rounded-xl border border-[#141b44] bg-[#04081c]/60 space-y-2 text-xs w-full max-w-full box-border h-auto min-h-max">
+                <p className="text-[10px] font-mono uppercase tracking-widest text-[#BE185D]/75 font-bold">5. Regional Custodial manager</p>
+                <div className="p-3.5 rounded-xl border border-[#FBCFE8] bg-[#FFF5F8]/80 space-y-2 text-xs w-full max-w-full box-border h-auto min-h-max">
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left flex-shrink-0 select-none">Branch Manager:</span>
-                    <span className="w-[65%] text-white font-semibold text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.managerName}</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left flex-shrink-0 select-none">Branch Manager:</span>
+                    <span className="w-[65%] text-[#4A044E] font-semibold text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.managerName}</span>
                   </div>
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-mono font-semibold text-left flex-shrink-0 select-none">Manager Employee ID:</span>
-                    <span className="w-[65%] text-slate-300 font-mono text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.managerId}</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-mono font-semibold text-left flex-shrink-0 select-none">Manager Employee ID:</span>
+                    <span className="w-[65%] text-[#831843] font-mono text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.managerId}</span>
                   </div>
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left flex-shrink-0 select-none">Designation Class:</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left flex-shrink-0 select-none">Designation Class:</span>
                     <span className="w-[65%] text-indigo-400 text-[11px] font-mono font-semibold text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.managerDesignation}</span>
                   </div>
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left flex-shrink-0 select-none">Mobile Number:</span>
-                    <span className="w-[65%] text-slate-300 font-mono text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.managerPhone}</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left flex-shrink-0 select-none">Mobile Number:</span>
+                    <span className="w-[65%] text-[#831843] font-mono text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.managerPhone}</span>
                   </div>
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left flex-shrink-0 select-none">Official Email:</span>
-                    <span className="w-[65%] text-slate-300 text-[10px] font-mono text-left break-all [word-break:break-word] [overflow-wrap:break-word] whitespace-normal" title={activeLoanItem.managerEmail}>{activeLoanItem.managerEmail}</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left flex-shrink-0 select-none">Official Email:</span>
+                    <span className="w-[65%] text-[#831843] text-[10px] font-mono text-left break-all [word-break:break-word] [overflow-wrap:break-word] whitespace-normal" title={activeLoanItem.managerEmail}>{activeLoanItem.managerEmail}</span>
                   </div>
                 </div>
               </div>
 
               {/* 6. Loan Processing Information */}
               <div className="space-y-2">
-                <p className="text-[10px] font-mono uppercase tracking-widest text-[#8496bf] font-bold">6. Intraday Creation Audit</p>
-                <div className="p-3.5 rounded-xl border border-[#141b44] bg-[#04081c]/60 space-y-2.5 text-xs w-full max-w-full box-border h-auto min-h-max">
-                  <div className="flex items-start w-full gap-2 py-0.5 border-b border-[#141b44]/55 pb-1.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left flex-shrink-0 select-none">Lending Officer:</span>
+                <p className="text-[10px] font-mono uppercase tracking-widest text-[#BE185D]/75 font-bold">6. Intraday Creation Audit</p>
+                <div className="p-3.5 rounded-xl border border-[#FBCFE8] bg-[#FFF5F8]/80 space-y-2.5 text-xs w-full max-w-full box-border h-auto min-h-max">
+                  <div className="flex items-start w-full gap-2 py-0.5 border-b border-[#FBCFE8]/55 pb-1.5">
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left flex-shrink-0 select-none">Lending Officer:</span>
                     <div className="w-[65%] text-left">
-                      <span className="text-white font-bold block">{activeLoanItem.createdBy}</span>
-                      <span className="text-[10px] font-mono text-slate-400 block break-words [word-break:break-word] [overflow-wrap:break-word]">{activeLoanItem.createdByRole} ({activeLoanItem.createdById})</span>
+                      <span className="text-[#4A044E] font-bold block">{activeLoanItem.createdBy}</span>
+                      <span className="text-[10px] font-mono text-[#9D174D]/85 block break-words [word-break:break-word] [overflow-wrap:break-word]">{activeLoanItem.createdByRole} ({activeLoanItem.createdById})</span>
                     </div>
                   </div>
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left flex-shrink-0 select-none">Submission Date & Time:</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left flex-shrink-0 select-none">Submission Date & Time:</span>
                     <span className="w-[65%] text-[#d4af37] font-mono block font-bold text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.submissionDate} at {activeLoanItem.submissionTime}</span>
                   </div>
                 </div>
@@ -1486,24 +1486,24 @@ export default function LoanManagement({
 
               {/* 7. Loan Approval Information */}
               <div className="space-y-2">
-                <p className="text-[10px] font-mono uppercase tracking-widest text-[#8496bf] font-bold">7. Sovereign Signatory Clearance</p>
-                <div className="p-3.5 rounded-xl border border-[#141b44] bg-[#04081c]/60 space-y-2.5 text-xs w-full max-w-full box-border h-auto min-h-max">
-                  <div className="flex items-start w-full gap-2 py-0.5 border-b border-[#141b44]/55 pb-1.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left flex-shrink-0 select-none">Clearing Officer:</span>
+                <p className="text-[10px] font-mono uppercase tracking-widest text-[#BE185D]/75 font-bold">7. Sovereign Signatory Clearance</p>
+                <div className="p-3.5 rounded-xl border border-[#FBCFE8] bg-[#FFF5F8]/80 space-y-2.5 text-xs w-full max-w-full box-border h-auto min-h-max">
+                  <div className="flex items-start w-full gap-2 py-0.5 border-b border-[#FBCFE8]/55 pb-1.5">
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left flex-shrink-0 select-none">Clearing Officer:</span>
                     <div className="w-[65%] text-left">
-                      <span className="text-white font-bold block">{activeLoanItem.approvedBy}</span>
-                      <span className="text-[10px] font-mono text-slate-400 block break-words [word-break:break-word] [overflow-wrap:break-word]">{activeLoanItem.approvedByRole} ({activeLoanItem.approvedById})</span>
+                      <span className="text-[#4A044E] font-bold block">{activeLoanItem.approvedBy}</span>
+                      <span className="text-[10px] font-mono text-[#9D174D]/85 block break-words [word-break:break-word] [overflow-wrap:break-word]">{activeLoanItem.approvedByRole} ({activeLoanItem.approvedById})</span>
                     </div>
                   </div>
-                  <div className="flex items-start w-full gap-2 py-0.5 border-b border-[#141b44]/55 pb-1.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left flex-shrink-0 select-none">Approval Date & Time:</span>
-                    <span className="w-[65%] text-white font-mono block font-bold text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.approvalDate} at {activeLoanItem.approvalTime}</span>
+                  <div className="flex items-start w-full gap-2 py-0.5 border-b border-[#FBCFE8]/55 pb-1.5">
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left flex-shrink-0 select-none">Approval Date & Time:</span>
+                    <span className="w-[65%] text-[#4A044E] font-mono block font-bold text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.approvalDate} at {activeLoanItem.approvalTime}</span>
                   </div>
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left flex-shrink-0 select-none">Authorization Code:</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left flex-shrink-0 select-none">Authorization Code:</span>
                     <div className="w-[65%] text-left">
                       <span className="text-[#10b981] font-mono font-bold block break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.managerAuthorizationStatus}</span>
-                      <span className="text-[10px] font-mono text-slate-400 block break-words [word-break:break-all] [overflow-wrap:break-word] mt-0.5">SEC-DIR-1-HYD-{activeLoanItem.id}</span>
+                      <span className="text-[10px] font-mono text-[#9D174D]/85 block break-words [word-break:break-all] [overflow-wrap:break-word] mt-0.5">SEC-DIR-1-HYD-{activeLoanItem.id}</span>
                     </div>
                   </div>
                 </div>
@@ -1511,28 +1511,28 @@ export default function LoanManagement({
 
               {/* 8. Credit Risk Assessment */}
               <div className="space-y-2">
-                <p className="text-[10px] font-mono uppercase tracking-widest text-[#8496bf] font-bold">8. Credit Risk Underwriting</p>
-                <div className="p-3.5 rounded-xl border border-[#141b44] bg-[#04081c]/60 space-y-2.5 text-xs w-full max-w-full box-border h-auto min-h-max">
+                <p className="text-[10px] font-mono uppercase tracking-widest text-[#BE185D]/75 font-bold">8. Credit Risk Underwriting</p>
+                <div className="p-3.5 rounded-xl border border-[#FBCFE8] bg-[#FFF5F8]/80 space-y-2.5 text-xs w-full max-w-full box-border h-auto min-h-max">
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left flex-shrink-0 select-none">Credit Score:</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left flex-shrink-0 select-none">Credit Score:</span>
                     <span className="w-[65%] text-emerald-400 font-mono font-black text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.creditScore} FICO</span>
                   </div>
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left flex-shrink-0 select-none">Income Verification:</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left flex-shrink-0 select-none">Income Verification:</span>
                     <span className="w-[65%] text-indigo-400 font-mono font-bold text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.incomeVerified}</span>
                   </div>
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left flex-shrink-0 select-none">AML Match Status:</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left flex-shrink-0 select-none">AML Match Status:</span>
                     <span className="w-[65%] text-emerald-400 font-mono font-bold text-left break-words [word-break:break-word] [overflow-wrap:break-word] whitespace-normal">{activeLoanItem.complianceStatus}</span>
                   </div>
                   
                   {/* Progress bar */}
-                  <div className="space-y-1.5 border-t border-[#141b44]/55 pt-2 mt-1">
+                  <div className="space-y-1.5 border-t border-[#FBCFE8]/55 pt-2 mt-1">
                     <div className="flex justify-between text-[11px]">
-                      <span className="text-slate-400">Portfolio Default Risk:</span>
+                      <span className="text-[#9D174D]/85">Portfolio Default Risk:</span>
                       <span className="font-mono text-amber-500 font-bold">{activeLoanItem.riskScore}%</span>
                     </div>
-                    <div className="w-full bg-[#11163b] h-2 rounded-full overflow-hidden">
+                    <div className="w-full bg-[#FDF2F8] h-2 rounded-full overflow-hidden">
                       <div 
                         className={`h-full rounded-full ${
                           activeLoanItem.riskScore > 75 
@@ -1546,7 +1546,7 @@ export default function LoanManagement({
                     </div>
                   </div>
 
-                  <p className="text-[10px] italic text-[#8496bf] leading-relaxed text-center mt-1 break-words [word-break:break-word] [overflow-wrap:break-word]">
+                  <p className="text-[10px] italic text-[#BE185D]/75 leading-relaxed text-center mt-1 break-words [word-break:break-word] [overflow-wrap:break-word]">
                     Risk Assessment: {activeLoanItem.underwritingResult}
                   </p>
                 </div>
@@ -1554,11 +1554,11 @@ export default function LoanManagement({
 
               {/* 9. Loan Transaction History Table */}
               <div className="space-y-2">
-                <p className="text-[10px] font-mono uppercase tracking-widest text-[#8496bf] font-bold">9. Lending Ledger Transactions</p>
-                <div className="overflow-x-auto p-3.5 rounded-xl border border-[#141b44] bg-[#04081c]/60">
+                <p className="text-[10px] font-mono uppercase tracking-widest text-[#BE185D]/75 font-bold">9. Lending Ledger Transactions</p>
+                <div className="overflow-x-auto p-3.5 rounded-xl border border-[#FBCFE8] bg-[#FFF5F8]/80">
                   <table className="w-full text-left text-[11px] border-collapse font-sans">
                     <thead>
-                      <tr className="border-b border-[#141c48] text-[9px] text-[#8496bf] uppercase font-bold tracking-wider">
+                      <tr className="border-b border-[#FBCFE8] text-[9px] text-[#BE185D]/75 uppercase font-bold tracking-wider">
                         <th className="py-1.5 px-2">TXN ID</th>
                         <th className="py-1.5 px-2">Type</th>
                         <th className="py-1.5 px-2 text-right">Value</th>
@@ -1566,12 +1566,12 @@ export default function LoanManagement({
                         <th className="py-1.5 px-2 text-right">State</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-[#141c48]/60 text-slate-300">
+                    <tbody className="divide-y divide-[#141c48]/60 text-[#831843]">
                       {activeLoanItem.transactions.map((tx) => (
-                        <tr key={tx.id} className="hover:bg-slate-800/40">
-                          <td className="py-2 px-2 font-mono font-bold text-slate-400">{tx.id}</td>
+                        <tr key={tx.id} className="hover:bg-[#FDF2F8]/40">
+                          <td className="py-2 px-2 font-mono font-bold text-[#9D174D]/85">{tx.id}</td>
                           <td className="py-2 px-2 font-mono">{tx.type}</td>
-                          <td className="py-2 px-2 text-right font-mono text-white">{formatUSD(tx.amount)}</td>
+                          <td className="py-2 px-2 text-right font-mono text-[#4A044E]">{formatUSD(tx.amount)}</td>
                           <td className="py-2 px-2 text-center font-mono opacity-80">{tx.date}</td>
                           <td className="py-2 px-2 text-right font-mono font-bold text-emerald-400">{tx.status}</td>
                         </tr>
@@ -1583,17 +1583,17 @@ export default function LoanManagement({
 
               {/* 10. Loan Timeline */}
               <div className="space-y-3">
-                <p className="text-[10px] font-mono uppercase tracking-widest text-[#8496bf] font-bold">10. Credit Lifecycle Timeline</p>
+                <p className="text-[10px] font-mono uppercase tracking-widest text-[#BE185D]/75 font-bold">10. Credit Lifecycle Timeline</p>
                 
-                <div className="relative border-l-2 border-[#17235a] ml-2.5 pl-4 space-y-4">
+                <div className="relative border-l-2 border-[#F9A8D4] ml-2.5 pl-4 space-y-4">
                   {activeLoanItem.timeline.map((evt, idx) => (
                     <div key={idx} className="relative">
-                      <span className="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-amber-500 ring-4 ring-[#0d153a]" />
+                      <span className="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-amber-500 ring-4 ring-[#FCE7F3]" />
                       <div className="text-xs">
-                        <div className="font-bold text-white">{evt.event}</div>
-                        <div className="text-[10px] text-slate-400 font-mono">{evt.date} at {evt.time}</div>
-                        <div className="text-slate-300 text-[10px] mt-0.5">Clearing officer: {evt.responsible}</div>
-                        <div className="text-slate-400 text-[9px] italic mt-1 leading-relaxed">"{evt.remarks}"</div>
+                        <div className="font-bold text-[#4A044E]">{evt.event}</div>
+                        <div className="text-[10px] text-[#9D174D]/85 font-mono">{evt.date} at {evt.time}</div>
+                        <div className="text-[#831843] text-[10px] mt-0.5">Clearing officer: {evt.responsible}</div>
+                        <div className="text-[#9D174D]/85 text-[9px] italic mt-1 leading-relaxed">"{evt.remarks}"</div>
                       </div>
                     </div>
                   ))}
@@ -1602,8 +1602,8 @@ export default function LoanManagement({
 
               {/* 11. Decisions Decision cockpit Action Area */}
               {activeLoanItem.status === 'Pending' && (
-                <div className="pt-4 border-t border-[#141b44] space-y-3">
-                  <p className="text-[10px] font-mono uppercase tracking-widest text-slate-400 font-bold">Render Underwriting Verdict</p>
+                <div className="pt-4 border-t border-[#FBCFE8] space-y-3">
+                  <p className="text-[10px] font-mono uppercase tracking-widest text-[#9D174D]/85 font-bold">Render Underwriting Verdict</p>
                   <div className="grid grid-cols-2 gap-3.5">
                     <button
                       id="apex-reject-verdict-btn"
@@ -1627,15 +1627,15 @@ export default function LoanManagement({
               )}
 
               {/* 12. Super Admin Actions List */}
-              <div className="space-y-2 border-t border-[#141b44] pt-4">
-                <p className="text-[10px] font-mono uppercase tracking-widest text-[#8496bf] font-bold">Super Admin Clearance Console</p>
+              <div className="space-y-2 border-t border-[#FBCFE8] pt-4">
+                <p className="text-[10px] font-mono uppercase tracking-widest text-[#BE185D]/75 font-bold">Super Admin Clearance Console</p>
                 <div id="super-admin-action-block-lending" className="grid grid-cols-2 gap-2 mt-2">
                   
                   <button
                     id="sa-view-file"
                     onClick={() => handleActionClick("View Loan Application", `Super Admin accessed electronic lending record ${activeLoanItem.id}`)}
                     disabled={loadingAction === "View Loan Application"}
-                    className="flex items-center justify-center gap-1 py-2 px-2 rounded-lg bg-[#0e1744] hover:bg-[#15225c] border border-[#1b2a6f] text-[10px] text-white font-bold transition-all cursor-pointer disabled:opacity-50"
+                    className="flex items-center justify-center gap-1 py-2 px-2 rounded-lg bg-[#FFF1F5] hover:bg-[#FCE7F3] border border-[#F9A8D4] text-[10px] text-[#4A044E] font-bold transition-all cursor-pointer disabled:opacity-50"
                   >
                     {loadingAction === "View Loan Application" ? <div className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin"></div> : <FileText size={12} className="text-blue-400" />}
                     <span>View Loan File</span>
@@ -1645,7 +1645,7 @@ export default function LoanManagement({
                     id="sa-view-linked"
                     onClick={() => handleActionClick("Auditing Linked Account", `Super Admin audited primary account linked to loan ${activeLoanItem.id}`, 'accounts')}
                     disabled={loadingAction === "Auditing Linked Account"}
-                    className="flex items-center justify-center gap-1 py-2 px-2 rounded-lg bg-[#0e1744] hover:bg-[#15225c] border border-[#1b2a6f] text-[10px] text-white font-bold transition-all cursor-pointer disabled:opacity-50"
+                    className="flex items-center justify-center gap-1 py-2 px-2 rounded-lg bg-[#FFF1F5] hover:bg-[#FCE7F3] border border-[#F9A8D4] text-[10px] text-[#4A044E] font-bold transition-all cursor-pointer disabled:opacity-50"
                   >
                     {loadingAction === "Auditing Linked Account" ? <div className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin"></div> : <Activity size={12} className="text-emerald-400" />}
                     <span>Linked Account</span>
@@ -1655,7 +1655,7 @@ export default function LoanManagement({
                     id="sa-view-tx-hist"
                     onClick={() => handleActionClick("Transaction Log Diagnostic", `Super Admin ran comprehensive transactions log diagnostic for ${activeLoanItem.id}`, 'transactions')}
                     disabled={loadingAction === "Transaction Log Diagnostic"}
-                    className="flex items-center justify-center gap-1 py-2 px-2 rounded-lg bg-[#0e1744] hover:bg-[#15225c] border border-[#1b2a6f] text-[10px] text-white font-bold transition-all cursor-pointer disabled:opacity-50"
+                    className="flex items-center justify-center gap-1 py-2 px-2 rounded-lg bg-[#FFF1F5] hover:bg-[#FCE7F3] border border-[#F9A8D4] text-[10px] text-[#4A044E] font-bold transition-all cursor-pointer disabled:opacity-50"
                   >
                     {loadingAction === "Transaction Log Diagnostic" ? <div className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin"></div> : <Coins size={12} className="text-[#d4af37]" />}
                     <span>View Transactions</span>
@@ -1666,7 +1666,7 @@ export default function LoanManagement({
                     type="button"
                     onClick={() => handleActionClick("Contact Branch Manager", `Super Admin initiated call to branch manager for loan ${activeLoanItem.id}`, undefined, true)}
                     disabled={loadingAction === "Contact Branch Manager"}
-                    className="flex items-center justify-center gap-1 py-2 px-2 rounded-lg bg-[#0e1744] hover:bg-[#15225c] border border-[#1b2a6f] text-[10px] text-white font-bold transition-all cursor-pointer disabled:opacity-50"
+                    className="flex items-center justify-center gap-1 py-2 px-2 rounded-lg bg-[#FFF1F5] hover:bg-[#FCE7F3] border border-[#F9A8D4] text-[10px] text-[#4A044E] font-bold transition-all cursor-pointer disabled:opacity-50"
                   >
                     {loadingAction === "Contact Branch Manager" ? <div className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin"></div> : <Phone size={12} className="text-amber-500" />}
                     <span>Contact Manager</span>
@@ -1676,7 +1676,7 @@ export default function LoanManagement({
                     id="sa-email-manager"
                     onClick={() => handleActionClick("Email Branch Manager", `Super Admin initiated email composer for branch manager: ${activeLoanItem.managerEmail}`, undefined, true)}
                     disabled={loadingAction === "Email Branch Manager"}
-                    className="flex items-center justify-center gap-1 py-2 px-2 rounded-lg bg-[#0e1744] hover:bg-[#15225c] border border-[#1b2a6f] text-[10px] text-white font-bold transition-all cursor-pointer disabled:opacity-50"
+                    className="flex items-center justify-center gap-1 py-2 px-2 rounded-lg bg-[#FFF1F5] hover:bg-[#FCE7F3] border border-[#F9A8D4] text-[10px] text-[#4A044E] font-bold transition-all cursor-pointer disabled:opacity-50"
                   >
                     {loadingAction === "Email Branch Manager" ? <div className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin"></div> : <Mail size={12} className="text-blue-400" />}
                     <span>Email Manager</span>
@@ -1686,7 +1686,7 @@ export default function LoanManagement({
                     id="sa-contact-officer"
                     onClick={() => handleActionClick("Contact Credit Officer", `Super Admin established bridge with loan initiator: ${activeLoanItem.createdBy}`, undefined, true)}
                     disabled={loadingAction === "Contact Credit Officer"}
-                    className="flex items-center justify-center gap-1 py-2 px-2 rounded-lg bg-[#0e1744] hover:bg-[#15225c] border border-[#1b2a6f] text-[10px] text-white font-bold transition-all cursor-pointer disabled:opacity-50"
+                    className="flex items-center justify-center gap-1 py-2 px-2 rounded-lg bg-[#FFF1F5] hover:bg-[#FCE7F3] border border-[#F9A8D4] text-[10px] text-[#4A044E] font-bold transition-all cursor-pointer disabled:opacity-50"
                   >
                     {loadingAction === "Contact Credit Officer" ? <div className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin"></div> : <UserCheck size={12} className="text-indigo-400" />}
                     <span>Contact Officer</span>
@@ -1696,7 +1696,7 @@ export default function LoanManagement({
                     id="sa-contact-approver"
                     onClick={() => handleActionClick("Contact Approval Authority", `Super Admin pinged lending board approver: ${activeLoanItem.approvedBy}`, undefined, true)}
                     disabled={loadingAction === "Contact Approval Authority"}
-                    className="flex items-center justify-center gap-1 py-2 px-2 rounded-lg bg-[#0e1744] hover:bg-[#15225c] border border-[#1b2a6f] text-[10px] text-white font-bold transition-all cursor-pointer disabled:opacity-50"
+                    className="flex items-center justify-center gap-1 py-2 px-2 rounded-lg bg-[#FFF1F5] hover:bg-[#FCE7F3] border border-[#F9A8D4] text-[10px] text-[#4A044E] font-bold transition-all cursor-pointer disabled:opacity-50"
                   >
                     {loadingAction === "Contact Approval Authority" ? <div className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin"></div> : <ShieldCheck size={12} className="text-emerald-500" />}
                     <span>Contact Approver</span>
@@ -1706,7 +1706,7 @@ export default function LoanManagement({
                     id="sa-download-rep"
                     onClick={() => handleActionClick("Download Sovereign Certificate", `Super Admin downloaded sovereign report dataset for loan ${activeLoanItem.id}`, undefined, true)}
                     disabled={loadingAction === "Download Sovereign Certificate"}
-                    className="flex items-center justify-center gap-1 py-2 px-2 rounded-lg bg-[#0e1744] hover:bg-[#15225c] border border-[#1b2a6f] text-[10px] text-white font-bold transition-all cursor-pointer col-span-2 disabled:opacity-50"
+                    className="flex items-center justify-center gap-1 py-2 px-2 rounded-lg bg-[#FFF1F5] hover:bg-[#FCE7F3] border border-[#F9A8D4] text-[10px] text-[#4A044E] font-bold transition-all cursor-pointer col-span-2 disabled:opacity-50"
                   >
                     {loadingAction === "Download Sovereign Certificate" ? <div className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin"></div> : <Download size={12} className="text-sky-400" />}
                     <span>Download Sovereign Credit Certificate</span>
@@ -1717,12 +1717,12 @@ export default function LoanManagement({
 
             </div>
           ) : (
-            <div className="py-24 text-center text-xs text-[#556994] font-mono">
+            <div className="py-24 text-center text-xs text-[#9D174D]/80 font-mono">
               Select an outstanding credit file from the Ledger to begin deep audit verification.
             </div>
           )}
 
-          <div className="text-[9px] text-[#556994] font-mono mt-5 pt-3 border-t border-[#141b44]/65">
+          <div className="text-[9px] text-[#9D174D]/80 font-mono mt-5 pt-3 border-t border-[#FBCFE8]/65">
             Sovereign Ledger assets are fully governed under international banking reserve policies. Authorization DIR-99-A active.
           </div>
 

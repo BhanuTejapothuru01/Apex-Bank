@@ -213,7 +213,7 @@ export default function ManagerDetailModal({
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.95 }}
         transition={{ duration: 0.25 }}
-        className="w-full max-w-[850px] max-h-[90vh] bg-[#090f2b] border border-[#17235a]/80 text-white rounded-[24px] shadow-2xl flex flex-col overflow-hidden relative box-border"
+        className="w-full max-w-[850px] max-h-[90vh] bg-[#FCE7F3] border border-[#F9A8D4]/80 text-[#4A044E] rounded-[24px] shadow-2xl flex flex-col overflow-hidden relative box-border"
       >
         {/* Status Highlight Strip */}
         <div className={`absolute top-0 inset-x-0 h-1.5 transition-all duration-250 ${
@@ -225,24 +225,24 @@ export default function ManagerDetailModal({
         }`} />
 
         {/* Modal Window Header */}
-        <div className="p-6 border-b border-white/10 flex items-center justify-between bg-slate-900/50">
+        <div className="p-6 border-b border-[#F9A8D4]/50 flex items-center justify-between bg-[#FFF1F5]/50">
           <div className="flex items-center gap-4 text-left">
-            <div className="w-14 h-14 rounded-full bg-[#131b45] text-[#d4af37] border border-[#1b2559] flex items-center justify-center text-xl font-black shadow-sm shrink-0 leading-none">
+            <div className="w-14 h-14 rounded-full bg-[#FBCFE8] text-[#d4af37] border border-[#F9A8D4] flex items-center justify-center text-xl font-black shadow-sm shrink-0 leading-none">
               {manager.avatarSeed}
             </div>
             <div>
-              <h3 className="text-lg font-black text-white flex flex-wrap items-center gap-2">
+              <h3 className="text-lg font-black text-[#4A044E] flex flex-wrap items-center gap-2">
                 <span>{manager.name}</span>
                 <span className="text-[#d4af37] font-mono text-xs bg-amber-500/10 px-2 py-0.5 rounded border border-[#d4af37]/35">({manager.id})</span>
               </h3>
-              <p className="text-xs text-slate-400 font-semibold mt-0.5">
+              <p className="text-xs text-[#9D174D]/85 font-semibold mt-0.5">
                 {manager.designation} • {manager.department}
               </p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-full text-slate-400 hover:text-[#d4af37] hover:bg-white/5 border border-white/5 cursor-pointer transition-all shrink-0 animate-none"
+            className="p-1.5 rounded-full text-[#9D174D]/85 hover:text-[#d4af37] hover:bg-white/5 border border-[#F9A8D4]/40 cursor-pointer transition-all shrink-0 animate-none"
           >
             <X size={18} />
           </button>
@@ -272,69 +272,69 @@ export default function ManagerDetailModal({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 leading-relaxed">
             
             {/* 1. BRANCH INFORMATION */}
-            <div className="p-5 bg-slate-950/40 border border-white/5 rounded-2xl space-y-3.5 text-xs flex flex-col justify-between w-full max-w-full box-border shadow-sm">
+            <div className="p-5 bg-pink-50/80 border border-[#F9A8D4]/40 rounded-2xl space-y-3.5 text-xs flex flex-col justify-between w-full max-w-full box-border shadow-sm">
               <div>
-                <h4 className="font-black text-[#d4af37] uppercase tracking-wider text-[11px] border-b border-white/5 pb-2 flex items-center gap-1.5 text-left">
+                <h4 className="font-black text-[#d4af37] uppercase tracking-wider text-[11px] border-b border-[#F9A8D4]/40 pb-2 flex items-center gap-1.5 text-left">
                   <Building2 size={13} className="text-amber-400" />
                   <span>Branch Information</span>
                 </h4>
                 <div className="space-y-2 mt-3.5 text-[11.5px]">
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left shrink-0">Branch Name:</span>
-                    <span className="w-[65%] font-bold text-slate-100 text-left break-words">{manager.branchName}</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left shrink-0">Branch Name:</span>
+                    <span className="w-[65%] font-bold text-[#4A044E] text-left break-words">{manager.branchName}</span>
                   </div>
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left shrink-0">Branch Code:</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left shrink-0">Branch Code:</span>
                     <span className="w-[65%] font-mono font-bold text-[#d4af37] text-left break-all">{manager.branchCode}</span>
                   </div>
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left shrink-0">Branch Location:</span>
-                    <span className="w-[65%] text-slate-200 font-semibold text-left break-words">{city}, {state}, {manager.branchLocation}</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left shrink-0">Branch Location:</span>
+                    <span className="w-[65%] text-[#701a75] font-semibold text-left break-words">{city}, {state}, {manager.branchLocation}</span>
                   </div>
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left shrink-0">Branch Type:</span>
-                    <span className="w-[65%] text-slate-200 text-left break-words">{manager.branchType}</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left shrink-0">Branch Type:</span>
+                    <span className="w-[65%] text-[#701a75] text-left break-words">{manager.branchType}</span>
                   </div>
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left shrink-0">Opening Date:</span>
-                    <span className="w-[65%] text-slate-200 font-mono text-left break-words">{manager.branchOpeningDate || "2018-05-10"}</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left shrink-0">Opening Date:</span>
+                    <span className="w-[65%] text-[#701a75] font-mono text-left break-words">{manager.branchOpeningDate || "2018-05-10"}</span>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* 2. BRANCH MANAGER DETAILS */}
-            <div className="p-5 bg-slate-950/40 border border-white/5 rounded-2xl space-y-3.5 text-xs flex flex-col justify-between w-full max-w-full box-border shadow-sm">
+            <div className="p-5 bg-pink-50/80 border border-[#F9A8D4]/40 rounded-2xl space-y-3.5 text-xs flex flex-col justify-between w-full max-w-full box-border shadow-sm">
               <div>
-                <h4 className="font-black text-[#d4af37] uppercase tracking-wider text-[11px] border-b border-white/5 pb-2 flex items-center gap-1.5 text-left">
+                <h4 className="font-black text-[#d4af37] uppercase tracking-wider text-[11px] border-b border-[#F9A8D4]/40 pb-2 flex items-center gap-1.5 text-left">
                   <User size={13} className="text-amber-400" />
                   <span>Branch Manager Details</span>
                 </h4>
                 <div className="space-y-2 mt-3.5 text-[11.5px]">
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left shrink-0">Full Name:</span>
-                    <span className="w-[65%] font-bold text-slate-100 text-left break-words">{manager.name}</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left shrink-0">Full Name:</span>
+                    <span className="w-[65%] font-bold text-[#4A044E] text-left break-words">{manager.name}</span>
                   </div>
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left shrink-0">Employee ID:</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left shrink-0">Employee ID:</span>
                     <span className="w-[65%] font-mono font-bold text-[#d4af37] text-left break-all">{manager.id}</span>
                   </div>
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left shrink-0">Contact Number:</span>
-                    <span className="w-[65%] text-slate-200 font-mono text-left break-words">{manager.phone}</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left shrink-0">Contact Number:</span>
+                    <span className="w-[65%] text-[#701a75] font-mono text-left break-words">{manager.phone}</span>
                   </div>
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left shrink-0">Official Email:</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left shrink-0">Official Email:</span>
                     <span className="w-[65%] text-[#d4af37] font-mono font-bold text-left break-all" title={manager.email}>{manager.email}</span>
                   </div>
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left shrink-0">Service Years:</span>
-                    <span className="w-[65%] text-slate-200 font-semibold text-left break-words">
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left shrink-0">Service Years:</span>
+                    <span className="w-[65%] text-[#701a75] font-semibold text-left break-words">
                       {service.years} Years, {service.months} Months (Joined {manager.joinDate})
                     </span>
                   </div>
                   <div className="flex items-start w-full gap-2 py-0.5">
-                    <span className="w-[35%] text-slate-400 font-semibold text-left shrink-0">Performance Rating:</span>
+                    <span className="w-[35%] text-[#9D174D]/85 font-semibold text-left shrink-0">Performance Rating:</span>
                     <span className="w-[65%] text-emerald-400 font-bold font-mono text-left break-words">
                       ★ {manager.rating.toFixed(1)} / 5.0 (A+ Rating)
                     </span>
@@ -346,15 +346,15 @@ export default function ManagerDetailModal({
           </div>
 
           {/* 3. TEAM SUMMARY */}
-          <div className="p-5 bg-slate-950/40 border border-white/5 rounded-2xl text-xs space-y-4 shadow-sm text-left">
-            <h4 className="font-black text-[#d4af37] uppercase tracking-wider text-[11px] border-b border-white/5 pb-2 flex items-center gap-1.5 font-sans">
+          <div className="p-5 bg-pink-50/80 border border-[#F9A8D4]/40 rounded-2xl text-xs space-y-4 shadow-sm text-left">
+            <h4 className="font-black text-[#d4af37] uppercase tracking-wider text-[11px] border-b border-[#F9A8D4]/40 pb-2 flex items-center gap-1.5 font-sans">
               <Users size={13} className="text-amber-400" />
               <span>Team Summary Metrics</span>
             </h4>
             <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
               
               <div className="p-3 bg-amber-500/10 border border-[#d4af37]/35 rounded-xl text-center flex flex-col justify-between">
-                <span className="text-[9px] font-bold text-slate-400 uppercase tracking-wider block">Total Team</span>
+                <span className="text-[9px] font-bold text-[#9D174D]/85 uppercase tracking-wider block">Total Team</span>
                 <span className="font-mono text-lg font-black text-[#d4af37] mt-1.5 block">{totalEmployees}</span>
               </div>
 
@@ -382,16 +382,16 @@ export default function ManagerDetailModal({
           </div>
 
           {/* MANAGER ACTION BUTTONS PANEL */}
-          <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 pt-4 border-t border-white/10 select-none text-slate-100">
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 pt-4 border-t border-[#F9A8D4]/50 select-none text-[#4A044E]">
             <button
               onClick={() => {
                 setActiveSubModal('profile');
                 addAuditLog(`Admin loaded complete biography dossier for ${manager.name} [ID: ${manager.id}]`, 'Info');
               }}
-              className="flex flex-col items-center justify-center p-3 bg-[#131b45]/30 hover:bg-[#131b45]/60 border border-[#d4af37]/35 text-[#d4af37] rounded-xl text-center gap-1.5 transition-all shadow-sm active:scale-95 cursor-pointer group"
+              className="flex flex-col items-center justify-center p-3 bg-[#FBCFE8]/30 hover:bg-[#FBCFE8]/60 border border-[#d4af37]/35 text-[#d4af37] rounded-xl text-center gap-1.5 transition-all shadow-sm active:scale-95 cursor-pointer group"
             >
               <User size={16} className="text-[#d4af37] group-hover:scale-105 transition-transform" />
-              <span className="text-[9px] uppercase font-black tracking-widest block text-slate-200">View Profile</span>
+              <span className="text-[9px] uppercase font-black tracking-widest block text-[#701a75]">View Profile</span>
             </button>
 
             <button
@@ -399,10 +399,10 @@ export default function ManagerDetailModal({
                 setActiveSubModal('contact');
                 addAuditLog(`Admin initiated communication panel with ${manager.name}`, 'Info');
               }}
-              className="flex flex-col items-center justify-center p-3 bg-[#131b45]/30 hover:bg-[#131b45]/60 border border-[#d4af37]/35 text-[#d4af37] rounded-xl text-center gap-1.5 transition-all shadow-sm active:scale-95 cursor-pointer group"
+              className="flex flex-col items-center justify-center p-3 bg-[#FBCFE8]/30 hover:bg-[#FBCFE8]/60 border border-[#d4af37]/35 text-[#d4af37] rounded-xl text-center gap-1.5 transition-all shadow-sm active:scale-95 cursor-pointer group"
             >
               <Mail size={16} className="text-[#d4af37] group-hover:scale-105 transition-transform" />
-              <span className="text-[9px] uppercase font-black tracking-widest block text-slate-200">Contact Manager</span>
+              <span className="text-[9px] uppercase font-black tracking-widest block text-[#701a75]">Contact Manager</span>
             </button>
 
             <button
@@ -410,10 +410,10 @@ export default function ManagerDetailModal({
                 setActiveSubModal('performance');
                 addAuditLog(`Admin reviewed interactive performance matrices for ${manager.name}`, 'Info');
               }}
-              className="flex flex-col items-center justify-center p-3 bg-[#131b45]/30 hover:bg-[#131b45]/60 border border-[#d4af37]/35 text-[#d4af37] rounded-xl text-center gap-1.5 transition-all shadow-sm active:scale-95 cursor-pointer group"
+              className="flex flex-col items-center justify-center p-3 bg-[#FBCFE8]/30 hover:bg-[#FBCFE8]/60 border border-[#d4af37]/35 text-[#d4af37] rounded-xl text-center gap-1.5 transition-all shadow-sm active:scale-95 cursor-pointer group"
             >
               <TrendingUp size={16} className="text-[#d4af37] group-hover:scale-105 transition-transform" />
-              <span className="text-[9px] uppercase font-black tracking-widest block text-slate-200">View Team Performance</span>
+              <span className="text-[9px] uppercase font-black tracking-widest block text-[#701a75]">View Team Performance</span>
             </button>
 
             <button
@@ -421,10 +421,10 @@ export default function ManagerDetailModal({
                 setActiveSubModal('transfer');
                 addAuditLog(`Admin logged transfer posting indices for ${manager.name}`, 'Info');
               }}
-              className="flex flex-col items-center justify-center p-3 bg-[#131b45]/30 hover:bg-[#131b45]/60 border border-[#d4af37]/35 text-[#d4af37] rounded-xl text-center gap-1.5 transition-all shadow-sm active:scale-95 cursor-pointer group"
+              className="flex flex-col items-center justify-center p-3 bg-[#FBCFE8]/30 hover:bg-[#FBCFE8]/60 border border-[#d4af37]/35 text-[#d4af37] rounded-xl text-center gap-1.5 transition-all shadow-sm active:scale-95 cursor-pointer group"
             >
               <MapPin size={16} className="text-[#d4af37] group-hover:scale-105 transition-transform" />
-              <span className="text-[9px] uppercase font-black tracking-widest block text-slate-200">Transfer History</span>
+              <span className="text-[9px] uppercase font-black tracking-widest block text-[#701a75]">Transfer History</span>
             </button>
 
             <button
@@ -432,17 +432,17 @@ export default function ManagerDetailModal({
                 setPanelNotification(`✔ EXTRACTING HIGH INTENSITY ANALYTICS CORE INDEX FOR BRANCH ${manager.branchCode}. ALL SYSTEMS SECURED.`);
                 addAuditLog(`Admin triggered electronic analytical evaluation for branch node: ${manager.branchCode}`, 'Info');
               }}
-              className="flex flex-col items-center justify-center p-3 bg-[#131b45]/30 hover:bg-[#131b45]/60 border border-[#d4af37]/35 text-[#d4af37] rounded-xl text-center gap-1.5 transition-all shadow-sm col-span-2 sm:col-span-1 active:scale-95 cursor-pointer group"
+              className="flex flex-col items-center justify-center p-3 bg-[#FBCFE8]/30 hover:bg-[#FBCFE8]/60 border border-[#d4af37]/35 text-[#d4af37] rounded-xl text-center gap-1.5 transition-all shadow-sm col-span-2 sm:col-span-1 active:scale-95 cursor-pointer group"
             >
               <Award size={16} className="text-[#d4af37] group-hover:scale-105 transition-transform" />
-              <span className="text-[9px] uppercase font-black tracking-widest block text-slate-200">Branch Analytics</span>
+              <span className="text-[9px] uppercase font-black tracking-widest block text-[#701a75]">Branch Analytics</span>
             </button>
           </div>
 
           {/* 4. EMPLOYEES UNDER THIS MANAGER */}
-          <div className="p-5 bg-slate-950/40 border border-white/5 rounded-2xl space-y-4 shadow-sm text-left">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5 border-b border-white/10 pb-2">
-              <h4 className="font-black text-white uppercase tracking-wider text-[11px] flex items-center gap-1.5">
+          <div className="p-5 bg-pink-50/80 border border-[#F9A8D4]/40 rounded-2xl space-y-4 shadow-sm text-left">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5 border-b border-[#F9A8D4]/50 pb-2">
+              <h4 className="font-black text-[#4A044E] uppercase tracking-wider text-[11px] flex items-center gap-1.5">
                 <Users size={13} className="text-amber-400" />
                 <span>Employees Reporting To This Branch Manager</span>
               </h4>
@@ -451,15 +451,15 @@ export default function ManagerDetailModal({
               </span>
             </div>
 
-            <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider flex items-center gap-1">
+            <p className="text-[10px] text-[#9D174D]/85 font-bold uppercase tracking-wider flex items-center gap-1">
               <span>💡</span>
               <span>Tap any staff member listed below to access the high clearance Employee Profile ledger and trigger direct analytics dashboards.</span>
             </p>
 
-            <div className="overflow-x-auto border border-white/10 rounded-xl">
+            <div className="overflow-x-auto border border-[#F9A8D4]/50 rounded-xl">
               <table className="w-full text-left text-xs border-collapse">
                 <thead>
-                  <tr className="bg-slate-900/60 text-slate-350 font-bold border-b border-white/10 text-[10px] uppercase">
+                  <tr className="bg-[#FFF1F5]/60 text-slate-350 font-bold border-b border-[#F9A8D4]/50 text-[10px] uppercase">
                     <th className="py-3 px-4">Photo</th>
                     <th className="py-3 px-4">Employee ID</th>
                     <th className="py-3 px-4">Employee Name</th>
@@ -486,15 +486,15 @@ export default function ManagerDetailModal({
                         className="hover:bg-amber-500/[0.03] transition-all cursor-pointer"
                       >
                         <td className="py-2.5 px-4">
-                          <div className="w-8 h-8 rounded-full bg-[#131b45] text-[#d4af37] border border-[#1b2559]/70 flex items-center justify-center text-[10px] font-black shadow-sm select-none">
+                          <div className="w-8 h-8 rounded-full bg-[#FBCFE8] text-[#d4af37] border border-[#F9A8D4]/70 flex items-center justify-center text-[10px] font-black shadow-sm select-none">
                             {empInitials}
                           </div>
                         </td>
                         <td className="py-2.5 px-4 font-mono font-bold text-[#d4af37]">{tNode.id}</td>
-                        <td className="py-2.5 px-4 font-black text-white">{tNode.name}</td>
-                        <td className="py-2.5 px-2 text-slate-300">
-                          <span className="font-bold block text-white">{tNode.designation}</span>
-                          <span className="text-[10px] text-slate-500 block">{tNode.department}</span>
+                        <td className="py-2.5 px-4 font-black text-[#4A044E]">{tNode.name}</td>
+                        <td className="py-2.5 px-2 text-[#831843]">
+                          <span className="font-bold block text-[#4A044E]">{tNode.designation}</span>
+                          <span className="text-[10px] text-[#9D174D]/75 block">{tNode.department}</span>
                         </td>
                         <td className="py-2.5 px-4 text-right">
                           <span className={`inline-block px-2.5 py-0.5 rounded text-[9px] font-mono font-semibold uppercase ${
@@ -519,10 +519,10 @@ export default function ManagerDetailModal({
         </div>
 
         {/* Modal Window Footer */}
-        <div className="p-4 bg-slate-950 border-t border-white/5 flex justify-end gap-2 text-xs">
+        <div className="p-4 bg-slate-950 border-t border-[#F9A8D4]/40 flex justify-end gap-2 text-xs">
           <button
             onClick={onClose}
-            className="px-6 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 font-extrabold uppercase text-[10px] tracking-wider rounded-xl cursor-pointer transition-all active:scale-[0.97]"
+            className="px-6 py-2.5 bg-[#FDF2F8] hover:bg-slate-700 text-[#831843] font-extrabold uppercase text-[10px] tracking-wider rounded-xl cursor-pointer transition-all active:scale-[0.97]"
           >
             Close Panel
           </button>
@@ -589,26 +589,26 @@ export default function ManagerDetailModal({
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.25 }}
-                  className="max-w-[800px] w-full max-h-[85vh] bg-[#090f2b] border border-[#17235a]/90 text-white rounded-[24px] shadow-2xl p-6 overflow-y-auto box-border"
+                  className="max-w-[800px] w-full max-h-[85vh] bg-[#FCE7F3] border border-[#F9A8D4]/90 text-[#4A044E] rounded-[24px] shadow-2xl p-6 overflow-y-auto box-border"
                   onClick={(e) => e.stopPropagation()}
                 >
                   {/* Top Header of Employee */}
-                  <div className="flex items-center justify-between pb-4 border-b border-white/10">
+                  <div className="flex items-center justify-between pb-4 border-b border-[#F9A8D4]/50">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-full bg-[#131b45] text-[#d4af37] border border-[#1b2559]/70 flex items-center justify-center text-sm font-black shadow-sm">
+                      <div className="w-12 h-12 rounded-full bg-[#FBCFE8] text-[#d4af37] border border-[#F9A8D4]/70 flex items-center justify-center text-sm font-black shadow-sm">
                         {empInitials}
                       </div>
                       <div className="text-left">
-                        <h4 className="text-md font-black text-white flex items-center gap-2">
+                        <h4 className="text-md font-black text-[#4A044E] flex items-center gap-2">
                           <span>{selectedEmployee.name}</span>
                           <span className="text-[#d4af37] font-mono text-xs font-bold leading-none bg-amber-500/10 px-1.5 py-0.5 rounded border border-[#d4af37]/35">({selectedEmployee.id})</span>
                         </h4>
-                        <p className="text-xs text-slate-400 font-bold">{selectedEmployee.designation} • {selectedEmployee.department}</p>
+                        <p className="text-xs text-[#9D174D]/85 font-bold">{selectedEmployee.designation} • {selectedEmployee.department}</p>
                       </div>
                     </div>
                     <button
                       onClick={() => setSelectedEmployee(null)}
-                      className="p-1.5 rounded-full border border-white/5 text-slate-400 hover:text-[#d4af37] hover:bg-white/5 transition-colors cursor-pointer shrink-0"
+                      className="p-1.5 rounded-full border border-[#F9A8D4]/40 text-[#9D174D]/85 hover:text-[#d4af37] hover:bg-white/5 transition-colors cursor-pointer shrink-0"
                     >
                       <X size={15} />
                     </button>
@@ -632,36 +632,36 @@ export default function ManagerDetailModal({
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-left">
                           
                           {/* Profile Data Box 1 */}
-                          <div className="p-4 bg-slate-950/40 border border-white/5 rounded-xl space-y-2.5 shadow-sm">
-                            <h5 className="font-black text-[#d4af37] uppercase tracking-widest text-[10px] border-b border-white/10 pb-1 flex items-center gap-1.5">
+                          <div className="p-4 bg-pink-50/80 border border-[#F9A8D4]/40 rounded-xl space-y-2.5 shadow-sm">
+                            <h5 className="font-black text-[#d4af37] uppercase tracking-widest text-[10px] border-b border-[#F9A8D4]/50 pb-1 flex items-center gap-1.5">
                               <User size={12} />
                               <span>Personal & Contact Info</span>
                             </h5>
                             <div className="space-y-1.5 text-[11.5px] font-medium leading-relaxed">
-                              <div className="flex justify-between"><span className="text-slate-400">Full Name:</span><span className="font-extrabold text-white">{selectedEmployee.name}</span></div>
-                              <div className="flex justify-between"><span className="text-slate-400">Employee ID:</span><span className="font-bold text-[#d4af37] font-mono">{selectedEmployee.id}</span></div>
-                              <div className="flex justify-between"><span className="text-slate-400">Gender:</span><span className="font-bold text-slate-200">{gender}</span></div>
-                              <div className="flex justify-between"><span className="text-slate-400">Date of Birth:</span><span className="font-bold text-slate-200 font-mono">{dob}</span></div>
-                              <div className="flex justify-between"><span className="text-slate-400">Mobile:</span><span className="font-bold text-white font-mono">{mobile}</span></div>
-                              <div className="flex justify-between"><span className="text-slate-400">Email:</span><span className="font-bold text-[#d4af37] font-mono break-all max-w-[170px] truncate" title={emailAddress}>{emailAddress}</span></div>
-                              <div className="flex justify-between"><span className="text-slate-400">Address:</span><span className="font-medium text-slate-350 text-right truncate max-w-[170px]" title={homeAddress}>{homeAddress}</span></div>
+                              <div className="flex justify-between"><span className="text-[#9D174D]/85">Full Name:</span><span className="font-extrabold text-[#4A044E]">{selectedEmployee.name}</span></div>
+                              <div className="flex justify-between"><span className="text-[#9D174D]/85">Employee ID:</span><span className="font-bold text-[#d4af37] font-mono">{selectedEmployee.id}</span></div>
+                              <div className="flex justify-between"><span className="text-[#9D174D]/85">Gender:</span><span className="font-bold text-[#701a75]">{gender}</span></div>
+                              <div className="flex justify-between"><span className="text-[#9D174D]/85">Date of Birth:</span><span className="font-bold text-[#701a75] font-mono">{dob}</span></div>
+                              <div className="flex justify-between"><span className="text-[#9D174D]/85">Mobile:</span><span className="font-bold text-[#4A044E] font-mono">{mobile}</span></div>
+                              <div className="flex justify-between"><span className="text-[#9D174D]/85">Email:</span><span className="font-bold text-[#d4af37] font-mono break-all max-w-[170px] truncate" title={emailAddress}>{emailAddress}</span></div>
+                              <div className="flex justify-between"><span className="text-[#9D174D]/85">Address:</span><span className="font-medium text-slate-350 text-right truncate max-w-[170px]" title={homeAddress}>{homeAddress}</span></div>
                             </div>
                           </div>
 
                           {/* Profile Data Box 2 */}
-                          <div className="p-4 bg-slate-950/40 border border-white/5 rounded-xl space-y-2.5 shadow-sm">
-                            <h5 className="font-black text-[#d4af37] uppercase tracking-widest text-[10px] border-b border-white/10 pb-1 flex items-center gap-1.5">
+                          <div className="p-4 bg-pink-50/80 border border-[#F9A8D4]/40 rounded-xl space-y-2.5 shadow-sm">
+                            <h5 className="font-black text-[#d4af37] uppercase tracking-widest text-[10px] border-b border-[#F9A8D4]/50 pb-1 flex items-center gap-1.5">
                               <Building2 size={12} />
                               <span>Employment & Security</span>
                             </h5>
                             <div className="space-y-1.5 text-[11.5px] font-medium leading-relaxed">
-                              <div className="flex justify-between"><span className="text-slate-400">Designation:</span><span className="font-bold text-white">{selectedEmployee.designation}</span></div>
-                              <div className="flex justify-between"><span className="text-slate-400">Department:</span><span className="font-bold text-slate-200">{selectedEmployee.department}</span></div>
-                              <div className="flex justify-between"><span className="text-slate-400">Branch Assigned:</span><span className="font-bold text-slate-200 text-right truncate max-w-[150px]" title={manager.branchName}>{manager.branchName}</span></div>
-                              <div className="flex justify-between"><span className="text-slate-400">Supervisor:</span><span className="font-bold text-[#d4af37] font-mono">{manager.name} ({manager.id})</span></div>
-                              <div className="flex justify-between"><span className="text-slate-400">Joining Date:</span><span className="font-bold text-slate-200 font-mono">{joiningDateString}</span></div>
-                              <div className="flex justify-between"><span className="text-slate-400">Clearance Level:</span><span className="font-black text-indigo-400 font-mono">{clearanceLevel}</span></div>
-                              <div className="flex justify-between"><span className="text-slate-400">Status Code:</span>
+                              <div className="flex justify-between"><span className="text-[#9D174D]/85">Designation:</span><span className="font-bold text-[#4A044E]">{selectedEmployee.designation}</span></div>
+                              <div className="flex justify-between"><span className="text-[#9D174D]/85">Department:</span><span className="font-bold text-[#701a75]">{selectedEmployee.department}</span></div>
+                              <div className="flex justify-between"><span className="text-[#9D174D]/85">Branch Assigned:</span><span className="font-bold text-[#701a75] text-right truncate max-w-[150px]" title={manager.branchName}>{manager.branchName}</span></div>
+                              <div className="flex justify-between"><span className="text-[#9D174D]/85">Supervisor:</span><span className="font-bold text-[#d4af37] font-mono">{manager.name} ({manager.id})</span></div>
+                              <div className="flex justify-between"><span className="text-[#9D174D]/85">Joining Date:</span><span className="font-bold text-[#701a75] font-mono">{joiningDateString}</span></div>
+                              <div className="flex justify-between"><span className="text-[#9D174D]/85">Clearance Level:</span><span className="font-black text-indigo-400 font-mono">{clearanceLevel}</span></div>
+                              <div className="flex justify-between"><span className="text-[#9D174D]/85">Status Code:</span>
                                 <span className={`px-2 py-0.5 rounded text-[9px] font-black uppercase ${
                                   selectedEmployee.status === 'Active' ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'bg-amber-500/10 text-amber-400 border border-amber-500/20'
                                 }`}>{selectedEmployee.status}</span>
@@ -680,7 +680,7 @@ export default function ManagerDetailModal({
                         animate={{ opacity: 1, y: 0 }}
                         className="space-y-4 text-left mr-1"
                       >
-                        <h4 className="font-black text-[#d4af37] uppercase tracking-widest text-[11px] border-b border-white/10 pb-2 flex items-center gap-1.5">
+                        <h4 className="font-black text-[#d4af37] uppercase tracking-widest text-[11px] border-b border-[#F9A8D4]/50 pb-2 flex items-center gap-1.5">
                           <Mail size={13} />
                           <span>Intranet Communications Dispatch Station</span>
                         </h4>
@@ -691,12 +691,12 @@ export default function ManagerDetailModal({
                           <div className="space-y-4">
                             
                             {/* Call Employee Card */}
-                            <div className="p-4 bg-slate-950/40 border border-white/5 rounded-xl space-y-3 shadow-sm">
-                              <h5 className="font-bold text-white uppercase tracking-wider text-[10px] flex items-center gap-1.5">
+                            <div className="p-4 bg-pink-50/80 border border-[#F9A8D4]/40 rounded-xl space-y-3 shadow-sm">
+                              <h5 className="font-bold text-[#4A044E] uppercase tracking-wider text-[10px] flex items-center gap-1.5">
                                 <Phone size={12} className="text-[#d4af37]" />
                                 <span>Voice Dial System</span>
                               </h5>
-                              <p className="text-[10px] text-slate-400">Initiate dynamic simulated connection with {selectedEmployee.name}.</p>
+                              <p className="text-[10px] text-[#9D174D]/85">Initiate dynamic simulated connection with {selectedEmployee.name}.</p>
                               
                               <div className="flex items-center gap-3">
                                 <button
@@ -704,7 +704,7 @@ export default function ManagerDetailModal({
                                   onClick={handleCallSimulation}
                                   className={`px-4 py-2 text-xs font-black uppercase rounded-lg cursor-pointer transition-all outline-none ${
                                     isCalling 
-                                      ? 'bg-rose-600 text-white animate-pulse'
+                                      ? 'bg-rose-600 text-[#4A044E] animate-pulse'
                                       : 'bg-amber-500/10 text-[#d4af37] border border-[#d4af37]/35 hover:bg-[#d4af37]/15'
                                   }`}
                                 >
@@ -721,24 +721,24 @@ export default function ManagerDetailModal({
                             </div>
 
                             {/* Internal Message Board */}
-                            <div className="p-4 bg-slate-950/40 border border-white/5 rounded-xl space-y-3 shadow-sm">
-                              <h5 className="font-bold text-white uppercase tracking-wider text-[10px] flex items-center gap-1.5">
+                            <div className="p-4 bg-pink-50/80 border border-[#F9A8D4]/40 rounded-xl space-y-3 shadow-sm">
+                              <h5 className="font-bold text-[#4A044E] uppercase tracking-wider text-[10px] flex items-center gap-1.5">
                                 <MessageSquare size={12} className="text-[#d4af37]" />
                                 <span>Slack-X Channel Feed</span>
                               </h5>
                               
-                              <div className="h-32 bg-slate-900 rounded-lg p-3 border border-white/5 overflow-y-auto font-mono text-[11px] space-y-2 scrollbar-thin scrollbar-thumb-white/10">
-                                <div className="text-slate-500 text-center text-[9px] uppercase">*** SECURE SYNDICATED CHAT RECORD START ***</div>
+                              <div className="h-32 bg-[#FFF1F5] rounded-lg p-3 border border-[#F9A8D4]/40 overflow-y-auto font-mono text-[11px] space-y-2 scrollbar-thin scrollbar-thumb-white/10">
+                                <div className="text-[#9D174D]/75 text-center text-[9px] uppercase">*** SECURE SYNDICATED CHAT RECORD START ***</div>
                                 {messageLog.length === 0 ? (
-                                  <div className="text-slate-500 text-center py-6">No messages dispatched during session state.</div>
+                                  <div className="text-[#9D174D]/75 text-center py-6">No messages dispatched during session state.</div>
                                 ) : (
                                   messageLog.map((log, idx) => (
-                                    <div key={idx} className="bg-slate-950/50 p-2 rounded border border-white/5 space-y-1">
+                                    <div key={idx} className="bg-slate-950/50 p-2 rounded border border-[#F9A8D4]/40 space-y-1">
                                       <div className="flex justify-between font-black text-[9px] text-[#d4af37]">
                                         <span>{log.sender}</span>
                                         <span>{log.time}</span>
                                       </div>
-                                      <p className="text-white font-medium">{log.text}</p>
+                                      <p className="text-[#4A044E] font-medium">{log.text}</p>
                                     </div>
                                   ))
                                 )}
@@ -750,7 +750,7 @@ export default function ManagerDetailModal({
                                   value={messageText}
                                   onChange={(e) => setMessageText(e.target.value)}
                                   placeholder="Write corporate note..."
-                                  className="flex-1 bg-slate-900 border border-white/10 rounded-lg px-3 py-1.5 text-xs outline-none focus:border-amber-500/50"
+                                  className="flex-1 bg-[#FFF1F5] border border-[#F9A8D4]/50 rounded-lg px-3 py-1.5 text-xs outline-none focus:border-amber-500/50"
                                 />
                                 <button
                                   type="submit"
@@ -767,32 +767,32 @@ export default function ManagerDetailModal({
                           <div className="space-y-4">
                             
                             {/* Email form mockup */}
-                            <div className="p-4 bg-slate-950/40 border border-white/5 rounded-xl space-y-3 shadow-sm text-xs">
-                              <h5 className="font-bold text-white uppercase tracking-wider text-[10px] flex items-center gap-1.5">
+                            <div className="p-4 bg-pink-50/80 border border-[#F9A8D4]/40 rounded-xl space-y-3 shadow-sm text-xs">
+                              <h5 className="font-bold text-[#4A044E] uppercase tracking-wider text-[10px] flex items-center gap-1.5">
                                 <Mail size={12} className="text-[#d4af37]" />
                                 <span>Official Corporate Email proxy</span>
                               </h5>
                               
                               <div className="space-y-2">
                                 <div className="grid grid-cols-5 gap-1.5 items-center">
-                                  <span className="text-slate-400 font-bold col-span-1">To:</span>
+                                  <span className="text-[#9D174D]/85 font-bold col-span-1">To:</span>
                                   <input 
-                                    className="col-span-4 bg-slate-900 border border-white/10 px-2 py-1 rounded text-[11px] font-mono text-slate-405 outline-none" 
+                                    className="col-span-4 bg-[#FFF1F5] border border-[#F9A8D4]/50 px-2 py-1 rounded text-[11px] font-mono text-slate-405 outline-none" 
                                     disabled 
                                     value={emailAddress} 
                                   />
                                 </div>
                                 <div className="grid grid-cols-5 gap-1.5 items-center">
-                                  <span className="text-slate-400 font-bold col-span-1">Subject:</span>
+                                  <span className="text-[#9D174D]/85 font-bold col-span-1">Subject:</span>
                                   <input 
-                                    className="col-span-4 bg-slate-900 border border-white/10 px-2 py-1 rounded text-[11.5px] font-semibold text-white outline-none focus:border-amber-500/50" 
+                                    className="col-span-4 bg-[#FFF1F5] border border-[#F9A8D4]/50 px-2 py-1 rounded text-[11.5px] font-semibold text-[#4A044E] outline-none focus:border-amber-500/50" 
                                     value={emailSubject}
                                     onChange={(e) => setEmailSubject(e.target.value)}
                                   />
                                 </div>
                                 <div>
                                   <textarea 
-                                    className="w-full bg-slate-900 border border-white/10 p-2 rounded text-[11.5px] font-semibold text-white outline-none h-20 resize-none font-mono focus:border-amber-500/50" 
+                                    className="w-full bg-[#FFF1F5] border border-[#F9A8D4]/50 p-2 rounded text-[11.5px] font-semibold text-[#4A044E] outline-none h-20 resize-none font-mono focus:border-amber-500/50" 
                                     value={emailBody}
                                     onChange={(e) => setEmailBody(e.target.value)}
                                   />
@@ -815,51 +815,51 @@ export default function ManagerDetailModal({
                             </div>
 
                             {/* Meeting Scheduler mockup */}
-                            <div className="p-4 bg-slate-950/40 border border-white/5 rounded-xl space-y-3 shadow-sm text-xs">
-                              <h5 className="font-bold text-white uppercase tracking-wider text-[10px] flex items-center gap-1.5">
+                            <div className="p-4 bg-pink-50/80 border border-[#F9A8D4]/40 rounded-xl space-y-3 shadow-sm text-xs">
+                              <h5 className="font-bold text-[#4A044E] uppercase tracking-wider text-[10px] flex items-center gap-1.5">
                                 <CalendarDays size={12} className="text-[#d4af37]" />
                                 <span>Security Room Meeting Planner</span>
                               </h5>
                               <form onSubmit={handleScheduleVirtualMeeting} className="space-y-2">
                                 <div className="grid grid-cols-2 gap-2">
                                   <div>
-                                    <label className="text-slate-400 font-bold text-[9px] uppercase block mb-0.5">Date</label>
+                                    <label className="text-[#9D174D]/85 font-bold text-[9px] uppercase block mb-0.5">Date</label>
                                     <input 
                                       type="date"
                                       value={meetingDate}
                                       onChange={(e) => setMeetingDate(e.target.value)}
-                                      className="w-full bg-slate-900 border border-white/10 rounded p-1 font-mono text-slate-100 placeholder-slate-500 outline-none focus:border-amber-500"
+                                      className="w-full bg-[#FFF1F5] border border-[#F9A8D4]/50 rounded p-1 font-mono text-[#4A044E] placeholder-slate-500 outline-none focus:border-amber-500"
                                       required
                                     />
                                   </div>
                                   <div>
-                                    <label className="text-slate-400 font-bold text-[9px] uppercase block mb-0.5">Time</label>
+                                    <label className="text-[#9D174D]/85 font-bold text-[9px] uppercase block mb-0.5">Time</label>
                                     <input 
                                       type="time"
                                       value={meetingTime}
                                       onChange={(e) => setMeetingTime(e.target.value)}
-                                      className="w-full bg-slate-900 border border-white/10 rounded p-1 font-mono text-slate-100 placeholder-slate-500 outline-none focus:border-amber-500"
+                                      className="w-full bg-[#FFF1F5] border border-[#F9A8D4]/50 rounded p-1 font-mono text-[#4A044E] placeholder-slate-500 outline-none focus:border-amber-500"
                                       required
                                     />
                                   </div>
                                 </div>
                                 <div>
-                                  <label className="text-slate-400 font-bold text-[9px] uppercase block mb-0.5">Topic Agenda</label>
+                                  <label className="text-[#9D174D]/85 font-bold text-[9px] uppercase block mb-0.5">Topic Agenda</label>
                                   <input 
                                     type="text"
                                     value={meetingTopic}
                                     onChange={(e) => setMeetingTopic(e.target.value)}
                                     placeholder="Quarterly audit targets..."
-                                    className="w-full bg-slate-900 border border-white/10 rounded p-1.5 font-semibold text-white outline-none focus:border-amber-500"
+                                    className="w-full bg-[#FFF1F5] border border-[#F9A8D4]/50 rounded p-1.5 font-semibold text-[#4A044E] outline-none focus:border-amber-500"
                                     required
                                   />
                                 </div>
                                 <div>
-                                  <label className="text-slate-400 font-bold text-[9px] uppercase block mb-0.5">Cryptographic Platform</label>
+                                  <label className="text-[#9D174D]/85 font-bold text-[9px] uppercase block mb-0.5">Cryptographic Platform</label>
                                   <select 
                                     value={meetingPlatform}
                                     onChange={(e) => setMeetingPlatform(e.target.value)}
-                                    className="w-full bg-slate-900 border border-white/10 rounded p-1 font-semibold text-slate-100 outline-none"
+                                    className="w-full bg-[#FFF1F5] border border-[#F9A8D4]/50 rounded p-1 font-semibold text-[#4A044E] outline-none"
                                   >
                                     <option value="Apex Encrypted Live Meet">Apex Encrypted Secured Room (Internal)</option>
                                     <option value="Sovereign Telecom VoIP Direct">Sovereign Telecom VoIP</option>
@@ -868,7 +868,7 @@ export default function ManagerDetailModal({
                                 </div>
                                 <button
                                   type="submit"
-                                  className="w-full py-2 bg-slate-950 text-slate-250 font-bold uppercase text-[9px] tracking-wider rounded-lg cursor-pointer hover:bg-slate-900 active:scale-95 transition-all text-center border border-white/5"
+                                  className="w-full py-2 bg-slate-950 text-slate-250 font-bold uppercase text-[9px] tracking-wider rounded-lg cursor-pointer hover:bg-[#FFF1F5] active:scale-95 transition-all text-center border border-[#F9A8D4]/40"
                                 >
                                   Schedule Secure Link
                                 </button>
@@ -888,7 +888,7 @@ export default function ManagerDetailModal({
                         animate={{ opacity: 1, y: 0 }}
                         className="space-y-4 text-left mr-1"
                       >
-                        <h4 className="font-black text-[#d4af37] uppercase tracking-widest text-[11px] border-b border-white/10 pb-2 flex items-center gap-1.5">
+                        <h4 className="font-black text-[#d4af37] uppercase tracking-widest text-[11px] border-b border-[#F9A8D4]/50 pb-2 flex items-center gap-1.5">
                           <Calendar size={13} />
                           <span>Attendance Ledger & Check-in Tracker</span>
                         </h4>
@@ -898,46 +898,46 @@ export default function ManagerDetailModal({
                           {/* Mini stats indicators */}
                           <div className="space-y-4 md:col-span-1">
                             
-                            <div className="p-4 bg-slate-950/40 border border-white/5 rounded-xl space-y-3 shadow-sm">
-                              <h5 className="font-black text-white uppercase tracking-wide text-[10px]">Overview Statistics</h5>
+                            <div className="p-4 bg-pink-50/80 border border-[#F9A8D4]/40 rounded-xl space-y-3 shadow-sm">
+                              <h5 className="font-black text-[#4A044E] uppercase tracking-wide text-[10px]">Overview Statistics</h5>
                               
                               <div className="grid grid-cols-2 gap-2 text-center">
                                 <div className="p-2 border border-emerald-500/20 bg-emerald-500/10 rounded-lg">
-                                  <span className="text-[8px] font-bold text-slate-400 uppercase">Present</span>
+                                  <span className="text-[8px] font-bold text-[#9D174D]/85 uppercase">Present</span>
                                   <span className="block font-mono text-base font-black text-emerald-400">224 Days</span>
                                 </div>
                                 <div className="p-2 border border-rose-500/20 bg-rose-500/10 rounded-lg">
-                                  <span className="text-[8px] font-bold text-slate-400 uppercase">Absent</span>
+                                  <span className="text-[8px] font-bold text-[#9D174D]/85 uppercase">Absent</span>
                                   <span className="block font-mono text-base font-black text-rose-450">4 Days</span>
                                 </div>
                                 <div className="p-2 border border-amber-500/20 bg-amber-500/10 rounded-lg">
-                                  <span className="text-[8px] font-bold text-slate-400 uppercase">On Leave</span>
+                                  <span className="text-[8px] font-bold text-[#9D174D]/85 uppercase">On Leave</span>
                                   <span className="block font-mono text-base font-black text-amber-400">12 Days</span>
                                 </div>
                                 <div className="p-2 border border-indigo-500/25 bg-indigo-500/10 rounded-lg">
-                                  <span className="text-[8px] font-bold text-slate-400 uppercase">Ratio</span>
+                                  <span className="text-[8px] font-bold text-[#9D174D]/85 uppercase">Ratio</span>
                                   <span className="block font-mono text-base font-black text-indigo-400">93.3%</span>
                                 </div>
                               </div>
                             </div>
 
                             {/* Check in Log */}
-                            <div className="p-4 bg-slate-950/40 border border-white/5 rounded-xl space-y-2 max-h-56 overflow-y-auto scrollbar-thin">
-                              <h5 className="font-black text-white uppercase tracking-wide text-[10px]">Recent Entry Logs</h5>
+                            <div className="p-4 bg-pink-50/80 border border-[#F9A8D4]/40 rounded-xl space-y-2 max-h-56 overflow-y-auto scrollbar-thin">
+                              <h5 className="font-black text-[#4A044E] uppercase tracking-wide text-[10px]">Recent Entry Logs</h5>
                               <div className="space-y-1.5 font-mono text-[10.5px]">
-                                <div className="p-1.5 bg-slate-900 border border-white/5 rounded flex justify-between">
+                                <div className="p-1.5 bg-[#FFF1F5] border border-[#F9A8D4]/40 rounded flex justify-between">
                                   <span className="text-slate-450">15-Jun-26 Check-In</span>
                                   <span className="text-emerald-400 font-extrabold">09:05 AM</span>
                                 </div>
-                                <div className="p-1.5 bg-slate-900 border border-white/5 rounded flex justify-between">
+                                <div className="p-1.5 bg-[#FFF1F5] border border-[#F9A8D4]/40 rounded flex justify-between">
                                   <span className="text-slate-450">15-Jun-26 Check-Out</span>
                                   <span className="text-slate-350">05:31 PM</span>
                                 </div>
-                                <div className="p-1.5 bg-slate-900 border border-white/5 rounded flex justify-between">
+                                <div className="p-1.5 bg-[#FFF1F5] border border-[#F9A8D4]/40 rounded flex justify-between">
                                   <span className="text-slate-450">14-Jun-26 Check-In</span>
                                   <span className="text-emerald-400 font-extrabold">08:58 AM</span>
                                 </div>
-                                <div className="p-1.5 bg-slate-900 border border-white/5 rounded flex justify-between">
+                                <div className="p-1.5 bg-[#FFF1F5] border border-[#F9A8D4]/40 rounded flex justify-between">
                                   <span className="text-slate-450">14-Jun-26 Check-Out</span>
                                   <span className="text-slate-350">05:40 PM</span>
                                 </div>
@@ -947,8 +947,8 @@ export default function ManagerDetailModal({
                           </div>
 
                           {/* june 2026 Monthly Calendar */}
-                          <div className="md:col-span-2 p-4 bg-slate-950/50 border border-white/5 rounded-xl space-y-3 flex flex-col">
-                            <h5 className="font-extrabold text-slate-200 text-[11px] uppercase tracking-wider text-center border-b border-white/10 pb-1 flex items-center justify-between">
+                          <div className="md:col-span-2 p-4 bg-slate-950/50 border border-[#F9A8D4]/40 rounded-xl space-y-3 flex flex-col">
+                            <h5 className="font-extrabold text-[#701a75] text-[11px] uppercase tracking-wider text-center border-b border-[#F9A8D4]/50 pb-1 flex items-center justify-between">
                               <span>June 2026 Attendance Calendar</span>
                               <span className="text-[9.5px] text-[#d4af37] font-sans capitalize font-normal">Legend: Green (Present) | Yellow (Leave) | Red (Absent)</span>
                             </h5>
@@ -974,7 +974,7 @@ export default function ManagerDetailModal({
                                   cellBg = "bg-amber-500/10 text-amber-400 border-amber-500/15"; // Leaves
                                 } else if (dayNumber > 15) {
                                   // future days in the system (since current local is 15-Jun-2026)
-                                  cellBg = "bg-slate-900/40 text-slate-500 border-white/5 opacity-60";
+                                  cellBg = "bg-[#FFF1F5]/40 text-[#9D174D]/75 border-[#F9A8D4]/40 opacity-60";
                                 }
 
                                 return (
@@ -1007,7 +1007,7 @@ export default function ManagerDetailModal({
                         animate={{ opacity: 1, y: 0 }}
                         className="space-y-4 text-left mr-1"
                       >
-                        <h4 className="font-black text-[#d4af37] uppercase tracking-widest text-[11px] border-b border-white/10 pb-2 flex items-center gap-1.5">
+                        <h4 className="font-black text-[#d4af37] uppercase tracking-widest text-[11px] border-b border-[#F9A8D4]/50 pb-2 flex items-center gap-1.5">
                           <TrendingUp size={13} />
                           <span>Performance Reviews & Evaluation Index</span>
                         </h4>
@@ -1015,12 +1015,12 @@ export default function ManagerDetailModal({
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                           
                           {/* Rating Card */}
-                          <div className="p-4 bg-slate-950/40 border border-white/5 rounded-xl space-y-2.5 shadow-sm">
-                            <h5 className="font-bold text-white uppercase tracking-wider text-[10px] flex items-center gap-1.5">
+                          <div className="p-4 bg-pink-50/80 border border-[#F9A8D4]/40 rounded-xl space-y-2.5 shadow-sm">
+                            <h5 className="font-bold text-[#4A044E] uppercase tracking-wider text-[10px] flex items-center gap-1.5">
                               <Star size={12} className="text-[#d4af37]" />
                               <span>SLA Performance Score</span>
                             </h5>
-                            <div className="text-center py-4 bg-slate-900 border border-white/5 rounded-xl">
+                            <div className="text-center py-4 bg-[#FFF1F5] border border-[#F9A8D4]/40 rounded-xl">
                               <span className="text-4xl font-mono font-black text-[#d4af37] block">★ 4.75</span>
                               <span className="text-[9px] font-bold text-emerald-400 uppercase mt-0.5 block">GRADE EXCELLATIVE EXECUTIVE</span>
                             </div>
@@ -1028,18 +1028,18 @@ export default function ManagerDetailModal({
                           </div>
 
                           {/* Historical Review Ledger */}
-                          <div className="p-4 bg-slate-950/40 border border-white/5 rounded-xl space-y-2 shadow-sm">
-                            <h5 className="font-bold text-white uppercase tracking-wider text-[10px]">Quarterly Review history</h5>
+                          <div className="p-4 bg-pink-50/80 border border-[#F9A8D4]/40 rounded-xl space-y-2 shadow-sm">
+                            <h5 className="font-bold text-[#4A044E] uppercase tracking-wider text-[10px]">Quarterly Review history</h5>
                             <div className="space-y-1.5 text-[11px] font-medium">
-                              <div className="p-2 bg-slate-900 border border-white/5 rounded flex justify-between">
+                              <div className="p-2 bg-[#FFF1F5] border border-[#F9A8D4]/40 rounded flex justify-between">
                                 <span className="font-bold">Q1 2026 Audit</span>
                                 <span className="font-mono font-black text-[#d4af37]">94.2% Passed</span>
                               </div>
-                              <div className="p-2 bg-slate-900 border border-white/5 rounded flex justify-between">
+                              <div className="p-2 bg-[#FFF1F5] border border-[#F9A8D4]/40 rounded flex justify-between">
                                 <span className="font-bold">Q4 2025 Audit</span>
                                 <span className="font-mono font-black text-[#d4af37]">96.8% Passed</span>
                               </div>
-                              <div className="p-2 bg-slate-900 border border-white/5 rounded flex justify-between">
+                              <div className="p-2 bg-[#FFF1F5] border border-[#F9A8D4]/40 rounded flex justify-between">
                                 <span className="font-bold">Q3 2025 Audit</span>
                                 <span className="font-mono font-black text-amber-500">89.4% Warning</span>
                               </div>
@@ -1047,16 +1047,16 @@ export default function ManagerDetailModal({
                           </div>
 
                           {/* Promotion Ledger */}
-                          <div className="p-4 bg-slate-950/40 border border-white/5 rounded-xl space-y-2 shadow-sm md:col-span-2 lg:col-span-1">
-                            <h5 className="font-bold text-white uppercase tracking-wider text-[10px]">Career & Promotion records</h5>
+                          <div className="p-4 bg-pink-50/80 border border-[#F9A8D4]/40 rounded-xl space-y-2 shadow-sm md:col-span-2 lg:col-span-1">
+                            <h5 className="font-bold text-[#4A044E] uppercase tracking-wider text-[10px]">Career & Promotion records</h5>
                             <div className="space-y-1.5 text-[11px] font-medium">
-                              <div className="p-2 bg-slate-900 border border-[#d4af37]/25 rounded">
+                              <div className="p-2 bg-[#FFF1F5] border border-[#d4af37]/25 rounded">
                                 <p className="font-bold text-[#d4af37]">Jun 2025 Posting</p>
-                               <p className="text-slate-400 text-[10px]">Promoted to Senior relations specialist at Sovereign Command</p>
+                               <p className="text-[#9D174D]/85 text-[10px]">Promoted to Senior relations specialist at Sovereign Command</p>
                               </div>
-                              <div className="p-2 bg-slate-900 border border-[#d4af37]/25 rounded">
+                              <div className="p-2 bg-[#FFF1F5] border border-[#d4af37]/25 rounded">
                                 <p className="font-bold text-[#d4af37]">Jan 2024 Posting</p>
-                                <p className="text-slate-400 text-[10px]">Joined node from London District Node Office</p>
+                                <p className="text-[#9D174D]/85 text-[10px]">Joined node from London District Node Office</p>
                               </div>
                             </div>
                           </div>
@@ -1065,8 +1065,8 @@ export default function ManagerDetailModal({
 
                         {/* Manager Feedback Text */}
                         <div className="p-4 bg-amber-500/[0.03] border border-amber-400/10 rounded-xl space-y-2.5">
-                          <h5 className="font-extrabold text-white text-[10px] uppercase tracking-widest">Active supervisor feed reviews</h5>
-                          <div className="p-3 bg-slate-900 border border-white/5 rounded-lg text-[11.5px] leading-relaxed font-medium">
+                          <h5 className="font-extrabold text-[#4A044E] text-[10px] uppercase tracking-widest">Active supervisor feed reviews</h5>
+                          <div className="p-3 bg-[#FFF1F5] border border-[#F9A8D4]/40 rounded-lg text-[11.5px] leading-relaxed font-medium">
                             <span className="text-[#d4af37] font-black font-mono text-[10px] uppercase block mb-1">Feedback signed by {manager.name} (Direct Manager):</span>
                             "{selectedEmployee.name} displays intense task performance capability within regional audit nodes. Consistently manages currency distribution protocols error-free and establishes exceptional workspace communication logs with our customer base. Recommend for upcoming administrative promotion cycle."
                           </div>
@@ -1082,13 +1082,13 @@ export default function ManagerDetailModal({
                         animate={{ opacity: 1, y: 0 }}
                         className="space-y-4 text-left mr-1"
                       >
-                        <h4 className="font-black text-[#d4af37] uppercase tracking-widest text-[11px] border-b border-white/10 pb-2 flex items-center gap-1.5">
+                        <h4 className="font-black text-[#d4af37] uppercase tracking-widest text-[11px] border-b border-[#F9A8D4]/50 pb-2 flex items-center gap-1.5">
                           <FileText size={13} />
                           <span>Automated Crypto-Report Generator Station</span>
                         </h4>
 
-                        <div className="p-4 bg-slate-950/40 border border-white/5 rounded-xl space-y-4">
-                          <p className="text-[10px] text-slate-400 uppercase tracking-wide font-black">
+                        <div className="p-4 bg-pink-50/80 border border-[#F9A8D4]/40 rounded-xl space-y-4">
+                          <p className="text-[10px] text-[#9D174D]/85 uppercase tracking-wide font-black">
                             Select desired export payload layout profile to trigger cryptographic system audit documents package.
                           </p>
 
@@ -1097,11 +1097,11 @@ export default function ManagerDetailModal({
                             <button
                               type="button"
                               onClick={() => handleExportClick('pdf')}
-                              className="p-4 bg-slate-900 hover:bg-slate-850 border border-[#d4af37]/35 hover:border-[#d4af37] rounded-xl text-center space-y-2 transition-all cursor-pointer shadow-sm flex flex-col items-center justify-between"
+                              className="p-4 bg-[#FFF1F5] hover:bg-slate-850 border border-[#d4af37]/35 hover:border-[#d4af37] rounded-xl text-center space-y-2 transition-all cursor-pointer shadow-sm flex flex-col items-center justify-between"
                             >
                               <FileText size={24} className="text-[#d4af37] block" />
                               <div>
-                                <span className="font-black text-xs text-white block">Export To PDF format</span>
+                                <span className="font-black text-xs text-[#4A044E] block">Export To PDF format</span>
                                 <span className="text-[9px] text-[#555555] block mt-1">SLA Standard Document</span>
                               </div>
                             </button>
@@ -1109,11 +1109,11 @@ export default function ManagerDetailModal({
                             <button
                               type="button"
                               onClick={() => handleExportClick('excel')}
-                              className="p-4 bg-slate-900 hover:bg-slate-850 border border-[#d4af37]/35 hover:border-[#d4af37] rounded-xl text-center space-y-2 transition-all cursor-pointer shadow-sm flex flex-col items-center justify-between"
+                              className="p-4 bg-[#FFF1F5] hover:bg-slate-850 border border-[#d4af37]/35 hover:border-[#d4af37] rounded-xl text-center space-y-2 transition-all cursor-pointer shadow-sm flex flex-col items-center justify-between"
                             >
                               <FileSpreadsheet size={24} className="text-amber-500 block" />
                               <div>
-                                <span className="font-black text-xs text-white block">Export Data to Excel</span>
+                                <span className="font-black text-xs text-[#4A044E] block">Export Data to Excel</span>
                                 <span className="text-[9px] text-[#555555] block mt-1">Dossier Sheet Matrix</span>
                               </div>
                             </button>
@@ -1121,11 +1121,11 @@ export default function ManagerDetailModal({
                             <button
                               type="button"
                               onClick={() => handleExportClick('print')}
-                              className="p-4 bg-slate-900 hover:bg-slate-850 border border-[#d4af37]/35 hover:border-[#d4af37] rounded-xl text-center space-y-2 transition-all cursor-pointer shadow-sm flex flex-col items-center justify-between"
+                              className="p-4 bg-[#FFF1F5] hover:bg-slate-850 border border-[#d4af37]/35 hover:border-[#d4af37] rounded-xl text-center space-y-2 transition-all cursor-pointer shadow-sm flex flex-col items-center justify-between"
                             >
                               <Printer size={24} className="text-indigo-400 block" />
                               <div>
-                                <span className="font-black text-xs text-white block">Print Standard Report</span>
+                                <span className="font-black text-xs text-[#4A044E] block">Print Standard Report</span>
                                 <span className="text-[9px] text-[#555555] block mt-1">Direct Terminal Printout</span>
                               </div>
                             </button>
@@ -1134,12 +1134,12 @@ export default function ManagerDetailModal({
 
                           {/* Progress bar simulation for download */}
                           {exportMode !== 'none' && (
-                            <div className="p-4 bg-slate-900 border border-[#d4af37]/35 rounded-xl space-y-2 animate-pulse">
+                            <div className="p-4 bg-[#FFF1F5] border border-[#d4af37]/35 rounded-xl space-y-2 animate-pulse">
                               <div className="flex justify-between font-mono text-[10.5px] font-black text-[#d4af37]">
                                 <span>SIMULATING ENCRYPTED EXPORT TARGET: {exportMode.toUpperCase()}...</span>
                                 <span>{exportProgress}%</span>
                               </div>
-                              <div className="w-full bg-slate-950 rounded-full h-2 shadow-inner border border-white/5 overflow-hidden">
+                              <div className="w-full bg-slate-950 rounded-full h-2 shadow-inner border border-[#F9A8D4]/40 overflow-hidden">
                                 <div 
                                   className="bg-gradient-to-r from-amber-400 to-[#d4af37] h-2 rounded-full transition-all duration-100" 
                                   style={{ width: `${exportProgress}%` }}
@@ -1149,9 +1149,9 @@ export default function ManagerDetailModal({
                           )}
 
                           {/* Preview paper layout sheet */}
-                          <div className="bg-slate-900 border border-white/5 rounded-xl p-6 font-mono text-[10.5px] text-slate-350 space-y-4 shadow-md max-h-72 overflow-y-auto leading-relaxed scrollbar-thin">
-                            <div className="text-center border-b border-white/10 pb-2">
-                              <h3 className="font-extrabold text-xs text-white uppercase tracking-widest">APEX NATIONAL BANK CO-CORE LEDGER</h3>
+                          <div className="bg-[#FFF1F5] border border-[#F9A8D4]/40 rounded-xl p-6 font-mono text-[10.5px] text-slate-350 space-y-4 shadow-md max-h-72 overflow-y-auto leading-relaxed scrollbar-thin">
+                            <div className="text-center border-b border-[#F9A8D4]/50 pb-2">
+                              <h3 className="font-extrabold text-xs text-[#4A044E] uppercase tracking-widest">APEX NATIONAL BANK CO-CORE LEDGER</h3>
                               <p className="text-[8px] uppercase tracking-widest text-[#d4af37] mt-1 font-sans">CRYPTOGRAPHIC ADM Clearance: CLR-SEC-LOGS</p>
                             </div>
                             
@@ -1164,16 +1164,16 @@ export default function ManagerDetailModal({
                               <div><span className="font-black text-[#d4af37]">STATION NODE:</span> {manager.branchName}</div>
                             </div>
 
-                            <hr className="border-white/5" />
+                            <hr className="border-[#F9A8D4]/40" />
 
                             <div>
-                              <span className="font-black block uppercase mb-1 text-white">■ PERFORMANCE KPI RECORD MATRIX:</span>
+                              <span className="font-black block uppercase mb-1 text-[#4A044E]">■ PERFORMANCE KPI RECORD MATRIX:</span>
                               <p>Rating state: 4.75 CSAT Unit points. Verified attendance average: 93.3% ratio limit bounds. Monthly calendar verified clean. Auditing checklists verified successfully processed on core branch network database.</p>
                             </div>
 
-                            <hr className="border-white/5" />
+                            <hr className="border-[#F9A8D4]/40" />
 
-                            <div className="text-[8.5px] text-slate-500">
+                            <div className="text-[8.5px] text-[#9D174D]/75">
                               System Hash: 0x9BFFCF82E0947AD6BB9332204E99C128 / Signature Certified Admin HR Core Sovereign
                             </div>
                           </div>
@@ -1189,7 +1189,7 @@ export default function ManagerDetailModal({
                         animate={{ opacity: 1, y: 0 }}
                         className="space-y-5 text-left text-xs text-white mr-1"
                       >
-                        <h4 className="font-black text-[#d4af37] uppercase tracking-widest text-[11px] border-b border-white/10 pb-2 flex items-center gap-1.5">
+                        <h4 className="font-black text-[#d4af37] uppercase tracking-widest text-[11px] border-b border-[#F9A8D4]/50 pb-2 flex items-center gap-1.5">
                           <Award size={13} className="text-amber-400" />
                           <span>Branch Node Analytics Dashboard Controller</span>
                         </h4>
@@ -1198,76 +1198,76 @@ export default function ManagerDetailModal({
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           
                           {/* Box 1: BRANCH MASTER INFO */}
-                          <div className="p-4 bg-slate-950/40 border border-white/5 rounded-xl space-y-3.5 shadow-sm">
-                            <h5 className="font-black text-[#d4af37] uppercase tracking-wider text-[10px] pb-1 border-b border-white/5 flex items-center gap-1.5">
+                          <div className="p-4 bg-pink-50/80 border border-[#F9A8D4]/40 rounded-xl space-y-3.5 shadow-sm">
+                            <h5 className="font-black text-[#d4af37] uppercase tracking-wider text-[10px] pb-1 border-b border-[#F9A8D4]/40 flex items-center gap-1.5">
                               <Building2 size={12} className="text-amber-400" />
                               <span>Sovereign Branch Information</span>
                             </h5>
                             <div className="space-y-2 mt-2 font-medium text-[11.5px] leading-relaxed">
-                              <div className="flex justify-between"><span className="text-slate-400">Branch Name:</span><span className="font-bold text-white">{manager.branchName}</span></div>
-                              <div className="flex justify-between"><span className="text-slate-400">Branch Code:</span><span className="font-bold font-mono text-[#d4af37]">{manager.branchCode}</span></div>
-                              <div className="flex justify-between"><span className="text-slate-400">Branch Location:</span><span className="font-semibold text-slate-200">{manager.branchLocation}</span></div>
-                              <div className="flex justify-between"><span className="text-slate-400">Branch Manager:</span><span className="font-bold text-white">{manager.name}</span></div>
-                              <div className="flex justify-between"><span className="text-slate-400">Opening Date:</span><span className="font-semibold font-mono text-slate-350">{manager.branchOpeningDate || "2018-05-10"}</span></div>
+                              <div className="flex justify-between"><span className="text-[#9D174D]/85">Branch Name:</span><span className="font-bold text-[#4A044E]">{manager.branchName}</span></div>
+                              <div className="flex justify-between"><span className="text-[#9D174D]/85">Branch Code:</span><span className="font-bold font-mono text-[#d4af37]">{manager.branchCode}</span></div>
+                              <div className="flex justify-between"><span className="text-[#9D174D]/85">Branch Location:</span><span className="font-semibold text-[#701a75]">{manager.branchLocation}</span></div>
+                              <div className="flex justify-between"><span className="text-[#9D174D]/85">Branch Manager:</span><span className="font-bold text-[#4A044E]">{manager.name}</span></div>
+                              <div className="flex justify-between"><span className="text-[#9D174D]/85">Opening Date:</span><span className="font-semibold font-mono text-slate-350">{manager.branchOpeningDate || "2018-05-10"}</span></div>
                             </div>
                           </div>
 
                           {/* Box 2: EMPLOYEE STATS ANALYTICS */}
-                          <div className="p-4 bg-slate-950/40 border border-white/5 rounded-xl space-y-3.5 shadow-sm">
-                            <h5 className="font-black text-[#d4af37] uppercase tracking-wider text-[10px] pb-1 border-b border-white/5 flex items-center gap-1.5">
+                          <div className="p-4 bg-pink-50/80 border border-[#F9A8D4]/40 rounded-xl space-y-3.5 shadow-sm">
+                            <h5 className="font-black text-[#d4af37] uppercase tracking-wider text-[10px] pb-1 border-b border-[#F9A8D4]/40 flex items-center gap-1.5">
                               <Users size={12} className="text-amber-400" />
                               <span>Staff Demographics Directory</span>
                             </h5>
                             <div className="space-y-2 mt-2 font-medium text-[11.5px] leading-relaxed">
-                              <div className="flex justify-between"><span className="text-slate-400 font-bold">Total Staff Count:</span><span className="font-bold font-mono text-[#d4af37]">{totalEmployees} Employees</span></div>
-                              <div className="flex justify-between"><span className="text-slate-400">Active Staff Duty:</span><span className="font-bold text-emerald-400">{activeEmployees} Active</span></div>
-                              <div className="flex justify-between"><span className="text-slate-400">On Leave Duty:</span><span className="font-bold text-amber-400">{onLeaveEmployees} On Leave</span></div>
-                              <div className="flex justify-between"><span className="text-slate-400">Contractor Base:</span><span className="font-bold text-indigo-400">{contractEmployees} Officers</span></div>
-                              <div className="flex justify-between"><span className="text-slate-400">Suspended Registry:</span><span className="font-bold text-rose-400">{suspendedEmployees} Members</span></div>
+                              <div className="flex justify-between"><span className="text-[#9D174D]/85 font-bold">Total Staff Count:</span><span className="font-bold font-mono text-[#d4af37]">{totalEmployees} Employees</span></div>
+                              <div className="flex justify-between"><span className="text-[#9D174D]/85">Active Staff Duty:</span><span className="font-bold text-emerald-400">{activeEmployees} Active</span></div>
+                              <div className="flex justify-between"><span className="text-[#9D174D]/85">On Leave Duty:</span><span className="font-bold text-amber-400">{onLeaveEmployees} On Leave</span></div>
+                              <div className="flex justify-between"><span className="text-[#9D174D]/85">Contractor Base:</span><span className="font-bold text-indigo-400">{contractEmployees} Officers</span></div>
+                              <div className="flex justify-between"><span className="text-[#9D174D]/85">Suspended Registry:</span><span className="font-bold text-rose-400">{suspendedEmployees} Members</span></div>
                             </div>
                           </div>
 
                           {/* Box 3: PERFORMANCE METRICS */}
-                          <div className="p-4 bg-slate-950/40 border border-white/5 rounded-xl space-y-3.5 shadow-sm">
-                            <h5 className="font-black text-[#d4af37] uppercase tracking-wider text-[10px] pb-1 border-b border-white/5 flex items-center gap-1.5">
+                          <div className="p-4 bg-pink-50/80 border border-[#F9A8D4]/40 rounded-xl space-y-3.5 shadow-sm">
+                            <h5 className="font-black text-[#d4af37] uppercase tracking-wider text-[10px] pb-1 border-b border-[#F9A8D4]/40 flex items-center gap-1.5">
                               <TrendingUp size={12} className="text-amber-400" />
                               <span>Performance & Productivity Logs</span>
                             </h5>
                             <div className="space-y-2 mt-2 font-medium text-[11.5px] leading-relaxed">
-                              <div className="flex justify-between"><span className="text-slate-400">Branch Performance index:</span><span className="font-black text-[#d4af37] font-mono">{branchPerformanceScore}</span></div>
-                              <div className="flex justify-between"><span className="text-slate-400">Monthly Node Revenue:</span><span className="font-bold text-emerald-400 font-mono">{manager.performance.revenue}</span></div>
-                              <div className="flex justify-between"><span className="text-slate-400">Loan Processing Target:</span><span className="font-extrabold text-white">94.2% Success</span></div>
-                              <div className="flex justify-between"><span className="text-slate-400">CSAT Score:</span><span className="font-bold text-[#d4af37]">4.75 CSAT Ratio</span></div>
-                              <div className="flex justify-between"><span className="text-slate-400">Workspace Productivity Index:</span><span className="font-mono font-black text-emerald-400">95.8% Rated</span></div>
+                              <div className="flex justify-between"><span className="text-[#9D174D]/85">Branch Performance index:</span><span className="font-black text-[#d4af37] font-mono">{branchPerformanceScore}</span></div>
+                              <div className="flex justify-between"><span className="text-[#9D174D]/85">Monthly Node Revenue:</span><span className="font-bold text-emerald-400 font-mono">{manager.performance.revenue}</span></div>
+                              <div className="flex justify-between"><span className="text-[#9D174D]/85">Loan Processing Target:</span><span className="font-extrabold text-[#4A044E]">94.2% Success</span></div>
+                              <div className="flex justify-between"><span className="text-[#9D174D]/85">CSAT Score:</span><span className="font-bold text-[#d4af37]">4.75 CSAT Ratio</span></div>
+                              <div className="flex justify-between"><span className="text-[#9D174D]/85">Workspace Productivity Index:</span><span className="font-mono font-black text-emerald-400">95.8% Rated</span></div>
                             </div>
                           </div>
 
                           {/* Box 4: FINANCIAL KPI BALANCES */}
-                          <div className="p-4 bg-slate-950/40 border border-white/5 rounded-xl space-y-3.5 shadow-sm">
-                            <h5 className="font-black text-[#d4af37] uppercase tracking-wider text-[10px] pb-1 border-b border-white/5 flex items-center gap-1.5">
+                          <div className="p-4 bg-pink-50/80 border border-[#F9A8D4]/40 rounded-xl space-y-3.5 shadow-sm">
+                            <h5 className="font-black text-[#d4af37] uppercase tracking-wider text-[10px] pb-1 border-b border-[#F9A8D4]/40 flex items-center gap-1.5">
                               <Shield size={12} className="text-amber-400" />
                               <span>Financial Assets Auditing Ledger</span>
                             </h5>
                             <div className="space-y-2 mt-2 font-medium text-[11.5px] leading-relaxed">
-                              <div className="flex justify-between"><span className="text-slate-400">Total Deposits Managed:</span><span className="font-bold text-emerald-405 font-mono">{manager.performance.totalDeposits}</span></div>
-                              <div className="flex justify-between"><span className="text-slate-400">Total Disbursed Loans:</span><span className="font-bold text-rose-450 font-mono">{manager.performance.totalLoans}</span></div>
-                              <div className="flex justify-between"><span className="text-slate-400">Credit Card Accounts:</span><span className="font-semibold text-slate-200">1,420 Active CCs</span></div>
-                              <div className="flex justify-between"><span className="text-slate-400">Fixed Deposits Locked:</span><span className="font-semibold text-slate-200">524 Ledger Nodes</span></div>
-                              <div className="flex justify-between"><span className="text-slate-400">Portfolio Investment:</span><span className="font-semibold text-slate-200">185 Managed Accounts</span></div>
+                              <div className="flex justify-between"><span className="text-[#9D174D]/85">Total Deposits Managed:</span><span className="font-bold text-emerald-405 font-mono">{manager.performance.totalDeposits}</span></div>
+                              <div className="flex justify-between"><span className="text-[#9D174D]/85">Total Disbursed Loans:</span><span className="font-bold text-rose-450 font-mono">{manager.performance.totalLoans}</span></div>
+                              <div className="flex justify-between"><span className="text-[#9D174D]/85">Credit Card Accounts:</span><span className="font-semibold text-[#701a75]">1,420 Active CCs</span></div>
+                              <div className="flex justify-between"><span className="text-[#9D174D]/85">Fixed Deposits Locked:</span><span className="font-semibold text-[#701a75]">524 Ledger Nodes</span></div>
+                              <div className="flex justify-between"><span className="text-[#9D174D]/85">Portfolio Investment:</span><span className="font-semibold text-[#701a75]">185 Managed Accounts</span></div>
                             </div>
                           </div>
 
                         </div>
 
                         {/* GRAPH CHARTS WITH NEW GOLD/SLATE PALETTE */}
-                        <div className="p-4 bg-slate-900 border border-white/5 rounded-xl space-y-4">
+                        <div className="p-4 bg-[#FFF1F5] border border-[#F9A8D4]/40 rounded-xl space-y-4">
                           <h5 className="font-black text-[#d4af37] uppercase tracking-wider text-[10px] text-center">Interactive Branch Visual Graphs Area</h5>
                           
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             
                             {/* Chart 1: Staff Distribution Pie */}
-                            <div className="p-3 bg-slate-950/30 border border-white/5 rounded-xl flex flex-col items-center">
-                              <span className="text-[9px] font-black text-slate-400 uppercase tracking-wider mb-2 block text-center">Employee Roles Distribution</span>
+                            <div className="p-3 bg-slate-950/30 border border-[#F9A8D4]/40 rounded-xl flex flex-col items-center">
+                              <span className="text-[9px] font-black text-[#9D174D]/85 uppercase tracking-wider mb-2 block text-center">Employee Roles Distribution</span>
                               <div className="w-full h-44 flex items-center justify-center">
                                 <ResponsiveContainer width="100%" height="100%">
                                   <PieChart>
@@ -1299,8 +1299,8 @@ export default function ManagerDetailModal({
                             </div>
 
                             {/* Chart 2: Department Distribution Chart */}
-                            <div className="p-3 bg-slate-950/30 border border-white/5 rounded-xl flex flex-col items-center">
-                              <span className="text-[9px] font-black text-slate-400 uppercase tracking-wider mb-2 block text-center font-sans">Department Distribution Ratio</span>
+                            <div className="p-3 bg-slate-950/30 border border-[#F9A8D4]/40 rounded-xl flex flex-col items-center">
+                              <span className="text-[9px] font-black text-[#9D174D]/85 uppercase tracking-wider mb-2 block text-center font-sans">Department Distribution Ratio</span>
                               <div className="w-full h-44">
                                 <ResponsiveContainer width="100%" height="100%">
                                   <BarChart data={deptDistData} margin={{ top: 10, right: 10, left: -25, bottom: 0 }}>
@@ -1315,8 +1315,8 @@ export default function ManagerDetailModal({
                             </div>
 
                             {/* Chart 3: Attendance Quarterly Line */}
-                            <div className="p-3 bg-slate-950/30 border border-white/5 rounded-xl flex flex-col items-center">
-                              <span className="text-[9px] font-black text-slate-400 uppercase tracking-wider mb-2 block text-center font-sans">Branch Attendance Ratio Trend</span>
+                            <div className="p-3 bg-slate-950/30 border border-[#F9A8D4]/40 rounded-xl flex flex-col items-center">
+                              <span className="text-[9px] font-black text-[#9D174D]/85 uppercase tracking-wider mb-2 block text-center font-sans">Branch Attendance Ratio Trend</span>
                               <div className="w-full h-44 font-mono text-[9px]">
                                 <ResponsiveContainer width="100%" height="100%">
                                   <LineChart data={attendanceTrendData} margin={{ top: 10, right: 10, left: -25, bottom: 0 }}>
@@ -1331,8 +1331,8 @@ export default function ManagerDetailModal({
                             </div>
 
                             {/* Chart 4: Revenue Trend Chart */}
-                            <div className="p-3 bg-slate-950/30 border border-white/5 rounded-xl flex flex-col items-center">
-                              <span className="text-[9px] font-black text-slate-400 uppercase tracking-wider mb-2 block text-center font-sans">Monthly Revenue Stream Trend Chart</span>
+                            <div className="p-3 bg-slate-950/30 border border-[#F9A8D4]/40 rounded-xl flex flex-col items-center">
+                              <span className="text-[9px] font-black text-[#9D174D]/85 uppercase tracking-wider mb-2 block text-center font-sans">Monthly Revenue Stream Trend Chart</span>
                               <div className="w-full h-44 text-[8px] font-mono">
                                 <ResponsiveContainer width="100%" height="100%">
                                   <AreaChart data={revenueTrendData} margin={{ top: 10, right: 10, left: -10, bottom: 0 }}>
@@ -1355,8 +1355,8 @@ export default function ManagerDetailModal({
                   </div>
 
                   {/* BOTTOM ACTION BUTTONS ROW LAYOUT */}
-                  <div className="mt-6 pt-4 border-t border-white/10 select-none">
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 w-full text-slate-100">
+                  <div className="mt-6 pt-4 border-t border-[#F9A8D4]/50 select-none">
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 w-full text-[#4A044E]">
                       
                       <button
                         type="button"
@@ -1367,7 +1367,7 @@ export default function ManagerDetailModal({
                         className={`py-2 px-1 hover:brightness-95 rounded-xl text-[10.5px] font-black uppercase tracking-wider transition-all duration-250 active:scale-[0.97] cursor-pointer flex items-center justify-center gap-1 shadow-sm ${
                           empViewTab === 'profile'
                             ? 'bg-amber-500/10 border-2 border-amber-400 text-[#d4af37] font-extrabold'
-                            : 'bg-slate-900 border-2 border-white/5 text-slate-350 font-semibold'
+                            : 'bg-[#FFF1F5] border-2 border-[#F9A8D4]/40 text-slate-350 font-semibold'
                         }`}
                       >
                         <User size={13} className="text-amber-400 shrink-0" />
@@ -1383,7 +1383,7 @@ export default function ManagerDetailModal({
                         className={`py-2 px-1 hover:brightness-95 rounded-xl text-[10.5px] font-black uppercase tracking-wider transition-all duration-250 active:scale-[0.97] cursor-pointer flex items-center justify-center gap-1 shadow-sm ${
                           empViewTab === 'contact'
                             ? 'bg-amber-500/10 border-2 border-amber-400 text-[#d4af37] font-extrabold'
-                            : 'bg-slate-900 border-2 border-white/5 text-slate-350 font-semibold'
+                            : 'bg-[#FFF1F5] border-2 border-[#F9A8D4]/40 text-slate-350 font-semibold'
                         }`}
                       >
                         <Mail size={13} className="text-amber-400 shrink-0" />
@@ -1399,7 +1399,7 @@ export default function ManagerDetailModal({
                         className={`py-2 px-1 hover:brightness-95 rounded-xl text-[10.5px] font-black uppercase tracking-wider transition-all duration-250 active:scale-[0.97] cursor-pointer flex items-center justify-center gap-1 shadow-sm ${
                           empViewTab === 'attendance'
                             ? 'bg-amber-500/10 border-2 border-amber-400 text-[#d4af37] font-extrabold'
-                            : 'bg-slate-900 border-2 border-white/5 text-slate-350 font-semibold'
+                            : 'bg-[#FFF1F5] border-2 border-[#F9A8D4]/40 text-slate-350 font-semibold'
                         }`}
                       >
                         <Calendar size={13} className="text-amber-400 shrink-0" />
@@ -1415,7 +1415,7 @@ export default function ManagerDetailModal({
                         className={`py-2 px-1 hover:brightness-95 rounded-xl text-[10.5px] font-black uppercase tracking-wider transition-all duration-250 active:scale-[0.97] cursor-pointer flex items-center justify-center gap-1 shadow-sm ${
                           empViewTab === 'performance'
                             ? 'bg-amber-500/10 border-2 border-amber-400 text-[#d4af37] font-extrabold'
-                            : 'bg-slate-900 border-2 border-white/5 text-slate-350 font-semibold'
+                            : 'bg-[#FFF1F5] border-2 border-[#F9A8D4]/40 text-slate-350 font-semibold'
                         }`}
                       >
                         <TrendingUp size={13} className="text-amber-400 shrink-0" />
@@ -1431,7 +1431,7 @@ export default function ManagerDetailModal({
                         className={`py-2 px-1 hover:brightness-95 rounded-xl text-[10.5px] font-black uppercase tracking-wider transition-all duration-250 active:scale-[0.97] cursor-pointer flex items-center justify-center gap-1 shadow-sm ${
                           empViewTab === 'report'
                             ? 'bg-amber-500/10 border-2 border-amber-400 text-[#d4af37] font-extrabold'
-                            : 'bg-slate-900 border-2 border-white/5 text-slate-350 font-semibold'
+                            : 'bg-[#FFF1F5] border-2 border-[#F9A8D4]/40 text-slate-350 font-semibold'
                         }`}
                       >
                         <Download size={13} className="text-amber-400 shrink-0" />
@@ -1447,7 +1447,7 @@ export default function ManagerDetailModal({
                         className={`py-2 px-1 hover:brightness-95 rounded-xl text-[10.5px] font-black uppercase tracking-wider transition-all duration-250 active:scale-[0.97] cursor-pointer flex items-center justify-center gap-1 shadow-md ${
                           empViewTab === 'analytics'
                             ? 'bg-amber-500/10 border-2 border-amber-400 text-[#d4af37] font-extrabold'
-                            : 'bg-gradient-to-r from-slate-900 to-slate-800 border border-white/10 text-[#d4af37] font-extrabold hover:border-[#d4af37]'
+                            : 'bg-gradient-to-r from-pink-200 to-rose-200 border border-[#F9A8D4]/50 text-[#d4af37] font-extrabold hover:border-[#d4af37]'
                         }`}
                       >
                         <Award size={13} className="text-amber-400 shrink-0" />
@@ -1458,8 +1458,8 @@ export default function ManagerDetailModal({
                   </div>
 
                   {/* Returning back to top line Manager Profile */}
-                  <div className="flex justify-between items-center mt-6 pt-4 border-t border-white/10">
-                    <p className="text-[9.5px] text-slate-500 font-mono">CORE IDENTITY HASH CERTIFICATION: SEC-APEX-ACTIVE</p>
+                  <div className="flex justify-between items-center mt-6 pt-4 border-t border-[#F9A8D4]/50">
+                    <p className="text-[9.5px] text-[#9D174D]/75 font-mono">CORE IDENTITY HASH CERTIFICATION: SEC-APEX-ACTIVE</p>
                     <button
                       type="button"
                       onClick={() => setSelectedEmployee(null)}

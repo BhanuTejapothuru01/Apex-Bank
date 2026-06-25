@@ -202,7 +202,7 @@ export default function DashboardOverview({
               {t('online_deposit_terminal', 'Online Deposit Core Terminal')}
             </h3>
           </div>
-          <div className="text-[10px] text-slate-400 font-mono font-bold flex items-center gap-1.5 uppercase tracking-wider">
+          <div className="text-[10px] text-[#9D174D]/85 font-mono font-bold flex items-center gap-1.5 uppercase tracking-wider">
             <span className="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
             Live Bank Ledger Connection Armed
           </div>
@@ -272,7 +272,7 @@ export default function DashboardOverview({
 
             {/* Quick pre-sets row */}
             <div>
-              <span className="block text-[9px] font-black uppercase tracking-wider text-slate-400 mb-1.5 ml-0.5">Quick Dollar Inflow Presets</span>
+              <span className="block text-[9px] font-black uppercase tracking-wider text-[#9D174D]/85 mb-1.5 ml-0.5">Quick Dollar Inflow Presets</span>
               <div className="flex flex-wrap gap-2">
                 {[5000, 25000, 100000, 1000000].map((preset) => (
                   <button
@@ -282,7 +282,7 @@ export default function DashboardOverview({
                       setDepositAmount(preset.toString());
                       setDepositStatusMsg(null);
                     }}
-                    className="px-3.5 py-1.5 rounded-xl text-[10px] font-mono font-bold bg-[#6d28d9]/5 text-[#6d28d9] border border-[#6d28d9]/10 hover:bg-[#6d28d9] hover:text-white transition-all shadow-sm flex items-center gap-1 cursor-pointer"
+                    className="px-3.5 py-1.5 rounded-xl text-[10px] font-mono font-bold bg-[#6d28d9]/5 text-[#6d28d9] border border-[#6d28d9]/10 hover:bg-[#6d28d9] hover:text-[#4A044E] transition-all shadow-sm flex items-center gap-1 cursor-pointer"
                   >
                     +${preset.toLocaleString()}
                   </button>
@@ -315,7 +315,7 @@ export default function DashboardOverview({
                   <p className="mt-1 opacity-90">{depositStatusMsg.text}</p>
                 </div>
               ) : (
-                <div className="text-[11px] text-slate-500 leading-relaxed font-mono">
+                <div className="text-[11px] text-[#9D174D]/75 leading-relaxed font-mono">
                   <p className="opacity-70">&gt; awaiting transaction parameters...</p>
                   <p className="opacity-50 mt-1">&gt; quantum authorization token armed</p>
                   <p className="opacity-50">&gt; secure channel audit enabled</p>
@@ -326,7 +326,7 @@ export default function DashboardOverview({
             <button
               type="submit"
               disabled={isDepositing}
-              className={`w-full mt-4 py-3 rounded-xl font-bold text-xs uppercase tracking-widest text-white shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer ${
+              className={`w-full mt-4 py-3 rounded-xl font-bold text-xs uppercase tracking-widest text-[#4A044E] shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer ${
                 isDepositing 
                   ? 'bg-purple-800/50 cursor-not-allowed' 
                   : 'bg-gradient-to-r from-[#6d28d9] to-[#ec4899] hover:brightness-[1.1] active:scale-[0.98]'
@@ -354,7 +354,7 @@ export default function DashboardOverview({
         {/* KPI 1: Customers */}
         <div className="glass-card bg-white/75 p-6 border border-white/60 hover:scale-[1.05] transition-all duration-500 group shadow-lg cursor-pointer">
           <div className="flex items-center justify-between mb-4">
-            <div className="p-3 rounded-2xl bg-purple-500/10 text-[#6d28d9] group-hover:bg-[#6d28d9] group-hover:text-white transition-all duration-500">
+            <div className="p-3 rounded-2xl bg-purple-500/10 text-[#6d28d9] group-hover:bg-[#6d28d9] group-hover:text-[#4A044E] transition-all duration-500">
               <Users size={20} />
             </div>
             <div className="flex items-center gap-1 text-emerald-600 text-[10px] font-black uppercase tracking-widest">
@@ -369,7 +369,7 @@ export default function DashboardOverview({
         {/* KPI 2: Personnel Force */}
         <div className="glass-card bg-white/75 p-6 border border-white/60 hover:scale-[1.05] transition-all duration-500 group shadow-lg cursor-pointer">
           <div className="flex items-center justify-between mb-4">
-            <div className="p-3 rounded-2xl bg-indigo-500/10 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-500">
+            <div className="p-3 rounded-2xl bg-indigo-500/10 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-[#4A044E] transition-all duration-500">
               <UserCheck size={20} />
             </div>
             <div className="flex items-center gap-1 text-emerald-600 text-[10px] font-black uppercase tracking-widest">
@@ -384,7 +384,7 @@ export default function DashboardOverview({
         {/* KPI 3: Total Deposits */}
         <div className="glass-card bg-white/75 p-6 border border-white/60 hover:scale-[1.05] transition-all duration-500 group shadow-lg cursor-pointer">
           <div className="flex items-center justify-between mb-4">
-            <div className="p-3 rounded-2xl bg-emerald-500/10 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-500">
+            <div className="p-3 rounded-2xl bg-emerald-500/10 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-[#4A044E] transition-all duration-500">
               <Wallet size={20} />
             </div>
             <div className="flex items-center gap-1 text-emerald-600 text-[10px] font-black uppercase tracking-widest">
@@ -401,7 +401,7 @@ export default function DashboardOverview({
         {/* KPI 4: Ledger Activity */}
         <div className="glass-card bg-white/75 p-6 border border-white/60 hover:scale-[1.05] transition-all duration-500 group shadow-lg cursor-pointer">
           <div className="flex items-center justify-between mb-4">
-            <div className="p-3 rounded-2xl bg-pink-500/10 text-[#ec4899] group-hover:bg-[#ec4899] group-hover:text-white transition-all duration-500">
+            <div className="p-3 rounded-2xl bg-pink-500/10 text-[#ec4899] group-hover:bg-[#ec4899] group-hover:text-[#4A044E] transition-all duration-500">
               <Activity size={20} />
             </div>
             <div className="flex items-center gap-1 text-emerald-600 text-[10px] font-black uppercase tracking-widest">
@@ -430,7 +430,7 @@ export default function DashboardOverview({
         {/* KPI 6: Capital Yield */}
         <div className="glass-card bg-white/75 p-6 border border-white/60 hover:scale-[1.05] transition-all duration-500 group shadow-lg cursor-pointer">
           <div className="flex items-center justify-between mb-4">
-            <div className="p-3 rounded-2xl bg-[#7c3aed]/10 text-[#7c3aed] group-hover:bg-[#7c3aed] group-hover:text-white transition-all duration-500">
+            <div className="p-3 rounded-2xl bg-[#7c3aed]/10 text-[#7c3aed] group-hover:bg-[#7c3aed] group-hover:text-[#4A044E] transition-all duration-500">
               <TrendingUp size={20} />
             </div>
             <div className="flex items-center gap-1 text-emerald-600 text-[10px] font-black uppercase tracking-widest">
@@ -447,7 +447,7 @@ export default function DashboardOverview({
         {/* KPI 7: Compliance Queue */}
         <div className="glass-card bg-white/75 p-6 border border-white/60 hover:scale-[1.05] transition-all duration-500 group shadow-lg cursor-pointer">
           <div className="flex items-center justify-between mb-4">
-            <div className="p-3 rounded-2xl bg-amber-500/10 text-amber-600 group-hover:bg-amber-600 group-hover:text-white transition-all duration-500">
+            <div className="p-3 rounded-2xl bg-amber-500/10 text-amber-600 group-hover:bg-amber-600 group-hover:text-[#4A044E] transition-all duration-500">
               <FileCheck size={20} />
             </div>
             <div className="px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-widest bg-amber-50 text-amber-500 border border-amber-100">
@@ -461,7 +461,7 @@ export default function DashboardOverview({
         {/* KPI 8: Core Stability */}
         <div className="glass-card bg-white/75 p-6 border border-white/60 hover:scale-[1.05] transition-all duration-500 group shadow-lg cursor-pointer">
           <div className="flex items-center justify-between mb-4">
-            <div className="p-3 rounded-2xl bg-blue-500/10 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+            <div className="p-3 rounded-2xl bg-blue-500/10 text-blue-600 group-hover:bg-blue-600 group-hover:text-[#4A044E] transition-all duration-500">
               <CheckCircle2 size={20} />
             </div>
             <div className="flex items-center gap-1 text-emerald-600 text-[10px] font-black uppercase tracking-widest">
@@ -475,7 +475,7 @@ export default function DashboardOverview({
         {/* KPI 9: Loan Management */}
         <div className="glass-card bg-white/75 p-6 border border-white/60 hover:scale-[1.05] transition-all duration-500 group shadow-lg cursor-pointer">
           <div className="flex items-center justify-between mb-4">
-            <div className="p-3 rounded-2xl bg-rose-500/10 text-rose-600 group-hover:bg-rose-600 group-hover:text-white transition-all duration-500">
+            <div className="p-3 rounded-2xl bg-rose-500/10 text-rose-600 group-hover:bg-rose-600 group-hover:text-[#4A044E] transition-all duration-500">
               <Coins size={20} />
             </div>
             <div className="flex items-center gap-1 text-rose-500 text-[10px] font-black uppercase tracking-widest">
@@ -491,7 +491,7 @@ export default function DashboardOverview({
         {/* KPI 10: Growth Velocity */}
         <div className="glass-card bg-white/75 p-6 border border-white/60 hover:scale-[1.05] transition-all duration-500 group shadow-lg cursor-pointer">
           <div className="flex items-center justify-between mb-4">
-            <div className="p-3 rounded-2xl bg-cyan-500/10 text-cyan-600 group-hover:bg-cyan-600 group-hover:text-white transition-all duration-500">
+            <div className="p-3 rounded-2xl bg-cyan-500/10 text-cyan-600 group-hover:bg-cyan-600 group-hover:text-[#4A044E] transition-all duration-500">
               <UserPlus size={20} />
             </div>
             <div className="flex items-center gap-1 text-emerald-600 text-[10px] font-black uppercase tracking-widest">
@@ -526,39 +526,39 @@ export default function DashboardOverview({
                 onClick={() => setActiveChartTab('revenue')}
                 className={`px-4 py-2 rounded-[50px] text-xs font-bold transition-all duration-300 cursor-pointer flex items-center gap-2 ${
                   activeChartTab === 'revenue' 
-                    ? 'bg-[#3a2072] text-white shadow-lg active' 
+                    ? 'bg-[#3a2072] text-[#4A044E] shadow-lg active' 
                     : 'text-[#3a2072]/60 hover:bg-white/40 hover:text-[#3a2072]'
                 }`}
               >
-                <TrendingUp size={14} className={activeChartTab === 'revenue' ? 'text-white' : 'text-[#6366f1]'} />
+                <TrendingUp size={14} className={activeChartTab === 'revenue' ? 'text-[#4A044E]' : 'text-[#6366f1]'} />
                 <span>{t('revenue_flow', 'Revenue Flow')}</span>
               </button>
               <button 
                 onClick={() => setActiveChartTab('customers')}
                 className={`px-4 py-2 rounded-[50px] text-xs font-bold transition-all duration-300 cursor-pointer flex items-center gap-2 ${
                   activeChartTab === 'customers' 
-                    ? 'bg-[#3a2072] text-white shadow-lg active' 
+                    ? 'bg-[#3a2072] text-[#4A044E] shadow-lg active' 
                     : 'text-[#3a2072]/60 hover:bg-white/40 hover:text-[#3a2072]'
                 }`}
               >
-                <Users size={14} className={activeChartTab === 'customers' ? 'text-white' : 'text-[#6366f1]'} />
+                <Users size={14} className={activeChartTab === 'customers' ? 'text-[#4A044E]' : 'text-[#6366f1]'} />
                 <span>{t('customer_base', 'Customer Base')}</span>
               </button>
               <button 
                 onClick={() => setActiveChartTab('transactions')}
                 className={`px-4 py-2 rounded-[50px] text-xs font-bold transition-all duration-300 cursor-pointer flex items-center gap-2 ${
                   activeChartTab === 'transactions' 
-                    ? 'bg-[#3a2072] text-white shadow-lg active' 
+                    ? 'bg-[#3a2072] text-[#4A044E] shadow-lg active' 
                     : 'text-[#3a2072]/60 hover:bg-white/40 hover:text-[#3a2072]'
                 }`}
               >
-                <Activity size={14} className={activeChartTab === 'transactions' ? 'text-white' : 'text-[#6366f1]'} />
+                <Activity size={14} className={activeChartTab === 'transactions' ? 'text-[#4A044E]' : 'text-[#6366f1]'} />
                 <span>{t('tx_speed', 'Tx Speed')}</span>
               </button>
             </div>
           </div>
 
-          <div className="p-5 rounded-3xl border border-white/50 bg-white/20 backdrop-blur-xl shadow-inner shadow-white/10">
+          <div className="p-5 rounded-3xl border border-[#F9A8D4]/400 bg-white/20 backdrop-blur-xl shadow-inner shadow-white/10">
             {/* Premium Vector Chart Representation with Glow effects */}
             <div className="relative h-64 w-full flex items-end justify-center">
               {/* Grid Lines */}

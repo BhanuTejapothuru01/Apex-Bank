@@ -523,7 +523,7 @@ export default function ApexBankAIAssistant({
               }}
               whileHover={{ scale: 1.05, boxShadow: '0 12px 30px rgba(255,79,216,0.45)' }}
               whileTap={{ scale: 0.95 }}
-              className="relative w-[64px] h-[64px] flex items-center justify-center bg-gradient-to-br from-[#FF4FD8] to-[#D86BFF] text-white rounded-full shadow-[0_8px_25px_rgba(255,79,216,0.35)] border border-white/50 cursor-pointer backdrop-blur-md transition-all group"
+              className="relative w-[64px] h-[64px] flex items-center justify-center bg-gradient-to-br from-[#FF4FD8] to-[#D86BFF] text-[#4A044E] rounded-full shadow-[0_8px_25px_rgba(255,79,216,0.35)] border border-[#F9A8D4]/400 cursor-pointer backdrop-blur-md transition-all group"
             >
               <div className="relative flex items-center justify-center">
                 <Sparkles 
@@ -534,7 +534,7 @@ export default function ApexBankAIAssistant({
               </div>
 
               {/* Tooltip Overlay */}
-              <div className="absolute right-full mr-4 px-3 py-1.5 bg-[#2D2438] text-white text-[10px] font-bold rounded-lg opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all pointer-events-none whitespace-nowrap shadow-xl border border-white/10 uppercase tracking-widest">
+              <div className="absolute right-full mr-4 px-3 py-1.5 bg-[#2D2438] text-[#4A044E] text-[10px] font-bold rounded-lg opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all pointer-events-none whitespace-nowrap shadow-xl border border-[#F9A8D4]/50 uppercase tracking-widest">
                 Apex AI Co-Pilot
                 <div className="absolute top-1/2 -right-1.5 -translate-y-1/2 border-8 border-transparent border-l-[#2D2438]"></div>
               </div>
@@ -553,7 +553,7 @@ export default function ApexBankAIAssistant({
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsMinimized(true)}
-              className="fixed inset-0 bg-slate-900/10 backdrop-blur-[2px] z-[51]"
+              className="fixed inset-0 bg-[#FFF1F5]/10 backdrop-blur-[2px] z-[51]"
             />
 
             <motion.div
@@ -565,7 +565,7 @@ export default function ApexBankAIAssistant({
               className="fixed top-0 right-0 h-screen w-full sm:w-[400px] md:w-[420px] bg-white/95 backdrop-blur-2xl border-l border-pink-100 shadow-[-15px_0_50px_rgba(0,0,0,0.15)] flex flex-col z-[52] overflow-hidden"
             >
               {/* Top Header Section */}
-              <div className="p-5 bg-gradient-to-r from-[#FF4FD8] to-[#D86BFF] flex items-center justify-between text-white shadow-md relative z-10">
+              <div className="p-5 bg-gradient-to-r from-[#FF4FD8] to-[#D86BFF] flex items-center justify-between text-[#4A044E] shadow-md relative z-10">
                 <div className="flex items-center gap-3 select-none">
                   <BrandLogo size={44} className="border-white/30" />
                   <div>
@@ -580,14 +580,14 @@ export default function ApexBankAIAssistant({
                 <div className="flex items-center gap-2">
                   <button
                     onClick={() => setIsMinimized(true)}
-                    className="p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-xl transition-all cursor-pointer"
+                    className="p-2 text-white/80 hover:text-[#4A044E] hover:bg-white/10 rounded-xl transition-all cursor-pointer"
                     title="Minimize"
                   >
                     <Minimize2 size={18} />
                   </button>
                   <button
                     onClick={() => setIsOpen(false)}
-                    className="p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-xl transition-all cursor-pointer"
+                    className="p-2 text-white/80 hover:text-[#4A044E] hover:bg-white/10 rounded-xl transition-all cursor-pointer"
                     title="Close"
                   >
                     <X size={20} />
@@ -638,7 +638,7 @@ export default function ApexBankAIAssistant({
                   <div className={`max-w-[85%] p-4 rounded-2xl text-[13px] leading-relaxed relative ${
                     msg.sender === 'ai' 
                       ? 'bg-white text-slate-700 rounded-tl-none border border-pink-50 shadow-sm'
-                      : 'bg-gradient-to-br from-[#FF4FD8] to-[#D86BFF] text-white font-semibold rounded-tr-none shadow-pink-100 shadow-lg'
+                      : 'bg-gradient-to-br from-[#FF4FD8] to-[#D86BFF] text-[#4A044E] font-semibold rounded-tr-none shadow-pink-100 shadow-lg'
                   }`}>
                     <p className="whitespace-pre-wrap">{msg.text}</p>
                     
@@ -654,7 +654,7 @@ export default function ApexBankAIAssistant({
                       </div>
                     )}
                     
-                    <span className={`text-[8px] absolute -bottom-4 ${msg.sender === 'ai' ? 'left-0 text-slate-400' : 'right-0 text-pink-400'} font-bold`}>
+                    <span className={`text-[8px] absolute -bottom-4 ${msg.sender === 'ai' ? 'left-0 text-[#9D174D]/85' : 'right-0 text-pink-400'} font-bold`}>
                       {msg.time}
                     </span>
                   </div>
@@ -680,7 +680,7 @@ export default function ApexBankAIAssistant({
               {/* Contextual Fast Actions Area */}
               <div className="p-5 border-t border-pink-100 bg-white shadow-[0_-10px_30px_rgba(0,0,0,0.02)]">
                 <div className="flex items-center justify-between mb-3 px-1">
-                  <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Quick Operations</span>
+                  <span className="text-[10px] font-black uppercase tracking-widest text-[#9D174D]/85">Quick Operations</span>
                   <button onClick={cleanChatLog} className="text-[9px] font-bold text-pink-500 hover:underline flex items-center gap-1">
                     <Trash2 size={10} /> Clear Context
                   </button>
@@ -712,15 +712,15 @@ export default function ApexBankAIAssistant({
                       value={inputText}
                       onChange={(e) => setInputText(e.target.value)}
                       placeholder="Input command..."
-                      className="w-full bg-slate-50 border border-slate-100 focus:border-pink-300 focus:bg-white p-3.5 pr-12 rounded-2xl text-sm outline-none transition-all placeholder:text-slate-400 text-slate-700 shadow-inner"
+                      className="w-full bg-slate-50 border border-slate-100 focus:border-pink-300 focus:bg-white p-3.5 pr-12 rounded-2xl text-sm outline-none transition-all placeholder:text-[#9D174D]/85 text-slate-700 shadow-inner"
                     />
-                    <div className="absolute right-3 top-1/2 -translate-y-1/2 p-2 text-slate-300 group-focus-within:text-pink-400 transition-colors">
+                    <div className="absolute right-3 top-1/2 -translate-y-1/2 p-2 text-[#831843] group-focus-within:text-pink-400 transition-colors">
                       <Terminal size={16} />
                     </div>
                   </div>
                   <button
                     type="submit"
-                    className="w-12 h-12 flex items-center justify-center rounded-2xl bg-gradient-to-br from-[#FF4FD8] to-[#D86BFF] text-white shadow-lg hover:shadow-pink-200 active:scale-95 transition-all cursor-pointer"
+                    className="w-12 h-12 flex items-center justify-center rounded-2xl bg-gradient-to-br from-[#FF4FD8] to-[#D86BFF] text-[#4A044E] shadow-lg hover:shadow-pink-200 active:scale-95 transition-all cursor-pointer"
                   >
                     <Send size={18} />
                   </button>
@@ -738,7 +738,7 @@ export default function ApexBankAIAssistant({
 function StatusItem({ label, value, color }: { label: string; value: string; color: string }) {
   return (
     <div className="flex flex-col items-start min-w-fit">
-      <span className="text-[8px] font-black uppercase tracking-tighter text-slate-400">{label}</span>
+      <span className="text-[8px] font-black uppercase tracking-tighter text-[#9D174D]/85">{label}</span>
       <span className={`text-[10px] font-black font-mono ${color}`}>{value}</span>
     </div>
   );
@@ -753,7 +753,7 @@ function InsightCard({ icon, label, value, subLabel, color, bgColor, borderColor
       </div>
       <div>
         <p className="text-[10px] font-black text-slate-700 uppercase leading-tight">{label}</p>
-        <p className="text-[8px] font-bold text-slate-400 uppercase tracking-wide">{subLabel}</p>
+        <p className="text-[8px] font-bold text-[#9D174D]/85 uppercase tracking-wide">{subLabel}</p>
       </div>
     </div>
   );

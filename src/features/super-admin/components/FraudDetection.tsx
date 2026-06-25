@@ -67,14 +67,14 @@ export default function FraudDetection({ alerts = [], setAlerts, addAuditLog }: 
         <div className="p-5 rounded-2xl border border-red-500/20 bg-red-950/20 shadow-lg relative">
           <div className="absolute top-3 right-3 p-1 rounded-full bg-red-500/10 text-red-500 animate-pulse"><Flame size={15} /></div>
           <span className="text-red-400 text-[10px] font-mono tracking-widest uppercase font-bold block">Cyber Shielding</span>
-          <h3 className="text-sm font-bold text-white mt-1">Current Threat Meter</h3>
+          <h3 className="text-sm font-bold text-[#4A044E] mt-1">Current Threat Meter</h3>
           <p className="text-3xl font-bold font-mono text-red-500 mt-2">{riskFactor}% {riskFactor >= 70 ? 'High' : 'Moderate'} Risk</p>
           <p className="text-[10px] text-red-300/70 mt-1">{pendingCount} pending alert{pendingCount !== 1 ? 's' : ''} from Supabase</p>
         </div>
 
         <div className="p-5 rounded-2xl border border-emerald-500/20 bg-emerald-500/5 shadow-lg relative">
           <span className="text-emerald-400 text-[10px] font-mono tracking-widest uppercase font-bold block">Firewall Core</span>
-          <h3 className="text-sm font-bold text-white mt-1">Intrusion Protection Status</h3>
+          <h3 className="text-sm font-bold text-[#4A044E] mt-1">Intrusion Protection Status</h3>
           <p className="text-3xl font-bold font-mono text-emerald-400 mt-2">
             {firewallArmed ? 'Armed & Shielded' : 'Bypassed'}
           </p>
@@ -87,10 +87,10 @@ export default function FraudDetection({ alerts = [], setAlerts, addAuditLog }: 
           </button>
         </div>
 
-        <div className="p-5 rounded-2xl border border-[#17235a]/60 bg-[#070c2e]/80 shadow-2xl relative flex flex-col justify-between">
+        <div className="p-5 rounded-2xl border border-[#F9A8D4] bg-[#FCE7F3]/90 shadow-2xl relative flex flex-col justify-between">
           <div>
             <span className="text-blue-400 text-[10px] font-mono tracking-widest uppercase font-bold block">Threat Simulation</span>
-            <h3 className="text-sm font-bold text-white mt-1">Apex Sandbox Probing</h3>
+            <h3 className="text-sm font-bold text-[#4A044E] mt-1">Apex Sandbox Probing</h3>
           </div>
           <button
             id="trigger-threat-sim-btn"
@@ -107,31 +107,31 @@ export default function FraudDetection({ alerts = [], setAlerts, addAuditLog }: 
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         
-        <div className="p-6 rounded-2xl border border-rose-500/20 bg-[#08020e]/80 shadow-2xl">
+        <div className="p-6 rounded-2xl border border-rose-500/20 bg-[#FCE7F3]/90 shadow-2xl">
           <div className="mb-4">
             <h3 className="text-sm font-bold text-red-400 uppercase tracking-wider flex items-center gap-1.5 leading-normal">
               <ShieldAlert size={14} className="text-red-500 animate-pulse" />
               Live Fraud Alerts (Supabase)
             </h3>
-            <p className="text-slate-400 text-xs mt-1">Real-time alerts from fraud_alerts table.</p>
+            <p className="text-[#9D174D]/85 text-xs mt-1">Real-time alerts from fraud_alerts table.</p>
           </div>
 
           {alerts.length === 0 ? (
-            <p className="text-xs text-slate-500 py-4">No fraud alerts in database. Run db:seed-expanded.</p>
+            <p className="text-xs text-[#9D174D]/75 py-4">No fraud alerts in database. Run db:seed-expanded.</p>
           ) : (
             <div className="space-y-2 max-h-[320px] overflow-y-auto">
               {alerts.map((alert) => (
                 <div
                   key={alert.id}
                   className={`p-3 rounded-xl border text-xs ${
-                    alert.read ? 'border-slate-800 bg-slate-900/30' : 'border-red-500/30 bg-red-950/20'
+                    alert.read ? 'border-slate-800 bg-[#FFF1F5]/30' : 'border-red-500/30 bg-red-950/20'
                   }`}
                 >
                   <div className="flex justify-between items-start gap-2">
                     <div>
-                      <p className="font-bold text-white">{alert.title}</p>
-                      <p className="text-slate-400 mt-0.5">{alert.description}</p>
-                      <p className="text-[10px] text-slate-500 mt-1">{alert.time}</p>
+                      <p className="font-bold text-[#4A044E]">{alert.title}</p>
+                      <p className="text-[#9D174D]/85 mt-0.5">{alert.description}</p>
+                      <p className="text-[10px] text-[#9D174D]/75 mt-1">{alert.time}</p>
                     </div>
                     {!alert.read && (
                       <button
@@ -148,7 +148,7 @@ export default function FraudDetection({ alerts = [], setAlerts, addAuditLog }: 
           )}
         </div>
 
-        <div className="p-6 rounded-2xl border border-rose-500/20 bg-[#08020e]/80 shadow-2xl">
+        <div className="p-6 rounded-2xl border border-rose-500/20 bg-[#FCE7F3]/90 shadow-2xl">
           <div className="mb-4">
             <h3 className="text-sm font-bold text-red-400 uppercase tracking-wider flex items-center gap-1.5 leading-normal">
               <ShieldAlert size={14} className="text-red-500" />
@@ -168,10 +168,10 @@ export default function FraudDetection({ alerts = [], setAlerts, addAuditLog }: 
               </thead>
               <tbody className="divide-y divide-rose-950/20">
                 {blacklistedIPs.map((b) => (
-                  <tr key={b.ip} className="text-xs hover:bg-[#15031a]/40 text-slate-300">
-                    <td className="py-3 px-3 font-mono font-bold text-white">{b.ip}</td>
+                  <tr key={b.ip} className="text-xs hover:bg-[#15031a]/40 text-[#831843]">
+                    <td className="py-3 px-3 font-mono font-bold text-[#4A044E]">{b.ip}</td>
                     <td className="py-3 px-3 uppercase text-[10px] text-amber-500 font-semibold">{b.country}</td>
-                    <td className="py-3 px-3 font-mono text-[11px] text-[#8496bf]">{b.blockedDate}</td>
+                    <td className="py-3 px-3 font-mono text-[11px] text-[#BE185D]/75">{b.blockedDate}</td>
                     <td className="py-3 px-3 text-right">
                       <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-red-600/20 text-red-500 border border-red-500/30 font-mono">
                         {b.threatScore}% CRIT

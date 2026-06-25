@@ -1008,7 +1008,7 @@ export default function TransactionMonitoring({
       {actionToast && (
         <div 
           id="action-toast-notification"
-          className="fixed bottom-6 right-6 z-50 flex items-center gap-3 px-5 py-4 rounded-xl border border-[#d4af37]/30 bg-[#070c2e] text-[#d4af37] text-xs font-semibold shadow-2xl transition-all duration-300 transform translate-y-0 max-w-sm"
+          className="fixed bottom-6 right-6 z-50 flex items-center gap-3 px-5 py-4 rounded-xl border border-[#d4af37]/30 bg-[#FCE7F3] text-[#d4af37] text-xs font-semibold shadow-2xl transition-all duration-300 transform translate-y-0 max-w-sm"
         >
           <div className="bg-[#d4af37]/10 p-1.5 rounded-lg">
             <CheckCircle2 size={16} className="text-[#d4af37]" />
@@ -1035,26 +1035,26 @@ export default function TransactionMonitoring({
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="bg-[#0a1135] border border-[#232d66] p-6 rounded-2xl max-w-sm w-full shadow-2xl space-y-4"
+              className="bg-[#FFF1F5] border border-[#F9A8D4] p-6 rounded-2xl max-w-sm w-full shadow-2xl space-y-4"
             >
               <div className="flex items-center gap-3 text-amber-400">
                 <ShieldAlert size={28} />
                 <h3 className="text-lg font-bold">Security Clearance Required</h3>
               </div>
-              <p className="text-slate-300 text-sm leading-relaxed">
-                You are about to execute a Level 5 Super Admin override: <span className="text-white font-bold">{confirmAction.name}</span>. 
+              <p className="text-[#831843] text-sm leading-relaxed">
+                You are about to execute a Level 5 Super Admin override: <span className="text-[#4A044E] font-bold">{confirmAction.name}</span>. 
                 This action will be permanently recorded in the immutable audit ledger.
               </p>
               <div className="flex gap-3 pt-2">
                 <button 
                   onClick={() => setConfirmAction(null)}
-                  className="flex-1 py-2 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 font-bold transition-colors cursor-pointer"
+                  className="flex-1 py-2 rounded-lg bg-[#FDF2F8] text-[#831843] hover:bg-slate-700 font-bold transition-colors cursor-pointer"
                 >
                   Abort
                 </button>
                 <button 
                   onClick={confirmAction.handler}
-                  className="flex-1 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-500 font-bold transition-all shadow-[0_0_15px_rgba(37,99,235,0.4)] cursor-pointer"
+                  className="flex-1 py-2 rounded-lg bg-blue-600 text-[#4A044E] hover:bg-blue-500 font-bold transition-all shadow-[0_0_15px_rgba(37,99,235,0.4)] cursor-pointer"
                 >
                   Authorize
                 </button>
@@ -1065,16 +1065,16 @@ export default function TransactionMonitoring({
       </AnimatePresence>
 
       {/* Top Filter Selection Panel */}
-      <div className="p-5 rounded-2xl border border-[#17235a]/60 bg-[#070c2e]/80 shadow-lg space-y-4">
-        <div className="flex items-center gap-2 pb-2 border-b border-[#141c48]/60">
+      <div className="p-5 rounded-2xl border border-[#F9A8D4] bg-[#FCE7F3]/90 shadow-lg space-y-4">
+        <div className="flex items-center gap-2 pb-2 border-b border-[#FBCFE8]/60">
           <Activity size={16} className="text-[#d4af37]" />
-          <h2 className="text-xs font-bold text-slate-300 uppercase tracking-wider">Dynamic Stream Controllers</h2>
+          <h2 className="text-xs font-bold text-[#831843] uppercase tracking-wider">Dynamic Stream Controllers</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {/* User Class Filters */}
           <div id="user-filter-box">
-            <span className="text-slate-500 text-[10px] uppercase font-bold tracking-wide block mb-1.5">User Class</span>
+            <span className="text-[#9D174D]/75 text-[10px] uppercase font-bold tracking-wide block mb-1.5">User Class</span>
             <select
               id="user-filter-select"
               value={userFilter}
@@ -1082,7 +1082,7 @@ export default function TransactionMonitoring({
                 setUserFilter(e.target.value as any);
                 setSelectedTxId(null); // Deselect on filter change to respect safety rule
               }}
-              className="w-full bg-[#0a1135] border border-[#1b2557] focus:border-[#d4af37]/60 text-white p-2.5 text-xs rounded-xl outline-none cursor-pointer hover:border-[#1b2557]/80"
+              className="w-full bg-[#FFF1F5] border border-[#F9A8D4] focus:border-[#d4af37]/60 text-[#4A044E] p-2.5 text-xs rounded-xl outline-none cursor-pointer hover:border-[#F9A8D4]/80"
             >
               <option value="All">All Users</option>
               <option value="Customers">Customers Only</option>
@@ -1092,7 +1092,7 @@ export default function TransactionMonitoring({
 
           {/* Transaction Type Filters */}
           <div id="type-filter-box">
-            <span className="text-slate-500 text-[10px] uppercase font-bold tracking-wide block mb-1.5">Transaction Flow</span>
+            <span className="text-[#9D174D]/75 text-[10px] uppercase font-bold tracking-wide block mb-1.5">Transaction Flow</span>
             <select
               id="type-filter-select"
               value={typeFilter}
@@ -1100,7 +1100,7 @@ export default function TransactionMonitoring({
                 setTypeFilter(e.target.value as any);
                 setSelectedTxId(null);
               }}
-              className="w-full bg-[#0a1135] border border-[#1b2557] focus:border-[#d4af37]/60 text-white p-2.5 text-xs rounded-xl outline-none cursor-pointer hover:border-[#1b2557]/80"
+              className="w-full bg-[#FFF1F5] border border-[#F9A8D4] focus:border-[#d4af37]/60 text-[#4A044E] p-2.5 text-xs rounded-xl outline-none cursor-pointer hover:border-[#F9A8D4]/80"
             >
               <option value="All">All Transactions</option>
               <option value="Deposit">Deposit</option>
@@ -1113,7 +1113,7 @@ export default function TransactionMonitoring({
 
           {/* Threat Clearance State */}
           <div id="status-filter-box">
-            <span className="text-slate-500 text-[10px] uppercase font-bold tracking-wide block mb-1.5">Threat Status</span>
+            <span className="text-[#9D174D]/75 text-[10px] uppercase font-bold tracking-wide block mb-1.5">Threat Status</span>
             <select
               id="status-filter-select"
               value={statusFilter}
@@ -1121,7 +1121,7 @@ export default function TransactionMonitoring({
                 setStatusFilter(e.target.value as any);
                 setSelectedTxId(null);
               }}
-              className="w-full bg-[#0a1135] border border-[#1b2557] focus:border-[#d4af37]/60 text-white p-2.5 text-xs rounded-xl outline-none cursor-pointer hover:border-[#1b2557]/80"
+              className="w-full bg-[#FFF1F5] border border-[#F9A8D4] focus:border-[#d4af37]/60 text-[#4A044E] p-2.5 text-xs rounded-xl outline-none cursor-pointer hover:border-[#F9A8D4]/80"
             >
               <option value="All">All Status</option>
               <option value="Success">Success</option>
@@ -1134,7 +1134,7 @@ export default function TransactionMonitoring({
 
           {/* Date Horizon Filters */}
           <div id="date-filter-box">
-            <span className="text-slate-500 text-[10px] uppercase font-bold tracking-wide block mb-1.5">Time Horizon</span>
+            <span className="text-[#9D174D]/75 text-[10px] uppercase font-bold tracking-wide block mb-1.5">Time Horizon</span>
             <select
               id="date-filter-select"
               value={dateFilter}
@@ -1142,7 +1142,7 @@ export default function TransactionMonitoring({
                 setDateFilter(e.target.value as any);
                 setSelectedTxId(null);
               }}
-              className="w-full bg-[#0a1135] border border-[#1b2557] focus:border-[#d4af37]/60 text-white p-2.5 text-xs rounded-xl outline-none cursor-pointer hover:border-[#1b2557]/80"
+              className="w-full bg-[#FFF1F5] border border-[#F9A8D4] focus:border-[#d4af37]/60 text-[#4A044E] p-2.5 text-xs rounded-xl outline-none cursor-pointer hover:border-[#F9A8D4]/80"
             >
               <option value="Today">Today</option>
               <option value="Last 7 Days">Last 7 Days</option>
@@ -1156,27 +1156,27 @@ export default function TransactionMonitoring({
         {dateFilter === 'Custom Range' && (
           <div 
             id="custom-date-pickers"
-            className="flex flex-col sm:flex-row items-center gap-4 p-4 rounded-xl bg-[#03061c]/60 border border-[#141c48]/80 animate-fadeIn"
+            className="flex flex-col sm:flex-row items-center gap-4 p-4 rounded-xl bg-[#FFF5F8]/80 border border-[#FBCFE8] animate-fadeIn"
           >
             <div className="w-full sm:w-auto">
-              <span className="text-slate-500 text-[9px] uppercase font-bold block mb-1">Start Limit</span>
+              <span className="text-[#9D174D]/75 text-[9px] uppercase font-bold block mb-1">Start Limit</span>
               <input 
                 type="date"
                 value={customStartDate}
                 onChange={(e) => setCustomStartDate(e.target.value)}
-                className="w-full sm:w-44 bg-[#0a1135] border border-[#1b2557] text-white p-1.5 text-xs rounded-lg outline-none focus:border-[#d4af37]/55"
+                className="w-full sm:w-44 bg-[#FFF1F5] border border-[#F9A8D4] text-[#4A044E] p-1.5 text-xs rounded-lg outline-none focus:border-[#d4af37]/55"
               />
             </div>
             <div className="w-full sm:w-auto">
-              <span className="text-slate-500 text-[9px] uppercase font-bold block mb-1">End Limit</span>
+              <span className="text-[#9D174D]/75 text-[9px] uppercase font-bold block mb-1">End Limit</span>
               <input 
                 type="date"
                 value={customEndDate}
                 onChange={(e) => setCustomEndDate(e.target.value)}
-                className="w-full sm:w-44 bg-[#0a1135] border border-[#1b2557] text-white p-1.5 text-xs rounded-lg outline-none focus:border-[#d4af37]/55"
+                className="w-full sm:w-44 bg-[#FFF1F5] border border-[#F9A8D4] text-[#4A044E] p-1.5 text-xs rounded-lg outline-none focus:border-[#d4af37]/55"
               />
             </div>
-            <div className="text-[10px] text-slate-500 self-end mt-2 sm:mt-0 italic">
+            <div className="text-[10px] text-[#9D174D]/75 self-end mt-2 sm:mt-0 italic">
               Indexes filtered based on selected limits.
             </div>
           </div>
@@ -1188,18 +1188,18 @@ export default function TransactionMonitoring({
         
         {/* Left Hand Core Ledger (2 Columns Span) */}
         <div className="xl:col-span-2 space-y-4" id="ledger-feed-table-container">
-          <div className="p-6 rounded-2xl border border-[#17235a]/60 bg-[#070c2e]/80 shadow-2xl space-y-4">
+          <div className="p-6 rounded-2xl border border-[#F9A8D4] bg-[#FCE7F3]/90 shadow-2xl space-y-4">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
-                <h3 className="text-sm font-bold text-white uppercase tracking-wider">Apex Transaction Ledger</h3>
-                <p className="text-xs text-[#556994]">Simplified real-time monitoring of customer and corporate employee cash flows.</p>
+                <h3 className="text-sm font-bold text-[#4A044E] uppercase tracking-wider">Apex Transaction Ledger</h3>
+                <p className="text-xs text-[#9D174D]/80">Simplified real-time monitoring of customer and corporate employee cash flows.</p>
               </div>
 
               <div className="flex items-center gap-2">
                 <button
                   id="export-csv-trigger"
                   onClick={handleExportCSV}
-                  className="flex items-center gap-1.5 px-3 py-1.5 bg-[#0a1135] hover:bg-[#141c48] border border-[#232d66] text-[#8496bf] text-[11px] font-bold uppercase rounded-lg transition-all cursor-pointer"
+                  className="flex items-center gap-1.5 px-3 py-1.5 bg-[#FFF1F5] hover:bg-[#141c48] border border-[#F9A8D4] text-[#BE185D]/75 text-[11px] font-bold uppercase rounded-lg transition-all cursor-pointer"
                 >
                   <FileSpreadsheet size={13} className="text-[#d4af37]" />
                   <span>Ledger CSV</span>
@@ -1210,7 +1210,7 @@ export default function TransactionMonitoring({
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse" id="audit-ledger-table">
                 <thead>
-                  <tr className="border-b border-[#141c48] text-[10px] text-[#8496bf] font-bold uppercase tracking-wider bg-[#0c143d]/30">
+                  <tr className="border-b border-[#FBCFE8] text-[10px] text-[#BE185D]/75 font-bold uppercase tracking-wider bg-[#FDF4F9]/70">
                     <th className="py-3 px-4">Transaction ID</th>
                     <th className="py-3 px-4">User Name</th>
                     <th className="py-3 px-4">User Type</th>
@@ -1223,7 +1223,7 @@ export default function TransactionMonitoring({
                 <tbody className="divide-y divide-[#141c48]">
                   {filtered.length === 0 ? (
                     <tr>
-                      <td colSpan={7} className="py-12 text-center text-xs text-[#556994] italic bg-[#03061c]/30">
+                      <td colSpan={7} className="py-12 text-center text-xs text-[#9D174D]/80 italic bg-[#FFF5F8]/60">
                         No transactions match the selected filters or search parameters.
                       </td>
                     </tr>
@@ -1237,12 +1237,12 @@ export default function TransactionMonitoring({
                           onClick={() => setSelectedTxId(t.id)}
                           className={`text-xs transition-colors cursor-pointer border-l-2 ${
                             isSelected 
-                              ? 'bg-[#121c4b] border-l-[#d4af37] text-white font-semibold' 
-                              : 'hover:bg-[#121c4b]/30 border-l-transparent text-slate-300'
+                              ? 'bg-[#FBCFE8] border-l-[#d4af37] text-[#4A044E] font-semibold' 
+                              : 'hover:bg-[#FBCFE8]/30 border-l-transparent text-[#831843]'
                           }`}
                         >
                           {/* ID */}
-                          <td className="py-3 px-4 font-mono font-bold text-slate-300">{t.id}</td>
+                          <td className="py-3 px-4 font-mono font-bold text-[#831843]">{t.id}</td>
                           
                           {/* User Name */}
                           <td className="py-3 px-4 font-medium whitespace-nowrap">
@@ -1269,7 +1269,7 @@ export default function TransactionMonitoring({
 
                           {/* Transaction Type */}
                           <td className="py-3 px-4">
-                            <span className="px-2 py-0.5 rounded text-[9px] font-mono font-bold border border-[#232d66] bg-[#0c143d] text-slate-200 uppercase">
+                            <span className="px-2 py-0.5 rounded text-[9px] font-mono font-bold border border-[#F9A8D4] bg-[#FDF4F9] text-[#701a75] uppercase">
                               {t.type}
                             </span>
                           </td>
@@ -1287,7 +1287,7 @@ export default function TransactionMonitoring({
                           </td>
 
                           {/* Date and Time */}
-                          <td className="py-3 px-4 text-center text-[#556994] font-mono whitespace-nowrap">
+                          <td className="py-3 px-4 text-center text-[#9D174D]/80 font-mono whitespace-nowrap">
                             {t.date} • {t.time.substring(0, 8)}
                           </td>
 
@@ -1328,7 +1328,7 @@ export default function TransactionMonitoring({
             </div>
 
             {/* Total items indicator */}
-            <div className="flex items-center justify-between text-xs text-[#556994] pt-2">
+            <div className="flex items-center justify-between text-xs text-[#9D174D]/80 pt-2">
               <span>Showing <strong>{filtered.length}</strong> core ledger transactions matching parameters.</span>
               <span>Anchord DB: <strong>June 14, 2026</strong></span>
             </div>
@@ -1339,33 +1339,33 @@ export default function TransactionMonitoring({
         <div id="intelligence-panel" className="space-y-6">
           {!selectedTx ? (
             /* Empty state placeholder when no row is clicked yet */
-            <div className="flex flex-col items-center justify-center p-8 text-center rounded-2xl border border-dashed border-[#17235a] bg-[#070c2e]/40 min-h-[500px]">
-              <div className="p-4 rounded-full bg-[#121c4b]/50 text-[#8496bf] mb-4 relative overflow-hidden">
+            <div className="flex flex-col items-center justify-center p-8 text-center rounded-2xl border border-dashed border-[#F9A8D4] bg-[#FCE7F3]/60 min-h-[500px]">
+              <div className="p-4 rounded-full bg-[#FBCFE8]/70 text-[#BE185D]/75 mb-4 relative overflow-hidden">
                 <SearchCheck className="h-8 w-8 text-[#d4af37] animate-pulse" />
                 <span className="absolute inset-0 bg-blue-500/10 rounded-full blur animate-ping" />
               </div>
-              <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-2">Ready for Auditing</h4>
-              <p className="text-xs text-[#8496bf] max-w-xs leading-relaxed">
+              <h4 className="text-sm font-bold text-[#4A044E] uppercase tracking-wider mb-2">Ready for Auditing</h4>
+              <p className="text-xs text-[#BE185D]/75 max-w-xs leading-relaxed">
                 Detailed transaction block remains unmapped. Click a transaction row in the left-hand ledger list to load the high-fidelity Intelligence Panel.
               </p>
             </div>
           ) : (
             /* Comprehensive High Fidelity Transaction Intelligence Panel */
-            <div id="intelligence-panel-content" className="p-5 rounded-2xl border border-[#d4af37]/25 bg-[#070c2e]/95 shadow-2xl space-y-6 animate-fadeIn">
+            <div id="intelligence-panel-content" className="p-5 rounded-2xl border border-[#d4af37]/25 bg-[#FCE7F3]/95 shadow-2xl space-y-6 animate-fadeIn">
               
               {/* Header profile with Name and IDs */}
-              <div className="flex items-center gap-3 pb-4 border-b border-[#141c48]">
-                <div className="h-10 w-10 rounded-xl bg-gradient-to-tr from-[#1b2557] to-[#0c143d] flex items-center justify-center text-white font-bold border border-[#d4af37]/20">
+              <div className="flex items-center gap-3 pb-4 border-b border-[#FBCFE8]">
+                <div className="h-10 w-10 rounded-xl bg-gradient-to-tr from-[#1b2557] to-[#0c143d] flex items-center justify-center text-[#4A044E] font-bold border border-[#d4af37]/20">
                   {selectedTx.userType === 'Customer' ? 'C' : 'E'}
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
-                    <h3 className="text-sm font-bold text-white tracking-wide">{selectedTx.name}</h3>
+                    <h3 className="text-sm font-bold text-[#4A044E] tracking-wide">{selectedTx.name}</h3>
                     <span className="px-1.5 py-0.5 bg-[#d4af37]/15 rounded text-[8px] text-[#d4af37] font-extrabold uppercase">
                       {selectedTx.userType}
                     </span>
                   </div>
-                  <p className="text-[10px] text-slate-400 font-mono">
+                  <p className="text-[10px] text-[#9D174D]/85 font-mono">
                     ID: {selectedTx.userId} • {selectedTx.email}
                   </p>
                 </div>
@@ -1373,130 +1373,130 @@ export default function TransactionMonitoring({
 
               {/* User Information */}
               <div className="space-y-2" id="detail-user-section">
-                <h4 className="text-[10px] uppercase text-[#8496bf] font-extrabold tracking-widest flex items-center gap-1.5">
+                <h4 className="text-[10px] uppercase text-[#BE185D]/75 font-extrabold tracking-widest flex items-center gap-1.5">
                   <User size={12} className="text-[#d4af37]" />
                   <span>User Information</span>
                 </h4>
-                <div className="p-3 rounded-xl bg-[#03061c]/60 border border-[#141c48] text-xs space-y-2">
-                  <div className="flex justify-between"><span className="text-slate-400">Full Name</span><span className="text-slate-200 font-medium">{selectedTx.name}</span></div>
-                  <div className="flex justify-between"><span className="text-slate-400">Registry ID</span><span className="text-slate-200 font-mono font-bold">{selectedTx.userId}</span></div>
-                  <div className="flex justify-between"><span className="text-slate-400">Class</span><span className="text-slate-200 font-medium">{selectedTx.userType}</span></div>
-                  <div className="flex justify-between"><span className="text-slate-400">Mobile Connection</span><span className="text-slate-200 font-mono">{selectedTx.mobile}</span></div>
-                  <div className="flex justify-between"><span className="text-slate-400">Email Address</span><span className="text-slate-200 font-semibold text-[11px] font-mono">{selectedTx.email}</span></div>
+                <div className="p-3 rounded-xl bg-[#FFF5F8]/80 border border-[#FBCFE8] text-xs space-y-2">
+                  <div className="flex justify-between"><span className="text-[#9D174D]/85">Full Name</span><span className="text-[#701a75] font-medium">{selectedTx.name}</span></div>
+                  <div className="flex justify-between"><span className="text-[#9D174D]/85">Registry ID</span><span className="text-[#701a75] font-mono font-bold">{selectedTx.userId}</span></div>
+                  <div className="flex justify-between"><span className="text-[#9D174D]/85">Class</span><span className="text-[#701a75] font-medium">{selectedTx.userType}</span></div>
+                  <div className="flex justify-between"><span className="text-[#9D174D]/85">Mobile Connection</span><span className="text-[#701a75] font-mono">{selectedTx.mobile}</span></div>
+                  <div className="flex justify-between"><span className="text-[#9D174D]/85">Email Address</span><span className="text-[#701a75] font-semibold text-[11px] font-mono">{selectedTx.email}</span></div>
                 </div>
               </div>
 
               {/* Account Information */}
               <div className="space-y-2" id="detail-account-section">
-                <h4 className="text-[10px] uppercase text-[#8496bf] font-extrabold tracking-widest flex items-center gap-1.5">
+                <h4 className="text-[10px] uppercase text-[#BE185D]/75 font-extrabold tracking-widest flex items-center gap-1.5">
                   <CreditCardIcon size={12} className="text-[#d4af37]" />
                   <span>Account Information</span>
                 </h4>
-                <div className="p-3 rounded-xl bg-[#03061c]/60 border border-[#141c48] text-xs space-y-2">
-                  <div className="flex justify-between"><span className="text-slate-400">Account Number</span><span className="text-slate-200 font-mono font-bold">{selectedTx.accountNumber}</span></div>
-                  <div className="flex justify-between"><span className="text-slate-400">Account Type</span><span className="text-slate-200 font-medium">{selectedTx.accountType}</span></div>
-                  <div className="flex justify-between"><span className="text-slate-400">Current Balance</span><span className="text-emerald-400 font-bold font-mono">{selectedTx.currentBalance}</span></div>
-                  <div className="flex justify-between"><span className="text-slate-400">Available Balance</span><span className="text-slate-300 font-bold font-mono">{selectedTx.availableBalance}</span></div>
+                <div className="p-3 rounded-xl bg-[#FFF5F8]/80 border border-[#FBCFE8] text-xs space-y-2">
+                  <div className="flex justify-between"><span className="text-[#9D174D]/85">Account Number</span><span className="text-[#701a75] font-mono font-bold">{selectedTx.accountNumber}</span></div>
+                  <div className="flex justify-between"><span className="text-[#9D174D]/85">Account Type</span><span className="text-[#701a75] font-medium">{selectedTx.accountType}</span></div>
+                  <div className="flex justify-between"><span className="text-[#9D174D]/85">Current Balance</span><span className="text-emerald-400 font-bold font-mono">{selectedTx.currentBalance}</span></div>
+                  <div className="flex justify-between"><span className="text-[#9D174D]/85">Available Balance</span><span className="text-[#831843] font-bold font-mono">{selectedTx.availableBalance}</span></div>
                 </div>
               </div>
 
               {/* Branch Information */}
               <div className="space-y-2" id="detail-branch-section">
-                <h4 className="text-[10px] uppercase text-[#8496bf] font-extrabold tracking-widest flex items-center gap-1.5">
+                <h4 className="text-[10px] uppercase text-[#BE185D]/75 font-extrabold tracking-widest flex items-center gap-1.5">
                   <Building size={12} className="text-[#d4af37]" />
                   <span>Branch Information</span>
                 </h4>
-                <div className="p-3 rounded-xl bg-[#03061c]/60 border border-[#141c48] text-xs space-y-2">
-                  <div className="flex justify-between"><span className="text-slate-400">Assigned Branch</span><span className="text-slate-200 font-medium">{selectedTx.branchName}</span></div>
-                  <div className="flex justify-between"><span className="text-slate-400">Branch Identifier</span><span className="text-slate-200 font-mono font-bold">{selectedTx.branchCode}</span></div>
-                  <div className="flex justify-between"><span className="text-slate-400">Physical Location</span><span className="text-slate-200">{selectedTx.branchLocation}</span></div>
+                <div className="p-3 rounded-xl bg-[#FFF5F8]/80 border border-[#FBCFE8] text-xs space-y-2">
+                  <div className="flex justify-between"><span className="text-[#9D174D]/85">Assigned Branch</span><span className="text-[#701a75] font-medium">{selectedTx.branchName}</span></div>
+                  <div className="flex justify-between"><span className="text-[#9D174D]/85">Branch Identifier</span><span className="text-[#701a75] font-mono font-bold">{selectedTx.branchCode}</span></div>
+                  <div className="flex justify-between"><span className="text-[#9D174D]/85">Physical Location</span><span className="text-[#701a75]">{selectedTx.branchLocation}</span></div>
                 </div>
               </div>
 
               {/* Branch Manager Information */}
               <div className="space-y-2" id="detail-manager-section">
-                <h4 className="text-[10px] uppercase text-[#8496bf] font-extrabold tracking-widest flex items-center gap-1.5">
+                <h4 className="text-[10px] uppercase text-[#BE185D]/75 font-extrabold tracking-widest flex items-center gap-1.5">
                   <UserCheck size={12} className="text-[#d4af37]" />
                   <span>Branch Manager Information</span>
                 </h4>
-                <div className="p-3 rounded-xl bg-[#03061c]/60 border border-[#141c48] text-xs space-y-2">
-                  <div className="flex justify-between"><span className="text-slate-400">Manager Name</span><span className="text-slate-200 font-medium">{selectedTx.managerName}</span></div>
-                  <div className="flex justify-between"><span className="text-slate-400">Employee ID</span><span className="text-[#d4af37] font-mono font-bold">{selectedTx.managerId}</span></div>
-                  <div className="flex justify-between"><span className="text-slate-400">Contact Number</span><span className="text-slate-200 font-mono">{selectedTx.managerContact}</span></div>
-                  <div className="flex justify-between"><span className="text-slate-400">Official Email</span><span className="text-slate-200 font-mono text-[11px]">{selectedTx.managerEmail}</span></div>
+                <div className="p-3 rounded-xl bg-[#FFF5F8]/80 border border-[#FBCFE8] text-xs space-y-2">
+                  <div className="flex justify-between"><span className="text-[#9D174D]/85">Manager Name</span><span className="text-[#701a75] font-medium">{selectedTx.managerName}</span></div>
+                  <div className="flex justify-between"><span className="text-[#9D174D]/85">Employee ID</span><span className="text-[#d4af37] font-mono font-bold">{selectedTx.managerId}</span></div>
+                  <div className="flex justify-between"><span className="text-[#9D174D]/85">Contact Number</span><span className="text-[#701a75] font-mono">{selectedTx.managerContact}</span></div>
+                  <div className="flex justify-between"><span className="text-[#9D174D]/85">Official Email</span><span className="text-[#701a75] font-mono text-[11px]">{selectedTx.managerEmail}</span></div>
                 </div>
               </div>
 
               {/* Transaction details */}
               <div className="space-y-2" id="detail-tx-section">
-                <h4 className="text-[10px] uppercase text-[#8496bf] font-extrabold tracking-widest flex items-center gap-1.5">
+                <h4 className="text-[10px] uppercase text-[#BE185D]/75 font-extrabold tracking-widest flex items-center gap-1.5">
                   <Activity size={12} className="text-[#d4af37]" />
                   <span>Transaction Information</span>
                 </h4>
-                <div className="p-3 rounded-xl bg-[#03061c]/60 border border-[#141c48] text-xs space-y-2">
-                  <div className="flex justify-between"><span className="text-slate-400">Ledger Index</span><span className="text-slate-200 font-mono font-bold">{selectedTx.id}</span></div>
-                  <div className="flex justify-between"><span className="text-slate-400">Transaction Type</span><span className="text-slate-200 uppercase font-bold">{selectedTx.type}</span></div>
-                  <div className="flex justify-between"><span className="text-slate-400">Gross Value</span><span className="text-[#d4af37] font-bold font-mono text-sm">₹{selectedTx.amount.toLocaleString('en-IN', { minimumFractionDigits: 2 })}</span></div>
-                  <div className="flex justify-between"><span className="text-slate-400">Clearance State</span><span className="font-bold text-emerald-400">{selectedTx.status}</span></div>
-                  <div className="flex justify-between"><span className="text-slate-400">Reference Number</span><span className="text-slate-200 font-mono">{selectedTx.referenceNumber}</span></div>
-                  <div className="flex justify-between"><span className="text-slate-400">Purpose / Remarks</span><span className="text-slate-300 italic text-[11px] text-right max-w-[160px] truncate-none block">{selectedTx.purpose}</span></div>
+                <div className="p-3 rounded-xl bg-[#FFF5F8]/80 border border-[#FBCFE8] text-xs space-y-2">
+                  <div className="flex justify-between"><span className="text-[#9D174D]/85">Ledger Index</span><span className="text-[#701a75] font-mono font-bold">{selectedTx.id}</span></div>
+                  <div className="flex justify-between"><span className="text-[#9D174D]/85">Transaction Type</span><span className="text-[#701a75] uppercase font-bold">{selectedTx.type}</span></div>
+                  <div className="flex justify-between"><span className="text-[#9D174D]/85">Gross Value</span><span className="text-[#d4af37] font-bold font-mono text-sm">₹{selectedTx.amount.toLocaleString('en-IN', { minimumFractionDigits: 2 })}</span></div>
+                  <div className="flex justify-between"><span className="text-[#9D174D]/85">Clearance State</span><span className="font-bold text-emerald-400">{selectedTx.status}</span></div>
+                  <div className="flex justify-between"><span className="text-[#9D174D]/85">Reference Number</span><span className="text-[#701a75] font-mono">{selectedTx.referenceNumber}</span></div>
+                  <div className="flex justify-between"><span className="text-[#9D174D]/85">Purpose / Remarks</span><span className="text-[#831843] italic text-[11px] text-right max-w-[160px] truncate-none block">{selectedTx.purpose}</span></div>
                 </div>
               </div>
 
               {/* Transaction Date & Time */}
               <div className="space-y-2" id="detail-time-section">
-                <h4 className="text-[10px] uppercase text-[#8496bf] font-extrabold tracking-widest flex items-center gap-1.5">
+                <h4 className="text-[10px] uppercase text-[#BE185D]/75 font-extrabold tracking-widest flex items-center gap-1.5">
                   <Calendar size={12} className="text-[#d4af37]" />
                   <span>Transaction Date & Time</span>
                 </h4>
-                <div className="p-3 rounded-xl bg-[#03061c]/60 border border-[#141c48] text-xs space-y-2">
-                  <div className="flex justify-between"><span className="text-slate-400">Calendar Date</span><span className="text-slate-200">{selectedTx.date}</span></div>
-                  <div className="flex justify-between"><span className="text-slate-400">Execution Time</span><span className="text-slate-200 font-mono">{selectedTx.time}</span></div>
+                <div className="p-3 rounded-xl bg-[#FFF5F8]/80 border border-[#FBCFE8] text-xs space-y-2">
+                  <div className="flex justify-between"><span className="text-[#9D174D]/85">Calendar Date</span><span className="text-[#701a75]">{selectedTx.date}</span></div>
+                  <div className="flex justify-between"><span className="text-[#9D174D]/85">Execution Time</span><span className="text-[#701a75] font-mono">{selectedTx.time}</span></div>
                 </div>
               </div>
 
               {/* Transaction Location */}
               <div className="space-y-2" id="detail-location-section">
-                <h4 className="text-[10px] uppercase text-[#8496bf] font-extrabold tracking-widest flex items-center gap-1.5">
+                <h4 className="text-[10px] uppercase text-[#BE185D]/75 font-extrabold tracking-widest flex items-center gap-1.5">
                   <MapPin size={12} className="text-[#d4af37]" />
                   <span>Transaction Location</span>
                 </h4>
-                <div className="p-3 rounded-xl bg-[#03061c]/60 border border-[#141c48] text-xs space-y-2">
-                  <div className="flex justify-between"><span className="text-slate-400">Source Point</span><span className="text-slate-200">{selectedTx.branchName}</span></div>
-                  <div className="flex justify-between"><span className="text-slate-400">City / Node</span><span className="text-slate-200">{selectedTx.locationCity}</span></div>
-                  <div className="flex justify-between"><span className="text-slate-400">State / Canton</span><span className="text-slate-200">{selectedTx.locationState}</span></div>
-                  <div className="flex justify-between"><span className="text-slate-400">Sovereign Country</span><span className="text-slate-200 font-semibold">{selectedTx.locationCountry}</span></div>
+                <div className="p-3 rounded-xl bg-[#FFF5F8]/80 border border-[#FBCFE8] text-xs space-y-2">
+                  <div className="flex justify-between"><span className="text-[#9D174D]/85">Source Point</span><span className="text-[#701a75]">{selectedTx.branchName}</span></div>
+                  <div className="flex justify-between"><span className="text-[#9D174D]/85">City / Node</span><span className="text-[#701a75]">{selectedTx.locationCity}</span></div>
+                  <div className="flex justify-between"><span className="text-[#9D174D]/85">State / Canton</span><span className="text-[#701a75]">{selectedTx.locationState}</span></div>
+                  <div className="flex justify-between"><span className="text-[#9D174D]/85">Sovereign Country</span><span className="text-[#701a75] font-semibold">{selectedTx.locationCountry}</span></div>
                 </div>
               </div>
 
               {/* Transaction Channel */}
               <div className="space-y-2" id="detail-channel-section">
-                <h4 className="text-[10px] uppercase text-[#8496bf] font-extrabold tracking-widest flex items-center gap-1.5">
+                <h4 className="text-[10px] uppercase text-[#BE185D]/75 font-extrabold tracking-widest flex items-center gap-1.5">
                   <ChevronRight size={12} className="text-[#d4af37]" />
                   <span>Transaction Channel</span>
                 </h4>
-                <div className="p-3 rounded-xl bg-[#03061c]/60 border border-[#141c48] text-xs space-y-2">
-                  <div className="flex justify-between"><span className="text-slate-400">Interface Route</span><span className="text-slate-200 font-bold uppercase font-mono">{selectedTx.channel}</span></div>
+                <div className="p-3 rounded-xl bg-[#FFF5F8]/80 border border-[#FBCFE8] text-xs space-y-2">
+                  <div className="flex justify-between"><span className="text-[#9D174D]/85">Interface Route</span><span className="text-[#701a75] font-bold uppercase font-mono">{selectedTx.channel}</span></div>
                 </div>
               </div>
 
               {/* Authorized By */}
               <div className="space-y-2" id="detail-authorized-section">
-                <h4 className="text-[10px] uppercase text-[#8496bf] font-extrabold tracking-widest flex items-center gap-1.5">
+                <h4 className="text-[10px] uppercase text-[#BE185D]/75 font-extrabold tracking-widest flex items-center gap-1.5">
                   <Shield size={12} className="text-[#d4af37]" />
                   <span>Authorized By</span>
                 </h4>
-                <div className="p-3 rounded-xl bg-[#03061c]/60 border border-[#141c48] text-xs space-y-2">
-                  <div className="flex justify-between"><span className="text-slate-400">Officer Name</span><span className="text-slate-200 font-medium">{selectedTx.authorizedByName || 'Sarah Jenkins'}</span></div>
-                  <div className="flex justify-between"><span className="text-slate-400">Employee ID</span><span className="text-slate-200 font-mono font-bold">{selectedTx.authorizedByEmployeeId || 'EMP-0101'}</span></div>
-                  <div className="flex justify-between"><span className="text-slate-400">Designation</span><span className="text-slate-300 italic text-[11px]">{selectedTx.authorizedByDesignation || 'Senior Banking Officer'}</span></div>
+                <div className="p-3 rounded-xl bg-[#FFF5F8]/80 border border-[#FBCFE8] text-xs space-y-2">
+                  <div className="flex justify-between"><span className="text-[#9D174D]/85">Officer Name</span><span className="text-[#701a75] font-medium">{selectedTx.authorizedByName || 'Sarah Jenkins'}</span></div>
+                  <div className="flex justify-between"><span className="text-[#9D174D]/85">Employee ID</span><span className="text-[#701a75] font-mono font-bold">{selectedTx.authorizedByEmployeeId || 'EMP-0101'}</span></div>
+                  <div className="flex justify-between"><span className="text-[#9D174D]/85">Designation</span><span className="text-[#831843] italic text-[11px]">{selectedTx.authorizedByDesignation || 'Senior Banking Officer'}</span></div>
                 </div>
               </div>
 
               {/* Fraud Monitoring Section with standard color indicators */}
-              <div className="space-y-3 p-4 rounded-xl border border-dashed border-[#17235a] bg-[#03061c]/40" id="detail-fraud-section">
+              <div className="space-y-3 p-4 rounded-xl border border-dashed border-[#F9A8D4] bg-[#FFF5F8]/70" id="detail-fraud-section">
                 <div className="flex items-center justify-between">
-                  <h4 className="text-[10px] uppercase text-[#8496bf] font-extrabold tracking-widest flex items-center gap-1.5">
+                  <h4 className="text-[10px] uppercase text-[#BE185D]/75 font-extrabold tracking-widest flex items-center gap-1.5">
                     <Shield size={12} className="text-rose-400 animate-pulse" />
                     <span>Fraud Security Assessment</span>
                   </h4>
@@ -1512,9 +1512,9 @@ export default function TransactionMonitoring({
                 </div>
 
                 <div className="grid grid-cols-2 gap-3 text-xs">
-                  <div className="bg-[#0c143d]/50 p-2.5 rounded-lg border border-[#1b2557]">
-                    <span className="text-[9px] text-[#8496bf] uppercase block">Risk Threat Score</span>
-                    <span className="text-base font-extrabold font-mono text-slate-200">{selectedTx.riskScore}%</span>
+                  <div className="bg-[#FDF4F9]/80 p-2.5 rounded-lg border border-[#F9A8D4]">
+                    <span className="text-[9px] text-[#BE185D]/75 uppercase block">Risk Threat Score</span>
+                    <span className="text-base font-extrabold font-mono text-[#701a75]">{selectedTx.riskScore}%</span>
                     <div className="w-full bg-[#1b2557] h-1.5 rounded-full mt-1 overflow-hidden">
                       <div 
                         className={`h-full rounded-full ${
@@ -1525,19 +1525,19 @@ export default function TransactionMonitoring({
                     </div>
                   </div>
 
-                  <div className="bg-[#0c143d]/50 p-2.5 rounded-lg border border-[#1b2557]">
-                    <span className="text-[9px] text-[#8496bf] uppercase block">Fraud Probability</span>
+                  <div className="bg-[#FDF4F9]/80 p-2.5 rounded-lg border border-[#F9A8D4]">
+                    <span className="text-[9px] text-[#BE185D]/75 uppercase block">Fraud Probability</span>
                     <span className={`text-base font-extrabold ${
                       selectedTx.riskScore > 60 ? 'text-red-400' : selectedTx.riskScore > 20 ? 'text-amber-400' : 'text-emerald-400'
                     }`}>
                       {selectedTx.fraudProbability}
                     </span>
-                    <span className="text-[8px] block text-slate-500 mt-1">Sovereign Index rating</span>
+                    <span className="text-[8px] block text-[#9D174D]/75 mt-1">Sovereign Index rating</span>
                   </div>
                 </div>
 
-                <div className="flex justify-between items-center text-xs pt-1.5 border-t border-[#141c48]">
-                  <span className="text-slate-400">Total Flagged Anomalies</span>
+                <div className="flex justify-between items-center text-xs pt-1.5 border-t border-[#FBCFE8]">
+                  <span className="text-[#9D174D]/85">Total Flagged Anomalies</span>
                   <span className={`font-mono font-extrabold text-[11px] px-1.5 py-0.5 rounded-full ${
                     selectedTx.flaggedTransactionsCount > 0 ? 'bg-red-500/10 text-red-400' : 'bg-emerald-500/10 text-emerald-400'
                   }`}>
@@ -1549,15 +1549,15 @@ export default function TransactionMonitoring({
               {/* Complete Transaction History Navigation Tabs */}
               <div className="space-y-3 text-xs" id="detail-history-section">
                 <div className="flex flex-col gap-1">
-                  <h4 className="text-[10px] uppercase text-[#8496bf] font-extrabold tracking-widest flex items-center gap-1.5">
+                  <h4 className="text-[10px] uppercase text-[#BE185D]/75 font-extrabold tracking-widest flex items-center gap-1.5">
                     <Clock size={12} className="text-[#d4af37]" />
                     <span>Complete History Context</span>
                   </h4>
-                  <p className="text-[9px] text-slate-500">Historical sequence for user {selectedTx.name}.</p>
+                  <p className="text-[9px] text-[#9D174D]/75">Historical sequence for user {selectedTx.name}.</p>
                 </div>
 
                 {/* Sub Tab selection slider to fit within 1 Column width comfortably */}
-                <div className="overflow-x-auto flex gap-1 pb-2 border-b border-[#141c48] scrollbar-thin">
+                <div className="overflow-x-auto flex gap-1 pb-2 border-b border-[#FBCFE8] scrollbar-thin">
                   {(['Timeline', 'Deposits', 'Withdrawals', 'Transfers', 'Payments', 'Cards'] as const).map((tab) => {
                     const isActive = historyTab === tab;
                     return (
@@ -1567,7 +1567,7 @@ export default function TransactionMonitoring({
                         className={`px-2.5 py-1 text-[10px] font-bold uppercase rounded-md transition-all cursor-pointer whitespace-nowrap ${
                           isActive 
                             ? 'bg-[#1b2557] text-[#d4af37] border border-[#d4af37]/20' 
-                            : 'text-slate-400 hover:text-white bg-[#03061c]/60'
+                            : 'text-[#9D174D]/85 hover:text-[#4A044E] bg-[#FFF5F8]/80'
                         }`}
                       >
                         {tab}
@@ -1581,15 +1581,15 @@ export default function TransactionMonitoring({
                   
                   {/* General timeline tab */}
                   {historyTab === 'Timeline' && (
-                    <div className="space-y-4 border-l border-[#141c48] pl-3 ml-2.5 pt-1.5">
+                    <div className="space-y-4 border-l border-[#FBCFE8] pl-3 ml-2.5 pt-1.5">
                       
                       {/* Timeline Dep */}
                       {selectedTx.history.deposits.slice(0, 2).map((item, index) => (
                         <div key={`timeline-dep-${index}`} className="relative">
                           <span className="absolute -left-[16.5px] top-1 h-2 w-2 rounded-full bg-emerald-400 ring-2 ring-[#070c2e]" />
                           <div className="text-[10px]">
-                            <p className="font-bold text-slate-200">Deposited {item.amount}</p>
-                            <p className="text-[9px] text-slate-500">{item.date} • {item.branch}</p>
+                            <p className="font-bold text-[#701a75]">Deposited {item.amount}</p>
+                            <p className="text-[9px] text-[#9D174D]/75">{item.date} • {item.branch}</p>
                           </div>
                         </div>
                       ))}
@@ -1599,8 +1599,8 @@ export default function TransactionMonitoring({
                         <div key={`timeline-crd-${index}`} className="relative">
                           <span className="absolute -left-[16.5px] top-1 h-2 w-2 rounded-full bg-amber-400 ring-2 ring-[#070c2e]" />
                           <div className="text-[10px]">
-                            <p className="font-bold text-slate-200">Card Payment of {item.amount} at {item.merchant}</p>
-                            <p className="text-[9px] text-slate-500">{item.date} • Number: {item.cardNumberMasked}</p>
+                            <p className="font-bold text-[#701a75]">Card Payment of {item.amount} at {item.merchant}</p>
+                            <p className="text-[9px] text-[#9D174D]/75">{item.date} • Number: {item.cardNumberMasked}</p>
                           </div>
                         </div>
                       ))}
@@ -1610,8 +1610,8 @@ export default function TransactionMonitoring({
                         <div key={`timeline-trf-${index}`} className="relative">
                           <span className="absolute -left-[16.5px] top-1 h-2 w-2 rounded-full bg-blue-400 ring-2 ring-[#070c2e]" />
                           <div className="text-[10px]">
-                            <p className="font-bold text-slate-200">Transferred {item.amount} to {item.receiver}</p>
-                            <p className="text-[9px] text-slate-500">{item.date} • {item.sender}</p>
+                            <p className="font-bold text-[#701a75]">Transferred {item.amount} to {item.receiver}</p>
+                            <p className="text-[9px] text-[#9D174D]/75">{item.date} • {item.sender}</p>
                           </div>
                         </div>
                       ))}
@@ -1621,8 +1621,8 @@ export default function TransactionMonitoring({
                         <div key={`timeline-pay-${index}`} className="relative">
                           <span className="absolute -left-[16.5px] top-1 h-2 w-2 rounded-full bg-rose-400 ring-2 ring-[#070c2e]" />
                           <div className="text-[10px]">
-                            <p className="font-bold text-slate-200">Merchant Payment: {item.amount} to {item.merchantName}</p>
-                            <p className="text-[9px] text-slate-500">{item.date}</p>
+                            <p className="font-bold text-[#701a75]">Merchant Payment: {item.amount} to {item.merchantName}</p>
+                            <p className="text-[9px] text-[#9D174D]/75">{item.date}</p>
                           </div>
                         </div>
                       ))}
@@ -1632,7 +1632,7 @@ export default function TransactionMonitoring({
                        selectedTx.history.cardTransactions.length === 0 && 
                        selectedTx.history.transfers.length === 0 && 
                        selectedTx.history.payments.length === 0 && (
-                        <p className="text-slate-500 italic text-[11px]">No matching historical record trace detected is ledger database systems.</p>
+                        <p className="text-[#9D174D]/75 italic text-[11px]">No matching historical record trace detected is ledger database systems.</p>
                       )}
                     </div>
                   )}
@@ -1641,13 +1641,13 @@ export default function TransactionMonitoring({
                   {historyTab === 'Deposits' && (
                     <div className="space-y-2">
                       {selectedTx.history.deposits.length === 0 ? (
-                        <p className="text-slate-500 text-[11px] italic">No deposit historical events found.</p>
+                        <p className="text-[#9D174D]/75 text-[11px] italic">No deposit historical events found.</p>
                       ) : (
                         selectedTx.history.deposits.map((item, i) => (
-                          <div key={i} className="bg-[#03061c]/40 border border-[#141c48] p-2.5 rounded-lg flex items-center justify-between">
+                          <div key={i} className="bg-[#FFF5F8]/70 border border-[#FBCFE8] p-2.5 rounded-lg flex items-center justify-between">
                             <div>
-                              <p className="font-bold text-slate-200">{item.branch}</p>
-                              <p className="text-[9px] text-slate-500">{item.date} • {item.time}</p>
+                              <p className="font-bold text-[#701a75]">{item.branch}</p>
+                              <p className="text-[9px] text-[#9D174D]/75">{item.date} • {item.time}</p>
                             </div>
                             <span className="text-emerald-400 font-mono font-bold text-[11px] shrink-0">+{item.amount}</span>
                           </div>
@@ -1660,13 +1660,13 @@ export default function TransactionMonitoring({
                   {historyTab === 'Withdrawals' && (
                     <div className="space-y-2">
                       {selectedTx.history.withdrawals.length === 0 ? (
-                        <p className="text-slate-500 text-[11px] italic">No withdrawal historical events found.</p>
+                        <p className="text-[#9D174D]/75 text-[11px] italic">No withdrawal historical events found.</p>
                       ) : (
                         selectedTx.history.withdrawals.map((item, i) => (
-                          <div key={i} className="bg-[#03061c]/40 border border-[#141c48] p-2.5 rounded-lg flex items-center justify-between">
+                          <div key={i} className="bg-[#FFF5F8]/70 border border-[#FBCFE8] p-2.5 rounded-lg flex items-center justify-between">
                             <div>
-                              <p className="font-bold text-slate-200">{item.branch}</p>
-                              <p className="text-[9px] text-slate-500">{item.date} • {item.time}</p>
+                              <p className="font-bold text-[#701a75]">{item.branch}</p>
+                              <p className="text-[9px] text-[#9D174D]/75">{item.date} • {item.time}</p>
                             </div>
                             <span className="text-rose-400 font-mono font-bold text-[11px] shrink-0">-{item.amount}</span>
                           </div>
@@ -1679,16 +1679,16 @@ export default function TransactionMonitoring({
                   {historyTab === 'Transfers' && (
                     <div className="space-y-2">
                       {selectedTx.history.transfers.length === 0 ? (
-                        <p className="text-slate-500 text-[11px] italic">No transfer historical events found.</p>
+                        <p className="text-[#9D174D]/75 text-[11px] italic">No transfer historical events found.</p>
                       ) : (
                         selectedTx.history.transfers.map((item, i) => (
-                          <div key={i} className="bg-[#03061c]/40 border border-[#141c48] p-2.5 rounded-lg text-[11px] space-y-1">
+                          <div key={i} className="bg-[#FFF5F8]/70 border border-[#FBCFE8] p-2.5 rounded-lg text-[11px] space-y-1">
                             <div className="flex justify-between items-center text-[10px]">
-                              <span className="text-slate-400">Recipient</span>
-                              <span className="font-mono text-slate-300 font-bold">{item.receiver}</span>
+                              <span className="text-[#9D174D]/85">Recipient</span>
+                              <span className="font-mono text-[#831843] font-bold">{item.receiver}</span>
                             </div>
                             <div className="flex justify-between items-center">
-                              <span className="text-slate-500">{item.date} {item.time ? `• ${item.time}` : ''}</span>
+                              <span className="text-[#9D174D]/75">{item.date} {item.time ? `• ${item.time}` : ''}</span>
                               <span className="text-blue-400 font-bold font-mono">{item.amount}</span>
                             </div>
                           </div>
@@ -1701,13 +1701,13 @@ export default function TransactionMonitoring({
                   {historyTab === 'Payments' && (
                     <div className="space-y-2">
                       {selectedTx.history.payments.length === 0 ? (
-                        <p className="text-slate-500 text-[11px] italic">No payment historical events found.</p>
+                        <p className="text-[#9D174D]/75 text-[11px] italic">No payment historical events found.</p>
                       ) : (
                         selectedTx.history.payments.map((item, i) => (
-                          <div key={i} className="bg-[#03061c]/40 border border-[#141c48] p-2.5 rounded-lg flex items-center justify-between">
+                          <div key={i} className="bg-[#FFF5F8]/70 border border-[#FBCFE8] p-2.5 rounded-lg flex items-center justify-between">
                             <div>
-                              <p className="font-bold text-slate-200">{item.merchantName}</p>
-                              <p className="text-[9px] text-slate-500">{item.date} • {item.time || '12:00 PM'}</p>
+                              <p className="font-bold text-[#701a75]">{item.merchantName}</p>
+                              <p className="text-[9px] text-[#9D174D]/75">{item.date} • {item.time || '12:00 PM'}</p>
                             </div>
                             <span className="text-rose-400 font-mono font-bold text-[11px] shrink-0">-{item.amount}</span>
                           </div>
@@ -1720,16 +1720,16 @@ export default function TransactionMonitoring({
                   {historyTab === 'Cards' && (
                     <div className="space-y-2">
                       {selectedTx.history.cardTransactions.length === 0 ? (
-                        <p className="text-slate-500 text-[11px] italic">No card ledger historical events found.</p>
+                        <p className="text-[#9D174D]/75 text-[11px] italic">No card ledger historical events found.</p>
                       ) : (
                         selectedTx.history.cardTransactions.map((item, i) => (
-                          <div key={i} className="bg-[#03061c]/40 border border-[#141c48] p-2.5 rounded-lg text-[11px] space-y-1">
+                          <div key={i} className="bg-[#FFF5F8]/70 border border-[#FBCFE8] p-2.5 rounded-lg text-[11px] space-y-1">
                             <div className="flex justify-between items-center text-[10px]">
-                              <span className="text-slate-400">{item.merchant}</span>
-                              <span className="font-mono text-slate-500">{item.cardNumberMasked}</span>
+                              <span className="text-[#9D174D]/85">{item.merchant}</span>
+                              <span className="font-mono text-[#9D174D]/75">{item.cardNumberMasked}</span>
                             </div>
                             <div className="flex justify-between items-center">
-                              <span className="text-slate-500">{item.date} • {item.time}</span>
+                              <span className="text-[#9D174D]/75">{item.date} • {item.time}</span>
                               <span className="text-rose-400 font-bold font-mono">{item.amount}</span>
                             </div>
                           </div>
@@ -1742,8 +1742,8 @@ export default function TransactionMonitoring({
               </div>
 
               {/* Super Admin Control Actions */}
-              <div className="space-y-2.5 text-xs pt-4 border-t border-[#141c48]" id="detail-actions-section">
-                <h4 className="text-[10px] uppercase text-[#8496bf] font-extrabold tracking-widest flex items-center gap-1.5 mb-2">
+              <div className="space-y-2.5 text-xs pt-4 border-t border-[#FBCFE8]" id="detail-actions-section">
+                <h4 className="text-[10px] uppercase text-[#BE185D]/75 font-extrabold tracking-widest flex items-center gap-1.5 mb-2">
                   <Sliders size={12} className="text-[#d4af37]" />
                   <span>Super Admin Actions Override</span>
                 </h4>
@@ -1753,7 +1753,7 @@ export default function TransactionMonitoring({
                     id="action-btn-report"
                     onClick={() => handleActionClick("View Full Transaction Report", `Requested full system compiled report for transaction ${selectedTx.id}`, 'reports', true)}
                     disabled={loadingAction === "View Full Transaction Report"}
-                    className="flex items-center gap-1.5 p-2 bg-[#0a1135] hover:bg-[#141c48] hover:text-white border border-[#232d66] text-slate-300 rounded-lg selection-none transition-all cursor-pointer disabled:opacity-50"
+                    className="flex items-center gap-1.5 p-2 bg-[#FFF1F5] hover:bg-[#141c48] hover:text-[#4A044E] border border-[#F9A8D4] text-[#831843] rounded-lg selection-none transition-all cursor-pointer disabled:opacity-50"
                   >
                     {loadingAction === "View Full Transaction Report" ? <div className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin"></div> : <FileText size={12} className="text-[#d4af37]" />}
                     <span>Ledger Report</span>
@@ -1763,7 +1763,7 @@ export default function TransactionMonitoring({
                     id="action-btn-acct-details"
                     onClick={() => handleActionClick("View Account Details", `Requested account portfolio mapping for account ${selectedTx.accountNumber}`, 'accounts')}
                     disabled={loadingAction === "View Account Details"}
-                    className="flex items-center gap-1.5 p-2 bg-[#0a1135] hover:bg-[#141c48] hover:text-white border border-[#232d66] text-slate-300 rounded-lg selection-none transition-all cursor-pointer disabled:opacity-50"
+                    className="flex items-center gap-1.5 p-2 bg-[#FFF1F5] hover:bg-[#141c48] hover:text-[#4A044E] border border-[#F9A8D4] text-[#831843] rounded-lg selection-none transition-all cursor-pointer disabled:opacity-50"
                   >
                     {loadingAction === "View Account Details" ? <div className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin"></div> : <CreditCardIcon size={12} className="text-[#d4af37]" />}
                     <span>Account Details</span>
@@ -1775,8 +1775,8 @@ export default function TransactionMonitoring({
                     disabled={selectedTx.userType !== 'Customer' || loadingAction === "View Customer Profile"}
                     className={`flex items-center gap-1.5 p-2 border rounded-lg selection-none transition-all cursor-pointer ${
                       selectedTx.userType === 'Customer'
-                        ? 'bg-[#0a1135] hover:bg-[#141c48] hover:text-white border-[#232d66] text-slate-300'
-                        : 'bg-[#03061c]/20 border-transparent text-slate-600 cursor-not-allowed'
+                        ? 'bg-[#FFF1F5] hover:bg-[#141c48] hover:text-[#4A044E] border-[#F9A8D4] text-[#831843]'
+                        : 'bg-[#FFF5F8]/50 border-transparent text-slate-600 cursor-not-allowed'
                     } disabled:opacity-50`}
                   >
                     {loadingAction === "View Customer Profile" ? <div className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin"></div> : <User size={12} className="text-blue-400" />}
@@ -1789,8 +1789,8 @@ export default function TransactionMonitoring({
                     disabled={selectedTx.userType !== 'Employee' || loadingAction === "View Employee Profile"}
                     className={`flex items-center gap-1.5 p-2 border rounded-lg selection-none transition-all cursor-pointer ${
                       selectedTx.userType === 'Employee'
-                        ? 'bg-[#0a1135] hover:bg-[#141c48] hover:text-white border-[#232d66] text-slate-300'
-                        : 'bg-[#03061c]/20 border-transparent text-slate-600 cursor-not-allowed'
+                        ? 'bg-[#FFF1F5] hover:bg-[#141c48] hover:text-[#4A044E] border-[#F9A8D4] text-[#831843]'
+                        : 'bg-[#FFF5F8]/50 border-transparent text-slate-600 cursor-not-allowed'
                     } disabled:opacity-50`}
                   >
                     {loadingAction === "View Employee Profile" ? <div className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin"></div> : <UserCheck size={12} className="text-[#d4af37]" />}
@@ -1801,7 +1801,7 @@ export default function TransactionMonitoring({
                     id="action-btn-msg-manager"
                     onClick={() => handleActionClick("Contact Branch Manager", `Dispatched priority message packet to manager of branch ${selectedTx.branchCode}`, undefined, true)}
                     disabled={loadingAction === "Contact Branch Manager"}
-                    className="flex items-center gap-1.5 p-2 bg-[#0a1135] hover:bg-[#141c48] hover:text-white border border-[#232d66] text-slate-300 rounded-lg selection-none transition-all cursor-pointer disabled:opacity-50"
+                    className="flex items-center gap-1.5 p-2 bg-[#FFF1F5] hover:bg-[#141c48] hover:text-[#4A044E] border border-[#F9A8D4] text-[#831843] rounded-lg selection-none transition-all cursor-pointer disabled:opacity-50"
                   >
                     {loadingAction === "Contact Branch Manager" ? <div className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin"></div> : <MessageSquare size={12} className="text-[#d4af37]" />}
                     <span>Ping Manager</span>
@@ -1811,7 +1811,7 @@ export default function TransactionMonitoring({
                     id="action-btn-msg-officer"
                     onClick={() => handleActionClick("Contact Authorizing Officer", `Dispatched communication log to authorizer: ${selectedTx.authorizedByName}`, undefined, true)}
                     disabled={loadingAction === "Contact Authorizing Officer"}
-                    className="flex items-center gap-1.5 p-2 bg-[#0a1135] hover:bg-[#141c48] hover:text-white border border-[#232d66] text-slate-300 rounded-lg selection-none transition-all cursor-pointer disabled:opacity-50"
+                    className="flex items-center gap-1.5 p-2 bg-[#FFF1F5] hover:bg-[#141c48] hover:text-[#4A044E] border border-[#F9A8D4] text-[#831843] rounded-lg selection-none transition-all cursor-pointer disabled:opacity-50"
                   >
                     {loadingAction === "Contact Authorizing Officer" ? <div className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin"></div> : <Shield size={12} className="text-emerald-400" />}
                     <span>Ping Authorizer</span>
@@ -1821,7 +1821,7 @@ export default function TransactionMonitoring({
                     id="action-btn-download-history"
                     onClick={() => handleActionClick("Download Transaction History", `Downloaded decrypted offline ledger log file for user ${selectedTx.id}`)}
                     disabled={loadingAction === "Download Transaction History"}
-                    className="flex items-center gap-1.5 p-2 bg-[#0a1135] hover:bg-[#141c48] hover:text-white border border-[#232d66] text-slate-300 rounded-lg selection-none transition-all cursor-pointer col-span-2 justify-center disabled:opacity-50"
+                    className="flex items-center gap-1.5 p-2 bg-[#FFF1F5] hover:bg-[#141c48] hover:text-[#4A044E] border border-[#F9A8D4] text-[#831843] rounded-lg selection-none transition-all cursor-pointer col-span-2 justify-center disabled:opacity-50"
                   >
                     {loadingAction === "Download Transaction History" ? <div className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin"></div> : <Download size={12} className="text-emerald-400" />}
                     <span>Download Historical Log</span>
@@ -1831,7 +1831,7 @@ export default function TransactionMonitoring({
                     id="action-btn-view-audit"
                     onClick={() => handleActionClick("View Audit Logs", `Filtered system audit records matching reference root ID ${selectedTx.id}`, 'audit')}
                     disabled={loadingAction === "View Audit Logs"}
-                    className="flex items-center gap-1.5 p-2 bg-[#0a1135] hover:bg-[#141c48] hover:text-white border border-[#232d66] text-slate-300 rounded-lg selection-none transition-all cursor-pointer col-span-2 justify-center disabled:opacity-50"
+                    className="flex items-center gap-1.5 p-2 bg-[#FFF1F5] hover:bg-[#141c48] hover:text-[#4A044E] border border-[#F9A8D4] text-[#831843] rounded-lg selection-none transition-all cursor-pointer col-span-2 justify-center disabled:opacity-50"
                   >
                     {loadingAction === "View Audit Logs" ? <div className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin"></div> : <Info size={12} className="text-blue-400" />}
                     <span>View Server Audit Logs</span>

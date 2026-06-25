@@ -24,19 +24,19 @@ export default function AuditLogs({ logs }: AuditLogsProps) {
     <div className="space-y-6" id="auditlogs-module">
       
       {/* Filtering Header Toolbar */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-xl border border-[#17235a]/60 bg-[#070c2e]/80 shadow-lg">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-xl border border-[#F9A8D4] bg-[#FCE7F3]/90 shadow-lg">
         
         <div className="flex flex-1 gap-3 items-center w-full">
           {/* Quick search */}
           <div className="relative flex-1 max-w-xs">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-[#556994] w-4 h-4" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-[#9D174D]/80 w-4 h-4" />
             <input 
               id="audit-trail-search"
               type="text"
               placeholder="Filter audit trails..."
               value={queryTerm}
               onChange={(e) => setQueryTerm(e.target.value)}
-              className="w-full bg-[#0a1135] border border-[#1b2557] focus:border-[#d4af37]/60 text-white placeholder-[#4d5c87] pl-9 pr-4 py-2 text-xs rounded-xl outline-none"
+              className="w-full bg-[#FFF1F5] border border-[#F9A8D4] focus:border-[#d4af37]/60 text-[#4A044E] placeholder-[#EC4899]/50 pl-9 pr-4 py-2 text-xs rounded-xl outline-none"
             />
           </div>
 
@@ -45,7 +45,7 @@ export default function AuditLogs({ logs }: AuditLogsProps) {
               id="audit-severity-filter"
               value={filterSeverity}
               onChange={(e) => setFilterSeverity(e.target.value as any)}
-              className="bg-[#0a1135] border border-[#1b2557] text-white p-2 text-xs rounded-xl outline-none cursor-pointer"
+              className="bg-[#FFF1F5] border border-[#F9A8D4] text-[#4A044E] p-2 text-xs rounded-xl outline-none cursor-pointer"
             >
               <option value="all">Any Severity</option>
               <option value="Info">Information (Routine)</option>
@@ -55,26 +55,26 @@ export default function AuditLogs({ logs }: AuditLogsProps) {
           </div>
         </div>
 
-        <div className="text-[10px] text-[#556994] font-mono whitespace-nowrap">
+        <div className="text-[10px] text-[#9D174D]/80 font-mono whitespace-nowrap">
           IMMUTABLE CRYPTO BLOCK LEDGER ACTIVE
         </div>
 
       </div>
 
       {/* Audit table representation */}
-      <div className="p-6 rounded-2xl border border-[#17235a]/60 bg-[#070c2e]/80 shadow-2xl">
+      <div className="p-6 rounded-2xl border border-[#F9A8D4] bg-[#FCE7F3]/90 shadow-2xl">
         <div className="mb-6 flex items-center gap-4">
           <BrandLogo size={48} className="shrink-0" />
           <div>
-            <h3 className="text-sm font-bold text-white uppercase tracking-wider">Apex immutable Operational History</h3>
-            <p className="text-xs text-[#556994]">This table records every manual action logged inside this admin portal. Logs are cryptographically hashed and un-editable.</p>
+            <h3 className="text-sm font-bold text-[#4A044E] uppercase tracking-wider">Apex immutable Operational History</h3>
+            <p className="text-xs text-[#9D174D]/80">This table records every manual action logged inside this admin portal. Logs are cryptographically hashed and un-editable.</p>
           </div>
         </div>
 
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="border-b border-[#141c48] text-[9px] text-[#8496bf] font-bold uppercase tracking-wider">
+              <tr className="border-b border-[#FBCFE8] text-[9px] text-[#BE185D]/75 font-bold uppercase tracking-wider">
                 <th className="py-2.5 px-3">Log Hash ID</th>
                 <th className="py-2.5 px-3">Clearance Logon Reference</th>
                 <th className="py-2.5 px-3">Action Completed</th>
@@ -85,12 +85,12 @@ export default function AuditLogs({ logs }: AuditLogsProps) {
             </thead>
             <tbody className="divide-y divide-[#141c48]">
               {filteredLogs.map((log) => (
-                <tr key={log.id} className="text-xs hover:bg-[#121c4b]/50 transition-colors">
-                  <td className="py-3 px-3 font-mono font-bold text-slate-400">{log.id}</td>
-                  <td className="py-3 px-3 font-medium text-white">{log.user}</td>
-                  <td className="py-3 px-3 text-slate-300 font-semibold">{log.action}</td>
-                  <td className="py-3 px-3 text-center font-mono text-[#8496bf]">{log.ipAddress}</td>
-                  <td className="py-3 px-3 text-center text-[#556994] font-mono whitespace-nowrap">
+                <tr key={log.id} className="text-xs hover:bg-[#FBCFE8]/70 transition-colors">
+                  <td className="py-3 px-3 font-mono font-bold text-[#9D174D]/85">{log.id}</td>
+                  <td className="py-3 px-3 font-medium text-[#4A044E]">{log.user}</td>
+                  <td className="py-3 px-3 text-[#831843] font-semibold">{log.action}</td>
+                  <td className="py-3 px-3 text-center font-mono text-[#BE185D]/75">{log.ipAddress}</td>
+                  <td className="py-3 px-3 text-center text-[#9D174D]/80 font-mono whitespace-nowrap">
                     {new Date(log.timestamp).toISOString().replace('T', ' ').substring(0, 19)}
                   </td>
                   <td className="py-3 px-3 text-right">

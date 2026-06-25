@@ -65,10 +65,10 @@ export default function SupportSystem({
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
         {/* Tickets listing */}
-        <div className="lg:col-span-1 p-6 rounded-2xl border border-[#17235a]/60 bg-[#070c2e]/80 shadow-2xl space-y-4">
+        <div className="lg:col-span-1 p-6 rounded-2xl border border-[#F9A8D4] bg-[#FCE7F3]/90 shadow-2xl space-y-4">
           <div>
-            <h3 className="text-sm font-bold text-white uppercase tracking-wider">Active System Support Tickets</h3>
-            <p className="text-xs text-[#556994]">A list of critical client tickets awaiting compliance review.</p>
+            <h3 className="text-sm font-bold text-[#4A044E] uppercase tracking-wider">Active System Support Tickets</h3>
+            <p className="text-xs text-[#9D174D]/80">A list of critical client tickets awaiting compliance review.</p>
           </div>
 
           <div className="space-y-2.5 max-h-[420px] overflow-y-auto pr-1">
@@ -81,13 +81,13 @@ export default function SupportSystem({
                   onClick={() => setSelectedTicketId(t.id)}
                   className={`p-4 border rounded-xl flex items-center justify-between transition-all cursor-pointer ${
                     isSelected 
-                      ? 'border-[#d4af37]/60 bg-[#0e1742] shadow-md' 
-                      : 'border-[#17235a]/60 hover:bg-[#121c4b]/30'
+                      ? 'border-[#d4af37]/60 bg-[#FDF2F8] shadow-md' 
+                      : 'border-[#F9A8D4] hover:bg-[#FBCFE8]/30'
                   }`}
                 >
                   <div className="min-w-0 flex-1 pr-2">
-                    <h4 className="text-xs font-bold text-white truncate">{t.subject}</h4>
-                    <span className="text-[10px] text-[#556994] font-mono block mt-0.5">{t.customerName} · {t.id}</span>
+                    <h4 className="text-xs font-bold text-[#4A044E] truncate">{t.subject}</h4>
+                    <span className="text-[10px] text-[#9D174D]/80 font-mono block mt-0.5">{t.customerName} · {t.id}</span>
                   </div>
 
                   <div className="flex flex-col items-end gap-1 flex-shrink-0" onClick={e => e.stopPropagation()}>
@@ -113,15 +113,15 @@ export default function SupportSystem({
         </div>
 
         {/* Live Support desk chat simulation */}
-        <div className="lg:col-span-2 p-6 rounded-2xl border border-[#17235a]/60 bg-[#070c2e]/80 shadow-2xl flex flex-col justify-between min-h-[460px] relative overflow-hidden">
+        <div className="lg:col-span-2 p-6 rounded-2xl border border-[#F9A8D4] bg-[#FCE7F3]/90 shadow-2xl flex flex-col justify-between min-h-[460px] relative overflow-hidden">
           
           {/* Header block */}
-          <div className="flex items-center gap-3 border-b border-[#141b44] pb-4">
-            <div className="w-9 h-9 rounded-lg bg-gradient-to-tr from-cyan-400 to-indigo-600 flex items-center justify-center font-bold text-white">
+          <div className="flex items-center gap-3 border-b border-[#FBCFE8] pb-4">
+            <div className="w-9 h-9 rounded-lg bg-gradient-to-tr from-cyan-400 to-indigo-600 flex items-center justify-center font-bold text-[#4A044E]">
               <Bot size={18} />
             </div>
             <div>
-              <h4 className="text-xs font-bold text-white">Sovereign Compliance AI Terminal</h4>
+              <h4 className="text-xs font-bold text-[#4A044E]">Sovereign Compliance AI Terminal</h4>
               <p className="text-[10px] text-emerald-400 flex items-center gap-1 leading-none mt-1">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                 Live AI Assistant Syncing
@@ -138,7 +138,7 @@ export default function SupportSystem({
                   msg.sender === 'user' ? 'ml-auto flex-row-reverse' : ''
                 }`}
               >
-                <div className={`w-7 h-7 rounded-full flex items-center justify-center font-bold text-[10px] text-white flex-shrink-0 ${
+                <div className={`w-7 h-7 rounded-full flex items-center justify-center font-bold text-[10px] text-[#4A044E] flex-shrink-0 ${
                   msg.sender === 'user' ? 'bg-amber-600' : 'bg-cyan-600'
                 }`}>
                   {msg.sender === 'user' ? 'CS' : 'AI'}
@@ -146,19 +146,19 @@ export default function SupportSystem({
                 <div>
                   <div className={`p-3 rounded-xl text-xs leading-relaxed ${
                     msg.sender === 'user' 
-                      ? 'bg-gradient-to-br from-[#1b255c] to-[#121942] border border-[#2b3989] text-white rounded-tr-none' 
-                      : 'bg-[#0b1030] border border-[#152055] text-slate-300 rounded-tl-none'
+                      ? 'bg-gradient-to-br from-[#1b255c] to-[#121942] border border-[#2b3989] text-[#4A044E] rounded-tr-none' 
+                      : 'bg-[#FFF1F5] border border-[#152055] text-[#831843] rounded-tl-none'
                   }`}>
                     {msg.text}
                   </div>
-                  <span className="text-[8px] text-[#556994] font-mono mt-1 block px-1 text-right">{msg.time}</span>
+                  <span className="text-[8px] text-[#9D174D]/80 font-mono mt-1 block px-1 text-right">{msg.time}</span>
                 </div>
               </div>
             ))}
           </div>
 
           {/* Input Sender */}
-          <form onSubmit={handleSendMessage} className="flex gap-2.5 items-center select-none pt-2 border-t border-[#141b44]">
+          <form onSubmit={handleSendMessage} className="flex gap-2.5 items-center select-none pt-2 border-t border-[#FBCFE8]">
             <input 
               id="support-chat-input"
               type="text"
@@ -166,12 +166,12 @@ export default function SupportSystem({
               value={chatMessage}
               onChange={(e) => setChatMessage(e.target.value)}
               placeholder="Query structural balances or active thread levels..."
-              className="flex-1 bg-[#0a1135] border border-[#1b2557] focus:border-[#d4af37]/60 text-white placeholder-[#4d5c87] p-2.5 rounded-xl text-xs outline-none font-mono"
+              className="flex-1 bg-[#FFF1F5] border border-[#F9A8D4] focus:border-[#d4af37]/60 text-[#4A044E] placeholder-[#EC4899]/50 p-2.5 rounded-xl text-xs outline-none font-mono"
             />
             <button 
               id="send-chat-btn"
               type="submit"
-              className="p-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-white transition-all cursor-pointer"
+              className="p-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-[#4A044E] transition-all cursor-pointer"
             >
               <Send size={14} />
             </button>

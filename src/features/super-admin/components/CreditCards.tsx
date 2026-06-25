@@ -976,7 +976,7 @@ export default function CreditCards({
         <div className="absolute right-0 top-0 w-80 h-80 bg-gradient-to-bl from-amber-500/5 to-transparent rounded-full blur-3xl pointer-events-none" />
         <div className="absolute left-10 -bottom-10 w-60 h-60 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-[#1b2559]/60 pb-4 mb-6">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-[#F9A8D4]/60 pb-4 mb-6">
           <div>
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#d946ef] animate-pulse" />
@@ -995,7 +995,7 @@ export default function CreditCards({
               }}
               className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
                 superAdminTab === 'official' 
-                   ? 'bg-pink-400 text-white shadow-md rounded-lg mx-1' 
+                   ? 'bg-pink-400 text-[#4A044E] shadow-md rounded-lg mx-1' 
                    : 'text-[#3a2072]/60 hover:text-[#3a2072]'
               }`}
             >
@@ -1009,7 +1009,7 @@ export default function CreditCards({
               }}
               className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
                 superAdminTab === 'personal' 
-                  ? 'bg-pink-400 text-white shadow-md rounded-lg mx-1' 
+                  ? 'bg-pink-400 text-[#4A044E] shadow-md rounded-lg mx-1' 
                   : 'text-[#3a2072]/60 hover:text-[#3a2072]'
               }`}
             >
@@ -1054,7 +1054,7 @@ export default function CreditCards({
                     <div className={`absolute inset-0 w-full h-full [backface-visibility:hidden] rounded-2xl p-5 flex flex-col justify-between text-white overflow-hidden shadow-2xl border transition-all ${
                       officialCardBlock 
                         ? 'bg-slate-300 border-slate-400 text-slate-800' 
-                        : 'bg-gradient-to-tr from-pink-500 via-rose-500 to-fuchsia-600 border-pink-300 group-hover:border-pink-200 shadow-xl text-white'
+                        : 'bg-gradient-to-tr from-pink-500 via-rose-500 to-fuchsia-600 border-pink-300 group-hover:border-pink-200 shadow-xl text-[#4A044E]'
                     }`}>
                       <div className="absolute inset-x-0 bottom-0 h-1/2 bg-[#705E7C]/10 backdrop-blur-md" />
                       <div className="absolute -right-16 -top-16 w-36 h-36 bg-pink-300/20 rounded-full blur-2xl" />
@@ -1088,7 +1088,7 @@ export default function CreditCards({
                     </div>
 
                     {/* BACK SIDE */}
-                    <div className={`absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-2xl border-pink-300 shadow-xl flex flex-col pt-6 overflow-hidden ${officialCardBlock ? 'bg-slate-300 text-slate-800' : 'bg-gradient-to-tr from-pink-500 via-rose-500 to-fuchsia-600 text-white'}`}>
+                    <div className={`absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-2xl border-pink-300 shadow-xl flex flex-col pt-6 overflow-hidden ${officialCardBlock ? 'bg-slate-300 text-slate-800' : 'bg-gradient-to-tr from-pink-500 via-rose-500 to-fuchsia-600 text-[#4A044E]'}`}>
                       {/* Magnetic Stripe */}
                       <div className="w-full h-10 bg-black/90 shadow-inner mb-4" />
                       
@@ -1108,46 +1108,46 @@ export default function CreditCards({
 
                         {/* Extended Details Grid */}
                         <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-[7px] font-bold text-[#A38BA7] uppercase font-mono">
-                           <div className="flex justify-between border-b border-white/5 pb-0.5">
+                           <div className="flex justify-between border-b border-[#F9A8D4]/40 pb-0.5">
                              <span>Card Type:</span>
-                             <span className="text-white">Apex Executive</span>
+                             <span className="text-[#4A044E]">Apex Executive</span>
                            </div>
-                           <div className="flex justify-between border-b border-white/5 pb-0.5">
+                           <div className="flex justify-between border-b border-[#F9A8D4]/40 pb-0.5">
                              <span>Issuing Bank:</span>
-                             <span className="text-white truncate max-w-[50px]">Apex Global</span>
+                             <span className="text-[#4A044E] truncate max-w-[50px]">Apex Global</span>
                            </div>
-                           <div className="flex justify-between border-b border-white/5 pb-0.5">
+                           <div className="flex justify-between border-b border-[#F9A8D4]/40 pb-0.5">
                              <span>Status:</span>
                              <span className="text-emerald-400">Active</span>
                            </div>
-                           <div className="flex justify-between border-b border-white/5 pb-0.5">
+                           <div className="flex justify-between border-b border-[#F9A8D4]/40 pb-0.5">
                              <span>Network:</span>
-                             <span className="text-white">Mastercard</span>
+                             <span className="text-[#4A044E]">Mastercard</span>
                            </div>
-                           <div className="flex justify-between border-b border-white/5 pb-0.5">
+                           <div className="flex justify-between border-b border-[#F9A8D4]/40 pb-0.5">
                              <span>Issue Date:</span>
-                             <span className="text-white">06/2026</span>
+                             <span className="text-[#4A044E]">06/2026</span>
                            </div>
-                           <div className="flex justify-between border-b border-white/5 pb-0.5">
+                           <div className="flex justify-between border-b border-[#F9A8D4]/40 pb-0.5">
                              <span>Expiry:</span>
-                             <span className="text-white text-pink-100">06/2032</span>
+                             <span className="text-[#4A044E] text-pink-100">06/2032</span>
                            </div>
                         </div>
 
                         <div className="flex justify-between items-center pt-1">
                           <div className="flex items-center gap-1.5 grayscale opacity-40">
-                             <Globe size={10} className="text-white" />
-                             <span className="text-[6px] font-mono tracking-tighter text-white">WORLDWIDE ACCESS ENABLED</span>
+                             <Globe size={10} className="text-[#4A044E]" />
+                             <span className="text-[6px] font-mono tracking-tighter text-[#4A044E]">WORLDWIDE ACCESS ENABLED</span>
                           </div>
                           <div className="flex items-center gap-1">
                              <Zap size={8} className="text-emerald-400 fill-emerald-400" />
-                             <span className="text-[7px] text-white">Contactless</span>
+                             <span className="text-[7px] text-[#4A044E]">Contactless</span>
                           </div>
                         </div>
                       </div>
 
                       {/* Micro Security Text */}
-                      <div className="mt-auto px-5 py-2 bg-black/40 text-[6px] text-[#A38BA7] font-mono leading-tight border-t border-white/5">
+                      <div className="mt-auto px-5 py-2 bg-black/40 text-[6px] text-[#A38BA7] font-mono leading-tight border-t border-[#F9A8D4]/40">
                         THIS CARD IS PROPERTY OF APEX BANK. USE IS SUBJECT TO EXECUTIVE NODE PROTOCOLS. 
                         IF FOUND PLEASE RETURN TO NEAREST HQ OFFICE.
                       </div>
@@ -1307,7 +1307,7 @@ export default function CreditCards({
                     <div className={`absolute inset-0 w-full h-full [backface-visibility:hidden] rounded-2xl p-5 flex flex-col justify-between text-white overflow-hidden shadow-2xl border transition-all ${
                       personalCardBlock 
                         ? 'bg-slate-300 border-slate-400 text-slate-800' 
-                        : 'bg-gradient-to-tr from-pink-500 via-rose-500 to-fuchsia-600 border-pink-300 group-hover:border-pink-200 shadow-xl text-white'
+                        : 'bg-gradient-to-tr from-pink-500 via-rose-500 to-fuchsia-600 border-pink-300 group-hover:border-pink-200 shadow-xl text-[#4A044E]'
                     }`}>
                       <div className="absolute inset-x-0 bottom-0 h-1/2 bg-white/5 backdrop-blur-md" />
                       <div className="absolute -right-16 -top-16 w-36 h-36 bg-pink-300/20 rounded-full blur-2xl" />
@@ -1361,27 +1361,27 @@ export default function CreditCards({
 
                         {/* Extended Details Grid */}
                         <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-[7px] font-bold text-[#A38BA7] uppercase font-mono">
-                           <div className="flex justify-between border-b border-white/5 pb-0.5">
+                           <div className="flex justify-between border-b border-[#F9A8D4]/40 pb-0.5">
                              <span>Card Type:</span>
-                             <span className="text-white">Visa Infinite</span>
+                             <span className="text-[#4A044E]">Visa Infinite</span>
                            </div>
-                           <div className="flex justify-between border-b border-white/5 pb-0.5">
+                           <div className="flex justify-between border-b border-[#F9A8D4]/40 pb-0.5">
                              <span>Issuing Bank:</span>
-                             <span className="text-white truncate">Apex Bank Int</span>
+                             <span className="text-[#4A044E] truncate">Apex Bank Int</span>
                            </div>
-                           <div className="flex justify-between border-b border-white/5 pb-0.5">
+                           <div className="flex justify-between border-b border-[#F9A8D4]/40 pb-0.5">
                              <span>Status:</span>
                              <span className="text-emerald-400">Active</span>
                            </div>
-                           <div className="flex justify-between border-b border-white/5 pb-0.5">
+                           <div className="flex justify-between border-b border-[#F9A8D4]/40 pb-0.5">
                              <span>Network:</span>
-                             <span className="text-white">Visa</span>
+                             <span className="text-[#4A044E]">Visa</span>
                            </div>
-                           <div className="flex justify-between border-b border-white/5 pb-0.5">
+                           <div className="flex justify-between border-b border-[#F9A8D4]/40 pb-0.5">
                              <span>Issue Date:</span>
-                             <span className="text-white">12/2024</span>
+                             <span className="text-[#4A044E]">12/2024</span>
                            </div>
-                           <div className="flex justify-between border-b border-white/5 pb-0.5">
+                           <div className="flex justify-between border-b border-[#F9A8D4]/40 pb-0.5">
                              <span>Expiry:</span>
                              <span className="text-pink-100">12/2030</span>
                            </div>
@@ -1389,17 +1389,17 @@ export default function CreditCards({
 
                         <div className="flex justify-between items-center pt-1">
                           <div className="flex items-center gap-1.5 grayscale opacity-40">
-                             <Globe size={10} className="text-white" />
-                             <span className="text-[6px] font-mono tracking-tighter text-white uppercase">Personal Sovereign Access</span>
+                             <Globe size={10} className="text-[#4A044E]" />
+                             <span className="text-[6px] font-mono tracking-tighter text-[#4A044E] uppercase">Personal Sovereign Access</span>
                           </div>
                           <div className="flex items-center gap-1">
                              <Zap size={8} className="text-emerald-400 fill-emerald-400" />
-                             <span className="text-[7px] text-white">Contactless</span>
+                             <span className="text-[7px] text-[#4A044E]">Contactless</span>
                           </div>
                         </div>
                       </div>
 
-                      <div className="mt-auto px-5 py-2 bg-black/40 text-[6px] text-[#A38BA7] font-mono leading-tight border-t border-white/5">
+                      <div className="mt-auto px-5 py-2 bg-black/40 text-[6px] text-[#A38BA7] font-mono leading-tight border-t border-[#F9A8D4]/40">
                         FOR CUSTOMER SUPPORT CALL +1 800 APEX ADMIN. 
                         AUTHORIZED PRIVILEGED PERSONAL ACCESS NODE.
                       </div>
@@ -1501,11 +1501,11 @@ export default function CreditCards({
         <div className="lg:col-span-5 space-y-4">
           
           {/* LEDGER FILTER CONTROL HUB */}
-          <div className="p-5 rounded-2xl border border-[#17235a]/60 bg-[#070c2e]/80 shadow-2xl space-y-4">
+          <div className="p-5 rounded-2xl border border-[#F9A8D4] bg-[#FCE7F3]/90 shadow-2xl space-y-4">
             
             <div className="flex justify-between items-center">
               <div>
-                <h3 className="text-sm font-extrabold text-white uppercase tracking-wider">Security Terminals Ledger</h3>
+                <h3 className="text-sm font-extrabold text-[#4A044E] uppercase tracking-wider">Security Terminals Ledger</h3>
                 <p className="text-xs text-[#8495bc]">Search and filter general card allocations.</p>
               </div>
               <Filter className="text-amber-400" size={16} />
@@ -1513,20 +1513,20 @@ export default function CreditCards({
 
             {/* Global local search filter bar */}
             <div className="relative">
-              <Search className="absolute left-3 top-2.5 h-4 w-4 text-[#556994]" />
+              <Search className="absolute left-3 top-2.5 h-4 w-4 text-[#9D174D]/80" />
               <input
                 type="text"
                 value={localSearch}
                 onChange={(e) => setLocalSearch(e.target.value)}
                 placeholder="Search card, owner, branch, mobile, score..."
-                className="w-full pl-9 pr-4 py-2 bg-[#040822] border border-[#17235a] rounded-xl text-xs text-white placeholder-[#556994] focus:outline-none focus:border-amber-400/50 transition-colors"
+                className="w-full pl-9 pr-4 py-2 bg-[#FFF1F5] border border-[#F9A8D4] rounded-xl text-xs text-[#4A044E] placeholder-[#556994] focus:outline-none focus:border-amber-400/50 transition-colors"
               />
             </div>
 
             {/* 1. Card Owner Type Switchers */}
             <div className="space-y-1.5">
               <span className="text-[10px] uppercase font-mono tracking-wider text-[#8495bc] font-bold block">Card Owner</span>
-              <div className="flex gap-1 bg-[#040822] p-1 rounded-xl border border-[#17235a]/60">
+              <div className="flex gap-1 bg-[#FFF1F5] p-1 rounded-xl border border-[#F9A8D4]">
                 {(['All', 'Customer', 'Employee'] as const).map((own) => (
                   <button
                     key={own}
@@ -1551,7 +1551,7 @@ export default function CreditCards({
               <select
                 value={typeFilter}
                 onChange={(e) => setTypeFilter(e.target.value)}
-                className="w-full px-3 py-2 bg-[#040822] border border-[#17235a] rounded-xl text-xs text-[#8495bc] focus:outline-none focus:border-amber-400/50 cursor-pointer"
+                className="w-full px-3 py-2 bg-[#FFF1F5] border border-[#F9A8D4] rounded-xl text-xs text-[#8495bc] focus:outline-none focus:border-amber-400/50 cursor-pointer"
               >
                 <option value="All">All Cards</option>
                 <option value="Visa Infinite">Visa Infinite</option>
@@ -1570,7 +1570,7 @@ export default function CreditCards({
               <select
                 value={statusFilter}
                 onChange={(e) => setStatusFilter(e.target.value)}
-                className="w-full px-3 py-2 bg-[#040822] border border-[#17235a] rounded-xl text-xs text-[#8495bc] focus:outline-none focus:border-amber-400/50 cursor-pointer"
+                className="w-full px-3 py-2 bg-[#FFF1F5] border border-[#F9A8D4] rounded-xl text-xs text-[#8495bc] focus:outline-none focus:border-amber-400/50 cursor-pointer"
               >
                 <option value="All">All Statuses</option>
                 <option value="Active">Active</option>
@@ -1583,7 +1583,7 @@ export default function CreditCards({
           </div>
 
           {/* DYNAMIC SCROLLING PHYSICAL TERMINAL LIST */}
-          <div className="p-5 rounded-2xl border border-[#17235a]/60 bg-[#070c2e]/80 shadow-2xl space-y-3.5">
+          <div className="p-5 rounded-2xl border border-[#F9A8D4] bg-[#FCE7F3]/90 shadow-2xl space-y-3.5">
             <div className="flex justify-between items-center text-xs text-[#8495bc]">
               <span>Search results: {filteredCards.length} Cards</span>
               <span>Sorted by Rating</span>
@@ -1604,7 +1604,7 @@ export default function CreditCards({
                       className={`p-3.5 border rounded-xl flex items-center justify-between transition-all cursor-pointer ${
                         isSelected 
                           ? 'bg-gradient-to-br from-[#2D2438] to-[#050505] border-[#D32F2F]/60 shadow-lg' 
-                          : 'border-[#40304D]/30 hover:bg-[#40304D]/20 bg-[#050505]/40'
+                          : 'border-[#F9A8D4]/50 hover:bg-[#FCE7F3]/60 bg-[#FFF1F5]/80'
                       }`}
                     >
                       <div className="flex items-center gap-2.5">
@@ -1617,15 +1617,15 @@ export default function CreditCards({
                   }`}>
                           <CardIcon size={16} />
                           {c.isEmployee && (
-                            <span className="absolute -top-1 -right-1 bg-purple-500 text-[6px] px-1 rounded-full text-white font-extrabold uppercase">EMP</span>
+                            <span className="absolute -top-1 -right-1 bg-purple-500 text-[6px] px-1 rounded-full text-[#4A044E] font-extrabold uppercase">EMP</span>
                           )}
                         </div>
                         <div>
                           <div className="flex items-center gap-1.5">
-                            <h4 className="text-[11px] font-bold text-white flex items-center">{c.customerName}</h4>
+                            <h4 className="text-[11px] font-bold text-[#4A044E] flex items-center">{c.customerName}</h4>
                           </div>
                           <div className="flex gap-1.5 mt-0.5 items-center">
-                            <span className="text-[9px] text-[#556994] font-mono">{c.cardNumber.replace(/\d{4}\s\d{4}\s/g, '•••• •••• ')}</span>
+                            <span className="text-[9px] text-[#9D174D]/80 font-mono">{c.cardNumber.replace(/\d{4}\s\d{4}\s/g, '•••• •••• ')}</span>
                             <span className={`text-[8px] px-1 rounded uppercase font-extrabold ${
                               c.status === 'Active' 
                                 ? 'bg-emerald-500/10 text-emerald-400' 
@@ -1642,7 +1642,7 @@ export default function CreditCards({
                       <div className="text-right flex items-center gap-3 shrink-0" onClick={(e) => e.stopPropagation()}>
                         <div className="min-w-[60px]">
                           <span className="text-[8px] text-[#A38BA7] font-mono block uppercase">Score</span>
-                          <p className="text-xs font-black font-mono text-white">{c.creditScore || '750'}</p>
+                          <p className="text-xs font-black font-mono text-[#4A044E]">{c.creditScore || '750'}</p>
                         </div>
 
                         <button 
@@ -1650,7 +1650,7 @@ export default function CreditCards({
                           className={`p-1.5 rounded-lg border transition-all cursor-pointer ${
                             c.status === 'Frozen' || c.status === 'Blocked' || c.status === 'Suspended'
                               ? 'border-[#D32F2F]/30 bg-[#D32F2F]/10 text-[#D32F2F] hover:bg-[#D32F2F]/20' 
-                              : 'border-[#17235a] bg-[#0c143d] text-slate-400 hover:text-[#D32F2F]'
+                              : 'border-[#F9A8D4] bg-[#FDF4F9] text-[#9D174D]/85 hover:text-[#D32F2F]'
                           }`}
                           title={c.status === 'Frozen' ? 'Activate Card Terminal' : 'Freeze Card Terminal'}
                         >
@@ -1661,7 +1661,7 @@ export default function CreditCards({
                   );
                 })
               ) : (
-                <div className="text-center py-8 text-xs text-[#556994]">
+                <div className="text-center py-8 text-xs text-[#9D174D]/80">
                   No cards match the active filters.
                 </div>
               )}
@@ -1681,7 +1681,7 @@ export default function CreditCards({
                 <span className="text-[10px] text-[#8495bc] font-mono tracking-wider">SECURE CLIENT TERMINAL</span>
                 <button 
                   onClick={() => setFlippedInstance(prev => prev === 'bottom' ? null : 'bottom')} 
-                  className="text-[9px] text-[#D32F2F] font-mono flex items-center gap-1.5 hover:text-white transition-colors bg-[#2D2438]/80 py-0.5 px-2 rounded-lg border border-[#D32F2F]/30 shadow-md cursor-pointer"
+                  className="text-[9px] text-[#D32F2F] font-mono flex items-center gap-1.5 hover:text-[#4A044E] transition-colors bg-[#2D2438]/80 py-0.5 px-2 rounded-lg border border-[#D32F2F]/30 shadow-md cursor-pointer"
                 >
                   <span>{flippedInstance === 'bottom' ? "View Card Face" : "Credit Intelligence"}</span>
                   <Sliders size={10} className="animate-pulse text-[#D32F2F]" />
@@ -1725,17 +1725,17 @@ export default function CreditCards({
                               <span className="text-[9px] uppercase font-bold tracking-widest text-pink-100">
                                 {selectedCard.isEmployee ? 'APEX INTERNAL MEMBER TOOL' : 'APEX BLACK CARD'}
                               </span>
-                              <p className="text-sm font-bold italic text-white flex items-center gap-1.5 mt-0.5 truncate">
+                              <p className="text-sm font-bold italic text-[#4A044E] flex items-center gap-1.5 mt-0.5 truncate">
                                 {selectedCard.cardType || 'Visa Infinite'}
                               </p>
                             </div>
                             
                             <div className="relative w-10 h-8 rounded-md bg-gradient-to-br from-pink-300 via-pink-400 to-pink-500 p-0.5 border border-white/20 flex items-center justify-center shrink-0 shadow-lg">
-                              <div className="absolute inset-0.5 border border-white/10 rounded flex flex-col justify-between p-1">
+                              <div className="absolute inset-0.5 border border-[#F9A8D4]/50 rounded flex flex-col justify-between p-1">
                                 <div className="flex justify-between h-full"><div className="w-[1px] bg-white/20" /><div className="w-[1px] bg-white/20" /></div>
                                 <div className="h-[1px] bg-white/20 w-full" />
                               </div>
-                              <div className="w-4 h-4 rounded bg-[#0b143c]/10" />
+                              <div className="w-4 h-4 rounded bg-[#FBCFE8]/40" />
                             </div>
                           </div>
 
@@ -1746,16 +1746,16 @@ export default function CreditCards({
                           <div className="flex justify-between items-end z-10 w-full">
                             <div className="min-w-0">
                               <span className="text-[8px] text-pink-100/80 uppercase tracking-wide block font-bold">AUTHORIZED HOLDER</span>
-                              <p className="text-xs font-semibold tracking-wide text-white truncate max-w-[180px]">{selectedCard.customerName}</p>
+                              <p className="text-xs font-semibold tracking-wide text-[#4A044E] truncate max-w-[180px]">{selectedCard.customerName}</p>
                             </div>
                             <div className="text-right shrink-0">
                                <span className="text-[8px] text-pink-100/80 uppercase tracking-wide block font-bold">EXPIRES</span>
-                               <p className="text-[10px] font-mono text-white">{selectedCard.expiryDate}</p>
+                               <p className="text-[10px] font-mono text-[#4A044E]">{selectedCard.expiryDate}</p>
                             </div>
                           </div>
                         </motion.div>
                       ) : (
-                        <div className="w-full h-full bg-[#040822] border border-[#1b2559] rounded-2xl flex items-center justify-center text-xs text-[#556994]">
+                        <div className="w-full h-full bg-[#FFF1F5] border border-[#F9A8D4] rounded-2xl flex items-center justify-center text-xs text-[#9D174D]/80">
                           No terminal selected. Choose one in the ledger.
                         </div>
                       )}
@@ -1798,11 +1798,11 @@ export default function CreditCards({
                           <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-[7px] font-bold text-pink-100/80 uppercase font-mono">
                              <div className="flex justify-between border-b border-pink-200/30 pb-0.5">
                                <span>Card Type:</span>
-                               <span className="text-white truncate ml-2">{selectedCard.cardType?.split(' ')[0] || 'Visa'}</span>
+                               <span className="text-[#4A044E] truncate ml-2">{selectedCard.cardType?.split(' ')[0] || 'Visa'}</span>
                              </div>
                              <div className="flex justify-between border-b border-pink-200/30 pb-0.5">
                                <span>Issuing Bank:</span>
-                               <span className="text-white truncate ml-2">Apex Bank</span>
+                               <span className="text-[#4A044E] truncate ml-2">Apex Bank</span>
                              </div>
                              <div className="flex justify-between border-b border-pink-200/30 pb-0.5">
                                <span>Status:</span>
@@ -1810,11 +1810,11 @@ export default function CreditCards({
                              </div>
                              <div className="flex justify-between border-b border-pink-200/30 pb-0.5">
                                <span>Issued:</span>
-                               <span className="text-white truncate ml-2">{selectedCard.cardIssueDate?.split(' ')[1] || '06'}/{selectedCard.cardIssueDate?.split(' ')[2] || '2026'}</span>
+                               <span className="text-[#4A044E] truncate ml-2">{selectedCard.cardIssueDate?.split(' ')[1] || '06'}/{selectedCard.cardIssueDate?.split(' ')[2] || '2026'}</span>
                              </div>
                              <div className="flex justify-between border-b border-pink-200/30 pb-0.5">
                                <span>Expiry:</span>
-                               <span className="text-white truncate ml-2">{selectedCard.expiryDate?.split('-')[1] || '12'}/{selectedCard.expiryDate?.split('-')[0] || '2029'}</span>
+                               <span className="text-[#4A044E] truncate ml-2">{selectedCard.expiryDate?.split('-')[1] || '12'}/{selectedCard.expiryDate?.split('-')[0] || '2029'}</span>
                              </div>
                              <div className="flex justify-between border-b border-pink-200/30 pb-0.5 flex items-center gap-1">
                                <Zap size={6} className="text-emerald-400 fill-emerald-400" />
@@ -1824,7 +1824,7 @@ export default function CreditCards({
                         </div>
 
                         {/* Customer Support Footer */}
-                        <div className="mt-auto px-5 py-2.5 bg-black/40 border-t border-pink-200/30 flex justify-between items-center text-[7px] font-mono text-slate-500">
+                        <div className="mt-auto px-5 py-2.5 bg-black/40 border-t border-pink-200/30 flex justify-between items-center text-[7px] font-mono text-[#9D174D]/75">
                           <div className="flex gap-3">
                             <span className="font-black text-white/40">APEX BANK GLOBAL</span>
                           </div>
@@ -1838,24 +1838,24 @@ export default function CreditCards({
               </div>
 
               {/* Action Hint */}
-              <p className="text-center text-[8px] text-[#556994] font-mono mt-1.5 tracking-wider animate-pulse select-none">
+              <p className="text-center text-[8px] text-[#9D174D]/80 font-mono mt-1.5 tracking-wider animate-pulse select-none">
                 💡 CLICK THE CARD FACE TO TOGGLE CREDIT INTELLIGENCE
               </p>
             </div>
 
             {/* Slider Limit Controller (5 cols) */}
             {selectedCard && (
-              <div className="md:col-span-5 p-4 rounded-2xl border border-[#17235a]/60 bg-[#070c2e]/80 flex flex-col justify-between">
+              <div className="md:col-span-5 p-4 rounded-2xl border border-[#F9A8D4] bg-[#FCE7F3]/90 flex flex-col justify-between">
                 <div>
                   <span className="text-amber-500 text-[8px] font-mono tracking-widest uppercase font-bold block">Limit Adjuster</span>
-                  <h3 className="text-xs font-bold text-white mt-1">Authorized credit ceiling</h3>
+                  <h3 className="text-xs font-bold text-[#4A044E] mt-1">Authorized credit ceiling</h3>
                   <p className="text-[#8495bc] text-[10px] leading-tight mt-0.5">Control operational limits for {selectedCard.customerName}.</p>
                 </div>
 
                 <div className="space-y-2 my-2">
-                  <div className="flex justify-between text-[10px] text-slate-400">
+                  <div className="flex justify-between text-[10px] text-[#9D174D]/85">
                     <span className="font-mono">${(100000).toLocaleString()}</span>
-                    <span className="font-mono text-white font-bold">${limitInput.toLocaleString()}</span>
+                    <span className="font-mono text-[#4A044E] font-bold">${limitInput.toLocaleString()}</span>
                   </div>
                   <input 
                     type="range"
@@ -1880,10 +1880,10 @@ export default function CreditCards({
 
           {/* ACTIVE DETAILS NAVIGATION INTERFACES */}
           {selectedCard ? (
-            <div className="p-5 rounded-2xl border border-[#17235a]/60 bg-[#070c2e]/80 shadow-2xl space-y-4">
+            <div className="p-5 rounded-2xl border border-[#F9A8D4] bg-[#FCE7F3]/90 shadow-2xl space-y-4">
               
               {/* Tabs list bar */}
-              <div className="flex border-b border-[#1b2559]/40 pb-2 overflow-x-auto gap-2">
+              <div className="flex border-b border-[#F9A8D4]/60 pb-2 overflow-x-auto gap-2">
                 {[
                   { id: 'details', label: 'Security Profile', icon: User },
                   { id: 'transactions', label: 'Ledger Registry', icon: Activity },
@@ -1896,7 +1896,7 @@ export default function CreditCards({
                     className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold rounded-lg transition-colors cursor-pointer whitespace-nowrap ${
                       intelligenceActiveTab === tb.id 
                         ? 'bg-[#1a235c] text-amber-400' 
-                        : 'text-[#8495bc] hover:text-white hover:bg-[#0d143d]'
+                        : 'text-[#9D174D]/75 hover:text-[#4A044E] hover:bg-[#FCE7F3]'
                     }`}
                   >
                     <tb.icon size={13} />
@@ -1919,14 +1919,14 @@ export default function CreditCards({
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       
                       {/* Owner Basic */}
-                      <div className="p-3.5 bg-[#1a0a14] border border-pink-500/20 rounded-xl space-y-2">
+                      <div className="p-3.5 bg-[#FCE7F3] border border-pink-500/20 rounded-xl space-y-2">
                         <h4 className="text-[10px] font-mono uppercase text-pink-400 font-bold tracking-wide">Owner Identification</h4>
                         <div className="flex items-center gap-3">
                           <div className="w-11 h-11 rounded-lg bg-gradient-to-br from-pink-500/10 to-rose-500/10 border border-pink-500/20 flex items-center justify-center font-extrabold text-pink-500 text-sm">
                             {selectedCard.customerName.charAt(0)}
                           </div>
                           <div>
-                            <p className="font-extrabold text-white text-[13px]">{selectedCard.customerName}</p>
+                            <p className="font-extrabold text-[#4A044E] text-[13px]">{selectedCard.customerName}</p>
                             <p className="text-[10px] text-pink-300/40 font-mono">{selectedCard.isEmployee ? 'Employee ID: ' : 'Customer ID: '}{selectedCard.customerId}</p>
                             <p className="text-[9px] text-pink-200/60">{selectedCard.emailAddress || 'N/A'}</p>
                             <p className="text-[9px] text-pink-300/40">{selectedCard.mobileNumber || 'N/A'}</p>
@@ -1935,16 +1935,16 @@ export default function CreditCards({
                       </div>
 
                       {/* Account details */}
-                      <div className="p-3.5 bg-[#1a0a14] border border-pink-500/20 rounded-xl space-y-2">
+                      <div className="p-3.5 bg-[#FCE7F3] border border-pink-500/20 rounded-xl space-y-2">
                         <h4 className="text-[10px] font-mono uppercase text-pink-400 font-bold tracking-wide">Account Handshake</h4>
                         <div className="space-y-1 bg-pink-950/40 p-2 rounded border border-pink-500/10">
                           <div className="flex justify-between">
                             <span className="text-pink-300/60">Linked Account:</span>
-                            <span className="font-mono text-white font-bold">{selectedCard.linkedAccountNumber || 'ACT-90812039'}</span>
+                            <span className="font-mono text-[#4A044E] font-bold">{selectedCard.linkedAccountNumber || 'ACT-90812039'}</span>
                           </div>
                           <div className="flex justify-between">
                             <span className="text-pink-300/60">Product Category:</span>
-                            <span className="text-white font-semibold">{selectedCard.accountType || 'VIP Current'}</span>
+                            <span className="text-[#4A044E] font-semibold">{selectedCard.accountType || 'VIP Current'}</span>
                           </div>
                           <div className="flex justify-between">
                             <span className="text-pink-300/60">Available Cash Bal:</span>
@@ -1957,24 +1957,24 @@ export default function CreditCards({
                     {/* Regional Branch information & Manager */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       
-                      <div className="p-3.5 bg-[#1a0a14] border border-pink-500/20 rounded-xl space-y-1.5">
+                      <div className="p-3.5 bg-[#FCE7F3] border border-pink-500/20 rounded-xl space-y-1.5">
                         <div className="flex items-center gap-1">
                           <Building size={12} className="text-pink-400" />
                           <h4 className="text-[10px] font-mono uppercase text-pink-400 font-bold tracking-wide">Servicing Branch Information</h4>
                         </div>
-                        <p className="font-bold text-white mb-1.5">{selectedCard.branchName || 'Hyderabad Main Branch'}</p>
+                        <p className="font-bold text-[#4A044E] mb-1.5">{selectedCard.branchName || 'Hyderabad Main Branch'}</p>
                         <div className="space-y-1 text-[11px] text-pink-100/60">
                           <p><span className="text-pink-300/40">Branch Code:</span> {selectedCard.branchCode || 'BR-101'}</p>
                           <p><span className="text-pink-300/40">State/Location:</span> {selectedCard.branchLocation || 'Hyderabad, Telangana'}</p>
                         </div>
                       </div>
 
-                      <div className="p-3.5 bg-[#1a0a14] border border-pink-500/20 rounded-xl space-y-1.5">
+                      <div className="p-3.5 bg-[#FCE7F3] border border-pink-500/20 rounded-xl space-y-1.5">
                         <div className="flex items-center gap-1">
                           <Briefcase size={12} className="text-pink-400" />
                           <h4 className="text-[10px] font-mono uppercase text-pink-400 font-bold tracking-wide">Branch Manager Details</h4>
                         </div>
-                        <p className="font-bold text-white mb-1.5">{selectedCard.branchManagerName || 'Mohammed Rahman'}</p>
+                        <p className="font-bold text-[#4A044E] mb-1.5">{selectedCard.branchManagerName || 'Mohammed Rahman'}</p>
                         <div className="space-y-1 text-[11px] text-pink-100/60">
                           <p><span className="text-pink-300/40">Designation:</span> {selectedCard.branchManagerDesignation || 'Branch Manager'}</p>
                           <p><span className="text-pink-300/40">ID Ref:</span> {selectedCard.branchManagerEmployeeId || 'EMP-0007'}</p>
@@ -1984,7 +1984,7 @@ export default function CreditCards({
                     </div>
 
                     {/* Card Issuance Chain and Approval Handover details */}
-                    <div className="p-3.5 bg-[#1a0a14] border border-pink-500/20 rounded-xl space-y-2.5">
+                    <div className="p-3.5 bg-[#FCE7F3] border border-pink-500/20 rounded-xl space-y-2.5">
                       <div className="flex items-center gap-1">
                         <ShieldCheck size={13} className="text-pink-400" />
                         <h4 className="text-[10px] font-mono uppercase text-pink-400 font-bold tracking-wide">Card Issuance & Approval Security Chain</h4>
@@ -1993,21 +1993,21 @@ export default function CreditCards({
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                         <div className="p-2.5 bg-pink-950/40 rounded border border-pink-500/10">
                           <p className="text-pink-300/60 text-[9px] uppercase font-bold mb-1">Issued By</p>
-                          <p className="font-bold text-white leading-tight">{selectedCard.cardIssuedByName || 'Sarah Jenkins'}</p>
+                          <p className="font-bold text-[#4A044E] leading-tight">{selectedCard.cardIssuedByName || 'Sarah Jenkins'}</p>
                           <p className="text-[9px] text-pink-200/40 mt-0.5">{selectedCard.cardIssuedByDesignation || 'Senior Compliance Officer'}</p>
                           <p className="text-[10px] font-mono text-pink-400 mt-1">{selectedCard.cardIssueDate || '12 June 2026'}</p>
                         </div>
 
                         <div className="p-2.5 bg-pink-950/40 rounded border border-pink-500/10">
                           <p className="text-pink-300/60 text-[9px] uppercase font-bold mb-1">Activated Status</p>
-                          <p className="font-bold text-white leading-tight">{selectedCard.cardActivatedByName || 'Sarah Jenkins'}</p>
+                          <p className="font-bold text-[#4A044E] leading-tight">{selectedCard.cardActivatedByName || 'Sarah Jenkins'}</p>
                           <p className="text-[9px] text-pink-200/40 mt-0.5">Activation handoff check</p>
                           <p className="text-[10px] font-mono text-pink-400 mt-1">{selectedCard.cardActivationTime ? `${selectedCard.cardActivationDate} ${selectedCard.cardActivationTime}` : 'Pending Activation'}</p>
                         </div>
 
                         <div className="p-2.5 bg-pink-950/40 rounded border border-pink-500/10">
                           <p className="text-pink-300/60 text-[9px] uppercase font-bold mb-1">Super Audit Signoff</p>
-                          <p className="font-bold text-white leading-tight">{selectedCard.approvedByName || 'Chloe Dupont'}</p>
+                          <p className="font-bold text-[#4A044E] leading-tight">{selectedCard.approvedByName || 'Chloe Dupont'}</p>
                           <p className="text-[9px] text-pink-200/40 mt-0.5">{selectedCard.approvalRole || 'Senior Underwriter'}</p>
                           <p className="text-[10px] font-mono text-pink-400 mt-1">{selectedCard.approvalDate ? `${selectedCard.approvalDate}` : 'Under Review'}</p>
                         </div>
@@ -2027,7 +2027,7 @@ export default function CreditCards({
                   >
                     <div className="flex justify-between items-center text-xs">
                       <div>
-                        <h4 className="font-bold text-white uppercase tracking-wide text-[11px]">Authorized Terminal Expenses Node</h4>
+                        <h4 className="font-bold text-[#4A044E] uppercase tracking-wide text-[11px]">Authorized Terminal Expenses Node</h4>
                         <p className="text-[10px] text-pink-300/60">Actual merchant transactions mapped under verified billing cycle.</p>
                       </div>
                       <div className="text-right">
@@ -2036,7 +2036,7 @@ export default function CreditCards({
                       </div>
                     </div>
 
-                    <div className="border border-pink-500/20 rounded-xl overflow-hidden bg-[#1a0a14] text-xs">
+                    <div className="border border-pink-500/20 rounded-xl overflow-hidden bg-[#FCE7F3] text-xs">
                       <table className="w-full text-left border-collapse">
                         <thead>
                           <tr className="bg-pink-950/60 text-pink-500 font-bold text-[9px] uppercase tracking-wider border-b border-pink-500/20">
@@ -2053,7 +2053,7 @@ export default function CreditCards({
                             selectedCard.cardTransactions.map((tx) => (
                               <tr key={tx.id} className="border-b border-pink-500/10 hover:bg-pink-500/5">
                                 <td className="p-2.5 font-mono text-pink-300/40">{tx.id}</td>
-                                <td className="p-2.5 font-bold text-white">{tx.merchant}</td>
+                                <td className="p-2.5 font-bold text-[#4A044E]">{tx.merchant}</td>
                                 <td className="p-2.5">
                                   <span className="px-1.5 py-0.5 bg-pink-900/30 text-pink-300 rounded text-[9px]">
                                     {tx.type}
@@ -2088,10 +2088,10 @@ export default function CreditCards({
                     </div>
 
                     {/* Spend Allocation Analytics preview summary */}
-                    <div className="grid grid-cols-3 gap-3 p-3 bg-[#1a0a14] border border-pink-500/20 rounded-xl text-center">
+                    <div className="grid grid-cols-3 gap-3 p-3 bg-[#FCE7F3] border border-pink-500/20 rounded-xl text-center">
                       <div>
                         <span className="text-pink-300/60 text-[9px] uppercase tracking-wider block">Total Transactions</span>
-                        <span className="text-sm font-mono font-extrabold text-white">
+                        <span className="text-sm font-mono font-extrabold text-[#4A044E]">
                           {selectedCard.cardTransactions?.length || 0}
                         </span>
                       </div>
@@ -2121,7 +2121,7 @@ export default function CreditCards({
                     className="space-y-4"
                   >
                     <div>
-                      <h4 className="font-bold text-white uppercase text-[11px] tracking-wide">Terminal Lifecycle Security Timeline</h4>
+                      <h4 className="font-bold text-[#4A044E] uppercase text-[11px] tracking-wide">Terminal Lifecycle Security Timeline</h4>
                       <p className="text-[10px] text-pink-300/60">Handoff stamps tracking authorization, key parameters check, and delivery logs.</p>
                     </div>
 
@@ -2131,25 +2131,25 @@ export default function CreditCards({
                           <div key={ev.id} className="relative">
                             
                             {/* Visual glowing knot */}
-                            <span className="absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full bg-[#1a0a14] border-2 border-pink-500/80 flex items-center justify-center">
+                            <span className="absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full bg-[#FCE7F3] border-2 border-pink-500/80 flex items-center justify-center">
                               <span className="w-1.5 h-1.5 bg-pink-400 rounded-full" />
                             </span>
 
-                            <div className="p-3 bg-[#1a0a14] border border-pink-500/20 rounded-xl space-y-1.5">
+                            <div className="p-3 bg-[#FCE7F3] border border-pink-500/20 rounded-xl space-y-1.5">
                               <div className="flex justify-between items-center">
-                                <span className="font-extrabold text-white text-[11px] uppercase tracking-wider">{idx + 1}. {ev.event}</span>
+                                <span className="font-extrabold text-[#4A044E] text-[11px] uppercase tracking-wider">{idx + 1}. {ev.event}</span>
                                 <span className="text-[9px] font-mono text-pink-400">{ev.date} at {ev.time}</span>
                               </div>
                               <p className="text-pink-300/60 text-[10px]">{ev.remarks}</p>
                               <div className="flex gap-1 items-center text-[9px] text-pink-200/40">
                                 <span>Supervisor Responsible:</span>
-                                <span className="font-bold text-white">{ev.employee}</span>
+                                <span className="font-bold text-[#4A044E]">{ev.employee}</span>
                               </div>
                             </div>
                           </div>
                         ))
                       ) : (
-                        <div className="text-slate-500 italic py-4">
+                        <div className="text-[#9D174D]/75 italic py-4">
                           No timeline progression milestones added to this card cardholder node.
                         </div>
                       )}
@@ -2169,13 +2169,13 @@ export default function CreditCards({
                     
                     {/* Header values */}
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                      <div className="p-2.5 bg-[#1a0a14] border border-pink-500/20 rounded-xl text-center">
+                      <div className="p-2.5 bg-[#FCE7F3] border border-pink-500/20 rounded-xl text-center">
                         <span className="text-pink-300/60 text-[9px] uppercase tracking-wider block">Credit Score</span>
                         <span className="text-sm font-mono font-bold text-pink-400">{selectedCard.creditScore || '780'}</span>
                         <span className="text-[8px] bg-emerald-500/10 text-emerald-400 py-0.5 px-1 rounded block mt-0.5 uppercase tracking-widest">{selectedCard.creditRating || 'Excellent'}</span>
                       </div>
 
-                      <div className="p-2.5 bg-[#1a0a14] border border-pink-500/20 rounded-xl text-center">
+                      <div className="p-2.5 bg-[#FCE7F3] border border-pink-500/20 rounded-xl text-center">
                         <span className="text-pink-300/60 text-[9px] uppercase tracking-wider block">Risk Parameter</span>
                         <span className={`text-xs font-bold block mt-1.5 ${
                           selectedCard.riskProfile === 'High Risk' ? 'text-rose-400' : 'text-emerald-400'
@@ -2184,12 +2184,12 @@ export default function CreditCards({
                         </span>
                       </div>
 
-                      <div className="p-2.5 bg-[#1a0a14] border border-pink-500/20 rounded-xl text-center">
+                      <div className="p-2.5 bg-[#FCE7F3] border border-pink-500/20 rounded-xl text-center">
                         <span className="text-pink-300/60 text-[10px] uppercase tracking-wider block">Utilization</span>
-                        <span className="text-sm font-mono font-bold text-white">{selectedCard.creditUtilizationRatio || '0'}%</span>
+                        <span className="text-sm font-mono font-bold text-[#4A044E]">{selectedCard.creditUtilizationRatio || '0'}%</span>
                       </div>
 
-                      <div className="p-2.5 bg-[#1a0a14] border border-pink-500/20 rounded-xl text-center">
+                      <div className="p-2.5 bg-[#FCE7F3] border border-pink-500/20 rounded-xl text-center">
                         <span className="text-pink-300/60 text-[10px] uppercase block">Payments Registry</span>
                         <div className="flex justify-center gap-1.5 text-[9px] mt-1 font-mono">
                           <span className="text-emerald-400" title="On-time">✓{selectedCard.paymentHistory?.onTime || 0}</span>
@@ -2251,7 +2251,7 @@ export default function CreditCards({
                       console.log(`Exported secure credit health dossier for ${selectedCard.customerName} inside private folder. Check security audit terminal logs.`);
                       addAuditLog(`Super Admin downloaded complete credit rating analytics report dossier for ${selectedCard.customerName} [ID: ${selectedCard.id}]`, 'Info');
                     }}
-                    className="px-2 py-2 rounded-lg font-bold border border-pink-900/40 bg-[#2d1020] text-pink-200/60 hover:text-white transition-all cursor-pointer"
+                    className="px-2 py-2 rounded-lg font-bold border border-pink-900/40 bg-[#2d1020] text-pink-200/60 hover:text-[#4A044E] transition-all cursor-pointer"
                   >
                     Download Dossier Report
                   </button>
@@ -2261,7 +2261,7 @@ export default function CreditCards({
                       console.log(`Transmitting internal bank alert request to Branch Manager Mohammed Rahman...`);
                       addAuditLog(`Issued instant high-priority supervisor contact call to ${selectedCard.branchManagerName} regarding security profile [Card Reference Ref: ${selectedCard.id}]`, 'Warning');
                     }}
-                    className="px-2 py-2 rounded-lg font-bold border border-pink-900/40 bg-[#2d1020] text-pink-200/60 hover:text-white transition-all cursor-pointer"
+                    className="px-2 py-2 rounded-lg font-bold border border-pink-900/40 bg-[#2d1020] text-pink-200/60 hover:text-[#4A044E] transition-all cursor-pointer"
                   >
                     Contact Area Director
                   </button>
@@ -2280,7 +2280,7 @@ export default function CreditCards({
 
             </div>
           ) : (
-            <div className="p-8 text-center rounded-2xl border border-[#17235a]/60 bg-[#070c2e]/80 text-[#556994] text-xs">
+            <div className="p-8 text-center rounded-2xl border border-[#F9A8D4] bg-[#FCE7F3]/90 text-[#9D174D]/80 text-xs">
               Select any credit card in the Plastic Terminal Ledger left-hand table to review dynamic profile indicators.
             </div>
           )}
@@ -2767,7 +2767,7 @@ export default function CreditCards({
                                 </div>
                              </div>
 
-                             <button className="w-full py-5 bg-[#C2185B] hover:bg-[#AD1457] text-white font-black uppercase tracking-[0.2em] rounded-2xl transition-all flex items-center justify-center gap-3 shadow-xl shadow-[#C2185B]/20">
+                             <button className="w-full py-5 bg-[#C2185B] hover:bg-[#AD1457] text-[#4A044E] font-black uppercase tracking-[0.2em] rounded-2xl transition-all flex items-center justify-center gap-3 shadow-xl shadow-[#C2185B]/20">
                                 <Download size={20} />
                                 Generate Official PDF Dossier
                              </button>
@@ -2819,7 +2819,7 @@ export default function CreditCards({
                                     }, 1500);
                                   }}
                                   disabled={isProcessing}
-                                  className="w-full py-5 bg-[#C2185B] hover:bg-[#AD1457] disabled:bg-[#4A5568] text-white font-black uppercase tracking-[0.2em] rounded-2xl transition-all shadow-xl shadow-[#C2185B]/20 active:scale-[0.98]"
+                                  className="w-full py-5 bg-[#C2185B] hover:bg-[#AD1457] disabled:bg-[#4A5568] text-[#4A044E] font-black uppercase tracking-[0.2em] rounded-2xl transition-all shadow-xl shadow-[#C2185B]/20 active:scale-[0.98]"
                                 >
                                   {isProcessing ? 'CALCULATING RISK VECTORS...' : 'AUTHORIZE NEW LIMIT OVERRIDE'}
                                 </button>
@@ -2901,7 +2901,7 @@ export default function CreditCards({
                                       addAuditLog(`Secure communication established with ${adminDetailView === 'contact_holder' ? 'Holder' : 'Branch Manager'} for card ref ${selectedCard.id}`, 'Info');
                                     }, 1000);
                                   }}
-                                  className="w-full py-5 bg-blue-600 hover:bg-blue-700 text-white font-black uppercase tracking-[0.2em] rounded-2xl transition-all flex items-center justify-center gap-3 shadow-xl shadow-blue-600/20 active:scale-[0.98]"
+                                  className="w-full py-5 bg-blue-600 hover:bg-blue-700 text-[#4A044E] font-black uppercase tracking-[0.2em] rounded-2xl transition-all flex items-center justify-center gap-3 shadow-xl shadow-blue-600/20 active:scale-[0.98]"
                                 >
                                   {isProcessing ? 'ESTABLISHING HANDSHAKE...' : 'INITIATE SECURE LINK'}
                                 </button>

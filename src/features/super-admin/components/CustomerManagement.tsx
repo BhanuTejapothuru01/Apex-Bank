@@ -655,7 +655,7 @@ export default function CustomerManagement({
       <div className="flex flex-col md:flex-row items-center justify-between gap-4">
         
         {/* Type segment switcher */}
-        <div className="flex bg-[#0c143c] p-1 rounded-xl border border-[#1b2559]">
+        <div className="flex bg-[#FDF4F9] p-1 rounded-xl border border-[#F9A8D4]">
           {['all', 'VIP', 'Retail', 'Corporate'].map((seg) => (
             <button
               id={`segment-btn-${seg}`}
@@ -664,7 +664,7 @@ export default function CustomerManagement({
               className={`px-4 py-2 rounded-lg text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer ${
                 activeSegment === seg 
                   ? 'bg-[#d4af37] text-[#050920] shadow-[0_2px_10px_rgba(212,175,55,0.2)]' 
-                  : 'text-[#8496bf] hover:text-white'
+                  : 'text-[#BE185D]/75 hover:text-[#4A044E]'
               }`}
             >
               {seg} Cards
@@ -687,19 +687,19 @@ export default function CustomerManagement({
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
         {/* Table Listing */}
-        <div className={`lg:col-span-2 p-3 sm:p-5 lg:p-6 rounded-2xl border border-[#17235a]/60 bg-[#070c2e]/80 shadow-2xl relative ${
+        <div className={`lg:col-span-2 p-3 sm:p-5 lg:p-6 rounded-2xl border border-[#F9A8D4] bg-[#FCE7F3]/90 shadow-2xl relative ${
           selectedCustomer ? 'lg:col-span-2' : 'lg:col-span-3'
         } transition-all duration-300`}>
           
           <div className="mb-4">
-            <h3 className="text-base font-bold text-white">Consolidated Client Ledger</h3>
-            <p className="text-[#556994] text-xs">A comprehensive listing of users authorized for transaction rails.</p>
+            <h3 className="text-base font-bold text-[#4A044E]">Consolidated Client Ledger</h3>
+            <p className="text-[#9D174D]/80 text-xs">A comprehensive listing of users authorized for transaction rails.</p>
           </div>
 
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="border-b border-[#141c48] text-[10px] text-[#8496bf] font-bold uppercase tracking-wider">
+                <tr className="border-b border-[#FBCFE8] text-[10px] text-[#BE185D]/75 font-bold uppercase tracking-wider">
                   <th className="py-3 px-3">Client ID</th>
                   <th className="py-3 px-3">Client details</th>
                   <th className="py-3 px-3">Segment Type</th>
@@ -714,7 +714,7 @@ export default function CustomerManagement({
               <tbody className="divide-y divide-[#141c48]">
                 {filteredCustomers.length === 0 ? (
                   <tr>
-                    <td colSpan={9} className="py-12 text-center text-xs text-[#556994]">
+                    <td colSpan={9} className="py-12 text-center text-xs text-[#9D174D]/80">
                       No customers matched the specified constraints.
                     </td>
                   </tr>
@@ -722,7 +722,7 @@ export default function CustomerManagement({
                   filteredCustomers.map((cust) => (
                     <tr 
                       key={cust.id} 
-                      className={`text-xs hover:bg-[#121c4b]/50 transition-colors cursor-pointer ${
+                      className={`text-xs hover:bg-[#FBCFE8]/70 transition-colors cursor-pointer ${
                         selectedCustomer?.id === cust.id ? 'bg-[#152361]/60 border-l-2 border-amber-500' : ''
                       }`}
                       onClick={() => {
@@ -730,10 +730,10 @@ export default function CustomerManagement({
                         setSelectedCustomerId?.(cust.id);
                       }}
                     >
-                      <td className="py-3.5 px-3 font-mono font-bold text-slate-300">{cust.id}</td>
+                      <td className="py-3.5 px-3 font-mono font-bold text-[#831843]">{cust.id}</td>
                       <td className="py-3.5 px-3">
-                        <div className="font-semibold text-white">{cust.name}</div>
-                        <div className="text-[10px] text-[#556994] lowercase font-mono">{cust.email}</div>
+                        <div className="font-semibold text-[#4A044E]">{cust.name}</div>
+                        <div className="text-[10px] text-[#9D174D]/80 lowercase font-mono">{cust.email}</div>
                       </td>
                       <td className="py-3.5 px-3">
                         <span className={`px-2 py-0.5 rounded text-[9px] font-bold ${
@@ -746,10 +746,10 @@ export default function CustomerManagement({
                           {cust.type}
                         </span>
                       </td>
-                      <td className="py-3.5 px-3 uppercase text-[10px] font-mono font-semibold text-[#8496bf]">
+                      <td className="py-3.5 px-3 uppercase text-[10px] font-mono font-semibold text-[#BE185D]/75">
                         {cust.branchId.replace("BR-", "")}
                       </td>
-                      <td className="py-3.5 px-3 text-right font-mono font-bold text-white">
+                      <td className="py-3.5 px-3 text-right font-mono font-bold text-[#4A044E]">
                         ${cust.balance.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                       </td>
                       <td className="py-3.5 px-3 text-center">
@@ -791,7 +791,7 @@ export default function CustomerManagement({
                               setSelectedCustomer(cust);
                               setSelectedCustomerId?.(cust.id);
                             }}
-                            className="p-1 text-slate-400 hover:text-white rounded hover:bg-[#121c4c] transition-all cursor-pointer"
+                            className="p-1 text-[#9D174D]/85 hover:text-[#4A044E] rounded hover:bg-[#FBCFE8] transition-all cursor-pointer"
                             title="View Extended Risk File"
                           >
                             <Eye size={13} />
@@ -800,7 +800,7 @@ export default function CustomerManagement({
                             id={`toggle-freeze-${cust.id}`}
                             onClick={() => handleToggleFreeze(cust)}
                             className={`p-1 rounded hover:bg-rose-950/20 transition-all cursor-pointer ${
-                              cust.status === 'Frozen' ? 'text-rose-400' : 'text-slate-400 hover:text-rose-400'
+                              cust.status === 'Frozen' ? 'text-rose-400' : 'text-[#9D174D]/85 hover:text-rose-400'
                             }`}
                             title={cust.status === 'Frozen' ? 'Unfreeze Account Ledger' : 'Freeze Account ledger'}
                           >
@@ -1058,7 +1058,7 @@ export default function CustomerManagement({
               };
 
               return (
-                <div id="customer-approval-verification-card" className="p-4 rounded-xl border border-amber-500/20 bg-[#070c2e]/60 space-y-4">
+                <div id="customer-approval-verification-card" className="p-4 rounded-xl border border-amber-500/20 bg-[#FCE7F3]/80 space-y-4">
                   <div className="flex items-center justify-between border-b border-pink-200 pb-2">
                     <div className="flex items-center gap-2">
                       <Shield size={14} className="text-[#d4af37]" />
@@ -1516,10 +1516,10 @@ export default function CustomerManagement({
                   <p className="text-[10px] text-center text-pink-700 py-4">No recent electronic transactions logged.</p>
                 ) : (
                   customerTxns.map((t) => (
-                    <div key={t.id} className="p-2 border border-[#151c4a] bg-[#0c1135]/40 rounded-lg flex items-center justify-between text-[11px]">
+                    <div key={t.id} className="p-2 border border-[#FBCFE8] bg-[#FFF1F5]/40 rounded-lg flex items-center justify-between text-[11px]">
                       <div>
                         <p className="font-semibold text-pink-900">{t.category}</p>
-                        <span className="text-[9px] text-[#4d5c87] font-mono">{t.id}</span>
+                        <span className="text-[9px] text-[#9D174D]/70 font-mono">{t.id}</span>
                       </div>
                       <div className="text-right">
                         <p className="font-semibold font-mono text-pink-900">${t.amount.toLocaleString()}</p>
@@ -1551,16 +1551,16 @@ export default function CustomerManagement({
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="w-full max-w-lg bg-[#070b28] border border-[#d4af37]/40 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.8)] overflow-hidden relative"
+            className="w-full max-w-lg bg-[#FCE7F3] border border-[#d4af37]/40 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.8)] overflow-hidden relative"
           >
             {/* Golden Header Strip */}
             <div className="absolute top-0 inset-x-0 h-[4px] bg-gradient-to-r from-[#d4af37] to-[#806410]" />
             
-            <div className="p-6 border-b border-[#141b44] flex items-center justify-between">
-              <h3 className="text-lg font-bold text-white uppercase tracking-wider">Enroll Managed Client File</h3>
+            <div className="p-6 border-b border-[#FBCFE8] flex items-center justify-between">
+              <h3 className="text-lg font-bold text-[#4A044E] uppercase tracking-wider">Enroll Managed Client File</h3>
               <button 
                 onClick={() => setShowAddModal(false)}
-                className="p-1.5 rounded-lg text-[#556994] hover:text-white hover:bg-white/5 transition-all cursor-pointer"
+                className="p-1.5 rounded-lg text-[#9D174D]/80 hover:text-[#4A044E] hover:bg-white/5 transition-all cursor-pointer"
               >
                 <X size={18} />
               </button>
@@ -1570,24 +1570,24 @@ export default function CustomerManagement({
               
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-1">
-                  <label className="text-slate-400 font-semibold uppercase tracking-wide">Customer Full Name:</label>
+                  <label className="text-[#9D174D]/85 font-semibold uppercase tracking-wide">Customer Full Name:</label>
                   <input
                     id="new-customer-name-input"
                     type="text"
                     required
                     value={newCustomer.name}
                     onChange={(e) => setNewCustomer({ ...newCustomer, name: e.target.value })}
-                    className="w-full bg-[#0a1135] border border-[#1b2557] focus:border-[#d4af37]/60 text-white p-2.5 rounded-lg outline-none"
+                    className="w-full bg-[#FFF1F5] border border-[#F9A8D4] focus:border-[#d4af37]/60 text-[#4A044E] p-2.5 rounded-lg outline-none"
                     placeholder="e.g. Cynthia Vance"
                   />
                 </div>
                 <div className="space-y-1">
-                  <label className="text-slate-400 font-semibold uppercase tracking-wide">Assigned Segment:</label>
+                  <label className="text-[#9D174D]/85 font-semibold uppercase tracking-wide">Assigned Segment:</label>
                   <select
                     id="new-customer-type-select"
                     value={newCustomer.type}
                     onChange={(e) => setNewCustomer({ ...newCustomer, type: e.target.value as any })}
-                    className="w-full bg-[#0a1135] border border-[#1b2557] focus:border-[#d4af37]/60 text-white p-2.5 rounded-lg outline-none cursor-pointer"
+                    className="w-full bg-[#FFF1F5] border border-[#F9A8D4] focus:border-[#d4af37]/60 text-[#4A044E] p-2.5 rounded-lg outline-none cursor-pointer"
                   >
                     <option value="VIP">VIP Platinum Account</option>
                     <option value="Corporate">Corporate Trust</option>
@@ -1598,25 +1598,25 @@ export default function CustomerManagement({
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-1">
-                  <label className="text-slate-400 font-semibold uppercase tracking-wide">Primary Email:</label>
+                  <label className="text-[#9D174D]/85 font-semibold uppercase tracking-wide">Primary Email:</label>
                   <input
                     id="new-customer-email-input"
                     type="email"
                     required
                     value={newCustomer.email}
                     onChange={(e) => setNewCustomer({ ...newCustomer, email: e.target.value })}
-                    className="w-full bg-[#0a1135] border border-[#1b2557] focus:border-[#d4af37]/60 text-white p-2.5 rounded-lg outline-none"
+                    className="w-full bg-[#FFF1F5] border border-[#F9A8D4] focus:border-[#d4af37]/60 text-[#4A044E] p-2.5 rounded-lg outline-none"
                     placeholder="cynthia@corporate.com"
                   />
                 </div>
                 <div className="space-y-1">
-                  <label className="text-slate-400 font-semibold uppercase tracking-wide">Direct Phone:</label>
+                  <label className="text-[#9D174D]/85 font-semibold uppercase tracking-wide">Direct Phone:</label>
                   <input
                     id="new-customer-phone-input"
                     type="text"
                     value={newCustomer.phone}
                     onChange={(e) => setNewCustomer({ ...newCustomer, phone: e.target.value })}
-                    className="w-full bg-[#0a1135] border border-[#1b2557] focus:border-[#d4af37]/60 text-white p-2.5 rounded-lg outline-none"
+                    className="w-full bg-[#FFF1F5] border border-[#F9A8D4] focus:border-[#d4af37]/60 text-[#4A044E] p-2.5 rounded-lg outline-none"
                     placeholder="+1 (555) 012-4012"
                   />
                 </div>
@@ -1624,12 +1624,12 @@ export default function CustomerManagement({
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-1">
-                  <label className="text-slate-400 font-semibold uppercase tracking-wide">Regional Node:</label>
+                  <label className="text-[#9D174D]/85 font-semibold uppercase tracking-wide">Regional Node:</label>
                   <select
                     id="new-customer-node-select"
                     value={newCustomer.branchId}
                     onChange={(e) => setNewCustomer({ ...newCustomer, branchId: e.target.value })}
-                    className="w-full bg-[#0a1135] border border-[#1b2557] focus:border-[#d4af37]/60 text-white p-2.5 rounded-lg outline-none cursor-pointer"
+                    className="w-full bg-[#FFF1F5] border border-[#F9A8D4] focus:border-[#d4af37]/60 text-[#4A044E] p-2.5 rounded-lg outline-none cursor-pointer"
                   >
                     {branches.map(b => (
                       <option key={b.id} value={b.id}>{b.name.replace(" Flagship", "").replace(" Hub", "")}</option>
@@ -1637,13 +1637,13 @@ export default function CustomerManagement({
                   </select>
                 </div>
                 <div className="space-y-1">
-                  <label className="text-slate-400 font-semibold uppercase tracking-wide">Initial Ledger Deposit ($):</label>
+                  <label className="text-[#9D174D]/85 font-semibold uppercase tracking-wide">Initial Ledger Deposit ($):</label>
                   <input
                     id="new-customer-deposit-input"
                     type="number"
                     value={newCustomer.balance}
                     onChange={(e) => setNewCustomer({ ...newCustomer, balance: Number(e.target.value) })}
-                    className="w-full bg-[#0a1135] border border-[#1b2557] focus:border-[#d4af37]/60 text-white p-2.5 rounded-lg outline-none font-mono font-bold"
+                    className="w-full bg-[#FFF1F5] border border-[#F9A8D4] focus:border-[#d4af37]/60 text-[#4A044E] p-2.5 rounded-lg outline-none font-mono font-bold"
                   />
                 </div>
               </div>
@@ -1652,11 +1652,11 @@ export default function CustomerManagement({
                 By clicking Submit, the client file is cryptographically processed and immediately synced to SWIFT clearance nodes. Full compliance screening is performed automatedly.
               </div>
 
-              <div className="flex justify-end gap-3 pt-4 border-t border-[#141b44]">
+              <div className="flex justify-end gap-3 pt-4 border-t border-[#FBCFE8]">
                 <button
                   type="button"
                   onClick={() => setShowAddModal(false)}
-                  className="px-4 py-2 hover:bg-white/5 text-[#8496bf] text-xs font-semibold rounded-lg transition-all"
+                  className="px-4 py-2 hover:bg-white/5 text-[#BE185D]/75 text-xs font-semibold rounded-lg transition-all"
                 >
                   Cancel
                 </button>
@@ -1686,7 +1686,7 @@ export default function CustomerManagement({
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="w-full max-w-sm bg-[#070b28] border-2 border-[#d4af37]/60 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.9)] overflow-hidden relative"
+            className="w-full max-w-sm bg-[#FCE7F3] border-2 border-[#d4af37]/60 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.9)] overflow-hidden relative"
           >
             {/* Fine Golden Accent Border */}
             <div className="absolute top-0 inset-x-0 h-[3px] bg-gradient-to-r from-[#d4af37] via-[#806410] to-[#d4af37]" />
@@ -1695,21 +1695,21 @@ export default function CustomerManagement({
             <button 
               type="button"
               onClick={() => setPreviewEmployee(null)}
-              className="absolute top-4 right-4 p-1.5 rounded-lg text-[#556994] hover:text-white hover:bg-white/5 transition-all cursor-pointer z-10 animate-fade-in"
+              className="absolute top-4 right-4 p-1.5 rounded-lg text-[#9D174D]/80 hover:text-[#4A044E] hover:bg-white/5 transition-all cursor-pointer z-10 animate-fade-in"
             >
               <X size={16} />
             </button>
 
             {/* Profile Header */}
-            <div className="p-5 bg-gradient-to-b from-[#10194e]/70 to-[#070b28] border-b border-[#141b44] flex flex-col items-center text-center space-y-3">
-              <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-amber-500 to-[#d4af37] border border-[#d4af37] flex items-center justify-center font-black text-white text-xl shadow-xl relative mt-3 select-none">
+            <div className="p-5 bg-gradient-to-b from-[#10194e]/70 to-[#070b28] border-b border-[#FBCFE8] flex flex-col items-center text-center space-y-3">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-amber-500 to-[#d4af37] border border-[#d4af37] flex items-center justify-center font-black text-[#4A044E] text-xl shadow-xl relative mt-3 select-none">
                 {previewEmployee.avatarSeed ? previewEmployee.avatarSeed.toUpperCase() : "EMP"}
                 <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-emerald-500 border-2 border-[#070b28]" />
               </div>
               <div>
-                <h4 className="text-sm font-bold text-white tracking-wide">{previewEmployee.name}</h4>
+                <h4 className="text-sm font-bold text-[#4A044E] tracking-wide">{previewEmployee.name}</h4>
                 <p className="text-[10px] text-amber-500 font-mono font-bold uppercase tracking-widest leading-none mt-1">{previewEmployee.id}</p>
-                <p className="text-[10px] text-slate-400 mt-1">{previewEmployee.designation}</p>
+                <p className="text-[10px] text-[#9D174D]/85 mt-1">{previewEmployee.designation}</p>
               </div>
             </div>
 
@@ -1717,37 +1717,37 @@ export default function CustomerManagement({
             <div className="p-5 space-y-4 text-[11px] select-text">
               <div className="grid grid-cols-2 gap-3">
                 <div className="space-y-0.5">
-                  <span className="text-[#8496bf] text-[9px] uppercase font-mono block">Node Terminal:</span>
-                  <span className="font-semibold text-white truncate block">{previewEmployee.office || "Hyderabad Regional HQ"}</span>
+                  <span className="text-[#BE185D]/75 text-[9px] uppercase font-mono block">Node Terminal:</span>
+                  <span className="font-semibold text-[#4A044E] truncate block">{previewEmployee.office || "Hyderabad Regional HQ"}</span>
                 </div>
                 <div className="space-y-0.5">
-                  <span className="text-[#8496bf] text-[9px] uppercase font-mono block">Department:</span>
-                  <span className="font-semibold text-white truncate block">Treasury & Onboarding</span>
+                  <span className="text-[#BE185D]/75 text-[9px] uppercase font-mono block">Department:</span>
+                  <span className="font-semibold text-[#4A044E] truncate block">Treasury & Onboarding</span>
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-3 border-t border-[#131b40]/60 pt-3">
                 <div className="space-y-0.5">
-                  <span className="text-[#8496bf] text-[9px] uppercase font-mono block">Clearance Tier:</span>
+                  <span className="text-[#BE185D]/75 text-[9px] uppercase font-mono block">Clearance Tier:</span>
                   <span className="text-amber-400 font-bold font-mono tracking-wider block">{previewEmployee.clearance || "Level 4 - Executive Audit"}</span>
                 </div>
                 <div className="space-y-0.5">
-                  <span className="text-[#8496bf] text-[9px] uppercase font-mono block">Review Rating:</span>
+                  <span className="text-[#BE185D]/75 text-[9px] uppercase font-mono block">Review Rating:</span>
                   <span className="font-mono text-emerald-400 block font-bold">4.9 / 5.0 Rating</span>
                 </div>
               </div>
 
               <div className="space-y-1.5 border-t border-[#131b40]/60 pt-3 font-mono text-[10px]">
                 <div className="flex justify-between items-center gap-2">
-                  <span className="text-[#556994]">Secure Email:</span>
-                  <span className="text-slate-300 truncate select-all">{previewEmployee.email || "s.johnson@apexbank.com"}</span>
+                  <span className="text-[#9D174D]/80">Secure Email:</span>
+                  <span className="text-[#831843] truncate select-all">{previewEmployee.email || "s.johnson@apexbank.com"}</span>
                 </div>
                 <div className="flex justify-between items-center gap-2">
-                  <span className="text-[#556994]">Direct Link:</span>
-                  <span className="text-slate-300 truncate select-all">{previewEmployee.phone || "+1 (555) 012-3456"}</span>
+                  <span className="text-[#9D174D]/80">Direct Link:</span>
+                  <span className="text-[#831843] truncate select-all">{previewEmployee.phone || "+1 (555) 012-3456"}</span>
                 </div>
                 <div className="flex justify-between items-center gap-2">
-                  <span className="text-[#556994]">Digital ID hash:</span>
+                  <span className="text-[#9D174D]/80">Digital ID hash:</span>
                   <span className="text-[#d4af37] select-all uppercase">APX-{(previewEmployee.id || "EMP").replace("-", "")}</span>
                 </div>
               </div>
@@ -1784,10 +1784,10 @@ export default function CustomerManagement({
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.2 }}
-              className="relative w-[75%] h-[80%] rounded-3xl border border-[#d4af37]/30 bg-[#0a103d] shadow-[0_20px_50px_rgba(0,0,0,0.8)] overflow-hidden flex flex-col"
+              className="relative w-[75%] h-[80%] rounded-3xl border border-[#d4af37]/30 bg-[#FDF2F8] shadow-[0_20px_50px_rgba(0,0,0,0.8)] overflow-hidden flex flex-col"
             >
               {/* Header */}
-              <div className="px-8 py-6 border-b border-[#1b2559]/60 flex items-center justify-between bg-gradient-to-r from-[#0e1644] to-[#0a103d]">
+              <div className="px-8 py-6 border-b border-[#F9A8D4]/60 flex items-center justify-between bg-gradient-to-r from-[#0e1644] to-[#0a103d]">
                 <div className="flex items-center gap-4">
                   <div className="p-3 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-500">
                     {(activeAction.type === 'Secure Voice Line' || activeAction.type === 'Contact Customer') && <Phone size={24} />}
@@ -1797,7 +1797,7 @@ export default function CustomerManagement({
                     {activeAction.type === 'Download Report' && <Download size={24} />}
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white tracking-tight">{activeAction.type}</h3>
+                    <h3 className="text-xl font-bold text-[#4A044E] tracking-tight">{activeAction.type}</h3>
                     <p className="text-[10px] text-amber-500 font-mono font-bold uppercase tracking-widest mt-0.5">
                       NODE: {activeAction.customer.id} // FILE: {activeAction.customer.name.toUpperCase()}
                     </p>
@@ -1805,14 +1805,14 @@ export default function CustomerManagement({
                 </div>
                 <button 
                   onClick={() => setActiveAction(null)}
-                  className="p-2.5 rounded-xl text-[#556994] hover:text-white hover:bg-white/5 transition-all cursor-pointer border border-transparent hover:border-white/10"
+                  className="p-2.5 rounded-xl text-[#9D174D]/80 hover:text-[#4A044E] hover:bg-white/5 transition-all cursor-pointer border border-transparent hover:border-[#F9A8D4]/50"
                 >
                   <X size={20} />
                 </button>
               </div>
 
               {/* Workspace Content */}
-              <div className="flex-1 overflow-y-auto p-10 bg-[#04081c]/40 scrollbar-hide">
+              <div className="flex-1 overflow-y-auto p-10 bg-[#FFF5F8]/70 scrollbar-hide">
                 {activeAction.type === 'Secure Voice Line' && (
                   <div className="h-full flex flex-col items-center justify-center space-y-8 animate-in fade-in zoom-in duration-500">
                     <div className="relative">
@@ -1823,15 +1823,15 @@ export default function CustomerManagement({
                       </div>
                     </div>
                     <div className="text-center space-y-3">
-                       <h4 className="text-2xl font-black text-white font-mono tracking-tighter">ESTABLISHING ENCRYPTED LINK</h4>
+                       <h4 className="text-2xl font-black text-[#4A044E] font-mono tracking-tighter">ESTABLISHING ENCRYPTED LINK</h4>
                        <div className="flex items-center justify-center gap-2">
                           <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                           <p className="text-emerald-400 font-mono text-xs font-bold uppercase tracking-widest">Quantum Guard Active</p>
                        </div>
-                       <p className="text-[#8496bf] text-sm font-mono mt-4">TARGET: {activeAction.customer.phone}</p>
+                       <p className="text-[#BE185D]/75 text-sm font-mono mt-4">TARGET: {activeAction.customer.phone}</p>
                     </div>
                     <div className="flex gap-4 pt-4">
-                       <button className="px-8 py-3 bg-rose-500/20 hover:bg-rose-500 text-rose-500 hover:text-white border border-rose-500/30 rounded-xl font-bold uppercase tracking-widest text-xs transition-all cursor-pointer">Terminate Connection</button>
+                       <button className="px-8 py-3 bg-rose-500/20 hover:bg-rose-500 text-rose-500 hover:text-[#4A044E] border border-rose-500/30 rounded-xl font-bold uppercase tracking-widest text-xs transition-all cursor-pointer">Terminate Connection</button>
                     </div>
                   </div>
                 )}
@@ -1845,33 +1845,33 @@ export default function CustomerManagement({
                            </div>
                            <div className="flex-1">
                               <p className="text-[10px] text-blue-400 font-mono font-bold uppercase tracking-widest">Secure SMTP Portal</p>
-                              <h4 className="text-white font-bold">Drafting Official Mandate</h4>
+                              <h4 className="text-[#4A044E] font-bold">Drafting Official Mandate</h4>
                            </div>
                         </div>
                      </div>
                      <div className="space-y-6">
                         <div className="grid grid-cols-2 gap-4">
                            <div className="space-y-2">
-                              <label className="text-[10px] text-[#8496bf] font-bold uppercase tracking-widest">Recipient</label>
-                              <div className="px-4 py-3 rounded-xl border border-white/5 bg-white/5 text-slate-300 font-mono text-xs">
+                              <label className="text-[10px] text-[#BE185D]/75 font-bold uppercase tracking-widest">Recipient</label>
+                              <div className="px-4 py-3 rounded-xl border border-[#F9A8D4]/40 bg-white/5 text-[#831843] font-mono text-xs">
                                  {activeAction.customer.email}
                               </div>
                            </div>
                            <div className="space-y-2">
-                              <label className="text-[10px] text-[#8496bf] font-bold uppercase tracking-widest">Security Clearance</label>
+                              <label className="text-[10px] text-[#BE185D]/75 font-bold uppercase tracking-widest">Security Clearance</label>
                               <div className="px-4 py-3 rounded-xl border border-emerald-500/30 bg-emerald-500/5 text-emerald-400 font-mono text-xs font-bold">
                                  LEVEL-5 SUPERADMIN AUTH
                               </div>
                            </div>
                         </div>
                         <div className="space-y-2">
-                           <label className="text-[10px] text-[#8496bf] font-bold uppercase tracking-widest">Directive Message</label>
+                           <label className="text-[10px] text-[#BE185D]/75 font-bold uppercase tracking-widest">Directive Message</label>
                            <textarea 
-                              className="w-full h-48 px-4 py-4 rounded-xl border border-white/10 bg-white/5 text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 transition-all font-sans italic"
+                              className="w-full h-48 px-4 py-4 rounded-xl border border-[#F9A8D4]/50 bg-white/5 text-[#4A044E] placeholder-slate-600 focus:outline-none focus:border-blue-500 transition-all font-sans italic"
                               placeholder="Type your official directive here..."
                            />
                         </div>
-                        <button className="w-full py-4 bg-blue-600 hover:bg-blue-500 text-white font-black uppercase tracking-[0.2em] rounded-xl shadow-[0_4px_20px_rgba(59,130,246,0.4)] transition-all transform hover:-translate-y-0.5 active:translate-y-0">
+                        <button className="w-full py-4 bg-blue-600 hover:bg-blue-500 text-[#4A044E] font-black uppercase tracking-[0.2em] rounded-xl shadow-[0_4px_20px_rgba(59,130,246,0.4)] transition-all transform hover:-translate-y-0.5 active:translate-y-0">
                            Dispatch Encrypted Mandate
                         </button>
                      </div>
@@ -1881,21 +1881,21 @@ export default function CustomerManagement({
                 {activeAction.type === 'View Account' && (
                   <div className="space-y-8 animate-in fade-in duration-500">
                     <div className="grid grid-cols-3 gap-6">
-                       <div className="p-6 rounded-2xl border border-white/5 bg-white/5 space-y-2">
-                          <p className="text-[10px] text-[#8496bf] font-bold uppercase tracking-widest">Ledger Balance</p>
-                          <p className="text-2xl font-black text-white font-mono">${activeAction.customer.balance.toLocaleString()}</p>
+                       <div className="p-6 rounded-2xl border border-[#F9A8D4]/40 bg-white/5 space-y-2">
+                          <p className="text-[10px] text-[#BE185D]/75 font-bold uppercase tracking-widest">Ledger Balance</p>
+                          <p className="text-2xl font-black text-[#4A044E] font-mono">${activeAction.customer.balance.toLocaleString()}</p>
                        </div>
-                       <div className="p-6 rounded-2xl border border-white/5 bg-white/5 space-y-2">
-                          <p className="text-[10px] text-[#8496bf] font-bold uppercase tracking-widest">Account Tier</p>
+                       <div className="p-6 rounded-2xl border border-[#F9A8D4]/40 bg-white/5 space-y-2">
+                          <p className="text-[10px] text-[#BE185D]/75 font-bold uppercase tracking-widest">Account Tier</p>
                           <p className="text-2xl font-black text-amber-500 uppercase tracking-tighter italic">Sovereign VIP</p>
                        </div>
-                       <div className="p-6 rounded-2xl border border-white/5 bg-white/5 space-y-2">
-                          <p className="text-[10px] text-[#8496bf] font-bold uppercase tracking-widest">Risk Allocation</p>
+                       <div className="p-6 rounded-2xl border border-[#F9A8D4]/40 bg-white/5 space-y-2">
+                          <p className="text-[10px] text-[#BE185D]/75 font-bold uppercase tracking-widest">Risk Allocation</p>
                           <p className="text-2xl font-black text-blue-400 font-mono">{activeAction.customer.riskScore}% <span className="text-xs uppercase">Safe</span></p>
                        </div>
                     </div>
-                    <div className="p-8 rounded-3xl border border-white/5 bg-[#070b28] space-y-6">
-                       <h5 className="font-bold text-white flex items-center gap-2">
+                    <div className="p-8 rounded-3xl border border-[#F9A8D4]/40 bg-[#FCE7F3] space-y-6">
+                       <h5 className="font-bold text-[#4A044E] flex items-center gap-2">
                           <Activity size={18} className="text-blue-500" />
                           Authorized Core Accounts
                        </h5>
@@ -1911,12 +1911,12 @@ export default function CustomerManagement({
                                      <Building size={20} />
                                   </div>
                                   <div>
-                                     <p className="text-xs font-bold text-white">{acc.name}</p>
-                                     <p className="text-[9px] text-slate-500 font-mono">{acc.id}</p>
+                                     <p className="text-xs font-bold text-[#4A044E]">{acc.name}</p>
+                                     <p className="text-[9px] text-[#9D174D]/75 font-mono">{acc.id}</p>
                                   </div>
                                </div>
                                <div className="text-right">
-                                  <p className="text-sm font-black text-white font-mono">${acc.bal.toLocaleString()}</p>
+                                  <p className="text-sm font-black text-[#4A044E] font-mono">${acc.bal.toLocaleString()}</p>
                                   <span className="text-[9px] text-emerald-400 font-bold uppercase tracking-widest">{acc.type}</span>
                                </div>
                             </div>
@@ -1928,10 +1928,10 @@ export default function CustomerManagement({
 
                 {activeAction.type === 'View Transactions' && (
                   <div className="space-y-8 animate-in fade-in duration-500 h-full flex flex-col">
-                     <div className="flex-1 rounded-3xl border border-white/5 bg-[#070b28] overflow-hidden flex flex-col">
-                        <div className="p-6 border-b border-white/5 flex items-center justify-between bg-white/[0.01]">
-                           <h5 className="font-bold text-white">Universal Sovereign Ledger</h5>
-                           <span className="text-[10px] text-slate-500 font-mono uppercase tracking-widest">Live Updates Hooked</span>
+                     <div className="flex-1 rounded-3xl border border-[#F9A8D4]/40 bg-[#FCE7F3] overflow-hidden flex flex-col">
+                        <div className="p-6 border-b border-[#F9A8D4]/40 flex items-center justify-between bg-white/[0.01]">
+                           <h5 className="font-bold text-[#4A044E]">Universal Sovereign Ledger</h5>
+                           <span className="text-[10px] text-[#9D174D]/75 font-mono uppercase tracking-widest">Live Updates Hooked</span>
                         </div>
                         <div className="flex-1 overflow-y-auto p-4 space-y-3">
                            {transactions.filter(t => t.id === activeAction.customer.id || true).slice(0, 15).map((tx, idx) => (
@@ -1943,8 +1943,8 @@ export default function CustomerManagement({
                                       {(tx.type === 'Deposit' || tx.type === 'Loan Disbursal') ? 'IN' : 'OUT'}
                                    </div>
                                    <div>
-                                      <p className="text-xs font-bold text-white group-hover:text-blue-400 transition-colors">{tx.category}</p>
-                                      <p className="text-[9px] text-slate-500 font-mono">{tx.timestamp}</p>
+                                      <p className="text-xs font-bold text-[#4A044E] group-hover:text-blue-400 transition-colors">{tx.category}</p>
+                                      <p className="text-[9px] text-[#9D174D]/75 font-mono">{tx.timestamp}</p>
                                    </div>
                                 </div>
                                 <div className="text-right">
@@ -1966,7 +1966,7 @@ export default function CustomerManagement({
                   <div className="h-full flex flex-col items-center justify-center space-y-10 animate-in fade-in zoom-in duration-500">
                     <div className="relative group">
                        <div className="absolute inset-0 bg-amber-500/20 rounded-3xl blur-2xl group-hover:bg-amber-500/40 transition-all duration-700" />
-                       <div className="relative w-40 h-52 rounded-2xl border-2 border-amber-500/50 bg-[#0a103d] flex flex-col p-6 shadow-2xl transform group-hover:rotate-1 group-hover:-translate-y-2 transition-all duration-500">
+                       <div className="relative w-40 h-52 rounded-2xl border-2 border-amber-500/50 bg-[#FDF2F8] flex flex-col p-6 shadow-2xl transform group-hover:rotate-1 group-hover:-translate-y-2 transition-all duration-500">
                           <div className="w-10 h-1bg bg-amber-500/20 rounded-full mb-8" />
                           <div className="space-y-4">
                              <div className="h-2 w-full bg-slate-700/50 rounded-full" />
@@ -1987,8 +1987,8 @@ export default function CustomerManagement({
                     </div>
                     <div className="text-center space-y-4">
                        <h4 className="text-2xl font-black text-white italic tracking-tight">COMPILE SOVEREIGN AUDIT REPORT</h4>
-                       <p className="text-[#8496bf] text-sm max-w-md mx-auto leading-relaxed">
-                          Generating complete transaction history, risk profiling, and KYC compliance validation nodes for <span className="text-white font-bold">{activeAction.customer.name}</span>.
+                       <p className="text-[#BE185D]/75 text-sm max-w-md mx-auto leading-relaxed">
+                          Generating complete transaction history, risk profiling, and KYC compliance validation nodes for <span className="text-[#4A044E] font-bold">{activeAction.customer.name}</span>.
                        </p>
                        <button 
                           onClick={() => {
@@ -2005,7 +2005,7 @@ export default function CustomerManagement({
               </div>
               
               {/* Footer / System Trace */}
-              <div className="px-8 py-4 bg-black/40 border-t border-white/5 flex items-center justify-between text-[9px] font-mono text-slate-500 uppercase tracking-widest">
+              <div className="px-8 py-4 bg-black/40 border-t border-[#F9A8D4]/40 flex items-center justify-between text-[9px] font-mono text-[#9D174D]/75 uppercase tracking-widest">
                  <div className="flex gap-4">
                     <span>Trace: APEX-CORE-MODAL</span>
                     <span>Status: Level-5-Elevated</span>

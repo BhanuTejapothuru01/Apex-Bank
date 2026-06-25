@@ -770,7 +770,7 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
             <h1 className="text-xl font-bold tracking-tight text-slate-900 uppercase">
               India Command Operations Center
             </h1>
-            <p className="text-xs text-slate-500 font-medium">
+            <p className="text-xs text-[#9D174D]/75 font-medium">
               Sovereign Real-Time Branch Network & Node Verification Station. Port: <span className="font-mono">3000</span>
             </p>
           </div>
@@ -801,11 +801,11 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
           </div>
           
           <div className="mt-4 relative shrink-0">
-             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 w-4 h-4" />
+             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-[#9D174D]/85 w-4 h-4" />
              <input
                type="text"
                placeholder="Search branches..."
-               className="w-full pl-9 pr-4 py-2 bg-pink-50/50 border border-pink-100 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-pink-500/20 text-slate-700 placeholder:text-slate-400"
+               className="w-full pl-9 pr-4 py-2 bg-pink-50/50 border border-pink-100 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-pink-500/20 text-slate-700 placeholder:text-[#9D174D]/85"
                value={searchQuery}
                onChange={e => setSearchQuery(e.target.value)}
              />
@@ -832,20 +832,20 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
                     {b.status}
                   </span>
                 </div>
-                <div className="flex items-center gap-1 text-[11px] text-slate-500">
+                <div className="flex items-center gap-1 text-[11px] text-[#9D174D]/75">
                   <MapPin size={10} className="text-pink-400" />
                   {b.city}, {b.state}
                 </div>
               </button>
             ))}
             {filteredBranches.length === 0 && (
-              <div className="text-center py-8 text-slate-400 text-sm">
+              <div className="text-center py-8 text-[#9D174D]/85 text-sm">
                 No branches found for "{searchQuery}"
               </div>
             )}
           </div>
           
-          <div className="flex justify-between items-center text-[10px] text-slate-500 font-mono pt-3 border-t border-pink-50 mt-2 shrink-0">
+          <div className="flex justify-between items-center text-[10px] text-[#9D174D]/75 font-mono pt-3 border-t border-pink-50 mt-2 shrink-0">
             <span>TERRITORIES MONITORED: 28 STATES & UTs</span>
             <span className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-pink-500 animate-ping" />
@@ -860,7 +860,7 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
           <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-pink-300 via-pink-500 to-pink-300" />
           
           {!selectedBranch ? (
-            <p className="text-sm text-slate-500 py-8 text-center">No branch selected.</p>
+            <p className="text-sm text-[#9D174D]/75 py-8 text-center">No branch selected.</p>
           ) : (
           <>
           <div className="space-y-4">
@@ -883,7 +883,7 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
                 <Building2 size={18} className="text-[#db2777]" />
                 {selectedBranch.name}
               </h3>
-              <p className="text-xs text-slate-500 font-bold flex items-center gap-1 mt-0.5">
+              <p className="text-xs text-[#9D174D]/75 font-bold flex items-center gap-1 mt-0.5">
                 <MapPin size={12} className="text-pink-400" />
                 {selectedBranch.city}, {selectedBranch.state}
               </p>
@@ -903,12 +903,12 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
             <div className="divide-y divide-pink-50 space-y-2 mt-4 text-xs font-medium">
               
               <div className="flex items-center justify-between py-1.5">
-                <span className="text-slate-500">Branch Code:</span>
+                <span className="text-[#9D174D]/75">Branch Code:</span>
                 <span className="font-mono text-slate-900 font-extrabold">{selectedBranch.code}</span>
               </div>
 
               <div className="flex items-center justify-between py-1.5">
-                <span className="text-slate-500">Branch Manager:</span>
+                <span className="text-[#9D174D]/75">Branch Manager:</span>
                 <span className="text-slate-900 font-extrabold flex items-center gap-1">
                   <UserCheck size={12} className="text-[#db2777]" />
                   {selectedBranch.manager.name}
@@ -916,39 +916,39 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
               </div>
 
               <div className="flex items-center justify-between py-1.5">
-                <span className="text-slate-500">Manager Contact:</span>
+                <span className="text-[#9D174D]/75">Manager Contact:</span>
                 <span className="text-slate-900 font-mono font-bold text-[11px]">
                   {selectedBranch.manager.phone}
                 </span>
               </div>
 
               <div className="flex items-center justify-between py-1.5">
-                <span className="text-slate-500">Employee Count:</span>
+                <span className="text-[#9D174D]/75">Employee Count:</span>
                 <span className="text-slate-900 font-bold">{selectedBranch.employeeCount} Experts</span>
               </div>
 
               <div className="flex items-center justify-between py-1.5">
-                <span className="text-slate-500">Customer Count:</span>
+                <span className="text-[#9D174D]/75">Customer Count:</span>
                 <span className="text-slate-900 font-bold">{selectedBranch.customerCount.toLocaleString()} Users</span>
               </div>
 
               <div className="flex items-center justify-between py-1.5">
-                <span className="text-slate-400">Total Loans Outstanding:</span>
+                <span className="text-[#9D174D]/85">Total Loans Outstanding:</span>
                 <span className="font-mono text-slate-900 font-bold">{formatCur(selectedBranch.loans * tickerMultiplier)}</span>
               </div>
 
               <div className="flex items-center justify-between py-1.5">
-                <span className="text-slate-400">Fixed Deposits Ledger:</span>
+                <span className="text-[#9D174D]/85">Fixed Deposits Ledger:</span>
                 <span className="font-mono text-slate-900 font-bold">{formatCur(selectedBranch.fixedDeposits * tickerMultiplier)}</span>
               </div>
 
               <div className="flex items-center justify-between py-1.5">
-                <span className="text-slate-400">Wealth Investment Portfolio:</span>
+                <span className="text-[#9D174D]/85">Wealth Investment Portfolio:</span>
                 <span className="font-mono text-slate-900 font-bold">{formatCur(selectedBranch.investmentPortfolio * tickerMultiplier)}</span>
               </div>
 
               <div className="flex items-center justify-between py-1.5">
-                <span className="text-slate-500">Audit Risk Rating:</span>
+                <span className="text-[#9D174D]/75">Audit Risk Rating:</span>
                 <span className={`font-mono font-black px-2 py-0.5 rounded text-[10px] ${
                   selectedBranch.riskRating === 'Low' ? 'bg-emerald-50 text-emerald-600' :
                   selectedBranch.riskRating === 'Medium' ? 'bg-amber-50 text-amber-600' : 'bg-rose-50 text-rose-600'
@@ -958,7 +958,7 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
               </div>
 
               <div className="flex items-center justify-between py-1.5">
-                <span className="text-slate-500">Performance Rating:</span>
+                <span className="text-[#9D174D]/75">Performance Rating:</span>
                 <span className="text-slate-900 font-bold flex items-center gap-0.5">
                   <Star size={12} className="fill-[#fbbf24] text-[#fbbf24]" />
                   {selectedBranch.performanceRating.toFixed(1)} / 5.0
@@ -966,27 +966,27 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
               </div>
 
               <div className="flex items-center justify-between py-1.5">
-                <span className="text-slate-500">Opening Date:</span>
+                <span className="text-[#9D174D]/75">Opening Date:</span>
                 <span className="font-mono text-slate-600">{selectedBranch.openDate}</span>
               </div>
 
               <div className="flex items-center justify-between py-1.5">
-                <span className="text-slate-500">Last Audit Inspection Date:</span>
+                <span className="text-[#9D174D]/75">Last Audit Inspection Date:</span>
                 <span className="font-mono text-[#db2777] font-bold">{selectedBranch.lastAuditDate}</span>
               </div>
 
               {/* Three detailed yield stats fields */}
               <div className="grid grid-cols-3 gap-2 pt-2.5">
                 <div className="text-center p-2 rounded bg-pink-50/30">
-                  <span className="text-[8px] text-slate-400 block font-bold uppercase">Live Revenue</span>
+                  <span className="text-[8px] text-[#9D174D]/85 block font-bold uppercase">Live Revenue</span>
                   <span className="text-[10px] font-mono font-bold text-slate-800">{formatCur(selectedBranch.revenue * tickerMultiplier)}</span>
                 </div>
                 <div className="text-center p-2 rounded bg-emerald-50/40">
-                  <span className="text-[8px] text-slate-400 block font-bold uppercase">Live Profit</span>
+                  <span className="text-[8px] text-[#9D174D]/85 block font-bold uppercase">Live Profit</span>
                   <span className="text-[10px] font-mono font-bold text-emerald-600">+{formatCur(selectedBranch.profit * tickerMultiplier)}</span>
                 </div>
                 <div className="text-center p-2 rounded bg-rose-50/40">
-                  <span className="text-[8px] text-slate-400 block font-bold uppercase">Live Loss</span>
+                  <span className="text-[8px] text-[#9D174D]/85 block font-bold uppercase">Live Loss</span>
                   <span className="text-[10px] font-mono font-bold text-rose-600">-{formatCur(selectedBranch.loss * tickerMultiplier)}</span>
                 </div>
               </div>
@@ -995,7 +995,7 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
           </div>
 
           <div className="pt-4 border-t border-pink-50 mt-4 space-y-3">
-            <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 font-black block">COMMAND ACTIONS</span>
+            <span className="text-[10px] font-mono uppercase tracking-wider text-[#9D174D]/85 font-black block">COMMAND ACTIONS</span>
             
             <div className="grid grid-cols-2 gap-3">
               {/* Row 1 */}
@@ -1099,7 +1099,7 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-3 border-b border-pink-50">
           <div>
             <h3 className="text-sm font-bold text-slate-900 uppercase tracking-tight">State-wise Administrative Terminal Index</h3>
-            <p className="text-xs text-slate-500">Click a record below to immediately synchronize navigation, focus, and state telemetry map visualization.</p>
+            <p className="text-xs text-[#9D174D]/75">Click a record below to immediately synchronize navigation, focus, and state telemetry map visualization.</p>
           </div>
           
           {/* Search bar helper */}
@@ -1111,14 +1111,14 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-64 px-3 py-1.5 text-xs rounded-xl border border-pink-200 bg-white text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#db2777] font-semibold"
             />
-            <Search size={14} className="absolute right-3.5 top-2 text-slate-400" />
+            <Search size={14} className="absolute right-3.5 top-2 text-[#9D174D]/85" />
           </div>
         </div>
 
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse min-w-[800px]">
             <thead>
-              <tr className="border-b border-pink-100 text-[10px] text-slate-500 uppercase tracking-wider font-extrabold font-mono">
+              <tr className="border-b border-pink-100 text-[10px] text-[#9D174D]/75 uppercase tracking-wider font-extrabold font-mono">
                 <th className="py-3 px-4">State</th>
                 <th className="py-3 px-4">Branch Name</th>
                 <th className="py-3 px-4">Branch Code</th>
@@ -1155,7 +1155,7 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
                         {b.name}
                       </div>
                     </td>
-                    <td className="py-3.5 px-4 font-mono text-slate-500 font-extrabold">{b.code}</td>
+                    <td className="py-3.5 px-4 font-mono text-[#9D174D]/75 font-extrabold">{b.code}</td>
                     <td className="py-3.5 px-4 text-slate-900 font-medium">
                       <div className="flex items-center gap-1.5">
                         <div className="w-6 h-6 rounded-full bg-pink-100 flex items-center justify-center font-bold text-[9px] text-[#db2777] font-mono">
@@ -1199,7 +1199,7 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
             >
               <button 
                 onClick={() => setActiveModal(null)}
-                className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 z-10"
+                className="absolute top-4 right-4 text-[#9D174D]/85 hover:text-slate-600 z-10"
               >
                 <X size={20} />
               </button>
@@ -1211,7 +1211,7 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
                   </div>
                   <div>
                     <h3 className="font-extrabold text-slate-900 uppercase">{selectedBranch.name} Dossier</h3>
-                    <p className="text-xs text-slate-500">Established {selectedBranch.openDate} • Standard Code: {selectedBranch.code}</p>
+                    <p className="text-xs text-[#9D174D]/75">Established {selectedBranch.openDate} • Standard Code: {selectedBranch.code}</p>
                   </div>
                 </div>
 
@@ -1230,18 +1230,18 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
 
                 <div className="grid grid-cols-2 gap-3 text-xs">
                   <div className="p-3 rounded-lg border border-pink-100 text-[#db2777] font-bold text-center">
-                    <span className="text-[10px] text-slate-400 block font-normal uppercase">Active Loans Yield</span>
+                    <span className="text-[10px] text-[#9D174D]/85 block font-normal uppercase">Active Loans Yield</span>
                     {formatCur(selectedBranch.loans)}
                   </div>
                   <div className="p-3 rounded-lg border border-pink-100 text-slate-800 font-bold text-center">
-                    <span className="text-[10px] text-slate-400 block font-normal uppercase">Deposits Held</span>
+                    <span className="text-[10px] text-[#9D174D]/85 block font-normal uppercase">Deposits Held</span>
                     {formatCur(selectedBranch.deposits)}
                   </div>
                 </div>
 
                 <button 
                   onClick={() => setActiveModal(null)}
-                  className="w-full py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl text-xs uppercase"
+                  className="w-full py-2.5 bg-[#FFF1F5] hover:bg-[#FDF2F8] text-[#4A044E] font-bold rounded-xl text-xs uppercase"
                 >
                   Terminate Inspection
                 </button>
@@ -1261,7 +1261,7 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
             >
               <button 
                 onClick={() => setActiveModal(null)}
-                className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 z-10"
+                className="absolute top-4 right-4 text-[#9D174D]/85 hover:text-slate-600 z-10"
               >
                 <X size={20} />
               </button>
@@ -1273,7 +1273,7 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
                   </div>
                   <div>
                     <h3 className="font-extrabold text-slate-900 uppercase">Compliance Audit Report</h3>
-                    <p className="text-xs text-slate-500">Inspection: verified until {selectedBranch.lastAuditDate}</p>
+                    <p className="text-xs text-[#9D174D]/75">Inspection: verified until {selectedBranch.lastAuditDate}</p>
                   </div>
                 </div>
 
@@ -1288,7 +1288,7 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
                 </div>
 
                 <div className="space-y-2">
-                  <span className="text-[10px] font-mono text-slate-400 block font-bold uppercase">AUDITED METRICS TRACKER</span>
+                  <span className="text-[10px] font-mono text-[#9D174D]/85 block font-bold uppercase">AUDITED METRICS TRACKER</span>
                   <div className="text-xs space-y-1.5">
                     <div className="flex justify-between text-slate-600">
                       <span>Reserve Cash Ratio:</span>
@@ -1314,7 +1314,7 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
                   </button>
                   <button 
                     onClick={() => setActiveModal(null)}
-                    className="flex-1 py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl text-xs uppercase"
+                    className="flex-1 py-2.5 bg-[#FFF1F5] hover:bg-[#FDF2F8] text-[#4A044E] font-bold rounded-xl text-xs uppercase"
                   >
                     Done
                   </button>
@@ -1335,7 +1335,7 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
             >
               <button 
                 onClick={() => setActiveModal(null)}
-                className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 z-10"
+                className="absolute top-4 right-4 text-[#9D174D]/85 hover:text-slate-600 z-10"
               >
                 <X size={20} />
               </button>
@@ -1347,7 +1347,7 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
                       <TrendingUp size={18} className="text-[#db2777]" />
                       {selectedBranch.name} Analytical Plots
                     </h3>
-                    <p className="text-xs text-slate-500">6-Month historical yield, revenue and capital performance projection</p>
+                    <p className="text-xs text-[#9D174D]/75">6-Month historical yield, revenue and capital performance projection</p>
                   </div>
                   <span className="text-xs font-mono font-bold bg-pink-50 text-[#db2777] px-3 py-1 rounded-full">
                     {selectedBranch.code} Ledger
@@ -1409,7 +1409,7 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
                   </ResponsiveContainer>
                 </div>
 
-                <div className="flex items-center justify-center gap-6 text-[11px] font-mono font-bold text-slate-500 py-2 border-t border-pink-50">
+                <div className="flex items-center justify-center gap-6 text-[11px] font-mono font-bold text-[#9D174D]/75 py-2 border-t border-pink-50">
                   <div className="flex items-center gap-1.5">
                     <span className="w-3 h-1 bg-[#db2777]" />
                     <span>TRAVERSING REVENUE</span>
@@ -1422,7 +1422,7 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
 
                 <button 
                   onClick={() => setActiveModal(null)}
-                  className="w-full py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl text-xs uppercase"
+                  className="w-full py-2.5 bg-[#FFF1F5] hover:bg-[#FDF2F8] text-[#4A044E] font-bold rounded-xl text-xs uppercase"
                 >
                   Done
                 </button>
@@ -1442,7 +1442,7 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
             >
               <button 
                 onClick={() => setActiveModal(null)}
-                className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 z-10"
+                className="absolute top-4 right-4 text-[#9D174D]/85 hover:text-slate-600 z-10"
               >
                 <X size={20} />
               </button>
@@ -1453,7 +1453,7 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
                     <Users size={18} className="text-[#db2777]" />
                     Nodal Human Resource Matrix
                   </h3>
-                  <p className="text-xs text-slate-500">Currently active expert staff stationed at {selectedBranch.name}</p>
+                  <p className="text-xs text-[#9D174D]/75">Currently active expert staff stationed at {selectedBranch.name}</p>
                 </div>
 
                 <div className="space-y-2.5 max-h-72 overflow-y-auto pr-1">
@@ -1470,7 +1470,7 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
                         </div>
                         <div>
                           <p className="font-bold text-slate-900 text-xs">{emp.name}</p>
-                          <p className="text-[10px] text-slate-400 font-bold">{emp.role}</p>
+                          <p className="text-[10px] text-[#9D174D]/85 font-bold">{emp.role}</p>
                         </div>
                       </div>
                       <div className="text-right">
@@ -1486,7 +1486,7 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
 
                 <button 
                   onClick={() => setActiveModal(null)}
-                  className="w-full py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl text-xs uppercase"
+                  className="w-full py-2.5 bg-[#FFF1F5] hover:bg-[#FDF2F8] text-[#4A044E] font-bold rounded-xl text-xs uppercase"
                 >
                   Done
                 </button>
@@ -1509,7 +1509,7 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
                   setVoipActive(false);
                   setActiveModal(null);
                 }}
-                className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 hover:bg-slate-50 p-1 rounded-full"
+                className="absolute top-4 right-4 text-[#9D174D]/85 hover:text-slate-600 hover:bg-slate-50 p-1 rounded-full"
               >
                 <X size={18} />
               </button>
@@ -1518,7 +1518,7 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
                 <span className="text-[9px] font-mono bg-pink-50 text-[#db2777] border border-pink-100 px-3 py-1 rounded-full font-black uppercase tracking-widest inline-block">
                   SECURE VOIP CLIENT PORT
                 </span>
-                <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider font-mono">
+                <p className="text-[10px] text-[#9D174D]/85 font-bold uppercase tracking-wider font-mono">
                   AES-256 SENDER-TUNNEL HOOK
                 </p>
               </div>
@@ -1535,7 +1535,7 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
               <div className="space-y-1">
                 <h4 className="text-sm font-extrabold text-slate-900">{selectedBranch.manager.name}</h4>
                 <p className="text-xs text-pink-600 font-bold">Authorized Station Officer</p>
-                <p className="text-xs text-slate-400 flex items-center justify-center gap-1.5 font-mono">
+                <p className="text-xs text-[#9D174D]/85 flex items-center justify-center gap-1.5 font-mono">
                   <Volume2 size={13} className="text-[#db2777] animate-bounce" />
                   STATUS: ESTABLISHED STREAM
                 </p>
@@ -1543,7 +1543,7 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
 
               {/* Live dial timer */}
               <div className="p-4 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
-                <div className="text-[8px] text-slate-400 font-mono font-black uppercase tracking-wider">SECURE LINK BROADCAST SECONDS</div>
+                <div className="text-[8px] text-[#9D174D]/85 font-mono font-black uppercase tracking-wider">SECURE LINK BROADCAST SECONDS</div>
                 <div className="text-2xl font-mono font-black text-slate-800 tracking-widest">
                   {Math.floor(voipTimer / 60).toString().padStart(2, '0')}:{(voipTimer % 60).toString().padStart(2, '0')}
                 </div>
@@ -1554,7 +1554,7 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
                   setVoipActive(false);
                   setActiveModal(null);
                 }}
-                className="w-full py-2.5 bg-rose-600 hover:bg-rose-700 text-white font-bold rounded-xl text-xs uppercase shadow-lg shadow-rose-100"
+                className="w-full py-2.5 bg-rose-600 hover:bg-rose-700 text-[#4A044E] font-bold rounded-xl text-xs uppercase shadow-lg shadow-rose-100"
               >
                 Disconnect Stream
               </button>
@@ -1573,7 +1573,7 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
             >
               <button 
                 onClick={() => setActiveModal(null)}
-                className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 z-10"
+                className="absolute top-4 right-4 text-[#9D174D]/85 hover:text-slate-600 z-10"
               >
                 <X size={20} />
               </button>
@@ -1585,14 +1585,14 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
                   </div>
                   <div>
                     <h3 className="font-extrabold text-slate-900 uppercase">Performance History Logs</h3>
-                    <p className="text-xs text-slate-500">Executive ranking evaluations for {selectedBranch.manager.name}</p>
+                    <p className="text-xs text-[#9D174D]/75">Executive ranking evaluations for {selectedBranch.manager.name}</p>
                   </div>
                 </div>
 
                 {/* Plot bars */}
                 <div className="p-4 rounded-xl border border-pink-50 bg-pink-50/10 space-y-3.5">
                   <div className="flex items-center justify-between text-xs">
-                    <span className="text-slate-500">Operational Margin Yield:</span>
+                    <span className="text-[#9D174D]/75">Operational Margin Yield:</span>
                     <strong className="text-slate-900 font-mono">92.4% Optimal</strong>
                   </div>
                   <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
@@ -1600,7 +1600,7 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
                   </div>
 
                   <div className="flex items-center justify-between text-xs">
-                    <span className="text-slate-500">Local Auditing Level score:</span>
+                    <span className="text-[#9D174D]/75">Local Auditing Level score:</span>
                     <strong className="text-slate-900 font-mono">98% Satisfactory</strong>
                   </div>
                   <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
@@ -1608,7 +1608,7 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
                   </div>
 
                   <div className="flex items-center justify-between text-xs">
-                    <span className="text-slate-500">Capital growth speed index:</span>
+                    <span className="text-[#9D174D]/75">Capital growth speed index:</span>
                     <strong className="text-slate-900 font-mono">Stable growth (+4.2%)</strong>
                   </div>
                   <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
@@ -1618,7 +1618,7 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
 
                 {/* Live notes dispatcher form inside performance */}
                 <form onSubmit={handleDispatchNoteSubmit} className="space-y-3 pt-2">
-                  <div className="flex justify-between items-center text-[10px] font-mono text-slate-400 font-black">
+                  <div className="flex justify-between items-center text-[10px] font-mono text-[#9D174D]/85 font-black">
                     <span>LAUNCH EXECUTIVE DIRECTIVE DIRECT</span>
                     <span>PG-9 PROTOCOL LOCK</span>
                   </div>
@@ -1633,7 +1633,7 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
                       <option value="Urgent Mandate">Urgent Mandate</option>
                       <option value="Performance Warning">Performance Warning</option>
                     </select>
-                    <span className="text-xs font-mono text-slate-500 flex items-center justify-end font-bold uppercase">{selectedBranch.code} Hook</span>
+                    <span className="text-xs font-mono text-[#9D174D]/75 flex items-center justify-end font-bold uppercase">{selectedBranch.code} Hook</span>
                   </div>
 
                   <textarea
@@ -1651,7 +1651,7 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
                     </span>
                     <button 
                       type="submit"
-                      className="py-1.5 px-3 bg-[#db2777] text-white font-bold text-xs rounded-lg uppercase"
+                      className="py-1.5 px-3 bg-[#db2777] text-[#4A044E] font-bold text-xs rounded-lg uppercase"
                     >
                       Dispatch
                     </button>
@@ -1660,7 +1660,7 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
 
                 <button 
                   onClick={() => setActiveModal(null)}
-                  className="w-full py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl text-xs uppercase mt-2"
+                  className="w-full py-2.5 bg-[#FFF1F5] hover:bg-[#FDF2F8] text-[#4A044E] font-bold rounded-xl text-xs uppercase mt-2"
                 >
                   Close Inspection
                 </button>
@@ -1680,7 +1680,7 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
             >
               <button 
                 onClick={() => setActiveModal(null)}
-                className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 z-10"
+                className="absolute top-4 right-4 text-[#9D174D]/85 hover:text-slate-600 z-10"
               >
                 <X size={20} />
               </button>
@@ -1692,19 +1692,19 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
                   </div>
                   <div>
                     <h3 className="font-extrabold text-slate-900 uppercase">Transfer Funds Between Nodes</h3>
-                    <p className="text-xs text-slate-500">Liquid reserve distribution mechanism</p>
+                    <p className="text-xs text-[#9D174D]/75">Liquid reserve distribution mechanism</p>
                   </div>
                 </div>
 
                 <div className="p-3 rounded-lg bg-pink-50/20 border border-pink-100 space-y-1 text-xs">
-                  <p className="text-slate-400 font-bold uppercase text-[9px] tracking-wider font-mono">SOURCE COMMAND NODE</p>
+                  <p className="text-[#9D174D]/85 font-bold uppercase text-[9px] tracking-wider font-mono">SOURCE COMMAND NODE</p>
                   <p className="font-bold text-slate-800">{selectedBranch.name}</p>
-                  <p className="font-mono text-slate-400">Available deposits: {formatCur(selectedBranch.deposits)}</p>
+                  <p className="font-mono text-[#9D174D]/85">Available deposits: {formatCur(selectedBranch.deposits)}</p>
                 </div>
 
                 <div className="space-y-3.5">
                   <div>
-                    <label className="text-[10px] text-slate-500 font-bold uppercase tracking-wider block mb-1">TARGET RECIPIENT NODE</label>
+                    <label className="text-[10px] text-[#9D174D]/75 font-bold uppercase tracking-wider block mb-1">TARGET RECIPIENT NODE</label>
                     <select
                       value={transferTargetId}
                       onChange={(e) => setTransferTargetId(e.target.value)}
@@ -1717,9 +1717,9 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
                   </div>
 
                   <div>
-                    <label className="text-[10px] text-slate-500 font-bold uppercase tracking-wider block mb-1">TRANSFER IN-FLOW AMOUNT (₹)</label>
+                    <label className="text-[10px] text-[#9D174D]/75 font-bold uppercase tracking-wider block mb-1">TRANSFER IN-FLOW AMOUNT (₹)</label>
                     <div className="relative">
-                      <span className="absolute left-3.5 top-2.5 font-bold text-slate-400 font-mono">₹</span>
+                      <span className="absolute left-3.5 top-2.5 font-bold text-[#9D174D]/85 font-mono">₹</span>
                       <input
                         type="number"
                         required
@@ -1741,13 +1741,13 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
                   <button 
                     type="button"
                     onClick={() => setActiveModal(null)}
-                    className="flex-1 py-1.5 border border-pink-200 text-slate-500 rounded-lg text-xs"
+                    className="flex-1 py-1.5 border border-pink-200 text-[#9D174D]/75 rounded-lg text-xs"
                   >
                     Cancel
                   </button>
                   <button 
                     type="submit"
-                    className="flex-1 py-1.5 bg-[#db2777] text-white font-bold rounded-lg text-xs uppercase shadow-sm"
+                    className="flex-1 py-1.5 bg-[#db2777] text-[#4A044E] font-bold rounded-lg text-xs uppercase shadow-sm"
                   >
                     Authorize Shift
                   </button>
@@ -1858,7 +1858,7 @@ export default function BranchManagement({ branches: dbBranches = [] }: BranchMa
                     onClick={() => {
                       setKpiModalNotification("✔ SECURE ANALYTICS CORE INITIALIZED! PARSING DEEP METRICS GRAPH...");
                     }}
-                    className="py-2.5 px-5 bg-gradient-to-r from-pink-500 to-rose-500 hover:opacity-95 text-white rounded-xl text-xs font-black uppercase tracking-wider transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] cursor-pointer shadow-md"
+                    className="py-2.5 px-5 bg-gradient-to-r from-pink-500 to-rose-500 hover:opacity-95 text-[#4A044E] rounded-xl text-xs font-black uppercase tracking-wider transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] cursor-pointer shadow-md"
                   >
                     View Analytics
                   </button>

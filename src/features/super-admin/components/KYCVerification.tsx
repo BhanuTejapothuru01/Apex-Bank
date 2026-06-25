@@ -751,7 +751,7 @@ export default function KYCVerification({
                                 animate={{ scale: 1, opacity: 1 }}
                                 className="text-[#EC4899]"
                               >
-                                <CheckCircle2 size={12} fill="#EC4899" className="text-white" />
+                                <CheckCircle2 size={12} fill="#EC4899" className="text-[#4A044E]" />
                               </motion.span>
                             )}
                           </span>
@@ -1109,7 +1109,7 @@ export default function KYCVerification({
 
             </div>
           ) : (
-            <div className="py-24 text-center text-xs text-[#556994]">
+            <div className="py-24 text-center text-xs text-[#9D174D]/80">
               Select a customer or employee from the left hand queue to proceed with Passport compliance checks.
             </div>
           )}

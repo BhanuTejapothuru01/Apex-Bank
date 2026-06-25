@@ -102,7 +102,7 @@ export default function LiveIndianClock() {
     >
       <div className="flex items-center gap-1.5">
         <Clock size={13} className="text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.65)] animate-[pulse_2s_infinite] group-hover:scale-110 transition-transform duration-300" />
-        <span className="text-xs sm:text-sm font-mono text-white tracking-[1px] font-bold">
+        <span className="text-xs sm:text-sm font-mono text-[#4A044E] tracking-[1px] font-bold">
           {timeStr || '12:00:00 AM IST'}
         </span>
       </div>

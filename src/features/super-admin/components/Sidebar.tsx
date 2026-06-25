@@ -135,7 +135,7 @@ export default function Sidebar({
   return (
     <div 
       id="apex-sidebar"
-      className={`self-stretch min-h-0 my-2 xl:my-4 ml-2 xl:ml-4 rounded-[24px] xl:rounded-[32px] bg-white/40 backdrop-blur-3xl flex flex-col shadow-2xl w-[220px] lg:w-[240px] xl:w-[260px] 2xl:w-[280px] flex-shrink-0 transition-transform duration-300 z-50 border border-white/50
+      className={`self-stretch min-h-0 my-2 xl:my-4 ml-2 xl:ml-4 rounded-[24px] xl:rounded-[32px] bg-white/40 backdrop-blur-3xl flex flex-col shadow-2xl w-[220px] lg:w-[240px] xl:w-[260px] 2xl:w-[280px] flex-shrink-0 transition-transform duration-300 z-50 border border-[#F9A8D4]/400
         ${isOpen 
           ? 'translate-x-0 fixed portal-fixed-below-banner-tight left-1 max-h-[calc(100dvh-var(--demo-banner-height))]' 
           : '-translate-x-full lg:translate-x-0 fixed lg:sticky lg:top-0 lg:left-auto lg:bottom-auto lg:max-h-[calc(100dvh-var(--demo-banner-height))] left-0'
@@ -179,7 +179,7 @@ export default function Sidebar({
               title={undefined}
               className={`relative w-full flex items-center gap-3.5 px-4 py-3 rounded-[20px] transition-all duration-400 group cursor-pointer ${
                 isActive 
-                  ? 'bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#a855f7] text-white shadow-[0_8px_25px_rgba(139,92,246,0.3)] active-sidebar-item-btn' 
+                  ? 'bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#a855f7] text-[#4A044E] shadow-[0_8px_25px_rgba(139,92,246,0.3)] active-sidebar-item-btn' 
                   : 'text-[#2e1065]/60 hover:bg-white/60 hover:text-[#2e1065] hover:shadow-sm'
               }`}
             >
@@ -191,13 +191,13 @@ export default function Sidebar({
               />
 
               <span className={`text-[13px] font-bold tracking-tight whitespace-nowrap overflow-hidden text-ellipsis flex-1 text-start ${
-                isActive ? 'text-white' : 'text-[#2e1065]'
+                isActive ? 'text-[#4A044E]' : 'text-[#2e1065]'
               }`}>
                 {t(item.id, item.name)}
               </span>
 
               {item.badge !== undefined && (
-                <span className={`px-2 py-0.5 text-[9px] font-black rounded-full ${isActive ? 'bg-white/30 text-white' : item.badgeColor}`}>
+                <span className={`px-2 py-0.5 text-[9px] font-black rounded-full ${isActive ? 'bg-white/30 text-[#4A044E]' : item.badgeColor}`}>
                   {item.badge}
                 </span>
               )}
@@ -211,7 +211,7 @@ export default function Sidebar({
         <button 
           id="sidebar-logout-btn"
           onClick={() => setShowLogoutConfirm(true)}
-          className="w-full h-12 flex items-center justify-center gap-2.5 bg-white/30 backdrop-blur-lg border border-white/50 hover:bg-red-500/10 hover:border-red-500/30 text-red-600 text-[11px] font-black rounded-[18px] transition-all duration-400 cursor-pointer group shadow-sm uppercase tracking-widest"
+          className="w-full h-12 flex items-center justify-center gap-2.5 bg-white/30 backdrop-blur-lg border border-[#F9A8D4]/400 hover:bg-red-500/10 hover:border-red-500/30 text-red-600 text-[11px] font-black rounded-[18px] transition-all duration-400 cursor-pointer group shadow-sm uppercase tracking-widest"
         >
           <LogOut size={16} className="text-red-500 group-hover:scale-110 transition-transform" />
           <span>{t('logout_secure', 'Logout')}</span>
@@ -269,7 +269,7 @@ export default function Sidebar({
                            }, 1500);
                         }, 2000);
                       }}
-                      className="py-3 px-4 rounded-xl bg-[#D32F2F] text-white text-sm font-bold hover:bg-[#B71C1C] transition-colors shadow-lg active:scale-[0.98]"
+                      className="py-3 px-4 rounded-xl bg-[#D32F2F] text-[#4A044E] text-sm font-bold hover:bg-[#B71C1C] transition-colors shadow-lg active:scale-[0.98]"
                     >
                       Confirm Logout
                     </button>
@@ -294,7 +294,7 @@ export default function Sidebar({
                     <Shield size={32} className="text-emerald-500" />
                   </motion.div>
                   <h3 className="text-lg font-bold text-emerald-600">Session terminated successfully.</h3>
-                  <p className="text-xs text-slate-400 mt-2">Redirecting to clearance gateway...</p>
+                  <p className="text-xs text-[#9D174D]/85 mt-2">Redirecting to clearance gateway...</p>
                 </div>
               )}
             </motion.div>
