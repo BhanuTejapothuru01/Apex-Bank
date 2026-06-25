@@ -37,5 +37,10 @@ export default function ProtectedRoute({
   }, [portal]);
 
   if (!allowed) return <AccessLoader />;
-  return <>{children}</>;
+  return (
+    <div className="flex flex-col h-[100dvh] overflow-hidden">
+      <div className="h-10 shrink-0" aria-hidden="true" />
+      <div className="flex-1 min-h-0 overflow-hidden">{children}</div>
+    </div>
+  );
 }

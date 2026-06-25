@@ -24,6 +24,7 @@ import MyProfile from './components/MyProfile';
 import ApexBankAIAssistant from './components/ApexBankAIAssistant';
 import Inbox, { InboxMessage } from './components/Inbox';
 import { BackgroundClouds } from './components/BackgroundClouds';
+import { LanguageProvider } from './components/LanguageContext';
 import { clearSession } from '@/auth/session';
 import { useSupabaseTable } from '@/hooks/useSupabaseTable';
 import {
@@ -139,14 +140,15 @@ export default function App() {
   const unreadInboxCount = inboxMessages.filter(m => !m.read && !m.archived).length;
 
   return (
-    <div className="super-admin-dashboard">
+    <LanguageProvider>
+    <div className="super-admin-dashboard h-full min-h-0">
         <motion.div 
           key="dashboard"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
           dir="ltr"
-          className="flex h-screen overflow-hidden bg-[#fbf5f7] text-[#2e1065] relative font-sans"
+          className="flex h-full min-h-0 overflow-hidden bg-[#fbf5f7] text-[#2e1065] relative font-sans"
         >
           {/* Floating animated pale pink clouds system */}
           <BackgroundClouds />
@@ -377,7 +379,7 @@ export default function App() {
                   )}
 
                   {activeTab === 'settings' && (
-                    <Settings />
+                    <Settings addAuditLog={addAuditLog} />
                   )}
 
                   {activeTab === 'profile' && (
@@ -425,5 +427,6 @@ export default function App() {
           />
         </motion.div>
     </div>
+    </LanguageProvider>
   );
 }

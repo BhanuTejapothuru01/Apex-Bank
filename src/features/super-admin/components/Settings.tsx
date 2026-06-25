@@ -2,14 +2,21 @@ import { useState } from 'react';
 import { Sliders, Lock, Shield, Server, Bell, Key, RefreshCw } from 'lucide-react';
 import { useTranslation } from './LanguageContext';
 
-export default function Settings() {
+interface SettingsProps {
+  addAuditLog?: (action: string, severity: 'Info' | 'Warning' | 'Critical') => void;
+}
+
+export default function Settings({ addAuditLog }: SettingsProps) {
   const [mfaStatus, setMfaStatus] = useState(true);
   const [sessionTimeout, setSessionTimeout] = useState(15);
   const [clearanceLevel, setClearanceLevel] = useState(5);
   const { t } = useTranslation();
 
   const handleApplySettings = () => {
-    console.log("Apex Admin System Configuration parameters saved. Synced immediately to sovereign active HSM blocks.");
+    addAuditLog?.(
+      `System settings saved — MFA: ${mfaStatus ? 'on' : 'off'}, timeout: ${sessionTimeout}m, clearance: ${clearanceLevel}`,
+      'Info'
+    );
   };
 
   return (

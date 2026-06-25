@@ -1,0 +1,5 @@
+Contact: mailto:security@example.com
+Preferred-Languages: en
+Canonical: https://master-app-ten.vercel.app/.well-known/security.txt
+Policy: https://master-app-ten.vercel.app/about-demo.html
+Acknowledgments: This is a student/portfolio banking UI demo. It is not a real bank and does not collect real credentials for financial services.

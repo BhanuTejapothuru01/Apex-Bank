@@ -11,7 +11,8 @@
   background-color: #fdf6f9;
   color: #3a2072;
   font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
-  min-height: 100vh;
+  height: 100%;
+  min-height: 0;
 }
 
 .super-admin-dashboard * {
@@ -58,8 +59,6 @@
 /* Sidebar Specific */
 .super-admin-dashboard aside:not(#apex-ai-assistant-wrapper *) {
   border-radius: 28px !important;
-  margin: 12px !important;
-  height: calc(100vh - 24px) !important;
 }
 
 /* The active state button in the sidebar */

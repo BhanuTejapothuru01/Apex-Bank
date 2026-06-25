@@ -1,0 +1,6 @@
+# Apex Bank — portfolio / educational UI demonstration
+# This is NOT a real financial institution. No real banking services are offered.
+User-agent: *
+Disallow:
+
+Sitemap: https://master-app-ten.vercel.app/about-demo.html

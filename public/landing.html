@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5">
-  <title>apex bank — liquid displacement studio</title>
+  <meta name="description" content="Apex Bank is a portfolio UI demonstration project. Not a real bank. No real financial services.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Apex Bank Demo — Portfolio UI (Not a Real Bank)</title>
 
   <!-- Google Fonts Loader -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,6 +39,28 @@
       -webkit-tap-highlight-color: transparent;
       overflow-x: hidden;
       touch-action: pan-y;
+      --demo-banner-height: 40px;
+    }
+
+    /* Portfolio demo notice — not a real bank (Safe Browsing mitigation) */
+    .demo-site-banner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999999;
+      background: #1e3a5f;
+      color: #f8fafc;
+      text-align: center;
+      padding: 8px 16px;
+      font-size: 11px;
+      font-weight: 600;
+      line-height: 1.45;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    }
+    .demo-site-banner a {
+      color: #93c5fd;
+      text-decoration: underline;
     }
 
     /* Form text selection allowance */
@@ -197,7 +221,7 @@
 
     .glass-nav {
       position: fixed;
-      top: max(40px, env(safe-area-inset-top, 0px) + 12px);
+      top: max(calc(var(--demo-banner-height) + 12px), env(safe-area-inset-top, 0px) + var(--demo-banner-height));
       left: 50%;
       max-width: calc(100vw - 24px);
       transform: translate(-50%, -20px);
@@ -246,7 +270,7 @@
     
     .glass-auth-container {
       position: fixed;
-      top: max(40px, env(safe-area-inset-top, 0px) + 12px);
+      top: max(calc(var(--demo-banner-height) + 12px), env(safe-area-inset-top, 0px) + var(--demo-banner-height));
       right: max(40px, env(safe-area-inset-right, 0px) + 12px);
       display: flex;
       gap: 12px;
@@ -1749,6 +1773,10 @@
   </script>
 </head>
 <body>
+  <div class="demo-site-banner" role="note" aria-label="Demonstration site notice">
+    DEMO / PORTFOLIO PROJECT — Not a real bank. No real money or financial services.
+    <a href="/about-demo.html" target="_blank" rel="noopener noreferrer">About this demo</a>
+  </div>
   <!-- Ambient Layout Decorator Backdrops -->
   <div class="blueprint-grid"></div>
   <div class="bg-glow-ball"></div>
@@ -1793,7 +1821,7 @@
     <section id="home" class="section-panel">
       <div class="section-header">
         <span class="section-label">01 — Home</span>
-        <h2>Welcome to Apex Bank</h2>
+        <h2>Welcome to Apex Bank <span style="font-size: 0.55em; font-weight: 700; color: #1e40af; display: block; margin-top: 6px;">Portfolio UI Demo — Not a Real Bank</span></h2>
       </div>
       <p class="section-lead">
         Apex Bank is high-end digital banking built for security, continuous capital growth, and client empowerment. We provide seamless digital custody, competitive interest rates, and automated quick funding options.
@@ -2058,14 +2086,14 @@
         <span class="section-label">07 — Legal</span>
         <h2>Terms &amp; Conditions</h2>
       </div>
-      <p class="section-lead">Apex Bank is governed by highly secure customer agreement protocols. Please review our covenants and policies detailing our programmatic and legal structure.</p>
+      <p class="section-lead">This is a fictional portfolio demo. The terms below are placeholders for UI demonstration only — not a real banking agreement.</p>
       <ul class="info-grid terms-grid">
-        <li class="info-card"><h4>1. Cryptographic Identity &amp; KYC Mandate</h4><p>By submitting this application, I consent to the creation of a unique, cryptographically secure digital customer identifier. I authorize Apex Bank and its designated KYC validators to query public and state databases to verify the authenticity of all uploaded documents under the Banking Regulation Acts.</p></li>
-        <li class="info-card"><h4>2. Zero-Knowledge Proof Transfer &amp; Security</h4><p>All financial telemetry, demographic datasets, and biometric identification pictures uploaded as part of the digital onboarding dossier will be encrypted in transit using TLS 1.3 with AES-256 GCM algorithms.</p></li>
-        <li class="info-card"><h4>3. Anti-Money Laundering Compliance (AML/CFT)</h4><p>Under international financial frameworks and Anti-Money Laundering legislation, I certify that none of the deposits, trades, or account assets initialized under this entity will originate from illicit activities or sanctioned entities.</p></li>
-        <li class="info-card"><h4>4. Consent to Credit Assessment</h4><p>I explicitly permit Apex Bank to execute secure deep queries on credit bureau registers (CIBIL, Equifax, Experian) to maintain a live risk scoring framework associated with my registered PAN ID.</p></li>
-        <li class="info-card"><h4>5. Digital Signature Consent</h4><p>Checking the agreement box serves as a legally binding, cryptographically authenticated electronic signature indicating full acceptance of all standard schedule of charges and digital banking user covenants.</p></li>
-        <li class="info-card"><h4>6. Programmatic Liquidity &amp; Settlement</h4><p>All deposits, withdrawals, and loan disbursements are governed by automated ledger settlements, adhering strictly to Basel III liquidity mandates and local statutory reserve ratios.</p></li>
+        <li class="info-card"><h4>1. Demo purpose</h4><p>Apex Bank is a fictional brand used for a software portfolio project. No real accounts, KYC checks, or financial services are offered.</p></li>
+        <li class="info-card"><h4>2. No real data</h4><p>Do not submit real government IDs, PAN numbers, passwords, or financial information. All forms are simulated for demonstration.</p></li>
+        <li class="info-card"><h4>3. Fictional compliance text</h4><p>References to AML, credit bureaus, and regulatory frameworks are sample copy only and have no legal effect.</p></li>
+        <li class="info-card"><h4>4. Privacy</h4><p>Any data entered may be stored in a demo database for testing. Do not use production credentials.</p></li>
+        <li class="info-card"><h4>5. Contact</h4><p>For questions about this demo site, see the <a href="/about-demo.html">About this demo</a> page.</p></li>
+        <li class="info-card"><h4>6. No warranties</h4><p>This project is provided as-is for educational and portfolio purposes without any banking guarantees.</p></li>
       </ul>
     </section>
   </div>
@@ -2136,8 +2164,8 @@
     <div class="reg-modal-content" style="max-width: 620px;">
       <button id="register-modal-close" class="reg-modal-close">&times;</button>
       <div class="reg-modal-header" style="text-align: center;">
-        <h2 style="font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 26px; color: #152e66;">NEW APEX ACCOUNT</h2>
-        <p style="text-transform: uppercase; font-weight: 700; color: #dc143c; letter-spacing: 0.05em; font-size: 11px;">Apex Secure Digital Enrolment Portal</p>
+        <h2 style="font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 26px; color: #152e66;">DEMO REGISTRATION</h2>
+        <p style="text-transform: uppercase; font-weight: 700; color: #1e40af; letter-spacing: 0.05em; font-size: 11px;">Portfolio project — simulated signup only</p>
       </div>
 
       <form id="register-form">
@@ -2193,7 +2221,7 @@
 
         <!-- KYC Document Upload Section for Registration -->
         <div id="reg-upload-section" style="margin-top: 24px; border-top: 1px solid rgba(21, 46, 102, 0.1); padding-top: 16px; text-align: left;">
-          <h3 style="font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 700; color: #dc143c; margin-bottom: 12px; border-bottom: 1px solid rgba(220, 20, 60, 0.15); padding-bottom: 6px; text-align: center;">Mandatory e-KYC Verification Dossier</h3>
+          <h3 style="font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 700; color: #1e40af; margin-bottom: 12px; border-bottom: 1px solid rgba(30, 64, 175, 0.15); padding-bottom: 6px; text-align: center;">Demo document upload (simulated)</h3>
           
           <div class="upload-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
             <!-- PAN Card Photo -->
@@ -2257,7 +2285,7 @@
         </div>
 
         <div class="form-footer" style="margin-top: 24px; text-align: center; border-top: 1px solid rgba(21, 46, 102, 0.1); padding-top: 18px;">
-          <button type="submit" class="submit-application-btn" style="background: #dc143c; box-shadow: 0 4px 16px rgba(220, 20, 60, 0.3);">Establish Handshake & Register</button>
+          <button type="submit" class="submit-application-btn" style="background: #dc143c; box-shadow: 0 4px 16px rgba(220, 20, 60, 0.3);">Create demo account</button>
         </div>
       </form>
 
@@ -2271,11 +2299,11 @@
         </div>
         <h2 style="font-family: 'Outfit', sans-serif; font-weight: 900; color: #152e66; font-size: 24px; margin-top: 16px;">Welcome to APEX BANK!</h2>
         <p style="font-size: 14px; color: rgba(21, 46, 102, 0.8); margin-top: 8px; line-height: 1.6;">
-          Your digital customer file has been minted and stored on the cryptographically secure ledger. Your customer portal is now active.
+          Your demo account was created locally in this portfolio app. No real banking services were activated.
         </p>
         
         <div class="submission-summary" style="background: rgba(220, 20, 60, 0.04); border: 1.5px solid rgba(220, 20, 60, 0.1); border-radius: 12px; padding: 18px; margin-top: 20px; text-align: left;">
-          <div style="font-size: 12px; font-weight: 700; color: #dc143c; margin-bottom: 10px; border-bottom: 1px solid rgba(220, 20, 60, 0.12); padding-bottom: 6px; letter-spacing: 0.05em;">DIGITAL CUSTOMER REQUISITION PASSPORT</div>
+          <div style="font-size: 12px; font-weight: 700; color: #dc143c; margin-bottom: 10px; border-bottom: 1px solid rgba(220, 20, 60, 0.12); padding-bottom: 6px; letter-spacing: 0.05em;">DEMO ACCOUNT SUMMARY</div>
           <div style="display: grid; grid-template-columns: 1fr; gap: 8px; font-size: 13.5px; color: #152e66;">
             <div><strong>Minted Customer ID:</strong> <span id="reg-summary-cust-id" style="font-family: monospace; font-weight: 700; color: #dc143c; background: rgba(220, 20, 60, 0.08); padding: 2px 6px; border-radius: 4px;"></span></div>
             <div><strong>Assigned Account No:</strong> <span id="reg-summary-acc-no" style="font-family: monospace; font-weight: 700; color: #152e66; background: rgba(148,112,194,0.1); padding: 2px 6px; border-radius: 4px;"></span></div>
@@ -2297,8 +2325,9 @@
     <div class="login-modal-content" style="max-width: 450px;">
       <button id="login-modal-close" class="login-modal-close">&times;</button>
       <div class="login-modal-header" style="text-align: center; margin-bottom: 12px;">
-        <h2 style="font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 24px; color: #152e66;">APEX PORTAL LOGIN</h2>
-        <p style="text-transform: uppercase; font-weight: 700; color: #dc143c; letter-spacing: 0.05em; font-size: 11px;">Access Secure Bank Terminal</p>
+        <h2 style="font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 24px; color: #152e66;">DEMO PORTAL LOGIN</h2>
+        <p style="text-transform: uppercase; font-weight: 700; color: #1e40af; letter-spacing: 0.05em; font-size: 11px;">Portfolio project — test credentials only</p>
+        <p style="margin-top: 8px; padding: 8px 10px; background: rgba(30, 64, 175, 0.08); border-radius: 8px; font-size: 10px; color: #1e3a5f; line-height: 1.45;">This is not a real bank. Logins use pre-seeded demo accounts only. Do not enter real passwords or financial data.</p>
       </div>
 
 
@@ -2313,7 +2342,7 @@
               <button type="button" class="portal-role-btn" data-portal="admin">Admin</button>
               <button type="button" class="portal-role-btn" data-portal="super-admin">Super Admin</button>
             </div>
-            <p id="portal-role-hint" style="font-size: 10px; color: rgba(21, 46, 102, 0.55); margin-top: 8px; line-height: 1.4;">Teja: 24691a3317@mits.ac.in / Teja@602142</p>
+            <p id="portal-role-hint" style="font-size: 10px; color: rgba(21, 46, 102, 0.55); margin-top: 8px; line-height: 1.4;">Demo: customer@apexbank.com / customer123 · admin@apexbank.com / admin123</p>
           </div>
 
           <div class="form-group" style="margin-bottom: 16px; text-align: left;">
@@ -2336,7 +2365,7 @@
               <input type="checkbox" id="login-remember" style="width: 14px; height: 14px; cursor: pointer;">
               <label for="login-remember" style="font-size: 11px; color: rgba(21, 46, 102, 0.75); cursor: pointer;">Remember terminal ID</label>
             </div>
-            <a href="javascript:void(0)" id="link-forgot-password" style="font-size: 11px; color: #dc143c; font-weight: 600; text-decoration: none;">Forgot Key?</a>
+            <a href="javascript:void(0)" id="link-forgot-password" style="font-size: 11px; color: #1e40af; font-weight: 600; text-decoration: none;">Demo password help</a>
           </div>
 
           <div class="form-footer" style="text-align: center; border-top: 1px solid rgba(21, 46, 102, 0.1); padding-top: 18px; margin-top: 16px;">
@@ -2349,40 +2378,31 @@
       <div id="login-tc-container" class="hidden" style="text-align: left;">
         <div style="padding: 16px; border: 1.2px solid rgba(21, 46, 102, 0.12); border-radius: 16px; text-align: left; font-family: 'Inter', sans-serif; font-size: 12px; color: #152e66; line-height: 1.6; max-height: 250px; overflow-y: auto; background: rgba(255, 255, 255, 0.3); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: inset 0 2px 8px rgba(21, 46, 102, 0.04); margin-bottom: 20px;">
           <div style="margin-bottom: 16px; border-bottom: 1px solid rgba(21, 46, 102, 0.1); padding-bottom: 10px;">
-            <h4 style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 13px; color: #dc143c; margin-bottom: 6px;">1. Cryptographic Identity &amp; KYC Mandate</h4>
-            <p style="margin: 0; color: #152e66; font-size: 12px; line-height: 1.5;">By submitting this application, I consent to the creation of a unique, cryptographically secure digital customer identifier. I authorize Apex Bank and its designated KYC validators to query public and state databases, including PAN, UIDAI, and Central Registry databases, to verify the authenticity of all uploaded documents under the Banking Regulation Acts.</p>
+            <h4 style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 13px; color: #1e40af; margin-bottom: 6px;">Demo terms (not legally binding)</h4>
+            <p style="margin: 0; color: #152e66; font-size: 12px; line-height: 1.5;">Apex Bank is a fictional portfolio project. Login forms, KYC fields, and document uploads are simulated UI only. Do not enter real personal or financial data.</p>
           </div>
           
           <div style="margin-bottom: 16px; border-bottom: 1px solid rgba(21, 46, 102, 0.1); padding-bottom: 10px;">
-            <h4 style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 13px; color: #dc143c; margin-bottom: 6px;">2. Zero-Knowledge Proof Transfer &amp; Security</h4>
-            <p style="margin: 0; color: #152e66; font-size: 12px; line-height: 1.5;">All financial telemetry, demographic datasets, and biometric identification pictures uploaded as part of the digital onboarding dossier will be encrypted in transit using Transport Layer Security (TLS 1.3) with AES-256 GCM algorithms. Storage hashes will be locked into Apex Bank's protected secure ledger.</p>
-          </div>
-          
-          <div style="margin-bottom: 16px; border-bottom: 1px solid rgba(21, 46, 102, 0.1); padding-bottom: 10px;">
-            <h4 style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 13px; color: #dc143c; margin-bottom: 6px;">3. Anti-Money Laundering Compliance (AML/CFT)</h4>
-            <p style="margin: 0; color: #152e66; font-size: 12px; line-height: 1.5;">Under international financial frameworks and Anti-Money Laundering legislation, I certify that none of the deposits, trades, or account assets initialized under this entity will originate from illicit activities or sanctioned entities. Any anomalous operations will trigger immediate protective isolation protocol and freeze of assets.</p>
-          </div>
-          
-          <div style="margin-bottom: 16px; border-bottom: 1px solid rgba(21, 46, 102, 0.1); padding-bottom: 10px;">
-            <h4 style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 13px; color: #dc143c; margin-bottom: 6px;">4. Consent to Credit Assessment</h4>
-            <p style="margin: 0; color: #152e66; font-size: 12px; line-height: 1.5;">I explicitly permit Apex Bank to execute secure deep queries on credit bureau registers (CIBIL, Equifax, Experian) to maintain a live risk scoring framework associated with my registered PAN ID.</p>
+            <h4 style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 13px; color: #1e40af; margin-bottom: 6px;">Test credentials</h4>
+            <p style="margin: 0; color: #152e66; font-size: 12px; line-height: 1.5;">Use pre-seeded demo accounts such as customer@apexbank.com / customer123. Password recovery flows are simulated and do not contact real services.</p>
           </div>
           
           <div style="padding-bottom: 4px;">
-            <h4 style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 13px; color: #dc143c; margin-bottom: 6px;">5. Digital Signature Consent</h4>
-            <p style="margin: 0; color: #152e66; font-size: 12px; line-height: 1.5;">Checking the agreement box serves as a legally binding, cryptographically authenticated electronic signature indicating full acceptance of all standard schedule of charges, digital banking user covenants, and dispute mitigation terms of Apex Bank.</p>
+            <h4 style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 13px; color: #1e40af; margin-bottom: 6px;">More information</h4>
+            <p style="margin: 0; color: #152e66; font-size: 12px; line-height: 1.5;">See <a href="/about-demo.html">About this demo</a> for project context and security reporting details.</p>
           </div>
         </div>
         
         <div style="text-align: center;">
-          <button type="button" id="login-tc-accept-btn" class="submit-application-btn" style="background: #dc143c; box-shadow: 0 4px 16px rgba(220, 20, 60, 0.3); width: 100%; box-sizing: border-box; color: white;">Return to Login Terminal</button>
+          <button type="button" id="login-tc-accept-btn" class="submit-application-btn" style="background: #dc143c; box-shadow: 0 4px 16px rgba(220, 20, 60, 0.3); width: 100%; box-sizing: border-box; color: white;">Return to login</button>
         </div>
       </div>
 
-      <!-- Highly Secure Bank Forgot Password / Change Password flow -->
+      <!-- Demo password help flow (simulated) -->
       <div id="forgot-password-screen" class="hidden" style="text-align: left; padding: 10px 0;">
-        <h3 id="forgot-p-title" style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 18px; color: #152e66; margin-bottom: 4px; text-align: center;">SECURE KEY RECOVERY</h3>
-        <p id="forgot-p-subtitle" style="text-transform: uppercase; font-weight: 700; color: #dc143c; letter-spacing: 0.05em; font-size: 10px; text-align: center; margin-bottom: 20px;">Multifactor Identity Attestation</p>
+        <h3 id="forgot-p-title" style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 18px; color: #152e66; margin-bottom: 4px; text-align: center;">DEMO PASSWORD HELP</h3>
+        <p id="forgot-p-subtitle" style="text-transform: uppercase; font-weight: 700; color: #1e40af; letter-spacing: 0.05em; font-size: 10px; text-align: center; margin-bottom: 12px;">Simulated recovery — not a real bank</p>
+        <p style="font-size: 11px; color: rgba(21, 46, 102, 0.75); text-align: center; margin-bottom: 16px; line-height: 1.45; padding: 8px; background: rgba(30, 64, 175, 0.06); border-radius: 8px;">Use demo credentials: customer@apexbank.com / customer123. This flow is UI-only and does not reset real passwords.</p>
         
         <!-- Step 1: Input Creds & PAN/Account -->
         <div id="pwd-step-1">
@@ -2392,7 +2412,7 @@
           </div>
           
           <div class="form-group" style="margin-bottom: 14px;">
-            <label for="pwd-secure-id" style="display: block; font-size: 11px; font-weight: 600; color: #152e66; margin-bottom: 5px;">Registered PAN Card (10 Characters) <span class="required" style="color:#dc143c;">*</span></label>
+            <label for="pwd-secure-id" style="display: block; font-size: 11px; font-weight: 600; color: #152e66; margin-bottom: 5px;">Demo ID (optional placeholder) <span class="required" style="color:#dc143c;">*</span></label>
             <input type="text" id="pwd-secure-id" placeholder="e.g. ABCDE1234F" style="width: 100%; padding: 10px 14px; border: 1.2px solid rgba(21, 46, 102, 0.15); border-radius: 8px; font-size: 13px; font-family: 'Inter', sans-serif; background: rgba(255, 255, 255, 0.5); box-sizing: border-box; text-transform: uppercase;">
           </div>
           
@@ -2404,28 +2424,28 @@
           <div class="form-group" style="margin-bottom: 20px;">
             <label for="pwd-sec-question" style="display: block; font-size: 11px; font-weight: 600; color: #152e66; margin-bottom: 5px;">Primary Branch Verification <span class="required" style="color:#dc143c;">*</span></label>
             <select id="pwd-sec-question" style="width: 100%; padding: 10px 14px; border: 1.2px solid rgba(21, 46, 102, 0.15); border-radius: 8px; font-size: 13px; font-family: 'Inter', sans-serif; background: rgba(255, 255, 255, 0.5); box-sizing: border-box;">
-              <option value="" disabled selected>-- Choose Security Node --</option>
+              <option value="" disabled selected>-- Choose demo branch --</option>
               <option value="Mumbai Headquarters">Apex Mumbai Headquarters (Fort Area)</option>
               <option value="New Delhi Corporate Office">Apex New Delhi Corporate Hub (Connaught Place)</option>
               <option value="Bangalore Digital Centre">Apex Bangalore Digital Centre (Indiranagar)</option>
             </select>
           </div>
           
-          <button type="button" id="btn-pwd-send-otp" class="submit-application-btn" style="background: #dc143c; color: white; width: 100%; border: none; font-weight: 600; padding: 11px; border-radius: 20px; cursor: pointer; box-shadow: 0 4px 16px rgba(220, 20, 60, 0.25);">Request Secure Authentication OTP</button>
+          <button type="button" id="btn-pwd-send-otp" class="submit-application-btn" style="background: #dc143c; color: white; width: 100%; border: none; font-weight: 600; padding: 11px; border-radius: 20px; cursor: pointer; box-shadow: 0 4px 16px rgba(220, 20, 60, 0.25);">Send demo OTP</button>
         </div>
 
         <!-- Step 2: Verification Code (Hidden initially) -->
         <div id="pwd-step-2" class="hidden">
           <p style="font-size: 12px; color: rgba(21, 46, 102, 0.85); text-align: center; margin-bottom: 16px; line-height: 1.4;">
-            🔐 Secure network handshake dispatch successful. A 6-digit Secure Token has been sent to your registered channel.
+            A simulated 6-digit code was generated for this demo. Enter any 6 digits to continue.
           </p>
           
           <div class="form-group" style="margin-bottom: 20px; text-align: center;">
-            <label for="pwd-otp-code" style="display: block; font-size: 11px; font-weight: 700; color: #152e66; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">ENTER 6-DIGIT APEX OTP</label>
+            <label for="pwd-otp-code" style="display: block; font-size: 11px; font-weight: 700; color: #152e66; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">ENTER 6-DIGIT DEMO CODE</label>
             <input type="text" id="pwd-otp-code" maxlength="6" placeholder="e.g. 519342" style="width: 160px; text-align: center; padding: 12px; border: 1.5px solid #dc143c; border-radius: 8px; font-size: 20px; font-family: monospace; font-weight: 700; background: rgba(255, 255, 255, 0.6); box-shadow: inset 0 1px 4px rgba(0,0,0,0.05);">
           </div>
           
-          <button type="button" id="btn-pwd-verify-otp" class="submit-application-btn" style="background: #dc143c; color: white; width: 100%; border: none; font-weight: 600; padding: 11px; border-radius: 20px; cursor: pointer; box-shadow: 0 4px 16px rgba(220, 20, 60, 0.25);">Verify Security Handshake</button>
+          <button type="button" id="btn-pwd-verify-otp" class="submit-application-btn" style="background: #dc143c; color: white; width: 100%; border: none; font-weight: 600; padding: 11px; border-radius: 20px; cursor: pointer; box-shadow: 0 4px 16px rgba(220, 20, 60, 0.25);">Verify demo code</button>
         </div>
 
         <!-- Step 3: Set New Password (Hidden initially) -->
@@ -2496,9 +2516,9 @@
             <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
           </svg>
         </div>
-        <h2 style="font-family: 'Outfit', sans-serif; font-weight: 900; color: #152e66; font-size: 24px; margin-top: 16px;">AUTHENTICATED</h2>
+        <h2 style="font-family: 'Outfit', sans-serif; font-weight: 900; color: #152e66; font-size: 24px; margin-top: 16px;">Demo login successful</h2>
         <p style="font-size: 13.5px; color: rgba(21, 46, 102, 0.8); margin-top: 8px; line-height: 1.6;">
-          Your cryptographic authentication handshake has been verified on the secure network. Session ID: <strong id="login-session-id" style="font-family: monospace; color: #dc143c;"></strong>. Welcome back to Apex Bank!
+          You signed in with a pre-seeded demo account (session <strong id="login-session-id" style="font-family: monospace; color: #1e40af;"></strong>). This is a portfolio UI project — not a real bank.
         </p>
         <button id="close-login-success-btn" class="classic-close-btn" style="margin-top: 24px; padding: 10px 32px; background: #152e66; color: white; border: none; border-radius: 20px; font-weight: 600; cursor: pointer;">Proceed to Dashboard</button>
       </div>
@@ -2512,8 +2532,8 @@
     <div class="loan-modal-content">
       <button id="loan-modal-close" class="loan-modal-close">&times;</button>
       <div class="loan-modal-header" style="text-align: center;">
-        <h2>APEX BANK LOANS</h2>
-        <p id="loan-modal-subtitle" style="text-transform: uppercase; font-weight: 700; color: #63339f; letter-spacing: 0.05em; font-size: 11px;">Secure Online Application Portal</p>
+        <h2>APEX BANK LOANS (DEMO)</h2>
+        <p id="loan-modal-subtitle" style="text-transform: uppercase; font-weight: 700; color: #1e40af; letter-spacing: 0.05em; font-size: 11px;">Simulated application — portfolio project only</p>
       </div>
       
       <form id="loan-application-form">

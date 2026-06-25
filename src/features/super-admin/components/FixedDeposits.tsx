@@ -368,14 +368,22 @@ export default function FixedDeposits({
   // Initialize and track active filtered Fixed Deposits database
   const [fdData, setFdData] = useState<FDRichDetails[]>(RICH_FD_PRESETS);
 
+  const [selectedFdId, setSelectedFdId] = useState<string | null>("FD-501");
+
   useEffect(() => {
     if (fixedDeposits.length === 0) return;
     const mapped: FDRichDetails[] = fixedDeposits.map((fd) => {
       const customer = customers.find((c) => c.name === fd.customerName);
       const branch = branches.find((b) => b.id === customer?.branchId) || branches[0];
       const months = fd.durationMonths || 12;
-      const maturity = new Date(fd.startDate);
+      const start = fd.startDate && !Number.isNaN(Date.parse(fd.startDate))
+        ? new Date(fd.startDate)
+        : new Date();
+      const maturity = new Date(start);
       maturity.setMonth(maturity.getMonth() + months);
+      const maturityDate = Number.isNaN(maturity.getTime())
+        ? start.toISOString().slice(0, 10)
+        : maturity.toISOString().slice(0, 10);
       const maturityAmount = fd.amount * (1 + (fd.interestRate / 100) * (months / 12));
       return {
         id: fd.id,
@@ -387,8 +395,8 @@ export default function FixedDeposits({
         amount: fd.amount,
         interestRate: fd.interestRate,
         durationMonths: months,
-        startDate: fd.startDate,
-        maturityDate: maturity.toISOString().slice(0, 10),
+        startDate: fd.startDate || start.toISOString().slice(0, 10),
+        maturityDate,
         maturityAmount,
         status: fd.status,
         fdType: 'Regular FD',
@@ -425,9 +433,6 @@ export default function FixedDeposits({
   const [holderFilter, setHolderFilter] = useState<'All' | 'Customers' | 'Employees'>('All');
   const [statusFilter, setStatusFilter] = useState<string>('All');
   const [typeFilter, setTypeFilter] = useState<string>('All');
-
-  // Currently Selected FD for right detailed profile display
-  const [selectedFdId, setSelectedFdId] = useState<string | null>("FD-501");
 
   // Keep selected item synchronized to matching data
   const selectedFdDetail = useMemo(() => {

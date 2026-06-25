@@ -1,6 +1,7 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import ProtectedRoute from '@/components/ProtectedRoute';
+import DemoSiteBanner from '@/components/DemoSiteBanner';
 
 const CustomerApp = lazy(() => import('@/features/customer/App'));
 const EmployeeApp = lazy(() => import('@/features/employee/App'));
@@ -43,7 +44,12 @@ function LandingPage() {
 }
 
 export default function App() {
+  const location = useLocation();
+  const showDemoBanner = /^\/(customer|employee|admin|super-admin)/.test(location.pathname);
+
   return (
+    <>
+      {showDemoBanner && <DemoSiteBanner />}
     <Routes>
       <Route path="/" element={<LandingPage />} />
       <Route
@@ -88,5 +94,6 @@ export default function App() {
       />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
+    </>
   );
 }
