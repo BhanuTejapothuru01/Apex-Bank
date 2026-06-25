@@ -37,7 +37,7 @@ export default function ProtectedRoute({
   }, [portal]);
 
   if (!allowed) return <AccessLoader />;
-  const scrollClass = portal === 'super-admin' ? ' portal-route-shell--scroll' : '';
+  const scrollClass = portal === 'super-admin' || portal === 'admin' ? ' portal-route-shell--scroll' : '';
   return (
     <div className={`portal-route-shell${scrollClass}`}>
       <div className="portal-app-root">{children}</div>

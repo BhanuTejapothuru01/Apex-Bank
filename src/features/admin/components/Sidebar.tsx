@@ -43,10 +43,9 @@ export default function Sidebar({ currentTab, onTabChange, isOpen, onClose }: Si
   ];
 
   const SidebarContent = () => (
-    <div className="flex flex-col h-full min-h-0 justify-between">
-      <div className="flex flex-col min-h-0 flex-1">
-        {/* Logo and Brand */}
-        <div className="mb-6 flex items-center gap-3">
+    <div className="flex flex-col h-full min-h-0">
+      {/* Logo and Brand */}
+      <div className="mb-4 flex items-center gap-3 shrink-0">
           <div className="relative flex items-center justify-center w-10 h-10 select-none">
             <svg className="w-10 h-10" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
               <defs>
@@ -91,9 +90,12 @@ export default function Sidebar({ currentTab, onTabChange, isOpen, onClose }: Si
           </div>
         </div>
 
-        {/* Menu Navigation container formatted with max-height & elegant scrollbars */}
+        {/* Menu Navigation — scrollable so all tabs + footer stay reachable */}
         <LayoutGroup id="admin-sidebar">
-        <nav className="space-y-1 py-1 flex-1 min-h-0 overflow-y-auto pr-1 select-none scrollbar-thin scrollbar-thumb-purple-950/15">
+        <nav
+          data-portal-scroll="nav"
+          className="space-y-1 py-1 flex-1 min-h-0 overflow-y-auto overscroll-contain pr-1 select-none scrollbar-thin scrollbar-thumb-purple-950/25"
+        >
           {menuItems.map((item) => {
             const Icon = item.icon;
             const isActive = currentTab === item.id;
@@ -163,10 +165,9 @@ export default function Sidebar({ currentTab, onTabChange, isOpen, onClose }: Si
           })}
         </nav>
         </LayoutGroup>
-      </div>
 
       {/* Decorative corporate secure identity block placed in footer */}
-      <div className="pt-3 border-t border-purple-900/10 text-center">
+      <div className="pt-3 mt-2 border-t border-purple-900/10 text-center shrink-0">
         <p className="text-[9px] font-bold uppercase tracking-widest text-purple-950/30">
           SECURE DISPATCH AD-10
         </p>
@@ -190,7 +191,7 @@ export default function Sidebar({ currentTab, onTabChange, isOpen, onClose }: Si
       </AnimatePresence>
 
       {/* Desktop Persistent Sidebar */}
-      <aside className="hidden lg:block portal-sidebar-width shrink-0 h-full max-h-full min-h-0 rounded-3xl p-4 xl:p-6 bg-white/20 border border-white/40 backdrop-blur-xl shadow-xl shadow-purple-950/5">
+      <aside className="hidden lg:flex portal-sidebar-width shrink-0 sticky top-0 self-start flex-col min-h-0 max-h-[calc(100dvh-var(--demo-banner-height)-1.5rem)] rounded-3xl p-4 xl:p-6 bg-white/20 border border-white/40 backdrop-blur-xl shadow-xl shadow-purple-950/5 overflow-hidden">
         <SidebarContent />
       </aside>
 
@@ -202,7 +203,7 @@ export default function Sidebar({ currentTab, onTabChange, isOpen, onClose }: Si
             animate={{ x: 0 }}
             exit={{ x: '-100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed portal-fixed-below-banner-tight bottom-0 left-0 w-72 h-auto z-50 p-6 bg-white/70 border-r border-white/50 backdrop-blur-2xl shadow-2xl flex flex-col justify-between"
+            className="fixed portal-fixed-below-banner-tight bottom-0 left-0 w-72 z-50 p-6 bg-white/70 border-r border-white/50 backdrop-blur-2xl shadow-2xl flex flex-col max-h-[calc(100dvh-var(--demo-banner-height))] overflow-hidden"
           >
             <div className="absolute top-4 right-4 lg:hidden">
               <button 
