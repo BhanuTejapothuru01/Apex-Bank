@@ -7,14 +7,18 @@
 .portal-route-shell {
   display: flex;
   flex-direction: column;
+  flex: 1 1 auto;
   height: 100dvh;
   max-height: 100dvh;
+  min-height: 0;
   overflow: hidden;
   padding-top: var(--demo-banner-height);
   box-sizing: border-box;
 }
 
 .portal-app-root {
+  display: flex;
+  flex-direction: column;
   flex: 1 1 auto;
   min-height: 0;
   width: 100%;
@@ -78,6 +82,18 @@
   .portal-main-pl {
     padding-left: 0;
   }
+}
+
+.portal-route-shell--scroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.portal-route-shell--scroll > .portal-app-root {
+  overflow: visible;
+  min-height: calc(100dvh - var(--demo-banner-height));
 }
 
 /* Popups / drawers should not exceed laptop viewport */

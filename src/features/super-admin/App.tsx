@@ -141,14 +141,14 @@ export default function App() {
 
   return (
     <LanguageProvider>
-    <div className="super-admin-dashboard portal-app-root h-full min-h-0 w-full">
+    <div className="super-admin-dashboard w-full">
         <motion.div 
           key="dashboard"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
           dir="ltr"
-          className="flex h-full min-h-0 overflow-hidden bg-[#fbf5f7] text-[#2e1065] relative font-sans"
+          className="relative flex w-full min-h-[calc(100dvh-var(--demo-banner-height))] bg-[#fbf5f7] text-[#2e1065] font-sans"
         >
           {/* Floating animated pale pink clouds system */}
           <BackgroundClouds />
@@ -196,7 +196,7 @@ export default function App() {
           />
 
           {/* Main Panel layout wrapper */}
-          <div className="flex-1 flex flex-col min-w-0 font-sans">
+          <div className="flex-1 flex flex-col min-w-0 font-sans relative z-10">
             
             {/* Top Header */}
             <Header 
@@ -220,7 +220,7 @@ export default function App() {
             />
 
             {/* Central dynamically toggling interactive view screen area */}
-            <main className="flex-1 min-h-0 overflow-y-auto px-3 sm:px-5 md:px-6 lg:px-8 py-4 md:py-5 lg:py-6 select-text scrollbar-thin scrollbar-thumb-slate-800">
+            <main className="w-full px-3 sm:px-5 md:px-6 lg:px-8 py-4 md:py-5 lg:py-6 pb-28 select-text">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeTab}
@@ -228,7 +228,7 @@ export default function App() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -8 }}
                   transition={{ duration: 0.25, ease: 'easeOut' }}
-                  className="h-full"
+                  className="min-h-min w-full"
                 >
                   {activeTab === 'overview' && (
                     <DashboardOverview 

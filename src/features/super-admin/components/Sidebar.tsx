@@ -135,10 +135,10 @@ export default function Sidebar({
   return (
     <div 
       id="apex-sidebar"
-      className={`h-full max-h-full my-2 xl:my-4 ml-2 xl:ml-4 rounded-[24px] xl:rounded-[32px] bg-white/40 backdrop-blur-3xl flex flex-col shadow-2xl w-[220px] lg:w-[240px] xl:w-[260px] 2xl:w-[280px] flex-shrink-0 transition-transform duration-300 z-50 border border-white/50
+      className={`self-stretch min-h-0 my-2 xl:my-4 ml-2 xl:ml-4 rounded-[24px] xl:rounded-[32px] bg-white/40 backdrop-blur-3xl flex flex-col shadow-2xl w-[220px] lg:w-[240px] xl:w-[260px] 2xl:w-[280px] flex-shrink-0 transition-transform duration-300 z-50 border border-white/50
         ${isOpen 
-          ? 'translate-x-0 fixed portal-fixed-below-banner-tight left-1' 
-          : '-translate-x-full lg:translate-x-0 fixed lg:static left-0 lg:left-auto lg:bottom-auto lg:top-auto lg:max-h-none'
+          ? 'translate-x-0 fixed portal-fixed-below-banner-tight left-1 max-h-[calc(100dvh-var(--demo-banner-height))]' 
+          : '-translate-x-full lg:translate-x-0 fixed lg:sticky lg:top-0 lg:left-auto lg:bottom-auto lg:max-h-[calc(100dvh-var(--demo-banner-height))] left-0'
         }
       `}
     >
@@ -160,7 +160,7 @@ export default function Sidebar({
       </div>
 
       {/* Menu Options Scrollable Item Area */}
-      <div className="flex-1 overflow-y-auto overflow-x-hidden p-4 space-y-1.5 h-0 scrollbar-none">
+      <div data-portal-scroll="nav" className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden p-4 space-y-1.5 scrollbar-none">
         <div className="text-[10px] font-black uppercase tracking-[0.25em] text-[#2e1065]/30 mb-3 px-3 mt-2">
           {t('corporate_core', 'Corporate Core')}
         </div>

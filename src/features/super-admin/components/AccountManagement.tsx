@@ -518,7 +518,7 @@ export default function AccountManagement({
                 step="0.05"
                 value={rateSavings}
                 onChange={(e) => setRateSavings(Number(e.target.value))}
-                className="w-full bg-[#0a1135] border border-[#1b2557] focus:border-[#d4af37]/60 text-white pl-16 pr-4 py-2.5 rounded-xl outline-none font-mono text-sm"
+                className="w-full bg-[#0a1135] border border-[#1b2557] focus:border-[#d4af37]/60 text-white pl-[4.5rem] pr-4 py-2.5 rounded-xl outline-none font-mono text-sm"
               />
             </div>
             <button 
@@ -545,7 +545,7 @@ export default function AccountManagement({
                 type="number" 
                 value={limitInput}
                 onChange={(e) => setLimitInput(Number(e.target.value))}
-                className="w-full bg-[#0a1135] border border-[#1b2557] focus:border-[#d4af37]/60 text-white pl-16 pr-4 py-2.5 rounded-xl outline-none font-mono text-sm font-bold"
+                className="w-full bg-[#0a1135] border border-[#1b2557] focus:border-[#d4af37]/60 text-white pl-[4.5rem] pr-4 py-2.5 rounded-xl outline-none font-mono text-sm font-bold"
               />
             </div>
             <button 

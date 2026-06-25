@@ -90,7 +90,7 @@ const Cloud: React.FC<CloudProps> = ({
 
 export const BackgroundClouds: React.FC = () => {
   return (
-    <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+    <div className="absolute inset-0 overflow-hidden pointer-events-none z-0" aria-hidden="true">
       {/* 
         Requested Colors:
         Pale Pink (#FDE2E7)

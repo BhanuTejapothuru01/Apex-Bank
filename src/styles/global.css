@@ -17,3 +17,10 @@ body {
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
 }
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}

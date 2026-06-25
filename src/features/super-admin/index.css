@@ -7,167 +7,57 @@
   --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
 }
 
+/* Light shell — content grows naturally; portal-route-shell--scroll handles page scroll */
 .super-admin-dashboard {
   background-color: #fdf6f9;
   color: #3a2072;
   font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
-  height: 100%;
-  min-height: 0;
+  width: 100%;
+  min-height: calc(100dvh - var(--demo-banner-height));
+  overflow: visible;
 }
 
-.super-admin-dashboard * {
-  color: inherit;
+/* Sticky sidebar on desktop — stays visible while main content scrolls */
+@media (min-width: 1024px) {
+  .super-admin-dashboard #apex-sidebar {
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    height: calc(100dvh - var(--demo-banner-height));
+    max-height: calc(100dvh - var(--demo-banner-height));
+  }
+
+  .super-admin-dashboard #apex-sidebar [data-portal-scroll="nav"] {
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
-.super-admin-dashboard p,
-.super-admin-dashboard span,
-.super-admin-dashboard div:not(.super-admin-dashboard *),
-.super-admin-dashboard li,
-.super-admin-dashboard td,
-.super-admin-dashboard th {
-  color: #5c4482;
-}
-
-.super-admin-dashboard h1:not(#apex-ai-assistant-wrapper *), 
-.super-admin-dashboard h2:not(#apex-ai-assistant-wrapper *), 
-.super-admin-dashboard h3:not(#apex-ai-assistant-wrapper *), 
-.super-admin-dashboard h4:not(#apex-ai-assistant-wrapper *), 
-.super-admin-dashboard h5:not(#apex-ai-assistant-wrapper *), 
-.super-admin-dashboard h6:not(#apex-ai-assistant-wrapper *), 
-.super-admin-dashboard .card-title {
-  color: #3a2072 !important;
-  font-family: var(--font-display) !important;
-}
-
-/* The actual "glass" containers like sidebar and cards */
-.super-admin-dashboard .glass-container:not(#apex-ai-assistant-wrapper *), 
-.super-admin-dashboard .glass-card:not(#apex-ai-assistant-wrapper *),
-.super-admin-dashboard .luxury-glass:not(#apex-ai-assistant-wrapper *),
-.super-admin-dashboard [class*="bg-[#0"]:not(#apex-ai-assistant-wrapper *),
-.super-admin-dashboard [class*="bg-[#1"]:not(#apex-ai-assistant-wrapper *),
-.super-admin-dashboard [class*="bg-slate-9"]:not(#apex-ai-assistant-wrapper *),
-.super-admin-dashboard aside:not(#apex-ai-assistant-wrapper *),
-.super-admin-dashboard .bg-white:not(#apex-ai-assistant-wrapper *) {
-  background: rgba(255, 255, 255, 0.45) !important;
-  backdrop-filter: blur(25px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(25px) saturate(180%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.5) !important;
-  box-shadow: 0 8px 32px 0 rgba(240, 180, 200, 0.1) !important;
-  border-radius: 24px !important;
-}
-
-/* Sidebar Specific */
-.super-admin-dashboard aside:not(#apex-ai-assistant-wrapper *) {
-  border-radius: 28px !important;
-}
-
-/* The active state button in the sidebar */
-.super-admin-dashboard .active-sidebar-item-btn,
-.super-admin-dashboard .active {
+/* Sidebar navigation */
+.super-admin-dashboard #apex-sidebar .active-sidebar-item-btn,
+.super-admin-dashboard #apex-sidebar .active {
   background: linear-gradient(135deg, #6d28d9 0%, #8b5cf6 100%) !important;
   color: #ffffff !important;
   box-shadow: 0 10px 20px rgba(109, 40, 217, 0.25) !important;
   border-radius: 16px !important;
   border: none !important;
 }
-.super-admin-dashboard .active-sidebar-item-btn *:not(#apex-ai-assistant-wrapper *),
-.super-admin-dashboard .active *:not(#apex-ai-assistant-wrapper *) {
+
+.super-admin-dashboard #apex-sidebar .active-sidebar-item-btn *,
+.super-admin-dashboard #apex-sidebar .active * {
   color: #ffffff !important;
 }
 
-/* Secondary/light action buttons - Send Money, Request, Top Up */
-.super-admin-dashboard button:not(#apex-ai-assistant-wrapper *):not(.active-sidebar-item-btn):not(.active):not(.primary-btn):not([type="submit"]):not([class*="bg-[#"]):not([class*="bg-red"]) {
-  background: rgba(255, 240, 245, 0.8) !important;
-  backdrop-filter: blur(10px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.9) !important;
-  box-shadow: 0 4px 15px rgba(240, 180, 200, 0.3) !important;
-  color: #3a2072 !important;
-  border-radius: 12px !important;
-  transition: all 0.2s ease !important;
+/* Header search — keep readable on light chrome */
+.super-admin-dashboard header input {
+  color: #3a2072;
 }
 
-.super-admin-dashboard button:not(#apex-ai-assistant-wrapper *):not(.active-sidebar-item-btn):not(.active):not(.primary-btn):not([type="submit"]):not([class*="bg-[#"]):not([class*="bg-red"]):hover {
-  background: rgba(255, 255, 255, 1) !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 8px 20px rgba(240, 180, 200, 0.4) !important;
-}
-
-.super-admin-dashboard button:not(#apex-ai-assistant-wrapper *) *:not(.active-sidebar-item-btn *):not(.active *):not(.primary-btn *):not([type="submit"] *):not([class*="bg-[#"] *):not([class*="bg-red"] *) {
-  color: #3a2072 !important;
-}
-
-/* Primary dark buttons (e.g. submit forms or explicit primary actions) */
-.super-admin-dashboard button.primary-btn, .super-admin-dashboard button[type="submit"], .super-admin-dashboard .bg-indigo-600 {
-  background: #4c2b83 !important;
-  color: #ffffff !important;
-  border-radius: 12px !important;
-  box-shadow: 0 6px 15px rgba(76, 43, 131, 0.25) !important;
-  border: none !important;
-}
-.super-admin-dashboard button.primary-btn *, .super-admin-dashboard button[type="submit"] *, .super-admin-dashboard .bg-indigo-600 * {
-  color: #ffffff !important;
-}
-
-/* Muted or subtitle text colors */
-.super-admin-dashboard .text-slate-400:not(#apex-ai-assistant-wrapper *), 
-.super-admin-dashboard .text-gray-400:not(#apex-ai-assistant-wrapper *), 
-.super-admin-dashboard .text-slate-500:not(#apex-ai-assistant-wrapper *), 
-.super-admin-dashboard .text-gray-500:not(#apex-ai-assistant-wrapper *) {
-  color: #725b96 !important;
-}
-
-/* Remove default dark backgrounds */
-.super-admin-dashboard .bg-slate-900, .super-admin-dashboard .bg-slate-950, .super-admin-dashboard .bg-[#070c2e], .super-admin-dashboard .bg-[#0a1135] {
-  background: transparent !important;
-}
-
-/* Make big text standout in deep purple */
-.super-admin-dashboard .text-4xl, .super-admin-dashboard .text-5xl, .super-admin-dashboard .text-6xl {
-  color: #3a2072 !important;
-  font-weight: 800 !important;
-  font-family: var(--font-display) !important;
-}
-
-/* Change random white text to dark purple in light theme */
-.super-admin-dashboard .text-white:not(#apex-ai-assistant-wrapper *):not(.active-sidebar-item-btn *):not(.active *):not(.primary-btn *):not([type="submit"] *) {
-  color: #3a2072 !important;
-}
-
-/* Input elements */
-.super-admin-dashboard input:not(#apex-ai-assistant-wrapper *), .super-admin-dashboard select:not(#apex-ai-assistant-wrapper *), .super-admin-dashboard textarea:not(#apex-ai-assistant-wrapper *) {
-  background: rgba(255, 255, 255, 0.6) !important;
-  border: 1px solid rgba(255, 185, 205, 0.3) !important;
-  border-radius: 12px !important;
-  color: #3a2072 !important;
-  padding: 8px 12px !important;
-  outline: none !important;
-  box-shadow: none !important;
-}
-
-.super-admin-dashboard input:focus, .super-admin-dashboard select:focus, .super-admin-dashboard textarea:focus {
-  background: rgba(255, 255, 255, 0.9) !important;
-  border-color: #f472b6 !important;
-}
-
-.super-admin-dashboard input::placeholder {
-  color: rgba(58, 32, 114, 0.4) !important;
-}
-
-/* Badges / Status colors overrides */
-.super-admin-dashboard .bg-emerald-500, .super-admin-dashboard .bg-emerald-100 {
-  background: rgba(16, 185, 129, 0.15) !important;
-  color: rgb(5, 150, 105) !important;
-}
-.super-admin-dashboard .bg-emerald-500 *, .super-admin-dashboard .bg-emerald-100 * { color: inherit !important; }
-
-.super-admin-dashboard .bg-rose-500, .super-admin-dashboard .bg-red-500, .super-admin-dashboard .bg-red-100, .super-admin-dashboard .bg-rose-100 {
-  background: rgba(239, 68, 68, 0.15) !important;
-  color: rgb(185, 28, 28) !important;
-}
-.super-admin-dashboard .bg-rose-500 *, .super-admin-dashboard .bg-red-500 *, .super-admin-dashboard .bg-red-100 *, .super-admin-dashboard .bg-rose-100 * { color: inherit !important; }
-
-/* Keep modal backgrounds glassy */
-.super-admin-dashboard .fixed.inset-0.bg-black\/35, .super-admin-dashboard [class*="bg-black/"] {
+/* Modal overlays */
+.super-admin-dashboard .fixed.inset-0.bg-black\/35,
+.super-admin-dashboard [class*="bg-black/"] {
   background: rgba(255, 230, 240, 0.15) !important;
   backdrop-filter: blur(8px) !important;
   -webkit-backdrop-filter: blur(8px) !important;
